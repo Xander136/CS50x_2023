@@ -1,6 +1,5 @@
 #include <stdio.h>
 
-int main(void)
-{
-    printf("Hellow\n");
+int main(void) {
+    printf("meow\n");
 }

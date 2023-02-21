@@ -3,6 +3,8 @@
 
 #include <cs50.h>
 #include <stdio.h>
+char name;
+char location;
 
 int main(void)
 {

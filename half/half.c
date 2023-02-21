@@ -20,6 +20,6 @@ float half(float bill, float tax, int tip)
 {
     float tax_inclusive_bill = bill * (tax / 100);
     float plus_tip = tax_inclusive_bill * (tip/100);
-    float total = 
-    return 0.0;
+    float total = (plus_tip / 2);
+    return total;
 }

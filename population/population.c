@@ -23,9 +23,9 @@ int main(void)
     int population;
     do
     {
-        int population = (start_size + (start_size / 3) )
+        int population = (start_size + (start_size / 3) - (start_size / 4));
     }
-    while (end_size >= population)
+    while (end_size >= population);
 
     // TODO: Print number of years
     printf("Year: %i\n", n);

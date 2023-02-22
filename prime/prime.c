@@ -32,6 +32,6 @@ bool prime(int number)
 {
     if(number % 2 == 0 && number % (number - 1) == 0)
     {
-        return false;
+        return 0;
     }
 }

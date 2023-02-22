@@ -31,7 +31,7 @@ int main(void)
 bool prime(int number)
 {
     // TODO
-    if (number < 2) /* Exit gracefully if a minimum value of 1 or less is entered */
+    if (number < 2)
     {
         return false;
     }
@@ -44,5 +44,5 @@ bool prime(int number)
             return false;
         }
     }
-    return true;        /* Technically returning a value greater than zero will equate to true, but it is better to return "true" */
+    return true;        
 }

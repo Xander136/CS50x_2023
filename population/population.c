@@ -20,13 +20,15 @@ int main(void)
     while (end_size < start_size);
 
     // TODO: Calculate number of years until we reach threshold
-    int population;
+    int population = start_size;
+    int year = 0;
     do
     {
-        int population = (start_size + (start_size / 3) - (start_size / 4));
+        population += ((population / 3) - (population / 4));
+        year++;
     }
     while (end_size >= population);
 
     // TODO: Print number of years
-    printf("Year: %i\n", n);
+    printf("Year: %i\n", year);
 }

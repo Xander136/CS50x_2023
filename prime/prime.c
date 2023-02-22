@@ -19,17 +19,17 @@ int main(void)
     }
     while (min >= max);
 
-    for (int i = min; i <= max; i++) //loop through
+    for (int i = min; i <= max; i++) //loop through min to max
     {
         if (prime(i))
         {
-            printf("%i\n", i);
+            printf("%i\n", i); // print if Prime number
         }
     }
 }
 
 bool prime(int number)
 {
-
+    if (number)
     return false;
 }

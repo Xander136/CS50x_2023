@@ -1,12 +1,12 @@
-rm#include <cs50.h>
+#include <cs50.h>
 #include <stdio.h>
 
 int main(void)
 {
-    string no_block;
+    int no_block;
     do
     {
-        no_block = get_int("Height: ")
+        no_block = get_int("Height: ");
     }
-    while (no_block <= 0 && no_block => 9)
+    while (no_block <= 0 && no_block => 9);
 }

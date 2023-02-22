@@ -2,5 +2,6 @@
 
 int main(void)
 {
-    printf("hello, world\n");
+    string name = get_name("What is your name? ")
+    printf("hello, %s\n", name);
 }

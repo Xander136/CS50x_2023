@@ -5,21 +5,21 @@ bool prime(int number);
 
 int main(void)
 {
-    int min;
+    int min; // ask for minimum number until you get a value greater than 1
     do
     {
         min = get_int("Minimum: ");
     }
     while (min < 1);
 
-    int max;
+    int max; // ask for max number until you get a value greater than min
     do
     {
         max = get_int("Maximum: ");
     }
     while (min >= max);
 
-    for (int i = min; i <= max; i++)
+    for (int i = min; i <= max; i++) //loop through
     {
         if (prime(i))
         {
@@ -30,6 +30,6 @@ int main(void)
 
 bool prime(int number)
 {
-    
+
     return false;
 }

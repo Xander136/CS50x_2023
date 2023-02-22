@@ -30,9 +30,19 @@ int main(void)
 
 bool prime(int number)
 {
-    if (number % 2 == 0 && number % (number - 1) == 0)
+    // TODO
+    if (number < 2) /* Exit gracefully if a minimum value of 1 or less is entered */
     {
         return false;
     }
-    return false;
+
+    int j;
+    for (j = 2; j <= number - 1; j++)
+    {
+        if (number % j == 0)
+        {
+            return false;
+        }
+    }
+    return true;        /* Technically returning a value greater than zero will equate to true, but it is better to return "true" */
 }

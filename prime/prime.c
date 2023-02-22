@@ -30,6 +30,6 @@ int main(void)
 
 bool prime(int number)
 {
-    if ((number / 2) % 0 && (number - 1) / number % 0);
-    return false;
+    if ((number / 2) % 0 && (number - 1) / number % 0)
+        return false;
 }

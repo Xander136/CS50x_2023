@@ -30,5 +30,5 @@ int main(void)
     while (end_size > population);
 
     // TODO: Print number of years
-    printf("Year: %i", year);
+    printf("Years: %i", year);
 }

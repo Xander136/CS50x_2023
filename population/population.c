@@ -23,7 +23,7 @@ int main(void)
     int population;
     do
     {
-        int population = (start_size / 3)
+        int population = (start_size + (start_size / 3) )
     }
     while (end_size >= population)
 

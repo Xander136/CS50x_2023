@@ -20,10 +20,10 @@ int main(void)
     while (end_size < start_size);
 
     // TODO: Calculate number of years until we reach threshold
-    int year;
+    int population;
     do
     {
-        int population = (start_size)
+        int population = (start_size / 3)
     }
     while (end_size >= population)
 

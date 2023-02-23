@@ -17,9 +17,9 @@ int main(void)
 
     while (block < no_block) //loop until blocks is same as height
     {
-        space = (no_block - n);
-        block = (no_block - space);
-        while (0 > space) // loop until there are no more spaces
+        space = (no_block - n); // 8 - 1 = 7
+        block = (no_block - space); // 8 - 7
+        while (0 > space) //7  loop until there are no more spaces
         {
             printf(" ");
             space--;

@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 bool prime(int number);
-
+c
 int main(void)
 {
     int min; // ask for minimum number until you get a value greater than 1
@@ -44,5 +44,5 @@ bool prime(int number)
             return false;
         }
     }
-    return true;        
+    return true;
 }

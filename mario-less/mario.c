@@ -10,3 +10,12 @@ int main(void)
     }
     while (no_block <= 0 || no_block >= 9);
 }
+
+int block;
+int space;
+while (block < no_block)
+{
+    space = (no_block - 1);
+    block = (no_block - space);
+    printf(%i)
+}

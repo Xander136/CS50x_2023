@@ -15,7 +15,7 @@ int main(void)
     int space = 0;
     int n = 1;
 
-    while (no_block > n) //loop until blocks is same as height
+    do
     {
         space = (no_block - n); // 8 - 1 = 7
         block = (no_block - space); // 8 - 7
@@ -32,4 +32,5 @@ int main(void)
         printf("\n"); //new line after each iteration
         n++; //increase count
     }
+    while (no_block >= n); //loop until blocks is same as height
 }

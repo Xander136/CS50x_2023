@@ -19,12 +19,12 @@ int main(void)
     {
         space = (no_block - n); // 8 - 1 = 7
         block = (no_block - space); // 8 - 7
-        while (0 > space) //7  loop until there are no more spaces
+        while (space > 0) //7  loop until there are no more spaces
         {
             printf(" ");
             space--;
         }
-        while (0 > block) //loop until there are no more blocks
+        while (block > 0) //loop until there are no more blocks
         {
             printf("#");
             block--;

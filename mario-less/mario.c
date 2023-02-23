@@ -14,16 +14,17 @@ int main(void)
 int block;
 int space;
 int n = 1;
-while (block < no_block);//loop until blocks is same as height
+
+while (block < no_block) //loop until blocks is same as height
 {
     space = (no_block - n);
     block = (no_block - space);
-    while (0 > space); // loop until there are no more spaces
+    while (0 > space) // loop until there are no more spaces
     {
         printf(" ");
         space--;
     }
-    while (0 > block); //loop until there are no more blocks
+    while (0 > block) //loop until there are no more blocks
     {
         printf("#");
         block--;

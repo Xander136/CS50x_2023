@@ -17,5 +17,5 @@ while (block < no_block)
 {
     space = (no_block - 1);
     block = (no_block - space);
-    printf("%i%i)
+    printf("%i%i\n", space, block)
 }

@@ -15,7 +15,7 @@ int main(void)
     int space = 0;
     int n = 1;
 
-    while (block < no_block) //loop until blocks is same as height
+    while (no_block > n) //loop until blocks is same as height
     {
         space = (no_block - n); // 8 - 1 = 7
         block = (no_block - space); // 8 - 7

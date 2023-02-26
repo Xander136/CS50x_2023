@@ -10,25 +10,25 @@ int main(void)
     }
     while(card_no < 1);
 
-    // string card_type = "";
+    string card_type = "";
 
-    // //15-digit numbers & start with 34 or 37
-    // if (card_type == "AMEX")
-    // {
-    //     printf("AMEX\n");
-    // }
-    // //16-digit numbers & start with 51, 52, 53, 54, or 55
-    // if (card_type == "MASTERCARD")
-    // {
-    //     printf("MASTERCARD\n");
-    // }
-    // //13- and 16-digit numbers & start with 4
-    // if (card_type == "VISA")
-    // {
-    //     printf("VISA\n");
-    // }
-    // else
-    // {
-    //     printf("INVALID\n");
-    // }
+    //15-digit numbers & start with 34 or 37
+    if (card_type == "AMEX")
+    {
+        printf("AMEX\n");
+    }
+    //16-digit numbers & start with 51, 52, 53, 54, or 55
+    if (card_type == "MASTERCARD")
+    {
+        printf("MASTERCARD\n");
+    }
+    //13- and 16-digit numbers & start with 4
+    if (card_type == "VISA")
+    {
+        printf("VISA\n");
+    }
+    else
+    {
+        printf("INVALID\n");
+    }
 }

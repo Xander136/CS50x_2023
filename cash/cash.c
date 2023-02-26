@@ -53,65 +53,73 @@ int calculate_quarters(int cents)
 {
     // TODO
 
-    int quarters = 0; //initialize quarter variable
+    // int quarters = 0; //initialize quarter variable
 
-    if (cents % 25 == 0)         //if cents is divisible by 25,
-    {
-        quarters = (cents / 25); //divide cents by 25 then store to quarters
-    }
-    else
-    {
-        quarters = (cents / 25);            //divide cents by 25 to get number of quarters
-        // cents = cents - (quarters * 25);    //subtract total value of quarters from cents
-    }
+    // if (cents % 25 == 0)         //if cents is divisible by 25,
+    // {
+    //     quarters = (cents / 25); //divide cents by 25 then store to quarters
+    // }
+    // else
+    // {
+    //     quarters = (cents / 25);            //divide cents by 25 to get number of quarters
+    //     // cents = cents - (quarters * 25);    //subtract total value of quarters from cents
+    // }
+    int quarters = 0;
+    quarters = (cents / 25);
     return quarters; //return quarters
 }
 
 int calculate_dimes(int cents)
 {
-    int dimes = 0; //initialize quarter variable
+    // int dimes = 0; //initialize quarter variable
 
-    if (cents % 10 == 0)         //if cents is divisible by 10,
-    {
-        dimes = (cents / 10); //divide cents by 10 then store to quarters
-    }
-    else
-    {
-        dimes = (cents / 10);            //divide cents by 10 to get number of quarters
-        // cents = cents - (dimes * 10);    //subtract total value of dimes from cents
-    }
+    // if (cents % 10 == 0)         //if cents is divisible by 10,
+    // {
+    //     dimes = (cents / 10); //divide cents by 10 then store to quarters
+    // }
+    // else
+    // {
+    //     dimes = (cents / 10);            //divide cents by 10 to get number of quarters
+    //     // cents = cents - (dimes * 10);    //subtract total value of dimes from cents
+    // }
+    int dimes = 0;
+    dimes = (cents / 10);
     return dimes; //return dimes
 
 }
 
 int calculate_nickels(int cents)
 {
-    int nickels = 0; //initialize nickels variable
+    // int nickels = 0; //initialize nickels variable
 
-    if (cents % 5 == 0)         //if cents is divisible by 5,
-    {
-        nickels = (cents / 5); //divide cents by 5 then store to nickels
-    }
-    else
-    {
-        nickels = (cents / 5);            //divide cents by 5 to get number of nickels
-        // cents = cents - (nickels * 5);    //subtract total value of nickels from cents
-    }
+    // if (cents % 5 == 0)         //if cents is divisible by 5,
+    // {
+    //     nickels = (cents / 5); //divide cents by 5 then store to nickels
+    // }
+    // else
+    // {
+    //     nickels = (cents / 5);            //divide cents by 5 to get number of nickels
+    //     // cents = cents - (nickels * 5);    //subtract total value of nickels from cents
+    // }
+    int nickels = 0;
+    nickels = (cents / 5);
     return nickels; //return nickels
 }
 
 int calculate_pennies(int cents)
 {
-    int pennies = 0; //initialize pennies variable
+    // int pennies = 0; //initialize pennies variable
 
-    if (cents % 1 == 0)         //if cents is divisible by 5,
-    {
-        pennies = (cents / 1); //divide cents by 5 then store to pennies
-    }
-    else
-    {
-        pennies = (cents / 1);            //divide cents by 5 to get number of pennies
-        // cents = cents - (pennies * 5);    //subtract total value of pennies from cents
-    }
+    // if (cents % 1 == 0)         //if cents is divisible by 5,
+    // {
+    //     pennies = (cents / 1); //divide cents by 5 then store to pennies
+    // }
+    // else
+    // {
+    //     pennies = (cents / 1);            //divide cents by 5 to get number of pennies
+    //     // cents = cents - (pennies * 5);    //subtract total value of pennies from cents
+    // }
+    int pennies = 0;
+    pennies = (cents / 1);
     return pennies; //return pennies
 }

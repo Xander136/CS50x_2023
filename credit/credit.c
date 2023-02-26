@@ -16,9 +16,9 @@ int main(void)
     //       100000000000000
 
     //15-digit numbers & start with 34 or 37
-    if (card_no % 100000000000000 == 34 || card_no % 100000000000000 == 37)
+    if ((card_no / 100000000000000) % 10 == 34 || (card_no / 100000000000000 == 37)
     {
-        
+
         printf("AMEX\n");
     }
     // //16-digit numbers & start with 51, 52, 53, 54, or 55

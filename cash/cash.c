@@ -86,22 +86,32 @@ int calculate_dimes(int cents)
 
 int calculate_nickels(int cents)
 {
-    int dimes = 0; //initialize quarter variable
+    int nickels = 0; //initialize nickels variable
 
-    if (cents % 10 == 0)         //if cents is divisible by 10,
+    if (cents % 5 == 0)         //if cents is divisible by 5,
     {
-        dimes = (cents / 10); //divide cents by 10 then store to quarters
+        nickels = (cents / 5); //divide cents by 5 then store to nickels
     }
     else
     {
-        dimes = (cents / 10);            //divide cents by 10 to get number of quarters
-        cents = cents - (dimes * 10);    //subtract total value of dimes from cents
+        nickels = (cents / 5);            //divide cents by 5 to get number of nickels
+        cents = cents - (nickels * 5);    //subtract total value of nickels from cents
     }
-    return dimes; //return dimes
+    return nickels; //return nickels
 }
 
 int calculate_pennies(int cents)
 {
-    // TODO
-    return 0;
+    int pennies = 0; //initialize pennies variable
+
+    if (cents % 5 == 0)         //if cents is divisible by 5,
+    {
+        pennies = (cents / 5); //divide cents by 5 then store to pennies
+    }
+    else
+    {
+        pennies = (cents / 5);            //divide cents by 5 to get number of pennies
+        cents = cents - (pennies * 5);    //subtract total value of pennies from cents
+    }
+    return pennies; //return pennies
 }

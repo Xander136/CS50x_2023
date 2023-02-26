@@ -60,8 +60,8 @@ int calculate_quarters(int cents)
     if (cents % 25 == 0; quarters = cents / 25; cents = 0);
     else
     {
-        quarters = cents / 25; //26
-        cents = (quarters * 25) - cents;
+        quarters = cents / 25; //
+        cents = cents - (quarters * 25); //
     }
     return 0;
 }

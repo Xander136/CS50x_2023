@@ -10,7 +10,7 @@ int main(void)
     }
     while(card_no < 1);
 
-    string card_type = "";
+    string card_type = "AMEX";
 
     //15-digit numbers & start with 34 or 37
     if (card_type == "AMEX")

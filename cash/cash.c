@@ -78,7 +78,7 @@ int calculate_dimes(int cents)
     }
     else
     {
-        quarters = (cents / 10);            //divide cents by 10 to get number of quarters
+        dimes = (cents / 10);            //divide cents by 10 to get number of quarters
         cents = cents - (dimes * 10);    //subtract total value of dimes from cents
     }
     return dimes; //return dimes

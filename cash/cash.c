@@ -104,7 +104,7 @@ int calculate_pennies(int cents)
 {
     int pennies = 0; //initialize pennies variable
 
-    if (cents % 5 == 0)         //if cents is divisible by 5,
+    if (cents % 1 == 0)         //if cents is divisible by 5,
     {
         pennies = (cents / 5); //divide cents by 5 then store to pennies
     }

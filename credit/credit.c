@@ -12,11 +12,11 @@ int main(void)
     while(card_no < 1);
 
     // int card_type = 0;
-    //sample 4003600000000014
-    //       1000000000000000
+    //sample 378282246310005
+    //       100000000000000
 
     //15-digit numbers & start with 34 or 37
-    if (card_no % 1000000000000000 == 34 || card_no % 1000000000000000 == 37)
+    if (card_no % 100000000000000 == 34 || card_no % 100000000000000 == 37)
     {
         printf("AMEX\n");
     }

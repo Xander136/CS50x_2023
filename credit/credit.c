@@ -13,16 +13,11 @@ int main(void)
 
     int card_type = 0;
     //sample 4003600000000014
-    int digit;
-    while(digits != 0)
-    {
-        
-        digit++;
-    }
+    //       1000000000000000
+
     //15-digit numbers & start with 34 or 37
-    if (card_type == "1")
+    if (card_no % 1000000000000000 = 34 || 37)
     {
-        if (card_no)
         printf("AMEX\n");
     }
     //16-digit numbers & start with 51, 52, 53, 54, or 55

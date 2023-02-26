@@ -16,6 +16,7 @@ int main(void)
     //15-digit numbers & start with 34 or 37
     if (card_type == "1")
     {
+        if (card_no)
         printf("AMEX\n");
     }
     //16-digit numbers & start with 51, 52, 53, 54, or 55

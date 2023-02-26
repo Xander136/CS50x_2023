@@ -62,7 +62,7 @@ int calculate_quarters(int cents)
     else
     {
         quarters = (cents / 25);            //divide cents by 25 to get number of quarters
-        cents = cents - (quarters * 25);    //subtract total value of quarters from cents
+        // cents = cents - (quarters * 25);    //subtract total value of quarters from cents
     }
     return quarters; //return quarters
 }
@@ -78,7 +78,7 @@ int calculate_dimes(int cents)
     else
     {
         dimes = (cents / 10);            //divide cents by 10 to get number of quarters
-        cents = cents - (dimes * 10);    //subtract total value of dimes from cents
+        // cents = cents - (dimes * 10);    //subtract total value of dimes from cents
     }
     return dimes; //return dimes
 
@@ -95,7 +95,7 @@ int calculate_nickels(int cents)
     else
     {
         nickels = (cents / 5);            //divide cents by 5 to get number of nickels
-        cents = cents - (nickels * 5);    //subtract total value of nickels from cents
+        // cents = cents - (nickels * 5);    //subtract total value of nickels from cents
     }
     return nickels; //return nickels
 }
@@ -111,7 +111,7 @@ int calculate_pennies(int cents)
     else
     {
         pennies = (cents / 5);            //divide cents by 5 to get number of pennies
-        cents = cents - (pennies * 5);    //subtract total value of pennies from cents
+        // cents = cents - (pennies * 5);    //subtract total value of pennies from cents
     }
     return pennies; //return pennies
 }

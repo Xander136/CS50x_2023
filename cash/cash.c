@@ -55,14 +55,18 @@ int calculate_quarters(int cents)
     // 25 = 1
     // 50 = 1
     int quarters = 0; //initialize quarter variable
-    //if cents is divisible by 25,
-    //divide cents by 25 then store to quarters,
-    //cents should be zero by now
-    if ((cents % 25 == 0); (quarters = cents / 25); (cents = 0));
+
+
+
+    if (cents % 25 == 0)         //if cents is divisible by 25,
+    {
+        quarters = (cents / 25); //divide cents by 25 then store to quarters,
+        cents = 0;               //cents should be zero by now
+    }
     else
     {
-        quarters = cents / 25; //divide cents by 25 to get number of quarters
-        cents = cents - (quarters * 25); //subtract total value of quarters from cents
+        quarters = (cents / 25);            //divide cents by 25 to get number of quarters
+        cents = cents - (quarters * 25);    //subtract total value of quarters from cents
     }
     return quarters; //return quarters
 }

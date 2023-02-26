@@ -6,9 +6,9 @@ int main(void)
     long card_no = 0;
     do //get credit card number
     {
-        long card_no = get_long("Number: ");
+        card_no = get_long("Number: ");
     }
-    while(card_no < 0)
+    while(card_no < 1);
     //15-digit numbers & start with 34 or 37
     printf("AMEX\n");
     //16-digit numbers & start with 51, 52, 53, 54, or 55

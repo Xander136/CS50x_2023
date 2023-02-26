@@ -52,11 +52,8 @@ int get_cents(void)
 int calculate_quarters(int cents)
 {
     // TODO
-    // 25 = 1
-    // 50 = 1
+
     int quarters = 0; //initialize quarter variable
-
-
 
     if (cents % 25 == 0)         //if cents is divisible by 25,
     {
@@ -73,7 +70,19 @@ int calculate_quarters(int cents)
 int calculate_dimes(int cents)
 {
     // TODO
-    return 0;
+    int dimes = 0; //initialize quarter variable
+
+    if (cents % 10 == 0)         //if cents is divisible by 10,
+    {
+        dimes = (cents / 10); //divide cents by 10 then store to quarters
+    }
+    else
+    {
+        quarters = (cents / 10);            //divide cents by 10 to get number of quarters
+        cents = cents - (dimes * 10);    //subtract total value of dimes from cents
+    }
+    return dimes; //return dimes
+
 }
 
 int calculate_nickels(int cents)

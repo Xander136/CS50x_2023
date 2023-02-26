@@ -1,0 +1,4 @@
+Code for mario less
+1. get user input
+2. make a do while loop to ensure the input is between 1-8
+3. calculate space is equal to 0; then input block -1

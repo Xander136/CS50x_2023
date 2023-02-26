@@ -10,10 +10,10 @@ int main(void)
     }
     while(card_no < 1);
 
-    string card_type = "AMEX";
+    int card_type = 1;
 
     //15-digit numbers & start with 34 or 37
-    if (card_type == "AMEX")
+    if (card_type == 1)
     {
         printf("AMEX\n");
     }

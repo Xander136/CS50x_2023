@@ -57,10 +57,10 @@ int calculate_quarters(int cents)
     //if cents is divisible by 25,
     //divide cents by 25 then store to quarters,
     //subtract cents from
-    if (cents % 25 == 0; quarters = cents / 25; cents = quarters);
+    if (cents % 25 == 0; quarters = cents / 25; cents = 0);
     else
     {
-        quarters = cents / 25;
+        quarters = cents / 25; //26
         cents = (quarters * 25) - cents;
     }
     return 0;

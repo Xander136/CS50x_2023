@@ -48,6 +48,7 @@ int get_cents(void)
     return cents;
 }
 
+
 int calculate_quarters(int cents)
 {
     // TODO
@@ -56,14 +57,14 @@ int calculate_quarters(int cents)
     int quarters = 0; //initialize quarter variable
     //if cents is divisible by 25,
     //divide cents by 25 then store to quarters,
-    //subtract cents from
-    if (cents % 25 == 0; quarters = cents / 25; cents = 0);
+    //cents should be zero by now
+    if ((cents % 25 == 0); (quarters = cents / 25); (cents = 0));
     else
     {
-        quarters = cents / 25; //
-        cents = cents - (quarters * 25); //
+        quarters = cents / 25; //divide cents by 25 to get number of quarters
+        cents = cents - (quarters * 25); //subtract total value of quarters from cents
     }
-    return 0;
+    return quarters; //return quarters
 }
 
 int calculate_dimes(int cents)

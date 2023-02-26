@@ -106,11 +106,11 @@ int calculate_pennies(int cents)
 
     if (cents % 1 == 0)         //if cents is divisible by 5,
     {
-        pennies = (cents / 5); //divide cents by 5 then store to pennies
+        pennies = (cents / 1); //divide cents by 5 then store to pennies
     }
     else
     {
-        pennies = (cents / 5);            //divide cents by 5 to get number of pennies
+        pennies = (cents / 1);            //divide cents by 5 to get number of pennies
         // cents = cents - (pennies * 5);    //subtract total value of pennies from cents
     }
     return pennies; //return pennies

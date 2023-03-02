@@ -23,8 +23,7 @@ int main(int argc, string argv[])
 }
 
 
-int main(void)
-{
+
     string s = get_string("Before: ");
     printf("After:  ");
     for (int i = 0, n = strlen(s); i < n; i++)
@@ -32,7 +31,7 @@ int main(void)
         printf("%c", toupper(s[i]));
     }
     printf("\n");
-}
+
 
 string replace(string word)
 {

@@ -16,31 +16,36 @@ int main(int argc, string argv[])
     {
         string character[] = replace(word[i]);
     }
-    printf("%s\n", character)
+    printf("%s\n", new_word)
 }
 
-char replace (string n)
+char replace (string word)
 {
-        switch (n)
+    for (characters = )
     {
-        case 'a':
-            return '6';
-            break;
-
-        case 'e':
-            return '3';
-            break;
-
-        case 'i':
-            return '1';
-            break;
-
-        case 'o':
-            return '0';
-            break;
-
-        default:
-            break;
-
+        
     }
+        switch (n)
+        {
+            case 'a':
+                return '6';
+                break;
+
+            case 'e':
+                return '3';
+                break;
+
+            case 'i':
+                return '1';
+                break;
+
+            case 'o':
+                return '0';
+                break;
+
+            default:
+                break;
+
+        }
+    return new_word
 }

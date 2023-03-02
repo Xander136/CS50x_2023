@@ -23,7 +23,7 @@ int main(int argc, string argv[])
 }
 
 //hello
-string replace(string word)
+string replace(string argv[1])
 {
     for (int i = 0, n = strlen(word); i < n; i++)
     {

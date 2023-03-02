@@ -25,32 +25,26 @@ int main(int argc, string argv[])
 //hello
 string replace(string word)
 {
-    string word_before = word;
-    for (int i = 0, n = strlen(word); i < n; i++)
+    for (int i = 0, n = strlen(word); i < n; i++) //iterate over the letters
     {
-        char word;
         switch (word[i])
         {
             case 'a':
                 word[i] = '6';
-                continue;
+                break;
 
             case 'e':
-                return '3';
-                continue;
+                word[i] = '3';
+                break;
 
             case 'i':
-                return '1';
-                continue;
+                word[i] = '1';
+                break;
 
             case 'o':
-                return '0';
-                continue;
-
-            default:
-                return 'n';
-                continue;
+                word[i] = '0';
+                break;
         }
     }
-    return converted_word;
+    return word;//return converted word
 }

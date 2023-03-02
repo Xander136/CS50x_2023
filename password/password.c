@@ -24,9 +24,30 @@ int main(void)
 // TODO: Complete the Boolean function below
 bool valid(string password)
 {
+    //initialize bool variables
+    bool uppercase_letter = false;
+    bool lowercase_letter = false;
+    bool number = false;
+    bool symbol = false;
+
     for (i = 0, n = strlen(password); i < n; i++)
     {
-        password[i]
+        if (uppercase letter password[i])
+        {
+            uppercase_letter = true;
+        }
+        if (lowercase letter password[i])
+        {
+            lowercase_letter = false;
+        }
+        if (number password[i])
+        {
+            number = true;
+        }
+        if (symbol case password[i])
+        {
+            symbol = true;
+        }
     }
 
     return false;

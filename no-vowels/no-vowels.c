@@ -12,8 +12,9 @@ int main(int argc, string argv[])
     printf("%s\n", word);
     for (int i = 0, n = strlen(s); i < n; i++)
     {
-        char character[] = replace(word[i]);
+        string character[] = replace(word[i]);
     }
+    print("%s")
 }
 
 char replace (char n)

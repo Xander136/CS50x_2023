@@ -32,11 +32,11 @@ bool valid(string password)
 
     for (i = 0, n = strlen(password); i < n; i++)
     {
-        if (uppercase letter password[i])
+        if (isupper(password[i]))
         {
             uppercase_letter = true;
         }
-        if (lowercase letter password[i])
+        if (islower(password[i]))
         {
             lowercase_letter = false;
         }

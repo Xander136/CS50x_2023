@@ -5,6 +5,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <ctype.h>
+#include <string.h>
 
 bool valid(string password);
 
@@ -30,7 +31,7 @@ bool valid(string password)
     bool number = false;
     bool symbol = false;
 
-    for (i = 0, n = strlen(password); i < n; i++)
+    for (int i = 0, n = strlen(password); i < n; i++)
     {
         if (isupper(password[i]))
         {
@@ -49,6 +50,10 @@ bool valid(string password)
             symbol = true;
         }
     }
-
-    return false;
+    if (uppercase_letter == true && lowercase_letter == true && number == true && symbol == true)
+        return true;
+    else
+    {
+        return false;
+    }
 }

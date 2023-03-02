@@ -27,7 +27,7 @@ int main(void)
 // TODO: complete the calc_hours function
 float calc_hours(int hours[], int weeks, char output)
 {
-    int total;
+    float total;
     int average;
     int i;
     for (i = 0, total = 0; i < weeks; i++) //add hours into a variable

@@ -52,7 +52,7 @@ int compute_score(string word)
         else if (islower(word[i]))
         {
             // get score from points array
-             points += POINTS[word[i] - 97];
+            points += POINTS[word[i] - 97];
         }
     }
     return points;//return total points

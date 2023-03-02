@@ -6,7 +6,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <string.h>
-char replace (char n);
+string replace(string n);
 
 int main(int argc, string argv[])
 {
@@ -31,7 +31,7 @@ int main(void)
     printf("\n");
 }
 
-string replace (string word)
+string replace(string word)
 {
     for (characters = )
     {

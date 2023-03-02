@@ -22,21 +22,12 @@ int main(int argc, string argv[])
 
 }
 
-
-
-    string s = get_string("Before: ");
-    printf("After:  ");
-    for (int i = 0, n = strlen(s); i < n; i++)
-    {
-        printf("%c", toupper(s[i]));
-    }
-    printf("\n");
-
 //hello
 string replace(string word)
 {
     for (int i = 0, n = strlen(word); i < n; i++)
     {
+        char word;
         switch (word[i])
         {
             case 'a':

@@ -23,7 +23,7 @@ char replace (string word)
 {
     for (characters = )
     {
-        
+
     }
         switch (n)
         {
@@ -45,7 +45,6 @@ char replace (string word)
 
             default:
                 break;
-
         }
     return new_word
 }

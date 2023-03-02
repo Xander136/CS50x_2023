@@ -18,14 +18,22 @@ char replace (char n)
     {
         case 'a':
             return '6';
+            break;
 
         case 'e':
             return '3';
+            break;
 
         case 'i':
             return '1';
+            break;
 
         case 'o':
             return '0';
+            break;
+            
+        default:
+            break;
+
     }
 }

@@ -5,16 +5,18 @@
 
 #include <cs50.h>
 #include <stdio.h>
+#include <string.h>
+char replace (char n);
 
 int main(int argc, string argv[])
 {
     string word = argv[1];
     printf("%s\n", word);
-    for (int i = 0, n = strlen(s); i < n; i++)
+    for (int i = 0, n = strlen(word); i < n; i++)
     {
         string character[] = replace(word[i]);
     }
-    print("%s")
+    printf("%s\n", character)
 }
 
 char replace (char n)

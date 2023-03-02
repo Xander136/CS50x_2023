@@ -15,9 +15,10 @@ int main(int argc, string argv[])
         printf("Missing command-line argument\n");
         return 1;
     }
-    // printf("hello, %s\n", argv[1]);
-    return 0;
 
+    string converted_word = replace(argv[1]); //call replace function
+    printf("%s\n", converted_word); //print converted word
+    return 0;
 
 }
 
@@ -61,5 +62,5 @@ string replace(string word)
                 return 'n';
                 continue;
         }
-    return new_word
+    return converted_word;
 }

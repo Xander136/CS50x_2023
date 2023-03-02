@@ -43,10 +43,10 @@ int compute_score(string word)
     for (int i = 0, n = strlen(word); i < n; i++)
     {
         //check whether the passed character is alphabetic,
-        if (isalpha(word[i]))
+        if (isupper(word[i]))
         {
             // get score from points array
-            points += POINTS[i];
+            points += POINTS[word[i] - 65];
         }
         else
         {

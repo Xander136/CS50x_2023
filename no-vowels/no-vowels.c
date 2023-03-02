@@ -10,13 +10,15 @@ string replace(string n);
 
 int main(int argc, string argv[])
 {
-    string word = argv[1];
-    printf("%s\n", word);
-    for (int i = 0, n = strlen(word); i < n; i++)
+    if (argc != 2) //user must input command-line argument
     {
-        string character[] = replace(word[i]);
+        printf("Missing command-line argument\n");
+        return 1;
     }
-    printf("%s\n", new_word)
+    printf("hello, %s\n", argv[1]);
+    return 0;
+
+
 }
 
 

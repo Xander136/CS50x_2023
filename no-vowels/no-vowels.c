@@ -19,6 +19,18 @@ int main(int argc, string argv[])
     printf("%s\n", new_word)
 }
 
+
+int main(void)
+{
+    string s = get_string("Before: ");
+    printf("After:  ");
+    for (int i = 0, n = strlen(s); i < n; i++)
+    {
+        printf("%c", toupper(s[i]));
+    }
+    printf("\n");
+}
+
 string replace (string word)
 {
     for (characters = )

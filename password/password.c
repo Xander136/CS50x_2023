@@ -23,5 +23,10 @@ int main(void)
 // TODO: Complete the Boolean function below
 bool valid(string password)
 {
+    for (i = 0, strlen(password) = n; i < n; i++)
+    {
+        
+    }
+
     return false;
 }

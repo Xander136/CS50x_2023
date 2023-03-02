@@ -19,7 +19,7 @@ int main(int argc, string argv[])
     printf("%s\n", character)
 }
 
-char replace (char n)
+char replace (string n)
 {
         switch (n)
     {

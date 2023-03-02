@@ -37,9 +37,7 @@ string replace(string word)
 {
     for (int i = 0, n = strlen(word); i < n; i++)
     {
-        char letter = word[i];
-    }
-        switch (letter)
+        switch (word[i])
         {
             case 'a':
                 word[i] = '6';
@@ -61,5 +59,6 @@ string replace(string word)
                 return 'n';
                 continue;
         }
+    }
     return converted_word;
 }

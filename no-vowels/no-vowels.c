@@ -32,12 +32,12 @@ int main(int argc, string argv[])
     }
     printf("\n");
 
-
+//hello
 string replace(string word)
 {
-    for (characters = )
+    for (int i = 0, n = strlen(word); i < n; i++)
     {
-        
+        wword[i] =
     }
         switch (n)
         {

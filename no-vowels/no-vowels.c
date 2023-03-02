@@ -29,22 +29,23 @@ char replace (string word)
         {
             case 'a':
                 return '6';
-                break;
+                continue;
 
             case 'e':
                 return '3';
-                break;
+                continue;
 
             case 'i':
                 return '1';
-                break;
+                continue;
 
             case 'o':
                 return '0';
-                break;
+                continue;
 
             default:
-                break;
+                return 'n';
+                continue;
         }
     return new_word
 }

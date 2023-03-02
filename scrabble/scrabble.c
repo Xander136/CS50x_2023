@@ -48,10 +48,10 @@ int compute_score(string word)
             // get score from points array
             points += POINTS[word[i] - 65];
         }
-        else
+        else if (islower(word[i]))
         {
             // 0 if character is a symbol
-            points += 0;
+             points += POINTS[word[i] - 97];
         }
     }
     return points;//return total points

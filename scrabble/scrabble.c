@@ -53,8 +53,6 @@ int compute_score(string word)
             // 0 if character is a symbol
             points += 0;
         }
-
-
     }
     return points;//return total points
 }

@@ -51,7 +51,9 @@ bool valid(string password)
         }
     }
     if (uppercase_letter == true && lowercase_letter == true && number == true && symbol == true)
+    {
         return true;
+    }
     else
     {
         return false;

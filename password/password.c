@@ -44,7 +44,7 @@ bool valid(string password)
         {
             number = true;
         }
-        if (symbol case password[i])
+        if (ispunct(password[i]))
         {
             symbol = true;
         }

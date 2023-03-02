@@ -37,12 +37,12 @@ string replace(string word)
 {
     for (int i = 0, n = strlen(word); i < n; i++)
     {
-        wword[i] =
+        char letter = word[i];
     }
-        switch (n)
+        switch (letter)
         {
             case 'a':
-                return '6';
+                word[i] = '6';
                 continue;
 
             case 'e':

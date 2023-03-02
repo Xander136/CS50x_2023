@@ -37,7 +37,7 @@ string replace(string word)
 {
     for (characters = )
     {
-
+        
     }
         switch (n)
         {

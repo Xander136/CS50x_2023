@@ -42,15 +42,16 @@ int compute_score(string word)
     //loop over string
     for (int i = 0, n = strlen(word); i < n; i++)
     {
-        //check whether the passed character is alphabetic,
+        //check whether the passed letter is uppper
         if (isupper(word[i]))
         {
             // get score from points array
             points += POINTS[word[i] - 65];
         }
+        //check whether the passed letter is lower
         else if (islower(word[i]))
         {
-            // 0 if character is a symbol
+            // get score from points array
              points += POINTS[word[i] - 97];
         }
     }

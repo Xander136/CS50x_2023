@@ -10,6 +10,8 @@ int main(int argc, string argv[])
 {
     string word = argv[1];
     printf("%s\n", word);
+    for (int i = 0, n = strlen(s); i < n; i++)
+
 }
 
 char replace (char n)
@@ -31,7 +33,7 @@ char replace (char n)
         case 'o':
             return '0';
             break;
-            
+
         default:
             break;
 

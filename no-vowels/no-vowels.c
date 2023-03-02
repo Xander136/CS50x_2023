@@ -12,4 +12,20 @@ int main(int argc, string argv[])
     printf("%s\n", word);
 }
 
+char replace (char n)
+{
+        switch (n)
+    {
+        case 'a':
+            return '6';
 
+        case 'e':
+            return '3';
+
+        case 'i':
+            return '1';
+
+        case 'o':
+            return '0';
+    }
+}

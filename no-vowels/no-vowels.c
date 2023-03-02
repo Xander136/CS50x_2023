@@ -8,5 +8,8 @@
 
 int main(int argc, string argv[])
 {
+    string word = argv[1];
     
 }
+
+

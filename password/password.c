@@ -40,7 +40,7 @@ bool valid(string password)
         {
             lowercase_letter = false;
         }
-        if (number password[i])
+        if (isdigit(password[i]))
         {
             number = true;
         }

@@ -31,26 +31,26 @@ bool valid(string password)
     bool number = false;
     bool symbol = false;
 
-    for (int i = 0, n = strlen(password); i < n; i++)
+    for (int i = 0, n = strlen(password); i < n; i++) //iterate over string
     {
-        if (isupper(password[i]))
+        if (isupper(password[i])) //check if uppercase
         {
             uppercase_letter = true;
         }
-        if (islower(password[i]))
+        if (islower(password[i])) //check if lower case
         {
             lowercase_letter = true;
         }
-        if (isdigit(password[i]))
+        if (isdigit(password[i])) //check of is a digit
         {
             number = true;
         }
-        if (ispunct(password[i]))
+        if (ispunct(password[i])) //check if symbol
         {
             symbol = true;
         }
     }
-
+    //if all conditions met, return true, else return false
     if (uppercase_letter == true && lowercase_letter == true && number == true && symbol == true)
     {
         return true;

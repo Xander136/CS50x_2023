@@ -25,6 +25,7 @@ int main(int argc, string argv[])
 //hello
 string replace(string word)
 {
+    string word_before = word;
     for (int i = 0, n = strlen(word); i < n; i++)
     {
         char word;

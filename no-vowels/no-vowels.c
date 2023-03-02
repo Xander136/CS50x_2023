@@ -19,7 +19,7 @@ int main(int argc, string argv[])
     printf("%s\n", new_word)
 }
 
-char replace (string word)
+string replace (string word)
 {
     for (characters = )
     {

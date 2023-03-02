@@ -9,7 +9,7 @@
 int main(int argc, string argv[])
 {
     string word = argv[1];
-    
+    printf("%s\n", word);
 }
 
 

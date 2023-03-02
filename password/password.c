@@ -39,7 +39,7 @@ bool valid(string password)
         }
         if (islower(password[i]))
         {
-            lowercase_letter = false;
+            lowercase_letter = true;
         }
         if (isdigit(password[i]))
         {
@@ -50,6 +50,7 @@ bool valid(string password)
             symbol = true;
         }
     }
+
     if (uppercase_letter == true && lowercase_letter == true && number == true && symbol == true)
     {
         return true;

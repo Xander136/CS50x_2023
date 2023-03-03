@@ -28,6 +28,9 @@ int main(void)
     //print number of sentences
     printf("%i sentences\n", sentences);
 
+    //Compute Coleman-Liau index
+    int index = 0.0588 * () - 0.296 * S - 15.8
+
 }
 
 //Function for counting letters from user input

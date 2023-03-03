@@ -31,6 +31,12 @@ int main(void)
 27.300252
 8.45672
 
+3.625
+21.315
+
+
+
+
 
  */
     //Compute Coleman-Liau index

@@ -28,6 +28,8 @@ int main(void)
     //print number of sentences
     printf("%i sentences\n", sentences);
 /*
+27.300252
+8.45672
 
 
  */

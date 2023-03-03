@@ -85,7 +85,7 @@ int count_sentence(string text)
     //Loop over the string
     for (int i = 0, len = strlen(text); i < len; i++)
     {
-        if ((text[i]) == '!' || (text[i]) == '.' || (text[i]) == '?' )
+        if ((text[i]) == '!' || (text[i]) == '.' || (text[i]) == '?')
         {
             sentences += 1;
         }

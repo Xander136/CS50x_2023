@@ -29,10 +29,19 @@ int main(void)
     printf("%i sentences\n", sentences);
 
     //Compute Coleman-Liau index
-    int index = 0.0588 * (letters / words * 100) - 0.296 * (sentence / words * 100) - 15.8;
-    if (index < 1 || index > 15)
-    printf("Grade %i\n", index);
-
+    int index = 0.0588 * (letters / words * 100) - 0.296 * (sentences / words * 100) - 15.8;
+    if (index < 1)
+    {
+        printf("Before Grade 1\n");
+    }
+    else if (index > 15)
+    {
+        printf("Grade 16+\n");
+    }
+    else //Grade 1 to 15
+    {
+        printf("Grade %i\n", index);
+    }
 }
 
 //Function for counting letters from user input

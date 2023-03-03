@@ -28,21 +28,10 @@ int main(void)
     int sentences = count_sentence(text);
     //print number of sentences
     printf("%i sentences\n", sentences);
-/*
-27.300252
-8.45672
 
-3.625
-21.315
-
-
-
-
-
- */
     //Compute Coleman-Liau index
-    float l = (float) (100 * (letters / words));
-    float s = (float) (100 * (sentences / words));
+    float l = (100 * ((float) letters / words));
+    float s = (100 * ((float) sentences / words));
     int index = round(0.0588 * l - 0.296 * s - 15.8);
 
     if (index < 1)

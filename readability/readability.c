@@ -29,7 +29,7 @@ int main(void)
     printf("%i sentences\n", sentences);
 
     //Compute Coleman-Liau index
-    int index = 0.0588 * () - 0.296 * S - 15.8
+    int index = 0.0588 * ( /100) - 0.296 * S - 15.8
 
 }
 

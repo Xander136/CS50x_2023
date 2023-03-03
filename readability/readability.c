@@ -40,7 +40,9 @@ int main(void)
 
  */
     //Compute Coleman-Liau index
-    float index = (float) ((0.0588 * ((letters / words) * 100)) - (0.296 * ((sentences / words) * 100)) - 15.8);
+    float l = (letters / words) * 100;
+    float s = (sentences / words) * 100;
+    float index = (float) 0.0588 * l - 0.296 * s - 15.8;
 
     if (index < 1)
     {

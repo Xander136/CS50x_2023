@@ -18,7 +18,7 @@ int main(void)
     printf("%i letters\n", letters);
 
     //count words
-    int words = count_words(text);
+    int words = count_words(text) + 1;
     //print number of words
     printf("%i words\n", words);
 

@@ -9,7 +9,7 @@ int main(void)
 {
     string text = get_string("Text: ");
     printf("%s\n", text);
-    int letters = 0;
+    int letters = count_letters(text);
     printf("%i\n", letters);
 
 }
@@ -17,6 +17,7 @@ int main(void)
 //Function for counting letters from user input
 int count_letters(string text)
 {
+    int letters = 0;
     //Loop over the string
     for (int i = 0, len = strlen(text); i < len; i++)
     {

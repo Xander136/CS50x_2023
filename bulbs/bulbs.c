@@ -19,9 +19,9 @@ int main(void)
     for (int i = 0, len = strlen(message); i < len; i++)
     {
         int decimal = message[i];
-        int bit = (1 * 2 ^ 4);
+        int bit = (decimal * 2 ^ 4);
         //print binary
-        //double pow(double x, double ylen-1);
+        //double pow(double 2, double ylen-1);
 
         print_bulb(bit);
     }

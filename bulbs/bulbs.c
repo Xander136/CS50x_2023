@@ -19,6 +19,7 @@ int main(void)
     for (int i = 0, len = strlen(message); i < len; i++)
     {
         printf("%d\n", message[i]);
+        int binary = (1 * 2 ^ 4)
     }
 }
 

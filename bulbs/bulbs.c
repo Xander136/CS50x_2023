@@ -17,7 +17,7 @@ int main(void)
     // iterate over string
     for (int i = 0, len = strlen(message); i < len; i++)
     {
-        
+        printf("%d\n", message[i]);
     }
 }
 

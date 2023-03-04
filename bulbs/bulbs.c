@@ -18,8 +18,10 @@ int main(void)
     // iterate over string
     for (int i = 0, len = strlen(message); i < len; i++)
     {
-        printf("%d\n", message[i]);
-        int binary = (1 * 2 ^ 4)
+        int decimal = message[i];
+        int bit = (1 * 2 ^ 4);
+        //print binary
+        print_bulb(bit);
     }
 }
 

@@ -13,7 +13,12 @@ int main(void)
     string message = get_string("Message: ");
     printf("%s\n", message);
 
-
+    //convert string
+    // iterate over string
+    for (int i = 0, len = strlen(message); i < len; i++)
+    {
+        
+    }
 }
 
 void print_bulb(int bit)

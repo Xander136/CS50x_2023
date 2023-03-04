@@ -21,6 +21,8 @@ int main(void)
         int decimal = message[i];
         int bit = (1 * 2 ^ 4);
         //print binary
+        //double pow(double x, double ylen-1);
+
         print_bulb(bit);
     }
 }

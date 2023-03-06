@@ -8,7 +8,7 @@ int main(int argc, string argv[])
 {
     // Make sure program was run with just one command-line argument
     // Make sure every character in argv[2] is a digit
-    string key = argv[2];
+    int key = argv[2];
     for (int i = 0, len = strlen(argv[2]); i < len; i++)
     {
         char character = key[i];

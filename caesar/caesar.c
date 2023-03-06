@@ -7,20 +7,22 @@
 int main(int argc, string argv[])
 {
     // Make sure program was run with just one command-line argument
-    if (argc != 2)
+    if (argc == 2)
     {
-        
-    }
-
-    // Make sure every character in argv[1] is a digit
-    string key = argv[2];
-    for (int i = 0, len = strlen(argv[2]); i < len; i++)
-    {
-        if (isdigit(key[i]) != 'True' && ) //check if digit, else print usage
+        // Make sure every character in argv[1] is a digit
+        string key = argv[2];
+        for (int i = 0, len = strlen(argv[2]); i < len; i++)
         {
-            printf("Usage: ./caesar key\n");
-            break;
+            if (isdigit(key[i]) != 'True') //check if digit, else print usage
+            {
+                printf("Usage: ./caesar key\n");
+                break;
+            }
         }
+    }
+    else
+    {
+        printf("Usage: ./caesar key\n");
     }
 
     // Convert argv[1] from a `string` to an `int`

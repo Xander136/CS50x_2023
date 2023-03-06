@@ -1,10 +1,16 @@
 #include <cs50.h>
 #include <stdio.h>
+#include <ctype.h>
+
 
 int main(int argc, string argv[])
 {
     // Make sure program was run with just one command-line argument
-
+    do
+    {
+        int key = argv[3]
+    }
+    while (argc <)
     // Make sure every character in argv[1] is a digit
 
     // Convert argv[1] from a `string` to an `int`

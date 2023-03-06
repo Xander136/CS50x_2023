@@ -26,3 +26,9 @@ int main(int argc, string argv[])
 
         // Rotate the character if it's a letter
 }
+
+bool only_digits(string s);
+{
+    bool isdigits(s);
+    
+}

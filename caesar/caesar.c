@@ -8,16 +8,14 @@ bool only_digits(string s);
 int main(int argc, string argv[])
 {
     // Make sure program was run with just one command-line argument
-    // Make sure every character in argv[2] is a digit
-    int key = argv[2];
-    for (int i = 0, len = strlen(argv[2]); i < len; i++)
+    if (argc != 2)
     {
-        char character = key[i];
-        if (isdigit(character) != 'True') //check if digit, else print usage
-        {
-            printf("Usage: ./caesar key\n");
-            break;
-        }
+        printf("Usage: ./caesar key\n");
+    }
+    // Make sure every character in argv[2] is a digit
+    if (only_digits(argv[2]) == false)
+    {
+        printf("Usage: ./caesar key\n");
     }
     // Convert argv[1] from a `string` to an `int`
 

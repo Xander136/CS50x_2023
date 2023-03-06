@@ -15,12 +15,13 @@ int main(void)
     printf("%s\n", message);
 
     //convert string
-    int bits[] = {0, 0, 0, 0, 0, 0, 0, 0};
+
 
     // iterate over string
     for (int i = 0, len = strlen(message); i < len; i++)
     {
         //convert to decimal
+        int bits[] = {0, 0, 0, 0, 0, 0, 0, 0};
         int decimal = message[i];
         for (int j = BITS_IN_BYTE - 1; decimal > 0; j--)
         {

@@ -8,16 +8,12 @@ int main(int argc, string argv[])
 {
     // Make sure program was run with just one command-line argument
 
-    if (argc != 2) //user must input KEY as command-line argument
-    {
-        printf("Usage: ./caesar key\n");
-    }
 
     // Make sure every character in argv[1] is a digit
     string key = argv[2];
     for (int i = 0, len = strlen(argv[2]); i < len; i++)
     {
-        if (isdigit(key[i]) != 'True') //check if digit, else print usage
+        if (isdigit(key[i]) != 'True' && argc != 2) //check if digit, else print usage
         {
             printf("Usage: ./caesar key\n");
             break;

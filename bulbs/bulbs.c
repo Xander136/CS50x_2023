@@ -20,17 +20,15 @@ int main(void)
     // iterate over string
     for (int i = 0, len = strlen(message); i < len; i++)
     {
+        //convert to decimal
         int decimal = message[i];
         for (int j = BITS_IN_BYTE - 1, decimal > 0; j--)
         {
+            //store to 1 or 0 to  from right most bit
             bits[j] = decimal % 2;
             decimal = decimal / 2;
         }
-
-        int bit = (decimal * 2 ^ 4);
         //print binary
-        //double pow(double 2, double ylen-1);
-
         print_bulb(bit);
     }
 }

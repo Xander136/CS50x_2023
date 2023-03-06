@@ -9,11 +9,12 @@ int main(int argc, string argv[])
     // Make sure program was run with just one command-line argument
     if (argc == 2)
     {
-        // Make sure every character in argv[1] is a digit
+        // Make sure every character in argv[2] is a digit
         string key = argv[2];
         for (int i = 0, len = strlen(argv[2]); i < len; i++)
         {
-            if (isdigit(key[i]) != 'True') //check if digit, else print usage
+            char character = key[i];
+            if (isdigit(character) != 'True') //check if digit, else print usage
             {
                 printf("Usage: ./caesar key\n");
                 break;

@@ -21,7 +21,11 @@ int main(void)
     for (int i = 0, len = strlen(message); i < len; i++)
     {
         int decimal = message[i];
-        for (int j = 0, )
+        for (int j = BITS_IN_BYTE - 1, decimal > 0; j--)
+        {
+            bits[j] = decimal % 2;
+            decimal = decimal / 2;
+        }
 
         int bit = (decimal * 2 ^ 4);
         //print binary

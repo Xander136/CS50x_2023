@@ -22,14 +22,14 @@ int main(void)
     {
         //convert to decimal
         int decimal = message[i];
-        for (int j = BITS_IN_BYTE - 1, decimal > 0; j--)
+        for (int j = BITS_IN_BYTE - 1; decimal > 0; j--)
         {
             //store to 1 or 0 to  from right most bit
             bits[j] = decimal % 2;
             decimal = decimal / 2;
         }
         //print binary
-        for (k = 0, k < BITS_IN_BYTE; k++)
+        for (int k = 0; k < BITS_IN_BYTE; k++)
         {
             print_bulb(bits[k]);
         }

@@ -29,7 +29,12 @@ int main(void)
             decimal = decimal / 2;
         }
         //print binary
-        print_bulb(bit);
+        for (k = 0, k < BITS_IN_BYTE; k++)
+        {
+            print_bulb(bits[k]);
+        }
+        //print new line for each bit
+        printf("\n");
     }
 }
 

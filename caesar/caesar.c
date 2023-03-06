@@ -3,6 +3,7 @@
 #include <ctype.h>
 #include <string.h>
 
+bool only_digits(string s);
 
 int main(int argc, string argv[])
 {
@@ -29,6 +30,13 @@ int main(int argc, string argv[])
 
 bool only_digits(string s);
 {
-    bool isdigits(s);
-    
+    bool digit;
+    for (int i = 0, len = strlen(s), i++)
+    {
+        if (isdigits(s[i]))
+        {
+            digits = true;
+        }
+    }
+    return digit;
 }

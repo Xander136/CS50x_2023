@@ -25,7 +25,7 @@ int main(void)
         int decimal = message[i];
         for (int j = BITS_IN_BYTE - 1; decimal > 0; j--)
         {
-            //store to 1 or 0 to  from right most bit
+            //store 1(with remainder) or 0(no remainder) from right most bit
             bits[j] = decimal % 2;
             decimal = decimal / 2;
         }

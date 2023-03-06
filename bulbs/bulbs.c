@@ -16,11 +16,13 @@ int main(void)
 
     //convert string
     int bits[] = {0, 0, 0, 0, 0, 0, 0, 0};
-    
+
     // iterate over string
     for (int i = 0, len = strlen(message); i < len; i++)
     {
         int decimal = message[i];
+        for (int j = 0, )
+
         int bit = (decimal * 2 ^ 4);
         //print binary
         //double pow(double 2, double ylen-1);

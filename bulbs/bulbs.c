@@ -15,6 +15,8 @@ int main(void)
     printf("%s\n", message);
 
     //convert string
+    int bits[] = {0, 0, 0, 0, 0, 0, 0, 0};
+    
     // iterate over string
     for (int i = 0, len = strlen(message); i < len; i++)
     {

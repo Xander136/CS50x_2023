@@ -11,6 +11,7 @@ int main(int argc, string argv[])
     if (argc != 2)
     {
         printf("Usage: ./caesar key\n");
+        return 1;
     }
     // Make sure every character in argv[2] is a digit
     if (only_digits(argv[2]) == false)
@@ -26,14 +27,14 @@ int main(int argc, string argv[])
         // Rotate the character if it's a letter
 }
 
-bool only_digits(string s);
+bool only_digits(string s)
 {
     bool digit;
-    for (int i = 0, len = strlen(s), i++)
+    for (int i = 0, len = strlen(s); i < len; i++)
     {
-        if (isdigits(s[i]))
+        if (isdigit(s[i]))
         {
-            digits = true;
+            digit = true;
         }
     }
     return digit;

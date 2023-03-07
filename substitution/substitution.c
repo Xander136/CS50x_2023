@@ -34,25 +34,7 @@ int main(int argc, string argv[])
 
     // print ciphertext
     // loop over plaintext
-    for (int i = 0, len = strlen(text); i < len; i++)
-    {
-        // Rotate the character if it's a letter
-        // Ci = (Pi + K) % 26
-        // VCHPRZGJNTLSKFBDQWAXEUYMOI
-        // AB
 
-        char letter = text[i];
-        if (isalpha(letter))
-        {
-            if (isupper(letter))
-
-            printf("%c", letter);
-        }
-        else
-        {
-            printf("%c", letter);
-        }
-    }
 
     //After outputting ciphertext, print a newline.
     printf("\n");
@@ -73,13 +55,21 @@ bool valid_key(string key)
         key[i] = toupper(key[i]);
     }
     //loop over key
-    for (int j = 0; j < len; j++)
+    for (int i = 0; i < len; i++)
     {
-        
-    }
-
-
-
+        //check if character is Alphabetic
+        if (!isalpha(key[i]))
+        {
+            return false;
+        }
+        //check for duplicates
+        for (int j = i + 1; j < len; j++)
+        {
+            if (key[i] == key[j])
+            {
+                return false;
+            }
+        }
     }
     return true;
 }

@@ -33,7 +33,8 @@ int main(int argc, string argv[])
     printf("ciphertext: ");
 
     // loop over plaintext
-    
+    int len = strlen(text);
+    int index = 
 
     //After outputting ciphertext, print a newline.
     printf("\n");

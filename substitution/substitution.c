@@ -32,9 +32,8 @@ int main(int argc, string argv[])
     //Output ciphertext: (without a newline) followed by the plaintext’s corresponding ciphertext
     printf("ciphertext: ");
 
-    // print ciphertext
     // loop over plaintext
-
+    
 
     //After outputting ciphertext, print a newline.
     printf("\n");

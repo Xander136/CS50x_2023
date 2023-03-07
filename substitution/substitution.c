@@ -40,7 +40,7 @@ bool valid_key(string key)
         }
         // if key is not all letters, return false
         char letter = key[i];
-        if (isalpha(letter))
+        if (!(isalpha(letter)))
         {
             return false;
         }

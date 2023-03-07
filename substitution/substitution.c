@@ -76,7 +76,11 @@ bool valid_key(string key)
         char letter = key[i];
 
         //check if alphabet
-        if (!(isalpha(letter)))
+        if (isalpha(letter))
+        {
+            
+        }
+        else
         {
             return false;
         }

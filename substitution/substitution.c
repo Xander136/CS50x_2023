@@ -70,7 +70,7 @@ bool valid_key(string key)
             return false;
         }
         //initialize array to check for duplicate letters
-        int dupplicate[len] = { 0 };
+        int duplicate[len] = { 0 };
 
         //get letter
         char letter = key[i];
@@ -78,7 +78,7 @@ bool valid_key(string key)
         //check if alphabet
         if (isalpha(letter))
         {
-            
+
         }
         else
         {

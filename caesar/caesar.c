@@ -33,11 +33,11 @@ int main(int argc, string argv[])
         {
             if (isupper(letter))
             {
-                letter = ((letter - 'A') + key % 26) + 'A';
+                letter = (((letter - 'A') + key) % 26) + 'A';
             }
             else
             {
-                letter = ((letter - 'a') + key % 26) + 'a';
+                letter = (((letter - 'a') + key) % 26) + 'a';
             }
             printf("%c", letter);
         }

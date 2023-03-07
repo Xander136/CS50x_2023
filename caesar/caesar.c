@@ -29,7 +29,7 @@ bool only_digits(string s)
     for (int i = 0, len = strlen(s); i < len; i++)
     {
         char k = s[i];
-        if (!isdigit(k))
+        if !(isdigit(k))
         {
             return false;
         }

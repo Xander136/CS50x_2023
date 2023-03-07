@@ -78,7 +78,7 @@ bool valid_key(string key)
         //check if alphabet
         if (isalpha(letter))
         {
-
+            duplicate[i] = 
         }
         else
         {

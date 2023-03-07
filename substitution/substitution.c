@@ -47,9 +47,9 @@ int main(int argc, string argv[])
                 ciphertext[i] += 32;
             }
         }
-        if (isuppper(text[i]))
+        if (isupper(text[i]))
         {
-            index = text[i] - 97;
+            index = text[i] - 65;
             ciphertext[i] = key[index];
             if (isupper(ciphertext[i]))
             {

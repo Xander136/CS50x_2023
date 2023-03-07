@@ -16,17 +16,38 @@ int main(int argc, string argv[])
         printf("Usage: ./substitution key\n");
         return 1;
     }
+    //store key
+    string key = argv[1];
 
     //Prompt the user for a string of plaintext
     string text = get_string("plaintext: ");
 
     //Output ciphertext: (without a newline) followed by the plaintext’s corresponding ciphertext
     printf("ciphertext: ");
+    
     // print ciphertext
     // loop over plaintext
-    for (int i = 0, len = (strlen(text)); i < len; i++)
+    for (int i = 0, len = strlen(text); i < len; i++)
     {
-        
+        // Rotate the character if it's a letter
+        // Ci = (Pi + K) % 26
+        char letter = text[i];
+        if (isalpha(letter))
+        {
+            if (isupper(letter))
+            {
+                letter = (((letter - 'A') + key) % 26) + 'A';
+            }
+            else
+            {
+                letter = (((letter - 'a') + key) % 26) + 'a';
+            }
+            printf("%c", letter);
+        }
+        else
+        {
+            printf("%c", letter);
+        }
     }
 
     //After outputting ciphertext, print a newline.

@@ -65,7 +65,7 @@ bool valid_key(string key)
     {
         // if key is not 26 characters, return false
         // or, if key is not all letters, return false
-        if (len < 26)
+        if (len != 26)
         {
             return false;
         }
@@ -74,7 +74,7 @@ bool valid_key(string key)
 
         //get letter
         char letter = key[i];
-        
+
         //check if alphabet
         if (!(isalpha(letter)))
         {

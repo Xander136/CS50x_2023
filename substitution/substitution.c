@@ -39,7 +39,7 @@ int main(int argc, string argv[])
         {
             if (isupper(letter))
             {
-                letter = (((letter - 'A') + key[i]) % 26) + 'A';
+                letter = (((letter - 'A') + (key[i] - ) % 26)) + 'A';
             }
             else
             {

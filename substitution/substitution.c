@@ -24,7 +24,7 @@ int main(int argc, string argv[])
 
     //Output ciphertext: (without a newline) followed by the plaintext’s corresponding ciphertext
     printf("ciphertext: ");
-    
+
     // print ciphertext
     // loop over plaintext
     for (int i = 0, len = strlen(text); i < len; i++)
@@ -36,11 +36,11 @@ int main(int argc, string argv[])
         {
             if (isupper(letter))
             {
-                letter = (((letter - 'A') + key) % 26) + 'A';
+                letter = (((letter - 'A') + key[i]) % 26) + 'A';
             }
             else
             {
-                letter = (((letter - 'a') + key) % 26) + 'a';
+                letter = (((letter - 'a') + key[i]) % 26) + 'a';
             }
             printf("%c", letter);
         }

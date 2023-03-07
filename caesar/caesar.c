@@ -8,17 +8,13 @@ bool only_digits(string s);
 int main(int argc, string argv[])
 {
     // Make sure program was run with just one command-line argument
-    if (argc != 2)
+    // Make sure every character in argv[2] is a digit
+    if (argc != 2 || !(only_digits(argv[2])))
     {
         printf("Usage: ./caesar key\n");
         return 1;
     }
     
-    // Make sure every character in argv[2] is a digit
-    if (only_digits(argv[2]) == false)
-    {
-        printf("Usage: ./caesar key\n");
-    }
     // Convert argv[1] from a `string` to an `int`
 
     // Prompt user for plaintext

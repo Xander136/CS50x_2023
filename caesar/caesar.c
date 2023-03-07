@@ -24,21 +24,29 @@ int main(int argc, string argv[])
 
     // For each character in the plaintext:
     printf("ciphertext: ");
-    for (i = 0, len = strlen(text); i < len; i++)
+    for (int i = 0, len = strlen(text); i < len; i++)
     {
+        // Rotate the character if it's a letter
+        // Ci = (Pi + K) % 26
         char letter = text[i];
         if (isalpha(letter))
         {
-            
+            if (isupper(letter))
+            {
+                letter = ((letter - 'A') + key % 26) + 'A';
+            }
+            else
+            {
+                letter = ((letter - 'a') + key % 26) + 'a';
+            }
+            printf("%c", letter);
         }
         else
         {
             printf("%c", letter);
         }
     }
-
-        // Rotate the character if it's a letter
-        // Ci = (Pi + K) % 26
+    printf("\n");
 }
 
 bool only_digits(string s)

@@ -15,7 +15,7 @@ int main(int argc, string argv[])
     {
         printf("Usage: ./substitution key\n");
     }
-
+    printf("Ukey\n");
 
 
 

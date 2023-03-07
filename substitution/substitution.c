@@ -61,21 +61,23 @@ int main(int argc, string argv[])
 // Function to check if KEY is valid
 bool valid_key(string key)
 {
-    for (int i = 0, len = strlen(key); i < len; i++)
+    // if key is not 26 characters, return false
+    int len = strlen(key);
+    if (len != 26)
     {
-        // if key is not 26 characters, return false
-        if (len != 26)
-        {
-            return false;
-        }
+        return false;
+    }
+    //change all char to upper
+    for (int i = 0, ; i < len; i++)
+    {
+        key[i] = toupper(key[i]);
+    }
+    //loop over key
+    for (int j = 0; j < len; j++)
+    {
+        
+    }
 
-        //upper case all letters
-        for (int j = 0; j < len; j++)
-        {
-            key[i] = toupper(key[i]);
-        }
-
-        //
 
 
     }

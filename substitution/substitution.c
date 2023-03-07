@@ -8,14 +8,15 @@ bool valid_key(string key);
 
 int main(int argc, string argv[])
 {
-    // Check for single command-line argument or
-    // Check for 26 char key
+    // Check for single command-line argument
     // return 1 and message if failed checks
     if (argc != 2)
     {
         printf("Usage: ./substitution key\n");
         return 1;
     }
+    
+    // Check for 26 char key
     if (!valid_key(argv[1]))
     {
         printf("Key must contain 26 characters.\n");

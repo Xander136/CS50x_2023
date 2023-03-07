@@ -64,27 +64,20 @@ bool valid_key(string key)
     for (int i = 0, len = strlen(key); i < len; i++)
     {
         // if key is not 26 characters, return false
-        // or, if key is not all letters, return false
         if (len != 26)
         {
             return false;
         }
-        //initialize array to check for duplicate letters
-        int duplicate[len] = { 0 };
 
-        //get letter
-        char letter = key[i];
+        //upper case all letters
+        for (int j = 0; j < len; j++)
+        {
+            key[i] = toupper(key[i]);
+        }
 
-        //check if alphabet
-        if (isalpha(letter))
-        {
-            duplicate[i] =
-            
-        }
-        else
-        {
-            return false;
-        }
+        //
+
+
     }
     return true;
 }

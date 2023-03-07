@@ -56,7 +56,7 @@ int main(int argc, string argv[])
                 ciphertext[i] += 32;
             }
         }
-        printf(ciphertext[i]);
+        printf("%c", ciphertext[i]);
     }
 
 

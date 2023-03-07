@@ -65,9 +65,16 @@ bool valid_key(string key)
     {
         // if key is not 26 characters, return false
         // or, if key is not all letters, return false
+        if (len < 26)
+        {
+            return false;
+        }
+        //initialize array to check for duplicate letters
         int dupplicate[len] = { 0 };
+
         char letter = key[i];
-        if (!(isalpha(letter)) || len < 26)
+
+        if (!(isalpha(letter)))
         {
             return false;
         }

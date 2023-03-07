@@ -28,10 +28,11 @@ bool only_digits(string s)
 {
     for (int i = 0, len = strlen(s); i < len; i++)
     {
-        if (isdigit(s[i]))
+        char k = s[i];
+        if (!isdigit(k))
         {
-            digit = true;
+            return false;
         }
     }
-    return digit;
+    return true;
 }

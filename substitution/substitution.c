@@ -32,6 +32,7 @@ int main(int argc, string argv[])
         // Rotate the character if it's a letter
         // Ci = (Pi + K) % 26
         // VCHPRZGJNTLSKFBDQWAXEUYMOI
+        // A
 
         char letter = text[i];
         if (isalpha(letter))

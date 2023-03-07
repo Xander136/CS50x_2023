@@ -38,10 +38,23 @@ int main(int argc, string argv[])
     int index;
     for (int i = 0; i < len; i++)
     {
-        if (islower(key[i]))
+        if (islower(text[i]))
         {
-            index = key[i] - 'A';
-            ciphertext[i] =
+            index = text[i] - 97;
+            ciphertext[i] = key[index];
+            if (isupper(ciphertext[i]))
+            {
+                ciphertext[i] += 32;
+            }
+        }
+        if (isuppper(text[i]))
+        {
+            index = text[i] - 97;
+            ciphertext[i] = key[index];
+            if (isupper(ciphertext[i]))
+            {
+                ciphertext[i] += 32;
+            }
         }
     }
 

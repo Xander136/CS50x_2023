@@ -41,10 +41,10 @@ int main(int argc, string argv[])
         if (islower(text[i]))   //if plaintext character is lowercase
         {
             index = text[i] - 'A';  //index is current plaintext character - A
-            ciphertext[i] = key[index]; //
+            ciphertext[i] = key[index]; //equivalent ciphertext
             if (isupper(ciphertext[i]))
             {
-                ciphertext[i] += 32;
+                ciphertext[i] += 32; //difference between upper and lower cases
             }
         }
         if (isupper(text[i]))
@@ -53,7 +53,7 @@ int main(int argc, string argv[])
             ciphertext[i] = key[index];
             if (isupper(ciphertext[i]))
             {
-                ciphertext[i] += 32;
+                ciphertext[i] -= 32;
             }
         }
 

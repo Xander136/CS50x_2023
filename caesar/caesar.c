@@ -38,6 +38,7 @@ int main(int argc, string argv[])
     }
 
         // Rotate the character if it's a letter
+        // Ci = (Pi + K) % 26
 }
 
 bool only_digits(string s)

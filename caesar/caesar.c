@@ -29,7 +29,11 @@ int main(int argc, string argv[])
         char letter = text[i];
         if (isalpha(letter))
         {
-            letter = 
+            letter =
+        }
+        else
+        {
+            printf("%c", letter);
         }
     }
 

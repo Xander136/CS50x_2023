@@ -33,9 +33,9 @@ int main(int argc, string argv[])
     // printf("ciphertext: ");
 
     // loop over plaintext
-    int len = strlen(text);
-    char ciphertext[len + 1];
-    int index;
+    int len = strlen(text);     //length of plaintext
+    char ciphertext[len + 1];   //array for ciphertext with len of plaintext +1 for terminator
+    int index;                  //index for difference of plaintext character - 
     for (int i = 0; i < len; i++)
     {
         if (islower(text[i]))

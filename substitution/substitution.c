@@ -11,11 +11,17 @@ int main(int argc, string argv[])
     // Check for single command-line argument or
     // Check for 26 char key
     // return 1 and message if failed checks
-    if (argc != 2 || !(valid_key(argv[1])))
+    if (argc != 2)
     {
         printf("Usage: ./substitution key\n");
         return 1;
     }
+    if (!valid_key(argv[1]))
+    {
+        printf("Key must contain 26 characters.\n");
+        return 1;
+    }
+
     //store key
     string key = argv[1];
 
@@ -38,13 +44,7 @@ int main(int argc, string argv[])
         if (isalpha(letter))
         {
             if (isupper(letter))
-            {
-                letter = (((letter - 'A') + key[]) % 26) + 'A';
-            }
-            else
-            {
-                letter = (((letter - 'a') + key[i]) % 26) + 'a';
-            }
+
             printf("%c", letter);
         }
         else

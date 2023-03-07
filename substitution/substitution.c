@@ -32,16 +32,16 @@ int main(int argc, string argv[])
     //Output ciphertext: (without a newline) followed by the plaintext’s corresponding ciphertext
     // printf("ciphertext: ");
 
-    // loop over plaintext
+
     int len = strlen(text);     //length of plaintext
     char ciphertext[len + 1];   //array for ciphertext with len of plaintext +1 for terminator
-    int index;                  //index for difference of plaintext character - 
-    for (int i = 0; i < len; i++)
+    int index;                  //index for difference of plaintext character - Decimal 'a'
+    for (int i = 0; i < len; i++) // loop over plaintext
     {
-        if (islower(text[i]))
+        if (islower(text[i]))   //if plaintext character is lowercase
         {
-            index = text[i] - 97;
-            ciphertext[i] = key[index];
+            index = text[i] - 'A';  //index is current plaintext character - A
+            ciphertext[i] = key[index]; //
             if (isupper(ciphertext[i]))
             {
                 ciphertext[i] += 32;
@@ -49,7 +49,7 @@ int main(int argc, string argv[])
         }
         if (isupper(text[i]))
         {
-            index = text[i] - 65;
+            index = text[i] - 'a';
             ciphertext[i] = key[index];
             if (isupper(ciphertext[i]))
             {

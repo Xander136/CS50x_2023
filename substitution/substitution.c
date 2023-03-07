@@ -34,7 +34,16 @@ int main(int argc, string argv[])
 
     // loop over plaintext
     int len = strlen(text);
-    char index =
+    char ciphertext[len + 1];
+
+    for (int i = 0; i < len; i++)
+    {
+        if (islower(key[i]))
+        {
+            int index = key[i] - 'A'
+        }
+    }
+
 
     //After outputting ciphertext, print a newline.
     printf("\n");

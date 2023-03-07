@@ -56,10 +56,9 @@ int main(int argc, string argv[])
                 ciphertext[i] += 32;
             }
         }
-
     }
 
-    ciphertext[len] = '\0';
+    ciphertext[len + 1] = '\0';
     printf("ciphertext: %s\n", ciphertext);
     //After outputting ciphertext, print a newline.
     // printf("\n");

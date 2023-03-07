@@ -15,7 +15,7 @@ int main(int argc, string argv[])
         printf("Usage: ./substitution key\n");
         return 1;
     }
-    
+
     // Check for 26 char key
     if (!valid_key(argv[1]))
     {
@@ -65,6 +65,7 @@ bool valid_key(string key)
     {
         // if key is not 26 characters, return false
         // or, if key is not all letters, return false
+        int dupplicate[len] = { 0 };
         char letter = key[i];
         if (!(isalpha(letter)) || len < 26)
         {

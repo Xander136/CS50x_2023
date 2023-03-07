@@ -30,8 +30,19 @@ int main(int argc, string argv[])
 // Function to check if KEY is valid
 bool valid_key(string key)
 {
-    for (int i = 0, lebn = strlen(key); i < len; i++)
+    for (int i = 0, len = strlen(key); i < len; i++)
     {
-        char letter
+        // if key is not 26 characters, return false
+        if (len < 26)
+        {
+            return false;
+        }
+        // if key is not all letters, return false
+        char letter = key[i];
+        if (isalpha(letter))
+        {
+            return false;
+        }
     }
+    return true;
 }

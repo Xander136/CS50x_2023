@@ -14,7 +14,7 @@ int main(int argc, string argv[])
         printf("Usage: ./caesar key\n");
         return 1;
     }
-    
+
     // Convert argv[1] from a `string` to an `int`
 
     // Prompt user for plaintext
@@ -26,7 +26,6 @@ int main(int argc, string argv[])
 
 bool only_digits(string s)
 {
-    bool digit;
     for (int i = 0, len = strlen(s); i < len; i++)
     {
         if (isdigit(s[i]))

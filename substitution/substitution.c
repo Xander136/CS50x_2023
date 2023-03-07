@@ -30,7 +30,7 @@ int main(int argc, string argv[])
     string text = get_string("plaintext: ");
 
     //Output ciphertext: (without a newline) followed by the plaintext’s corresponding ciphertext
-    printf("ciphertext: ");
+    // printf("ciphertext: ");
 
     // loop over plaintext
     int len = strlen(text);
@@ -56,12 +56,13 @@ int main(int argc, string argv[])
                 ciphertext[i] += 32;
             }
         }
-        printf("%c", ciphertext[i]);
+
     }
 
-
+    ciphertext[len] = '\0';
+    printf("ciphertext: %s\n", ciphertext);
     //After outputting ciphertext, print a newline.
-    printf("\n");
+    // printf("\n");
 }
 
 // Function to check if KEY is valid

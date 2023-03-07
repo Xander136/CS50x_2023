@@ -50,7 +50,7 @@ bool valid_key(string key)
         return false;
     }
     //change all char to upper
-    for (int i = 0, ; i < len; i++)
+    for (int i = 0; i < len; i++)
     {
         key[i] = toupper(key[i]);
     }

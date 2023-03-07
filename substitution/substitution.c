@@ -35,12 +35,13 @@ int main(int argc, string argv[])
     // loop over plaintext
     int len = strlen(text);
     char ciphertext[len + 1];
-
+    int index;
     for (int i = 0; i < len; i++)
     {
         if (islower(key[i]))
         {
-            int index = key[i] - 'A'
+            index = key[i] - 'A';
+            ciphertext[i] =
         }
     }
 

@@ -72,8 +72,10 @@ bool valid_key(string key)
         //initialize array to check for duplicate letters
         int dupplicate[len] = { 0 };
 
+        //get letter
         char letter = key[i];
-
+        
+        //check if alphabet
         if (!(isalpha(letter)))
         {
             return false;

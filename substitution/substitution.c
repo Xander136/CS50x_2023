@@ -59,6 +59,10 @@ int main(int argc, string argv[])
                 }
             }
         }
+        else
+        {
+            ciphertext[i] = text[i];
+        }
     }
 
     ciphertext[len] = '\0';

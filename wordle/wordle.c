@@ -149,7 +149,8 @@ int check_word(string guess, int wordsize, int status[], string choice)
 
         if (char1 == char2)
         {
-            printf(EXACT"same\n");
+            printf(GREEN"same"RESET"\n");
+
             break;
         }
 

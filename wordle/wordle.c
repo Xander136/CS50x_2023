@@ -86,10 +86,7 @@ int main(int argc, string argv[])
 
         // set all elements of status array initially to 0, aka WRONG
         // TODO #4
-        int EXACT[] = 0;
-        int CLOSE[] = 0;
-        int WRONG[] = 0;
-
+        status[] = { 0 };
 
 
         // Calculate score for the guess

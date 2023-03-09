@@ -139,6 +139,10 @@ int check_word(string guess, int wordsize, int status[], string choice)
 
     // HINTS
     // iterate over each letter of the guess
+    for (int i = 0, len = strlen(guess); i < len; i++)
+    {
+        
+    }
         // iterate over each letter of the choice
             // compare the current guess letter to the current choice letter
                 // if they're the same position in the word, score EXACT points (green) and break so you don't compare that letter further

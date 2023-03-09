@@ -38,27 +38,30 @@ int main(int argc, string argv[])
     int index;                  //index for difference of plaintext character - Decimal 'a'
     for (int i = 0; i < len; i++) // loop over plaintext
     {
-        if (islower(text[i]))   //if plaintext character is lowercase
+        if (isalpha(text[i]))
         {
-            index = text[i] - 97;  //index is current plaintext character - A
-            ciphertext[i] = key[index]; //equivalent ciphertext
-            if (isupper(ciphertext[i]))
+            if (islower(text[i]))   //if plaintext character is lowercase
             {
-                ciphertext[i] += 32; //difference between upper and lower cases
+                index = text[i] - 97;  //index is current plaintext character - A
+                ciphertext[i] = key[index]; //equivalent ciphertext
+                if (isupper(ciphertext[i]))
+                {
+                    ciphertext[i] += 32; //difference between upper and lower cases
+                }
             }
-        }
-        if (isupper(text[i]))
-        {
-            index = text[i] - 65;
-            ciphertext[i] = key[index];
-            if (islower(ciphertext[i]))
+            if (isupper(text[i]))
             {
-                ciphertext[i] += 32;
+                index = text[i] - 65;
+                ciphertext[i] = key[index];
+                if (islower(ciphertext[i]))
+                {
+                    ciphertext[i] += 32;
+                }
             }
         }
     }
 
-    // ciphertext[len] = '\0';
+    ciphertext[len] = '\0';
     printf("ciphertext: %s\n", ciphertext);
     //After outputting ciphertext, print a newline.
     // printf("\n");

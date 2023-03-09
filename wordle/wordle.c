@@ -139,9 +139,10 @@ int check_word(string guess, int wordsize, int status[], string choice)
 
     // HINTS
     // iterate over each letter of the guess
-    for (int i = 0, len = strlen(guess); i < len; i++)
+    for (int i = 0, len1 = strlen(guess); i < len; i++)
     {
-        
+        char char1 = guess[i];
+        for (int j = 0, len2 = strlen())
     }
         // iterate over each letter of the choice
             // compare the current guess letter to the current choice letter

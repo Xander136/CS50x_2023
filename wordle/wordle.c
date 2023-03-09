@@ -145,7 +145,7 @@ int check_word(string guess, int wordsize, int status[], string choice)
         char char2 = choice[i];
         if (char1 == char2)
         {
-            
+            printf("same\n");
         }
 
     }

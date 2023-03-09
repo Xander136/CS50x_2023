@@ -139,13 +139,14 @@ int check_word(string guess, int wordsize, int status[], string choice)
 
     // HINTS
     // iterate over each letter of the guess
+    printf("%s\n", choice);
     for (int i = 0; i < wordsize; i++)
     {
         char char1 = guess[i];
-        printf("%c\n", char1);
+        printf("%s\n", guess[i]);
 
         char char2 = choice[i];
-        printf("%c\n", char2);
+        printf("%s\n", char2);
         // if (char1 == char2)
         // {
         //     printf("same\n");

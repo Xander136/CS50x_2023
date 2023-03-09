@@ -143,15 +143,15 @@ int check_word(string guess, int wordsize, int status[], string choice)
     for (int i = 0; i < wordsize; i++)
     {
         char char1 = guess[i];
-        printf("%s\n", guess[i]);
+        printf("%c\n", guess[i]);
 
         char char2 = choice[i];
-        printf("%s\n", char2);
-        // if (char1 == char2)
-        // {
-        //     printf("same\n");
-        //     break;
-        // }
+
+        if (char1 == char2)
+        {
+            printf("same\n");
+            break;
+        }
 
     }
 

@@ -27,6 +27,12 @@ int main(int argc, string argv[])
 {
     // ensure proper usage
     // TODO #1
+    // ensure the program accepts a single command-line argument
+    if (argc != 2)
+    {
+        printf("Usage: ./wordle wordsize\n");
+        return 1;
+    }
 
     int wordsize = 0;
 
@@ -79,7 +85,7 @@ int main(int argc, string argv[])
         int score = check_word(guess, wordsize, status, choice);
 
         printf("Guess %i: ", i + 1);
-        
+
         // Print the guess
         print_word(guess, wordsize, status);
 

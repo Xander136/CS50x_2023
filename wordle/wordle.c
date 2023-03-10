@@ -177,10 +177,19 @@ void print_word(string guess, int wordsize, int status[])
         char letter = guess[i];
         switch (status[i])
         {
-            
+            case 2:
+                // print letter in green if exact
+                printf(GREEN"%c"RESET, letter);
+                break;
+            case 1:
+                // print letter in yellow if close
+                printf(YELLOW"%c"RESET, letter);
+                break;
+            case 0:
+                // print letter in red if wrong
+                printf(RED"%c"RESET, letter);
+                break;
         }
-
-        printf(status[i])
     }
     printf("\n");
     return;

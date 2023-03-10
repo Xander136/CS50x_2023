@@ -154,9 +154,10 @@ int check_word(string guess, int wordsize, int status[], string choice)
                 status[i] += EXACT;
                 break;
             }
-            else
+            else if
             {
                 // if it's in the word, but not the right spot, score CLOSE point (yellow)
+                
                 status[i] += CLOSE;
             }
         }

@@ -26,13 +26,6 @@ int main(void)
 int convert(string input)
 {
     // TODO
-    int len = strlen(input);
-    if (len <= 0)
-    {
-        return;
-    }
-
-    int number = (int) input[len - 1];
-    input[len - 1] = '\0'
+   
 
 }

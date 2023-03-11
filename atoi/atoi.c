@@ -29,7 +29,7 @@ int convert(string input)
     int len = strlen(input);
     if (len <= 0)
     {
-        break;
+        return;
     }
-    
+
 }

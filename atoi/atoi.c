@@ -26,6 +26,15 @@ int main(void)
 int convert(string input)
 {
     // TODO
-   
+    //get length of input
+    int len = strlen(input);
+    if (len == 1)
+    {
+        return input[0] - '0';
+    }
+
+    for (int i = len - 1; len)
+    int last_digit =
+
 
 }

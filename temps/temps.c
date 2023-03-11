@@ -64,7 +64,7 @@ void sort_cities(void)
 {
     //
 
-    char temp_low;
+    avg_temp temp_low;
 
     for (int i = 0; i < NUM_CITIES - 1; i++)
     {
@@ -72,8 +72,8 @@ void sort_cities(void)
         {
             temp_low = temps[i];
             temps[i] = temps[i + 1];
-            temps[i + 1] = temps_low;
+            temps[i + 1] = temp_low;
         }
     }
-    return 1;
+    return;
 }

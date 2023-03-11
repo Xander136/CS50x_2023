@@ -33,8 +33,13 @@ int convert(string input)
         return input[0] - '0';
     }
 
-    for (int i = len - 1; len)
-    int last_digit =
-
+    //Start by getting the index of the last char in the string (the char before the \0).
+    char last_digit = input[len - 1];
+    //Convert this char into its numeric value.
+    int converted = last_digit - '0';
+    //Remove the last char from the string by moving the null terminator one position to the left
+    input[len - 1] = '\0';
+    //Return this value plus 10 times the integer value of the new shortened string.
+    return converted + 10 * convert(input);
 
 }

@@ -72,7 +72,7 @@ void sort_cities(void)
         {
             temp_low = temps[i];
             temps[i] = temps[i + 1];
-            temps[i + 1] = temps
+            temps[i + 1] = temps_low;
         }
     }
 }

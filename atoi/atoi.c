@@ -32,7 +32,7 @@ int convert(string input)
         return;
     }
 
-    char char = input[len - 1];
-    
+    int number = (int) input[len - 1];
+    input[len - 1] = '\0'
 
 }

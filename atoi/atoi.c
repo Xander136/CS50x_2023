@@ -26,4 +26,10 @@ int main(void)
 int convert(string input)
 {
     // TODO
+    int len = strlen(input);
+    if (len <= 0)
+    {
+        break;
+    }
+    
 }

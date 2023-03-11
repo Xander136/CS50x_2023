@@ -63,8 +63,8 @@ int main(void)
 void sort_cities(void)
 {
     //
-    string temp_high;
-    string temp_low;
+
+    char temp_low;
 
     for (int i = 0; i < NUM_CITIES - 1; i++)
     {

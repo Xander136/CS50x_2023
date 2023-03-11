@@ -32,4 +32,7 @@ int convert(string input)
         return;
     }
 
+    char char = input[len - 1];
+    
+
 }

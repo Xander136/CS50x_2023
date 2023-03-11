@@ -63,7 +63,7 @@ int main(void)
 void sort_cities(void)
 {
     //
-    for (int i = 0; i < NUM_CITIES; i++)
+    for (int i = 0; i < NUM_CITIES - 1; i++)
     {
         if (temps[i] < temps[i + 1])
     }

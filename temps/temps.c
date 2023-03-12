@@ -74,7 +74,7 @@ void sort_cities(void)
     for (int i = 0; i < n - 1; i++)
     {
         //loop all cities after i
-        for (int j = i + 1; j < NUM_CITIES - 2; j++)
+        for (int j = i + 1; j < n - 2; j++)
             //if current city is cooler than next city
             if (temps[i].temp < temps[j].temp)
             {

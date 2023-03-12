@@ -29,7 +29,12 @@ int max(int array[], int n)
 {
     //declare max value
     int max = array[0];
-    
-
-    return 0;
+    for (int i = 0; i < n - 1; i++)
+    {
+        if (array[i] < array[i + 1])
+        {
+            max = array[i + 1];
+        }
+    }
+    return max;
 }

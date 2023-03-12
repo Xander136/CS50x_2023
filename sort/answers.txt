@@ -4,7 +4,7 @@ How do you know?: time sorting random and reversed are the same, while sorted ta
 
 sort2 uses: Merge Sort
 
-How do you know?: time sorting all lists are the same.
+How do you know?: time sorting random lists is fastest.
 
 sort3 uses: Selection Sort
 

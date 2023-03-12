@@ -1,4 +1,4 @@
-sort1 uses: Selection Sort
+sort1 uses: Bubble Sort
 
 How do you know?: time sorting random and reversed are the same, while sorted takes the fastest time.
 
@@ -6,6 +6,6 @@ sort2 uses: Merge Sort
 
 How do you know?: time sorting all lists are the same.
 
-sort3 uses: Bubble Sort
+sort3 uses: Selection Sort
 
 How do you know?: sorting a sorted list takes same time as sorting random list.

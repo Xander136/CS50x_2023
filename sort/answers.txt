@@ -8,4 +8,4 @@ How do you know?: time sorting all lists are the same.
 
 sort3 uses: Bubble
 
-How do you know?: 
+How do you know?: sorting a sorted list takes same time as sorting random list.

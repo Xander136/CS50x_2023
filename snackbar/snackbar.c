@@ -118,7 +118,10 @@ void add_items(void)
 float get_cost(string item)
 {
     float cost = 0.0;
-    strncasecmp
-
-    return 0.0;
+    for (int i = 0; i < NUM_ITEMS - 1; i++)
+    {
+        if (strncasecmp(item, menu[i]) == 0)
+        cost += menu[i].price;
+    }
+    return cost;
 }

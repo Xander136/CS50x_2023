@@ -63,19 +63,18 @@ int main(void)
 void sort_cities(void)
 {
     //
-
-    avg_temp temp_low;
     avg_temp temp_high;
 
     for (int i = 0; i < NUM_CITIES - 1; i++)
     {
-        if (temps[i].temp < temps[i + 1].temp)
-        {
-            temp_low = temps[i];
-            temp_high = temps[i + 1];
-            temps[i] = temp_high;
-            temps[i + 1] = temp_low;
-        }
+        for (int j = 0; j < )
+            if (temps[i].temp < temps[i + 1].temp)
+            {
+                temp_low = temps[i];
+                temp_high = temps[i + 1];
+                temps[i] = temp_high;
+                temps[i + 1] = temp_low;
+            }
     }
     return;
 }

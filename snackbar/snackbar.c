@@ -96,20 +96,20 @@ void add_items(void)
     menu_item[2].item = "Hot Dog";
     menu_item[2].price = "5";
 
-    menu_item[3].item = "Hot Dog";
-    menu_item[3].price = "5";
+    menu_item[3].item = "Cheese Dog";
+    menu_item[3].price = "7";
 
-    menu_item[4].item = "Cheese Dog";
-    menu_item[4].price = "7";
+    menu_item[4].item = "Fries";
+    menu_item[4].price = "5";
 
-    menu_item[5].item = "Fries";
+    menu_item[5].item = "Cheese Fries";
     menu_item[5].price = "6";
 
-    menu_item[6].item = "Cheese Fries";
-    menu_item[6].price = "6";
+    menu_item[6].item = "Cold Pressed Juice";
+    menu_item[6].price = "7";
 
-    menu_item[7].item = "Cold Pressed Juice";
-    menu_item[7].price = "7";
+    menu_item[7].item = "Cold Brew";
+    menu_item[7].price = "3";
 
     menu_item[8].item = "Water";
     menu_item[8].price = "2";

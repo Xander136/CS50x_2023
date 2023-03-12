@@ -1,11 +1,11 @@
-sort1 uses: TODO
+sort1 uses: selection
 
 How do you know?: TODO
 
-sort2 uses: TODO
+sort2 uses: bubble
 
 How do you know?: TODO
 
-sort3 uses: TODO
+sort3 uses: merge
 
 How do you know?: TODO

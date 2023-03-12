@@ -120,7 +120,7 @@ float get_cost(string item)
     // initialize cost variable
     float cost = 0.0;
     // iterate over menu items
-    for (int i = 0; i < NUM_ITEMS - 1; i++)
+    for (int i = 0; i < NUM_ITEMS; i++)
     {
         //compare inputed item to existing menu
         if (strcasecmp(item, menu[i].item) == 0)

@@ -104,8 +104,13 @@ int main(void)
 
 void add_items(void)
 {
+    menu_item items[];
 
-
+    // Add first 4 items
+    for (int i = 0; i < 4; i++)
+    {
+        items[i] = menu[i];
+    }
     return;
 }
 

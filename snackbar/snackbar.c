@@ -72,13 +72,50 @@ int main(void)
 }
 
 // Add at least the first for items to the menu array
+/**
+ * Beach Burger Shack has the following 10 items on their menu
+ * Burger: $9.5
+ * Vegan Burger: $11
+ * Hot Dog: $5
+ * Cheese Dog: $7
+ * Fries: $5
+ * Cheese Fries: $6
+ * Cold Pressed Juice: $7
+ * Cold Brew: $3
+ * Water: $2
+ * Soda: $2
+*/
 void add_items(void)
 {
-    for (int i = 0; i < 4; i++)
-    {
-        
-    }
-    menu[0]
+    menu_item[0].item = "Burger";
+    menu_item[0].price ="9.5";
+
+    menu_item[1].item = "Vegan Burger";
+    menu_item[1].price = "11";
+
+    menu_item[2].item = "Hot Dog";
+    menu_item[2].price = "5";
+
+    menu_item[3].item = "Hot Dog";
+    menu_item[3].price = "5";
+
+    menu_item[4].item ="Cheese Dog";
+    menu_item[4].price =;
+
+    menu_item[5].item =;
+    menu_item[5].price =;
+
+    menu_item[6].item =;
+    menu_item[6].price =;
+
+    menu_item[7].item =;
+    menu_item[7].price =;
+
+    menu_item[8].item =;
+    menu_item[8].price =;
+
+    menu_item[9].item =;
+    menu_item[9].price =;
 
     return;
 }

@@ -102,23 +102,9 @@ int main(void)
     printf("Your total cost is: $%.2f\n", total);
 }
 
-// Add at least the first for items to the menu array
-/**
- * Beach Burger Shack has the following 10 items on their menu
- * Burger: $9.5
- * Vegan Burger: $11
- * Hot Dog: $5
- * Cheese Dog: $7
- * Fries: $5
- * Cheese Fries: $6
- * Cold Pressed Juice: $7
- * Cold Brew: $3
- * Water: $2
- * Soda: $2
-*/
 void add_items(void)
 {
-    
+
 
     return;
 }

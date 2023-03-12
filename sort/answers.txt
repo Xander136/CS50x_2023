@@ -1,4 +1,4 @@
-sort1 uses: Selection
+sort1 uses: Selection 
 
 How do you know?: time sorting random and reversed are the same, while sorted takes the fastest time.
 

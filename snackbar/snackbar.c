@@ -36,6 +36,37 @@ menu_item;
 // Array of menu items
 menu_item menu[NUM_ITEMS];
 
+menu_item[0].item = "Burger";
+menu_item[0].price ="9.5";
+
+menu_item[1].item = "Vegan Burger";
+menu_item[1].price = "11";
+
+menu_item[2].item = "Hot Dog";
+menu_item[2].price = "5";
+
+menu_item[3].item = "Cheese Dog";
+menu_item[3].price = "7";
+
+menu_item[4].item = "Fries";
+menu_item[4].price = "5";
+
+menu_item[5].item = "Cheese Fries";
+menu_item[5].price = "6";
+
+menu_item[6].item = "Cold Pressed Juice";
+menu_item[6].price = "7";
+
+menu_item[7].item = "Cold Brew";
+menu_item[7].price = "3";
+
+menu_item[8].item = "Water";
+menu_item[8].price = "2";
+
+menu_item[9].item = "Soda";
+menu_item[9].price = "2";
+
+
 // Add items to menu
 void add_items(void);
 
@@ -87,35 +118,7 @@ int main(void)
 */
 void add_items(void)
 {
-    menu_item[0].item = "Burger";
-    menu_item[0].price ="9.5";
-
-    menu_item[1].item = "Vegan Burger";
-    menu_item[1].price = "11";
-
-    menu_item[2].item = "Hot Dog";
-    menu_item[2].price = "5";
-
-    menu_item[3].item = "Cheese Dog";
-    menu_item[3].price = "7";
-
-    menu_item[4].item = "Fries";
-    menu_item[4].price = "5";
-
-    menu_item[5].item = "Cheese Fries";
-    menu_item[5].price = "6";
-
-    menu_item[6].item = "Cold Pressed Juice";
-    menu_item[6].price = "7";
-
-    menu_item[7].item = "Cold Brew";
-    menu_item[7].price = "3";
-
-    menu_item[8].item = "Water";
-    menu_item[8].price = "2";
-
-    menu_item[9].item = "Soda";
-    menu_item[9].price = "2";
+    
 
     return;
 }

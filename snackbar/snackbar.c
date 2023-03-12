@@ -111,11 +111,11 @@ void add_items(void)
     menu_item[7].item = "Cold Pressed Juice";
     menu_item[7].price = "7";
 
-    menu_item[8].item =;
-    menu_item[8].price =;
+    menu_item[8].item = "Water";
+    menu_item[8].price = "2";
 
-    menu_item[9].item =;
-    menu_item[9].price =;
+    menu_item[9].item = "Soda";
+    menu_item[9].price = "2";
 
     return;
 }

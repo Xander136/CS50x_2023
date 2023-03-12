@@ -62,19 +62,13 @@ int main(void)
 // TODO: Sort cities by temperature in descending order
 void sort_cities(void)
 {
-    //
-    /*
-    Repeat n-1 times
-    For i from 0 to n–2
-        If numbers[i] and numbers[i+1] out of order
-            Swap them */
     int n = NUM_CITIES;
     avg_temp temp_low;
     //loop all cities
-    for (int i = 0; i < n - 1; i++)
+    for (int i = 0; i < n - 2; i++)
     {
         //loop all cities after i
-        for (int j = i + 1; j < n - 2; j++)
+        for (int j = i + 1; j < n - 1; j++)
             //if current city is cooler than next city
             if (temps[i].temp < temps[j].temp)
             {

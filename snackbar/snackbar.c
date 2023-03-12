@@ -74,6 +74,12 @@ int main(void)
 // Add at least the first for items to the menu array
 void add_items(void)
 {
+    for (int i = 0; i < 4; i++)
+    {
+        
+    }
+    menu[0]
+
     return;
 }
 

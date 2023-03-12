@@ -1,6 +1,6 @@
 sort1 uses: selection
 
-How do you know?: TODO
+How do you know?: time sorting random and reversed are the same, while sorted takes the fastest time.
 
 sort2 uses: bubble
 

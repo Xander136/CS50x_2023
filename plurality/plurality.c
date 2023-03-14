@@ -69,12 +69,12 @@ bool vote(string name)
     // TODO
     for (int i = 0; i < candidate_count; i++)
     {
-        if (strncmp(candidate.name[i], name) == 0)
+        if (strcasecmp(candidate.name[i], name) == 0)
         {
-            
+            candidate[i].vote += 1;
+            return true;
         }
     }
-
     return false;
 }
 

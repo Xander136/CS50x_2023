@@ -67,10 +67,13 @@ int main(int argc, string argv[])
 bool vote(string name)
 {
     // TODO
+    // Loop over candidates
     for (int i = 0; i < candidate_count; i++)
     {
+        // if voter input match a candidate
         if (strcasecmp(candidate.name[i], name) == 0)
         {
+            // increment vote and return true
             candidate[i].vote += 1;
             return true;
         }

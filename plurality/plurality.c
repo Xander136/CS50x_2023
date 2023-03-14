@@ -75,7 +75,7 @@ bool vote(string name)
         if (strcasecmp(candidate[i].name, name) == 0)
         {
             // increment vote and return true
-            candidate[i].vote += 1;
+            candidate[i].votes += 1;
             return true;
         }
     }
@@ -92,13 +92,13 @@ void print_winner(void)
     {
         for (int j = i + 1; j < candidate_count; j++)
         {
-            if (candidate[i].vote < candidate[j].vote)
+            if (candidate[i].votes < candidate[j].votes)
             {
-                max_vote = candidate[j].vote;
+                max_vote = candidate[j].votes;
             }
             else
             {
-                max_vote = candidate[i].vote;
+                max_vote = candidate[i].votes;
             }
         }
     }

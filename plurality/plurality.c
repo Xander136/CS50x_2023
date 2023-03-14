@@ -72,7 +72,7 @@ bool vote(string name)
     for (int i = 0; i < candidate_count; i++)
     {
         // if voter input match a candidate
-        if ((strcasecmp(candidate[i].name, name)) == 0)
+        if (strcasecmp(candidate[i].name, name) == 0)
         {
             // increment vote and return true
             candidate[i].vote += 1;

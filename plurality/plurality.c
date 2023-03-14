@@ -87,9 +87,9 @@ void print_winner(void)
     // TODO
     int max_vote;
 
-    for (int i = 0; i < candidate_count; i++)
+    for (int i = 0, j = candidate_vote - 1; i < candidate_count; i++)
     {
-        
+        for
     }
 
     return;

@@ -87,27 +87,19 @@ void print_winner(void)
 {
     // TODO
     // variable for highest number of votes
-    int max_vote;
+    int max_vote = candidates[0].votes;
 
-    // loop over the candidates
-    for (int i = 0; i < candidate_count - 2; i++)
+    // loop over the candidates and get highest number of votesstyle50 plurality.c
+
+    for (int i = 1; i < candidate_count; i++)
     {
-        // get next candidate
-        for (int j = i + 1; j < candidate_count; j++)
+        if (max_vote < candidates[i].votes)
         {
-            // if current candidates votes are less than next candidate votes
-            if (candidates[i].votes < candidates[j].votes)
-            {
-                //max votes is next candidate's votes
-                max_vote = candidates[j].votes;
-            }
-            else
-            {
-                //max votes is current candidate's votes
-                max_vote = candidates[i].votes;
-            }
+            max_vote = candidates[i].votes;
         }
     }
+
+
     //print array of winner
     // loop over candidates
     for (int i = 0; i < candidate_count; i++)

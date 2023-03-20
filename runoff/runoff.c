@@ -134,7 +134,7 @@ bool vote(int voter, int rank, string name)
     {
         if (strcasecmp(candidates[i].name, name) == 0)
         {
-            candidates
+            candidateso
         }
     }
     return false;

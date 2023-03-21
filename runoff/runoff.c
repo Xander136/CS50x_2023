@@ -191,7 +191,7 @@ int find_min(void)
 {
     // TODO
     // initialize variable for min votes
-    int min_vote = 0;
+    int min_vote = voter_count;
 
     // Loop over candidates
     for (int i = 0; i < candidate_count; i++)

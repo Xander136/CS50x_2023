@@ -130,8 +130,10 @@ int main(int argc, string argv[])
 bool vote(int voter, int rank, string name)
 {
     // TODO
+    // Loop over all candidates
     for (int i = 0; i < candidate_count; i++)
     {
+        // if voted name is in list of candidates, update preference array
         if (strcasecmp(candidates[i].name, name) == 0)
         {
             preferences[voter][rank] = i;
@@ -147,7 +149,10 @@ void tabulate(void)
     // TODO
     for (int i = 0; i < voter_count; i++)
     {
-        if (candidates[i].)
+        if (!candidates[i].eliminated)
+        {
+
+        }
     }
     return;
 }

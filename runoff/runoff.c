@@ -150,10 +150,10 @@ void tabulate(void)
     // Loop over the voters
     for (int i = 0; i < voter_count; i++)
     {
-
+        // if candidate is not eliminated
         if (!candidates[i].eliminated)
         {
-            
+            candidates[i].votes +=
         }
     }
     return;

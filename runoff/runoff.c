@@ -169,8 +169,10 @@ void tabulate(void)
 bool print_winner(void)
 {
     // TODO
-    // Loop over candidates
+    // get needed number of votes to win
     int win = (voter_count / 2) + 1;
+
+    // Loop over candidates
     for (int i = 0; i < candidate_count; i++)
     {
         // check if candidate got more than half of needed votes

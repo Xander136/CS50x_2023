@@ -170,9 +170,16 @@ bool print_winner(void)
 {
     // TODO
     // Loop over candidates
+    int win = (voter_count / 2) + 1;
     for (int i = 0; i < candidate_count; i++)
     {
-        if ()
+        // check if candidate got more than half of needed votes
+        if (candidates[i].votes == win)
+        {
+            //print candidate name
+            printf("%s\n", candidates[i].name);
+            return true;
+        }
     }
     return false;
 }

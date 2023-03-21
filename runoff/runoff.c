@@ -190,6 +190,20 @@ bool print_winner(void)
 int find_min(void)
 {
     // TODO
+    // initialize variable for min votes
+    int min_vote;
+
+    // Loop over candidates
+    for (int i = 0; i < candidate_count; i++)
+    {
+        // check if candidate got lowest vote
+        if (candidates[i].votes == win)
+        {
+            //print candidate name
+            printf("%s\n", candidates[i].name);
+            return true;
+        }
+    }
     return 0;
 }
 

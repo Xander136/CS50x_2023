@@ -153,9 +153,11 @@ void tabulate(void)
         // Loop over the candidates
         for (int j = 0; j < candidate_count; j++)
         {
-            if (!candidates(preferences[i][j]))
+            if (!candidates[preferences[i][j]])
+            {
+                candidates[preferences[i][j]].votes += 1;
+            }
         }
-
     }
     return;
 }

@@ -196,11 +196,15 @@ int find_min(void)
     // Loop over candidates
     for (int i = 0; i < candidate_count; i++)
     {
-        // check if candidate got lowest vote
-        if (candidates[i].votes < min_vote)
+        // check if candidate is not eliminated
+        if (!candidates[i].eliminated)
         {
-            //set min_vote to candidate's number of votes
-            min_vote = candidates[i].votes;
+            // check if candidate got lowest vote
+            if (candidates[i].votes < min_vote)
+            {
+                //set min_vote to candidate's number of votes
+                min_vote = candidates[i].votes;
+            }
         }
     }
     return 0;

@@ -199,6 +199,7 @@ int find_min(void)
         // check if candidate got lowest vote
         if (candidates[i].votes < min_vote)
         {
+            //set min_vote to candidate's number of votes
             min_vote = candidates[i].votes;
         }
     }

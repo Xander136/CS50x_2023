@@ -153,8 +153,10 @@ void tabulate(void)
         // Loop over the candidates
         for (int j = 0; j < candidate_count; j++)
         {
-            if (!candidates[preferences[i][j]])
+            // if voters preferred candidate is not eliminated
+            if (!candidates[preferences[i][j]].eliminated)
             {
+                // increment vote
                 candidates[preferences[i][j]].votes += 1;
             }
         }

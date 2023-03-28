@@ -52,8 +52,8 @@ int main(int argc, char *argv[])
         printf("Unsupported file format.\n");
         return 4;
     }
-    //change bi.biHeight to positive
-    bi.biHeight = bi.biHeight * -1;
+    // make bi.biheight positive
+    bi.biHeight = bi.biHeight * (-1);
 
     // Write outfile's BITMAPFILEHEADER
     fwrite(&bf, sizeof(BITMAPFILEHEADER), 1, outptr);
@@ -65,7 +65,7 @@ int main(int argc, char *argv[])
     int padding = (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4;
 
     // Iterate over infile's scanlines
-    for (int i = 0, biHeight = abs(bi.biHeight); i > biHeight; i--)
+    for (int i = 0, biHeight = abs(bi.biHeight); i < biHeight; i++)
     {
         // Iterate over pixels in scanline
         for (int j = 0; j < bi.biWidth; j++)

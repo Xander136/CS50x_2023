@@ -27,6 +27,7 @@ int main(int argc, char *argv[])
         buffer[6] = '\0';
 
         // Save plate number in array
+        buffer[idx] = malloc(7);
         strcpy(plates[idx], buffer);
         idx++;
     }

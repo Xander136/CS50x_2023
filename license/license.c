@@ -30,8 +30,8 @@ int main(int argc, char *argv[])
         //allot memory
         for (int i = 0; i < 7; i++)
         {
-            plates[idx][i] = malloc(strlen(buffer));
-            strcpy(buffer, plates[idx][i]);
+            // plates[idx][i] = malloc(strlen(buffer));
+            strcpy(*plates[idx][i], buffer);
         }
         idx++;
     }

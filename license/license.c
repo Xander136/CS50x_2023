@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <cs50.h>
 
 int main(int argc, char *argv[])
 {
@@ -12,10 +13,10 @@ int main(int argc, char *argv[])
     }
 
     // Create buffer to read into
-    char buffer[7];
+    string buffer[7];
 
     // Create array to store plate numbers
-    char *plates[8];
+    string plates[8];
 
     FILE *infile = fopen(argv[1], "r");
 
@@ -27,7 +28,6 @@ int main(int argc, char *argv[])
         buffer[6] = '\0';
 
         // Save plate number in array
-        buffer[idx] = malloc(7);
         strcpy(plates[idx], buffer);
         idx++;
     }

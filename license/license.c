@@ -28,8 +28,9 @@ int main(int argc, char *argv[])
 
         // Save plate number in array
         char *number = malloc(sizeof(*buffer));
-        strcpy(bu);
+        strcpy(buffer, number);
         plates[idx] = number;
+        free(number);
         idx++;
     }
 

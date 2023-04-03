@@ -27,15 +27,19 @@ int main(int argc, char *argv[])
         buffer[6] = '\0';
 
         // Save plate number in array
-        char *number = malloc(sizeof(*buffer));
-        strcpy(number, buffer);
-        plates[idx] = number;
-        free(number);
+        // allocate memory
+        plates[idx] = malloc(strlen(buffer));
+        // copy
+        strcpy(plates[idx], buffer);
         idx++;
     }
 
     for (int i = 0; i < 8; i++)
     {
         printf("%s\n", plates[i]);
+        //free memory
+        free(plates[i]);
     }
+    // Close file
+    fclose(infile);
 }

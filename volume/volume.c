@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 
     // TODO: Copy header from input file to output file
     uint16_t header;
-    while (fread(&c, sizeof(char), 1, file))
+    while (fread(&c, sizeof(int), 1, input))
         {
             printf("%c", c);
         }

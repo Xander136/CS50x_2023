@@ -33,21 +33,21 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
         // width
         for (int j = 0; j < width; j++)
         {
-            // calculate the sepiaRed = .393 * originalRed + .769 * originalGreen + .189 * originalBlue
+            // Set each color value to variables
+            int originalBlue = image[i][j].rgbtBlue;
+            int originalGreen = image[i][j].rgbtGreen;
+            int originalRed = image[i][j].rgbtRed;
+
+            // calculate the sepia values
             int sepiaRed = round((.189 * image[i][j].rgbtBlue) + (.769 * image[i][j].rgbtGreen) + (.393 * image[i][j].rgbtRed));
-            //sepiaGreen = .349 * originalRed + .686 * originalGreen + .168 * originalBlue
-  sepiaBlue = .272 * originalRed + .534 * originalGreen + .131 * originalBlue
-
-            // calculate the sepiaRed = .393 * originalRed + .769 * originalGreen + .189 * originalBlue
-            int sepiaGreen = round((.168 * image[i][j].rgbtBlue) + (.686 * image[i][j].rgbtGreen) + (.349 * image[i][j].rgbtRed));
-
-            // calculate the sepiaRed = .393 * originalRed + .769 * originalGreen + .189 * originalBlue
-            int sepiaBlue = round((.189 * image[i][j].rgbtBlue) + (.769 * image[i][j].rgbtGreen) + (.393 * image[i][j].rgbtRed));
+            int sepiaRed = round((.393 * originalRed + .769 * originalGreen + .189 * originalBlue) * 1.0);
+            int sepiaGreen = round((.349 * originalRed + .686 * originalGreen + .168 * originalBlue) * 1.0);
+            int sepiaBlue = round((.272 * originalRed + .534 * originalGreen + .131 * originalBlue) * 1.0);
 
             // Set each color value to the average value
-            image[i][j].rgbtBlue = average;
-            image[i][j].rgbtGreen = average;
-            image[i][j].rgbtRed = average;
+            image[i][j].rgbtBlue = sepiaBlue;
+            image[i][j].rgbtGreen = sepiaGreen;
+            image[i][j].rgbtRed = sepiaBlue;
         }
     }
     return;

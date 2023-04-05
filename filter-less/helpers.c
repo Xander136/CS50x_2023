@@ -39,7 +39,6 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             int originalRed = image[i][j].rgbtRed;
 
             // calculate the sepia values
-            int sepiaRed = round((.189 * image[i][j].rgbtBlue) + (.769 * image[i][j].rgbtGreen) + (.393 * image[i][j].rgbtRed));
             int sepiaRed = round((.393 * originalRed + .769 * originalGreen + .189 * originalBlue) * 1.0);
             int sepiaGreen = round((.349 * originalRed + .686 * originalGreen + .168 * originalBlue) * 1.0);
             int sepiaBlue = round((.272 * originalRed + .534 * originalGreen + .131 * originalBlue) * 1.0);

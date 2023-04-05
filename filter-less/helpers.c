@@ -28,7 +28,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
     // Max value of color
     int MAX_VALUE = 255;
-    
+
     // get each pixel
     // height
     for (int i = 0; i < height; i++)
@@ -80,6 +80,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 // Reflect image horizontally
 void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
+    
     return;
 }
 

@@ -33,7 +33,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
         // width
         for (int j = 0; j < width; j++)
         {
-            // calculate the average pixel value
+            // calculate the sepiaRed = .393 * originalRed + .769 * originalGreen + .189 * originalBlue
             int average = round((image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / 3.0);
 
             // Set each color value to the average value

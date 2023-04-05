@@ -28,6 +28,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 {
     // get each pixel
     // height
+    int MAX_VALUE = 255;
     for (int i = 0; i < height; i++)
     {
         // width
@@ -38,15 +39,37 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             int originalGreen = image[i][j].rgbtGreen;
             int originalRed = image[i][j].rgbtRed;
 
+
             // calculate the sepia values
             int sepiaRed = round((.393 * originalRed + .769 * originalGreen + .189 * originalBlue) * 1.0);
             int sepiaGreen = round((.349 * originalRed + .686 * originalGreen + .168 * originalBlue) * 1.0);
             int sepiaBlue = round((.272 * originalRed + .534 * originalGreen + .131 * originalBlue) * 1.0);
 
             // Set each color value to the average value
-            image[i][j].rgbtBlue = sepiaBlue;
-            image[i][j].rgbtGreen = sepiaGreen;
-            image[i][j].rgbtRed = sepiaBlue;
+            if (sepiaBlue < MAX_VALUE)
+            {
+                image[i][j].rgbtBlue = sepiaBlue;
+            }
+            else
+            {
+                image[i][j].rgbtBlue = MAX_VALUE;
+            }
+            if (sepiaBlue < MAX_VALUE)
+            {
+                image[i][j].rgbtGreen = sepiaGreen;
+            }
+            else
+            {
+                image[i][j].rgbtGreen = MAX_VALUE;
+            }
+            if (sepiaBlue < MAX_VALUE)
+            {
+                image[i][j].rgbtRed = sepiaRed;
+            }
+            else
+            {
+                image[i][j].rgbtRed = MAX_VALUE;
+            }
         }
     }
     return;

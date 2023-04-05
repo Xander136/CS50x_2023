@@ -90,7 +90,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             // calculate the average pixel value
 
             // int average = round((image[i][j].rgbtBlue + image[i][j].rgbtGreen + image[i][j].rgbtRed) / 3.0);
-            image[i][j]
+            RGBTRIPLE value = image[i][j];
             // // Set each color value to the average value
             // image[i][j].rgbtBlue = average;
             // image[i][j].rgbtGreen = average;

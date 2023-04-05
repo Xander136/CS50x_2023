@@ -41,9 +41,9 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
 
 
             // calculate the sepia values
-            int sepiaRed = round((.393 * originalRed + .769 * originalGreen + .189 * originalBlue) * 1.0);
-            int sepiaGreen = round((.349 * originalRed + .686 * originalGreen + .168 * originalBlue) * 1.0);
-            int sepiaBlue = round((.272 * originalRed + .534 * originalGreen + .131 * originalBlue) * 1.0);
+            int sepiaRed = round(.393 * originalRed + .769 * originalGreen + .189 * originalBlue);
+            int sepiaGreen = round(.349 * originalRed + .686 * originalGreen + .168 * originalBlue);
+            int sepiaBlue = round(.272 * originalRed + .534 * originalGreen + .131 * originalBlue);
 
             // Set each color value to the average value
             if (sepiaBlue < MAX_VALUE)

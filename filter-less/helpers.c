@@ -54,7 +54,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             {
                 image[i][j].rgbtBlue = MAX_VALUE;
             }
-            if (sepiaBlue < MAX_VALUE)
+            if (sepiaGreen < MAX_VALUE)
             {
                 image[i][j].rgbtGreen = sepiaGreen;
             }
@@ -62,7 +62,7 @@ void sepia(int height, int width, RGBTRIPLE image[height][width])
             {
                 image[i][j].rgbtGreen = MAX_VALUE;
             }
-            if (sepiaBlue < MAX_VALUE)
+            if (sepiaRed < MAX_VALUE)
             {
                 image[i][j].rgbtRed = sepiaRed;
             }

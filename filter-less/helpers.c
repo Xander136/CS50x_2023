@@ -88,9 +88,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         for (int j = 0; j < width; j++)
         {
             // get value
-            RGBTRIPLE value = image[i][j - width];
-            RGBTRIPLE value = image[i][j];
-            RGBTRIPLE value = image[i][j];
+            RGBTRIPLE temp_variable = image[i][j]; // 1st vale
+            image[i][j] = image[i][j - width]; // copy 2nd value
+            image[i][j] = temp_variable; // store 1st to last
             // 0 1 2 3 4
 
 

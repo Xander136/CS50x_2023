@@ -98,8 +98,8 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     }
     return;
 }
-
-int blur_value(int rgbtValue, int x, int y, int height, int width, int color, RGBTRIPLE copy)
+// blur_value(x, y, height, width, copy, BLUE);
+int blur_value(int x, int y, int height, int width, RGBTRIPLE copy, int color)
 {
     width -= 1;
     height -= 1;

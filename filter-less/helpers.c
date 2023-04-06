@@ -99,7 +99,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-int blur_value(int rgbtValue, int x, int y, int height, int width, int color)
+int blur_value(int rgbtValue, int x, int y, int height, int width, int color, RGBTRIPLE copy)
 {
     width -= 1;
     height -= 1;
@@ -171,9 +171,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int y = 0; y < height; y++)
         {
-            image[x][y].rgbtBlue = blur_value(x, y, height, width, copy[x][y].rgbtBlue, BLUE);
-            image[x][y].rgbtGreen = blur_value(x, y, height, width, copy[x][y].rgbtGreen, GREEN);
-            image[x][y].rgbtRed = blur_value(x, y, height, width, copy[x][y].rgbtRed, RED);
+            image[x][y].rgbtBlue = blur_value(x, y, height, width, copy, BLUE);
+            image[x][y].rgbtGreen = blur_value(x, y, height, width, copy, GREEN);
+            image[x][y].rgbtRed = blur_value(x, y, height, width, copy, RED);
         }
     }
     return;

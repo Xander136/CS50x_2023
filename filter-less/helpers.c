@@ -100,7 +100,27 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 // Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    
+    // create array for copy of image
+    RGBTRIPLE copy[height][width];
+
+    // get each pixel
+    // height
+    for (int i = 0; i < height; i++)
+    {
+        // width
+        for (int j = 0; j < width; j++)
+        {
+            // copy colors of image
+            copy[i][j] = image[i][j];
+        }
+    }
+
+    // determine array item
+        // declare average color variables
+        // calculate average color values
+            // store to original image
+
+
     return;
 }
 

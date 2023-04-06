@@ -138,15 +138,21 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
 
      */
-    if (!i = height)
+    for (int x = 0; x < width; x++)
+    {
+        for (int y = 0; y < height; y++)
+        {
+            
+        }
+    }
+
+
+    return;
+}
+
 
         // calculate average color values
         ave_rgbtBlue += copy[i][j].rgbtBlue;
         ave_rgbtGreen += copy[i][j].rgbtGreen;
         ave_rgbtRed += copy[i][j].rgbtRed;
             // store to original image
-
-
-    return;
-}
-

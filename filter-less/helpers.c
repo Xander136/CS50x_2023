@@ -142,7 +142,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int y = 0; y < height; y++)
         {
-            
+            image[x][y].rgbtBlue = blur_value(copy[x][y].rgbtBlue);
+            image[x][y].rgbtGreen = blur_value(copy[x][y].rgbtGreen);
+            image[x][y].rgbtRed = blur_value(copy[x][y].rgbtRed);
         }
     }
 
@@ -150,9 +152,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-
-        // calculate average color values
-        ave_rgbtBlue += copy[i][j].rgbtBlue;
-        ave_rgbtGreen += copy[i][j].rgbtGreen;
-        ave_rgbtRed += copy[i][j].rgbtRed;
-            // store to original image
+int blur_value(int rgbtValue)
+{
+    
+}

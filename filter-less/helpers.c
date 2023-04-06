@@ -1,7 +1,7 @@
 #include "helpers.h"
 #include <math.h>
 
-
+int blur_value(int x, int y, int height, int width, RGBTRIPLE copy, int color)
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -99,6 +99,42 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 // blur_value(x, y, height, width, copy, BLUE);
+
+// Blur image
+void blur(int height, int width, RGBTRIPLE image[height][width])
+{
+    // create array for copy of image
+    RGBTRIPLE copy[height][width];
+
+    // get each pixel
+    // height
+    for (int i = 0; i < height; i++)
+    {
+        // width
+        for (int j = 0; j < width; j++)
+        {
+            // copy colors of image
+            copy[i][j] = image[i][j];
+        }
+    }
+
+    // variable for colors
+    int BLUE = 0;
+    int GREEN = 1;
+    int RED = 2;
+
+    for (int x = 0; x < width; x++)
+    {
+        for (int y = 0; y < height; y++)
+        {
+            image[x][y].rgbtBlue = blur_value(x, y, height, width, copy[x][y], BLUE);
+            image[x][y].rgbtGreen = blur_value(x, y, height, width, copy[x][y], GREEN);
+            image[x][y].rgbtRed = blur_value(x, y, height, width, copy[x][y], RED);
+        }
+    }
+    return;
+}
+
 int blur_value(int x, int y, int height, int width, RGBTRIPLE copy[], int color)
 {
     width -= 1;
@@ -143,40 +179,4 @@ int blur_value(int x, int y, int height, int width, RGBTRIPLE copy[], int color)
     int ave_green = round(sum_green / (float) cube_count);
     int ave_red = round(sum_green / (float) cube_count);
 }
-
-// Blur image
-void blur(int height, int width, RGBTRIPLE image[height][width])
-{
-    // create array for copy of image
-    RGBTRIPLE copy[height][width];
-
-    // get each pixel
-    // height
-    for (int i = 0; i < height; i++)
-    {
-        // width
-        for (int j = 0; j < width; j++)
-        {
-            // copy colors of image
-            copy[i][j] = image[i][j];
-        }
-    }
-
-    // variable for colors
-    int BLUE = 0;
-    int GREEN = 1;
-    int RED = 2;
-
-    for (int x = 0; x < width; x++)
-    {
-        for (int y = 0; y < height; y++)
-        {
-            image[x][y].rgbtBlue = blur_value(x, y, height, width, copy[x][y], BLUE);
-            image[x][y].rgbtGreen = blur_value(x, y, height, width, copy[x][y], GREEN);
-            image[x][y].rgbtRed = blur_value(x, y, height, width, copy[x][y], RED);
-        }
-    }
-    return;
-}
-
 

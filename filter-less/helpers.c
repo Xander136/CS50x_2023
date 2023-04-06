@@ -114,7 +114,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             copy[i][j] = image[i][j];
         }
     }
-
+    
+    // declare average color variables
+    int ave_rgbtBlue;
+    int ave_rgbtGreen;
+    int ave_rgbtRed;
     // determine array item
     /*
     0 1 2 3 4
@@ -122,16 +126,11 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     2 3 4 5 6
 
      */
-        // declare average color variables
-        int ave_rgbtBlue;
-        int ave_rgbtGreen;
-        int ave_rgbtRed;
+
         // calculate average color values
-        int ave_rgbtBlue;
-        int ave_rgbtGreen;
-        int ave_rgbtRed;
-
-
+        ave_rgbtBlue += copy[i][j].rgbtBlue;
+        ave_rgbtGreen += copy[i][j].rgbtGreen;
+        ave_rgbtRed += copy[i][j].rgbtRed;
             // store to original image
 
 

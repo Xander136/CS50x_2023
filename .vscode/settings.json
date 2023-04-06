@@ -5,6 +5,7 @@
         "ctype.h": "c",
         "math.h": "c",
         "stdio.h": "c",
-        "type_traits": "c"
+        "type_traits": "c",
+        "algorithm": "c"
     }
 }

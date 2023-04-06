@@ -90,7 +90,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
         {
             RGBTRIPLE temp = image[i][j];
             image[i][j] = image[i][width - j];
-            image[i][width - j]= temp;
+            image[i][width - j] = temp;
         }
     }
     return;

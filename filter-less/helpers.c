@@ -135,7 +135,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-int blur_value(int x, int y, int height, int width, RGBTRIPLE copy, int color)
+int blur_value(int x, int y, int height, int width, RGBTRIPLE copy[height][width], int color)
 {
     width -= 1;
     height -= 1;

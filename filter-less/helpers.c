@@ -138,6 +138,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
 
      */
+    if (!i = height)
 
         // calculate average color values
         ave_rgbtBlue += copy[i][j].rgbtBlue;

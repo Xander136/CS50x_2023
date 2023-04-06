@@ -139,9 +139,7 @@ int blur_value(int x, int y, int height, int width, RGBTRIPLE copy, int color)
 {
     width -= 1;
     height -= 1;
-    int sum_blue;
-    int sum_green;
-    int sum_red;
+    int sum;
     int cube_count;
 
     for (int row = x - 1; row < 3; row++)
@@ -157,26 +155,25 @@ int blur_value(int x, int y, int height, int width, RGBTRIPLE copy, int color)
                 // blue
                 if (color == 0)
                 {
-                    sum_blue += copy[row][column].rgbtBlue;
+                    sum += copy[row][column].rgbtBlue;
                     cube_count++;
                 }
                 // green
                 else if (color == 1)
                 {
-                    sum_green += copy[row][column].rgbtGreen;
+                    sum += copy[row][column].rgbtGreen;
                     cube_count++;
                 }
                 // red
                 else if (color == 2)
                 {
-                    sum_red += copy[row][column].rgbtRed;
+                    sum += copy[row][column].rgbtRed;
                     cube_count++;
                 }
             }
         }
     }
-    int ave_blue = round(sum_blue / (float) cube_count);
-    int ave_green = round(sum_green / (float) cube_count);
-    int ave_red = round(sum_green / (float) cube_count);
+    int average = round(sum / (float) cube_count);
+    return average;
 }
 

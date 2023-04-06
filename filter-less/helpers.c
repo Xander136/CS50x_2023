@@ -138,6 +138,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
 
      */
+    int BLUE = 0;
+    int GREEN = 1;
+    int RED = 2;
     for (int x = 0; x < width; x++)
     {
         for (int y = 0; y < height; y++)
@@ -172,5 +175,5 @@ int blur_value(int rgbtValue, int x, int y, int height, int width)
 
         }
     }
-    
+
 }

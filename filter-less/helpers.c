@@ -1,6 +1,7 @@
 #include "helpers.h"
 #include <math.h>
 
+int blur_value(int x, int y, int height, int width, RGBTRIPLE copy, int color);
 
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
@@ -134,7 +135,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     return;
 }
 
-int blur_value(int x, int y, int height, int width, RGBTRIPLE copy[], int color)
+int blur_value(int x, int y, int height, int width, RGBTRIPLE copy, int color)
 {
     width -= 1;
     height -= 1;

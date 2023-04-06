@@ -171,9 +171,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int y = 0; y < height; y++)
         {
-            image[x][y].rgbtBlue = blur_value(x, y, height, width, copy, BLUE);
-            image[x][y].rgbtGreen = blur_value(x, y, height, width, copy, GREEN);
-            image[x][y].rgbtRed = blur_value(x, y, height, width, copy, RED);
+            image[x][y].rgbtBlue = blur_value(x, y, height, width, copy[x][y], BLUE);
+            image[x][y].rgbtGreen = blur_value(x, y, height, width, copy[x][y], GREEN);
+            image[x][y].rgbtRed = blur_value(x, y, height, width, opy[x][y], RED);
         }
     }
     return;

@@ -85,7 +85,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     for (int i = 0; i < height; i++)
     {
         // width
-        for (int j = 0; j < width; j++)
+        for (int j = 0; j < width/2; j++)
         {
             // get value
             RGBTRIPLE temp_variable = image[i][j]; // store 1st value in temp

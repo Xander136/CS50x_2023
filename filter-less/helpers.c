@@ -121,19 +121,19 @@ int blur_value(int x, int y, int height, int width, RGBTRIPLE copy, int color)
                 // blue
                 if (color == 0)
                 {
-                    sum_blue += copy[x][y].rgbtBlue;
+                    sum_blue += copy[row][column].rgbtBlue;
                     cube_count++;
                 }
                 // green
                 else if (color == 1)
                 {
-                    sum_green += copy[x][y].rgbtGreen;
+                    sum_green += copy[row][column].rgbtGreen;
                     cube_count++;
                 }
                 // red
                 else if (color == 2)
                 {
-                    sum_red += copy[x][y].rgbtRed;
+                    sum_red += copy[row][column].rgbtRed;
                     cube_count++;
                 }
             }
@@ -173,7 +173,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         {
             image[x][y].rgbtBlue = blur_value(x, y, height, width, copy[x][y], BLUE);
             image[x][y].rgbtGreen = blur_value(x, y, height, width, copy[x][y], GREEN);
-            image[x][y].rgbtRed = blur_value(x, y, height, width, opy[x][y], RED);
+            image[x][y].rgbtRed = blur_value(x, y, height, width, copy[x][y], RED);
         }
     }
     return;

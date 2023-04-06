@@ -116,8 +116,19 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     }
 
     // determine array item
+    /*
+    0 1 2 3 4
+    1 2 3 4 5
+    2 3 4 5 6
+
+     */
         // declare average color variables
+        int ave_rgbtBlue;
+        int ave_rgbtGreen;
+        int ave_rgbtRed;
         // calculate average color values
+        
+
             // store to original image
 
 

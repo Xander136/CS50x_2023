@@ -142,7 +142,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     {
         for (int y = 0; y < height; y++)
         {
-            image[x][y].rgbtBlue = blur_value(copy[x][y].rgbtBlue);
+            image[x][y].rgbtBlue = blur_value(xcopy[x][y].rgbtBlue);
             image[x][y].rgbtGreen = blur_value(copy[x][y].rgbtGreen);
             image[x][y].rgbtRed = blur_value(copy[x][y].rgbtRed);
         }
@@ -154,5 +154,5 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
 int blur_value(int rgbtValue)
 {
-    
+    if ()
 }

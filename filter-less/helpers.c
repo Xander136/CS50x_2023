@@ -127,7 +127,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         int ave_rgbtGreen;
         int ave_rgbtRed;
         // calculate average color values
-        
+        int ave_rgbtBlue;
+        int ave_rgbtGreen;
+        int ave_rgbtRed;
+
 
             // store to original image
 

@@ -82,7 +82,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     // get each pixel
     // height
-    int half_width = round(width/2.0);
+    int half_width = width/2;
     for (int i = 0; i < height; i++)
     {
         // width

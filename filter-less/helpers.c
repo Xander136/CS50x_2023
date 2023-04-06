@@ -82,10 +82,11 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 {
     // get each pixel
     // height
+    int half_width = round(width/2.0);
     for (int i = 0; i < height; i++)
     {
         // width
-        for (int j = 0; j < width/2; j++)
+        for (int j = 0; j < half_width; j++)
         {
             // get RGBTRIPLE values
             RGBTRIPLE temp_variable = image[i][j]; // store 1st value in temp

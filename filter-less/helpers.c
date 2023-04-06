@@ -160,9 +160,17 @@ int blur_value(int rgbtValue, int x, int y, int height, int width)
     {
         for (int column = y - 1; column < 3; column++)
         {
-            if (row - x < width)
+            if (row < 0 || column < 0 || row > width || column > height)
+            {
+                continue;
+            }
+            else
+            {
+
+            }
+
 
         }
     }
-
+    
 }

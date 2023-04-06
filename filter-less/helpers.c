@@ -91,6 +91,7 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
             RGBTRIPLE value = image[i][j];
             RGBTRIPLE value = image[i][j];
             RGBTRIPLE value = image[i][j];
+            // 0 1 2 3 4 
 
 
         }

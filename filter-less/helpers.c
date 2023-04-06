@@ -154,5 +154,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
 int blur_value(int rgbtValue, int x, int y, int height, int width)
 {
+    for (int row = )
+
     if (x - 1 < width)
 }

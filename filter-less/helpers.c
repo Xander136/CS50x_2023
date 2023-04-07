@@ -127,23 +127,31 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         // height
         for (int j = 0; j < height; i++)
         {
+            // get target row and increment for 3 times
             for (int x = i - 1, count_x = 0; count_x < 3; x++, count_x++)
             {
-                for (int y = j - 1, count_y = 0; count_y < 3; count_y++)
+                // get target column and increment 3 times
+                for (int y = j - 1, count_y = 0; count_y < 3; y++, count_y++)
                 {
-                    if (row < 0 || column < 0 || row > width || column > height)
+                    // Skip if target box is outside of image width and height
+                    if (x < 0 || y < 0 || x > (width - 1) || y > (height - 1))
                     {
                         continue;
                     }
                     else
                     {
-                        image[x][y].rgbtBlue = blur_value(x, y, height, width, copy[height][width], BLUE);
-                        image[x][y].rgbtGreen = blur_value(x, y, height, width, copy[height][width], GREEN);
-                        image[x][y].rgbtRed = blur_value(x, y, height, width, copy[height][width], RED);
+                        int sum_blue += copy[x][y].rgbtBlue;
+                        int sum_green += copy[x][y].rgbtGreen;
+                        int sum_red += copy[x][y].rgbtRed;
                         box_count++;
                     }
                 }
             }
+            int average_blue = round(sum_blue / (float) box_count);
+            int average_green = round(sum_green / (float) box_count);
+            int average_red = round(sum_red / (float) box_count);
+
+            image[j][i]
         }
     }
     return;

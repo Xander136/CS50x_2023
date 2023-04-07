@@ -134,8 +134,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int Gx_green = 0;
             int Gx_red = 0;
             int Gx_pixel_count = 0;
-            int Gx = 0;
-            int Gy = 0;
             int Gx_multiplier[] = {-1, 0, 1, -2, 0, 2, -1, 0, 1};
 
             // loop over 3x3 grid around the current pixel
@@ -165,8 +163,6 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int Gy_green = 0;
             int Gy_red = 0;
             int Gy_pixel_count = 0;
-            int Gx = 0;
-            int Gy = 0;
             int Gy_multiplier[] = {-1, -2, -1, 0, 0, 0, 1, 2, 1};
 
             // loop over 3x3 grid around the current pixel

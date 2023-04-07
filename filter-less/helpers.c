@@ -118,10 +118,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
         }
     }
 
-    // variable for colors
-    int BLUE = 0;
-    int GREEN = 1;
-    int RED = 2;
+    // variable for box count
+    int box_count;
     for (int row = x - 1; row < 3; row++)
     {
         for (int column = y - 1; column < 3; column++)
@@ -135,6 +133,7 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                 image[x][y].rgbtBlue = blur_value(x, y, height, width, copy[height][width], BLUE);
                 image[x][y].rgbtGreen = blur_value(x, y, height, width, copy[height][width], GREEN);
                 image[x][y].rgbtRed = blur_value(x, y, height, width, copy[height][width], RED);
+                box_count++;
             }
         }
     }

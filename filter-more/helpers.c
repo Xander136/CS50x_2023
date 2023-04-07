@@ -192,9 +192,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
 
             //get Gx^2 + Gy^2 color values pow(double x, double y)
-            int ave_blue = round(sqrt(pow(Gx_blue, 2) + pow(Gy_blue, 2)));
-            int ave_green = round(green / (float) pixel_count);
-            int ave_red = round(red / (float) pixel_count);
+            int ave_blue = sqrt(pow(Gx_blue, 2) + pow(Gy_blue, 2));
+            int ave_green = sqrt(pow(Gx_green, 2) + pow(Gy_green, 2));
+            int ave_red = sqrt(pow(Gx_red, 2) + pow(Gy_red, 2));
 
             // store changed values to original image
             image[h][w].rgbtBlue = ave_blue;

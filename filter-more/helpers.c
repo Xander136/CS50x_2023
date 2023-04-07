@@ -192,7 +192,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             }
 
             //get Gx^2 + Gy^2 color values pow(double x, double y)
-            int ave_blue = round(sqrtf(powf(Gx_blue, 2.0) + powf(Gy_blue, 2.0)));
+            int ave_blue = round(sqrt(pow(Gx_blue, 2) + pow(Gy_blue, 2)));
             int ave_green = round(green / (float) pixel_count);
             int ave_red = round(red / (float) pixel_count);
 

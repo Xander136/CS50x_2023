@@ -119,13 +119,16 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     }
 
     // variable for box count
-    int box_count;
+    int box_count = 0;
+    int sum_blue;
+    int sum_green;
+    int sum_red;
 
     // height
     for (int i = 0; i < height; i++)
     {
         // width
-        for (int j = 0; j < width; i++)
+        for (int j = 0; j < width; j++)
         {
             // get target row and increment for 3 times
             for (int x = i - 1, count_x = 0; count_x < 3; x++, count_x++)
@@ -140,9 +143,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     }
                     else
                     {
-                        int sum_blue += copy[x][y].rgbtBlue;
-                        int sum_green += copy[x][y].rgbtGreen;
-                        int sum_red += copy[x][y].rgbtRed;
+                        sum_blue = sum_blue + copy[x][y].rgbtBlue;
+                        sum_green = sum_green + copy[x][y].rgbtGreen;
+                        sum_red = sum_red + copy[x][y].rgbtRed;
                         box_count++;
                     }
                 }

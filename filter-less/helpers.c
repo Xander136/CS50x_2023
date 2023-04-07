@@ -122,26 +122,6 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
     int BLUE = 0;
     int GREEN = 1;
     int RED = 2;
-
-    for (int x = 0; x < width; x++)
-    {
-        for (int y = 0; y < height; y++)
-        {
-            image[x][y].rgbtBlue = blur_value(x, y, height, width, copy[height][width], BLUE);
-            image[x][y].rgbtGreen = blur_value(x, y, height, width, copy[height][width], GREEN);
-            image[x][y].rgbtRed = blur_value(x, y, height, width, copy[height][width], RED);
-        }
-    }
-    return;
-}
-
-int blur_value(int x, int y, int height, int width, RGBTRIPLE copy[height][width], int color)
-{
-    width -= 1;
-    height -= 1;
-    int sum;
-    int cube_count;
-
     for (int row = x - 1; row < 3; row++)
     {
         for (int column = y - 1; column < 3; column++)
@@ -152,28 +132,13 @@ int blur_value(int x, int y, int height, int width, RGBTRIPLE copy[height][width
             }
             else
             {
-                // blue
-                if (color == 0)
-                {
-                    sum += copy[row][column].rgbtBlue;
-                    cube_count++;
-                }
-                // green
-                else if (color == 1)
-                {
-                    sum += copy[row][column].rgbtGreen;
-                    cube_count++;
-                }
-                // red
-                else if (color == 2)
-                {
-                    sum += copy[row][column].rgbtRed;
-                    cube_count++;
-                }
+                image[x][y].rgbtBlue = blur_value(x, y, height, width, copy[height][width], BLUE);
+                image[x][y].rgbtGreen = blur_value(x, y, height, width, copy[height][width], GREEN);
+                image[x][y].rgbtRed = blur_value(x, y, height, width, copy[height][width], RED);
             }
         }
     }
-    int average = round(sum / (float) cube_count);
-    return average;
+    return;
 }
+
 

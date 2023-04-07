@@ -151,8 +151,8 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             }
             //get average of color values
             int ave_blue = round(blue / (float) pixel_count);
-            int ave_green = round(blue / (float) pixel_count);
-            int ave_red = round(blue / (float) pixel_count);
+            int ave_green = round(green / (float) pixel_count);
+            int ave_red = round(red / (float) pixel_count);
 
             // store changed values to original image
             image[h][w].rgbtBlue = ave_blue;

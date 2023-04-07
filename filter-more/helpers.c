@@ -134,6 +134,8 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
             int green = 0;
             int red = 0;
             int pixel_count = 0;
+            int Gx = 0;
+            int Gy = 0;
 
             // loop over 3x3 grid around the current pixel
             // Gx

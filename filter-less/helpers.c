@@ -1,8 +1,6 @@
 #include "helpers.h"
 #include <math.h>
 
-int blur_value(int x, int y, int height, int width, RGBTRIPLE copy[height][width], int color);
-
 // Convert image to grayscale
 void grayscale(int height, int width, RGBTRIPLE image[height][width])
 {
@@ -101,9 +99,9 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
 
 
 
-blur_value(x, y, height, width, copy, BLUE);
 
-Blur image
+
+//Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
     // create array for copy of image
@@ -111,58 +109,55 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
     // get each pixel
     // height
-    for (int i = 0; i < height; i++)
+    for (int h = 0; h < height; h++)
     {
         // width
-        for (int j = 0; j < width; j++)
+        for (int w = 0; w < width; w++)
         {
             // copy colors of image
-            copy[i][j] = image[i][j];
+            copy[h][w] = image[h][w];
         }
     }
 
-
-    // variable for sums of colors
-    int sum_blue = 0;
-    int sum_green = 0;
-    int sum_red = 0;
-
-    // height
-    for (int i = 0; i < height; i++)
+    // select every pixel
+    for (int h = 0; h < height; h++)
     {
-        // width
-        for (int j = 0; j < width; j++)
+        for (int w = 0; w < width; w++)
         {
-            // variable for box count
-            int box_count = 0;
-
-            // get target row and increment for 3 times
-            for (int x = i - 1; x < (i + 2); x++)
+            // set color values
+            int blue = 0;
+            int green = 0;
+            int red = 0;
+            int pixel_count = 0;
+            // loop over 3x3 grid around the current pixel
+            for (int x = -1; x < 2; x++)
             {
-                // get target column and increment 3 times
-                for (int y = j - 1; y < (i + 2); y++)
+                for (int y = -1; y < 2; y++)
                 {
-                    // Skip if target box is outside of image width and height
-                    if (x < 0 || y < 0 || x > (width - 1) || y > (height - 1))
+                    // check for out of range pixels
+                    if ((x + w) < 0 || (x + w) > (width - 1) || (y + h) < 0 || (y + h) > (height - 1))
                     {
                         continue;
                     }
                     else
                     {
-                        sum_blue += copy[x][y].rgbtBlue;
-                        sum_green += copy[x][y].rgbtGreen;
-                        sum_red += copy[x][y].rgbtRed;
-                        box_count++;
+                        // get color values from valid pixels
+                        blue += copy[(x + w)][(y + h)].rgbtBlue;
+                        green += copy[(x + w)][(y + h)].rgbtGreen;
+                        red += copy[(x + w)][(y + h)].rgbtRed;
+                        pixel_count++;
                     }
                 }
             }
-            int average_blue = round(sum_blue / (float) box_count);
-            int average_green = round(sum_green / (float) box_count);
-            int average_red = round(sum_red / (float) box_count);
+            //get average of color values
+            int ave_blue = round(blue / (float) pixel_count);
+            int ave_green = round(blue / (float) pixel_count);
+            int ave_red = round(blue / (float) pixel_count);
 
-            image[i][j].rgbtBlue = average_blue;
-            image[i][j].rgbtGreen = average_green;
-            image[i][j].rgbtRed = average_red;
+            // store changed values to original image
+            image[h][w].rgbtBlue = ave_blue;
+            image[h][w].rgbtGreen = ave_green;
+            image[h][w].rgbtRed = ave_red;
         }
     }
     return;

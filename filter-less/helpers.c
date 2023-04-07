@@ -120,20 +120,30 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 
     // variable for box count
     int box_count;
-    for (int row = x - 1; row < 3; row++)
+
+    // height
+    for (int i = 0; i < height; i++)
     {
-        for (int column = y - 1; column < 3; column++)
+        // width
+        for (int j = 0; j < width; i++)
         {
-            if (row < 0 || column < 0 || row > width || column > height)
+
+            for (int column = i - 1; row < 3; row++)
             {
-                continue;
-            }
-            else
-            {
-                image[x][y].rgbtBlue = blur_value(x, y, height, width, copy[height][width], BLUE);
-                image[x][y].rgbtGreen = blur_value(x, y, height, width, copy[height][width], GREEN);
-                image[x][y].rgbtRed = blur_value(x, y, height, width, copy[height][width], RED);
-                box_count++;
+                for (int column = y - 1; column < 3; column++)
+                {
+                    if (row < 0 || column < 0 || row > width || column > height)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        image[x][y].rgbtBlue = blur_value(x, y, height, width, copy[height][width], BLUE);
+                        image[x][y].rgbtGreen = blur_value(x, y, height, width, copy[height][width], GREEN);
+                        image[x][y].rgbtRed = blur_value(x, y, height, width, copy[height][width], RED);
+                        box_count++;
+                    }
+                }
             }
         }
     }

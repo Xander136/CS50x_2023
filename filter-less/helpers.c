@@ -143,9 +143,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
                     else
                     {
                         // get color values from valid pixels
-                        blue += copy[(x + w)][(y + h)].rgbtBlue;
-                        green += copy[(x + w)][(y + h)].rgbtGreen;
-                        red += copy[(x + w)][(y + h)].rgbtRed;
+                        blue += copy[(y + h)][(x + w)].rgbtBlue;
+                        green += copy[(y + h)][(x + w)].rgbtGreen;
+                        red += copy[(y + h)][(x + w)].rgbtRed;
                         pixel_count++;
                     }
                 }

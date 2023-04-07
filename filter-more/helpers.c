@@ -151,7 +151,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     else
                     {
                         // get color values from valid pixels
-                        blue += copy[(y + h)][(x + w)].rgbtBlue;
+                        blue += (copy[(y + h)][(x + w)].rgbtBlue) * ;
                         green += copy[(y + h)][(x + w)].rgbtGreen;
                         red += copy[(y + h)][(x + w)].rgbtRed;
                         pixel_count++;

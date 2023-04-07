@@ -150,9 +150,9 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     else
                     {
                         // get color values from valid pixels
-                        Gx_blue += Gx_multiplier[Gx_pixel_count] * (copy[(y + h)][(x + w)].rgbtBlue);
-                        Gx_green += Gx_multiplier[Gx_pixel_count] * copy[(y + h)][(x + w)].rgbtGreen;
-                        Gx_red += Gx_multiplier[Gx_pixel_count] * copy[(y + h)][(x + w)].rgbtRed;
+                        Gx_blue += (Gx_multiplier[Gx_pixel_count] * (copy[(y + h)][(x + w)].rgbtBlue));
+                        Gx_green += (Gx_multiplier[Gx_pixel_count] * (copy[(y + h)][(x + w)].rgbtGreen));
+                        Gx_red += (Gx_multiplier[Gx_pixel_count] * (copy[(y + h)][(x + w)].rgbtRed));
                         Gx_pixel_count++;
                     }
                 }

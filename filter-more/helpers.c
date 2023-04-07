@@ -130,14 +130,13 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
         for (int w = 0; w < width; w++)
         {
             // set color values
-            int blue = 0;
-            int green = 0;
-            int red = 0;
-            int pixel_count = 0;
+            int Gx_blue = 0;
+            int Gx_green = 0;
+            int Gx_red = 0;
+            int Gx_pixel_count = 0;
             int Gx = 0;
             int Gy = 0;
             int Gx_multiplier[] = {-1, 0, 1, -2, 0, 2, -1, 0, 1};
-            int Gy_multiplier[] = {-1, -2, -1, 0, 0, 0, 1, 2, 1};
 
             // loop over 3x3 grid around the current pixel
             // Gx
@@ -148,15 +147,46 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     // check for out of range pixels
                     if ((x + w) < 0 || (x + w) > (width - 1) || (y + h) < 0 || (y + h) > (height - 1))
                     {
-                        continue;
+                        Gx_pixel_count++;
                     }
                     else
                     {
                         // get color values from valid pixels
-                        blue += (copy[(y + h)][(x + w)].rgbtBlue) * ;
-                        green += copy[(y + h)][(x + w)].rgbtGreen;
-                        red += copy[(y + h)][(x + w)].rgbtRed;
-                        pixel_count++;
+                        Gx_blue += Gx_multiplier[Gx_pixel_count] * (copy[(y + h)][(x + w)].rgbtBlue);
+                        Gx_green += Gx_multiplier[Gx_pixel_count] * copy[(y + h)][(x + w)].rgbtGreen;
+                        Gx_red += Gx_multiplier[Gx_pixel_count] * copy[(y + h)][(x + w)].rgbtRed;
+                        Gx_pixel_count++;
+                    }
+                }
+            }
+
+            // set color values
+            int Gy_blue = 0;
+            int Gy_green = 0;
+            int Gy_red = 0;
+            int Gy_pixel_count = 0;
+            int Gx = 0;
+            int Gy = 0;
+            int Gy_multiplier[] = {-1, -2, -1, 0, 0, 0, 1, 2, 1};
+
+            // loop over 3x3 grid around the current pixel
+            // Gy
+            for (int x = -1; x < 2; x++)
+            {
+                for (int y = -1; y < 2; y++)
+                {
+                    // check for out of range pixels
+                    if ((x + w) < 0 || (x + w) > (width - 1) || (y + h) < 0 || (y + h) > (height - 1))
+                    {
+                        Gy_pixel_count++;
+                    }
+                    else
+                    {
+                        // get color values from valid pixels
+                        Gy_blue += Gy_multiplier[Gy_pixel_count] * (copy[(y + h)][(x + w)].rgbtBlue);
+                        Gy_green += Gy_multiplier[Gy_pixel_count] * copy[(y + h)][(x + w)].rgbtGreen;
+                        Gy_red += Gy_multiplier[Gy_pixel_count] * copy[(y + h)][(x + w)].rgbtRed;
+                        Gy_pixel_count++;
                     }
                 }
             }

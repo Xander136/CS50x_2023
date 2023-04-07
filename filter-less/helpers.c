@@ -98,71 +98,115 @@ void reflect(int height, int width, RGBTRIPLE image[height][width])
     }
     return;
 }
-// blur_value(x, y, height, width, copy, BLUE);
 
-// Blur image
 void blur(int height, int width, RGBTRIPLE image[height][width])
 {
-    // create array for copy of image
-    RGBTRIPLE copy[height][width];
-
-    // get each pixel
-    // height
-    for (int i = 0; i < height; i++)
+    RGBTRIPLE tmpImage[height][width];
+    for (int h = 0; h < height; h++)
     {
-        // width
-        for (int j = 0; j < width; j++)
+        for (int w = 0; w < width; w++)
         {
-            // copy colors of image
-            copy[i][j] = image[i][j];
+            tmpImage[h][w] = image[h][w];
         }
     }
-
-
-    // variable for sums of colors
-    int sum_blue = 0;
-    int sum_green = 0;
-    int sum_red = 0;
-
-    // height
-    for (int i = 0; i < height; i++)
+    for (int h = 0; h < height; h++)
     {
-        // width
-        for (int j = 0; j < width; j++)
+        for (int w = 0; w < width; w++)
         {
-            // variable for box count
-            int box_count = 0;
-
-            // get target row and increment for 3 times
-            for (int x = i - 1; x < (i + 2); x++)
+            // now we are on a current pixel of image[h][w]
+            int reds = 0;
+            int blues = 0;
+            int greens = 0;
+            int availablePixels = 0;
+            for (int i = -1; i < 2; i++)
             {
-                // get target column and increment 3 times
-                for (int y = j - 1; y < (i + 2); y++)
+                for (int j = -1; j < 2; j++)
                 {
-                    // Skip if target box is outside of image width and height
-                    if (x < 0 || y < 0 || x > (width - 1) || y > (height - 1))
+                    // checks the boxes around the pixel by using [-1][-1], [-1][0], [-1][1], ... etc
+                    // makes sure we don't go past width/height and 0
+                    if ((h + i >= 0 && h + i < height) && (w + j >= 0 && w + j < width))
                     {
-                        continue;
-                    }
-                    else
-                    {
-                        sum_blue += copy[x][y].rgbtBlue;
-                        sum_green += copy[x][y].rgbtGreen;
-                        sum_red += copy[x][y].rgbtRed;
-                        box_count++;
+                        availablePixels++;
+                        reds += tmpImage[h + i][w + j].rgbtRed;
+                        greens +=  tmpImage[h + i][w + j].rgbtGreen;
+                        blues +=  tmpImage[h + i][w + j].rgbtBlue;
                     }
                 }
             }
-            int average_blue = round(sum_blue / (float) box_count);
-            int average_green = round(sum_green / (float) box_count);
-            int average_red = round(sum_red / (float) box_count);
-
-            image[i][j].rgbtBlue = average_blue;
-            image[i][j].rgbtGreen = average_green;
-            image[i][j].rgbtRed = average_red;
+            // set the current pixel we are on to the avg of the block
+            image[h][w].rgbtRed = round(reds / (float) availablePixels);
+            image[h][w].rgbtGreen = round(greens / (float)  availablePixels);
+            image[h][w].rgbtBlue = round(blues / (float) availablePixels);
         }
     }
-    return;
 }
+
+
+// blur_value(x, y, height, width, copy, BLUE);
+
+// Blur image
+// void blur(int height, int width, RGBTRIPLE image[height][width])
+// {
+//     // create array for copy of image
+//     RGBTRIPLE copy[height][width];
+
+//     // get each pixel
+//     // height
+//     for (int i = 0; i < height; i++)
+//     {
+//         // width
+//         for (int j = 0; j < width; j++)
+//         {
+//             // copy colors of image
+//             copy[i][j] = image[i][j];
+//         }
+//     }
+
+
+//     // variable for sums of colors
+//     int sum_blue = 0;
+//     int sum_green = 0;
+//     int sum_red = 0;
+
+//     // height
+//     for (int i = 0; i < height; i++)
+//     {
+//         // width
+//         for (int j = 0; j < width; j++)
+//         {
+//             // variable for box count
+//             int box_count = 0;
+
+//             // get target row and increment for 3 times
+//             for (int x = i - 1; x < (i + 2); x++)
+//             {
+//                 // get target column and increment 3 times
+//                 for (int y = j - 1; y < (i + 2); y++)
+//                 {
+//                     // Skip if target box is outside of image width and height
+//                     if (x < 0 || y < 0 || x > (width - 1) || y > (height - 1))
+//                     {
+//                         continue;
+//                     }
+//                     else
+//                     {
+//                         sum_blue += copy[x][y].rgbtBlue;
+//                         sum_green += copy[x][y].rgbtGreen;
+//                         sum_red += copy[x][y].rgbtRed;
+//                         box_count++;
+//                     }
+//                 }
+//             }
+//             int average_blue = round(sum_blue / (float) box_count);
+//             int average_green = round(sum_green / (float) box_count);
+//             int average_red = round(sum_red / (float) box_count);
+
+//             image[i][j].rgbtBlue = average_blue;
+//             image[i][j].rgbtGreen = average_green;
+//             image[i][j].rgbtRed = average_red;
+//         }
+//     }
+//     return;
+// }
 
 

@@ -134,10 +134,10 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
             int box_count = 0;
 
             // get target row and increment for 3 times
-            for (int x = i - 1; x < (i + 1); x++)
+            for (int x = i - 1; x < (i + 2); x++)
             {
                 // get target column and increment 3 times
-                for (int y = j - 1; y < (i + 1); y++)
+                for (int y = j - 1; y < (i + 2); y++)
                 {
                     // Skip if target box is outside of image width and height
                     if (x < 0 || y < 0 || x > (width - 1) || y > (height - 1))

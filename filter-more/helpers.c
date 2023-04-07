@@ -109,6 +109,9 @@ void blur(int height, int width, RGBTRIPLE image[height][width])
 // Detect edges
 void edges(int height, int width, RGBTRIPLE image[height][width])
 {
+    // max value of color
+    int MAX = 255;
+
     // create array for copy of image
     RGBTRIPLE copy[height][width];
 
@@ -179,23 +182,46 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     else
                     {
                         // get color values from valid pixels
-                        Gy_blue += Gy_multiplier[Gy_pixel_count] * (copy[(y + h)][(x + w)].rgbtBlue);
-                        Gy_green += Gy_multiplier[Gy_pixel_count] * (copy[(y + h)][(x + w)].rgbtGreen);
-                        Gy_red += Gy_multiplier[Gy_pixel_count] * (copy[(y + h)][(x + w)].rgbtRed);
+                        Gy_blue += (Gy_multiplier[Gy_pixel_count] * (copy[(y + h)][(x + w)].rgbtBlue));
+                        Gy_green += (Gy_multiplier[Gy_pixel_count] * (copy[(y + h)][(x + w)].rgbtGreen));
+                        Gy_red += (Gy_multiplier[Gy_pixel_count] * (copy[(y + h)][(x + w)].rgbtRed));
                         Gy_pixel_count++;
                     }
                 }
             }
 
             //get Gx^2 + Gy^2 color values pow(double x, double y)
-            int ave_blue = sqrt(pow(Gx_blue, 2) + pow(Gy_blue, 2));
-            int ave_green = sqrt(pow(Gx_green, 2) + pow(Gy_green, 2));
-            int ave_red = sqrt(pow(Gx_red, 2) + pow(Gy_red, 2));
+            int ave_blue = round(sqrtf(pow(Gx_blue, 2) + pow(Gy_blue, 2)));
+            int ave_green = round(sqrtf(pow(Gx_green, 2) + pow(Gy_green, 2)));
+            int ave_red = round(sqrtf(pow(Gx_red, 2) + pow(Gy_red, 2)));
 
-            // store changed values to original image
-            image[h][w].rgbtBlue = ave_blue;
-            image[h][w].rgbtGreen = ave_green;
-            image[h][w].rgbtRed = ave_red;
+            // store changed color values or MAX Color Value to original image
+            if (ave_blue >= 0 && ave_blue < 256)
+            {
+                image[h][w].rgbtBlue = ave_blue;
+            }
+            else
+            {
+                image[h][w].rgbtBlue = MAX;
+            }
+
+            if (ave_green >= 0 && ave_green < 256)
+            {
+                image[h][w].rgbtGreen = ave_green;
+            }
+            else
+            {
+                image[h][w].rgbtGreen = MAX;
+            }
+
+            if (ave_red >= 0 && ave_red < 256)
+            {
+                 image[h][w].rgbtRed = ave_red;
+            }
+            else
+            {
+                image[h][w].rgbtRed = MAX;
+            }
         }
     }
     return;

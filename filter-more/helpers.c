@@ -216,7 +216,7 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
 
             if (ave_red >= 0 && ave_red < 256)
             {
-                 image[h][w].rgbtRed = ave_red;
+                image[h][w].rgbtRed = ave_red;
             }
             else
             {

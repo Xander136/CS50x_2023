@@ -184,13 +184,14 @@ void edges(int height, int width, RGBTRIPLE image[height][width])
                     {
                         // get color values from valid pixels
                         Gy_blue += Gy_multiplier[Gy_pixel_count] * (copy[(y + h)][(x + w)].rgbtBlue);
-                        Gy_green += Gy_multiplier[Gy_pixel_count] * copy[(y + h)][(x + w)].rgbtGreen;
-                        Gy_red += Gy_multiplier[Gy_pixel_count] * copy[(y + h)][(x + w)].rgbtRed;
+                        Gy_green += Gy_multiplier[Gy_pixel_count] * (copy[(y + h)][(x + w)].rgbtGreen);
+                        Gy_red += Gy_multiplier[Gy_pixel_count] * (copy[(y + h)][(x + w)].rgbtRed);
                         Gy_pixel_count++;
                     }
                 }
             }
-            //get average of color values
+
+            //get Gx^2 + Gy^2 color values
             int ave_blue = round(blue / (float) pixel_count);
             int ave_green = round(green / (float) pixel_count);
             int ave_red = round(red / (float) pixel_count);

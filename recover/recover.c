@@ -19,7 +19,12 @@ int main(int argc, char *argv[])
         printf("Can't open file: %s\n", argv[1]);
         return 1;
     }
+    
     // filename for generated image
-    char buffer[8];
-    sprintf(buffer, "%03i.jpg", 2);
+    for (int file_number = 0; file_number < 10; file_number++)
+    {
+        char buffer[8];
+        sprintf(buffer, "%03i.jpg", file_number);
+        printf("%s\n", buffer);
+    }
 }

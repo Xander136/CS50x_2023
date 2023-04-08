@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
     if (jpeg_start(buffer))
     {
         // Write data to the file
-        BYTE write[512]
+        BYTE data[512]
         fwrite(buffer, 512, 1, write);
     }
 

@@ -29,24 +29,20 @@ int main(int argc, char *argv[])
 
     // create a new type to store a byte of data
     typedef uint8_t BYTE;
-    BYTE buffer[513];
+    int BLOCK_SIZE = 512;
+    BYTE buffer[BLOCK_SIZE];
 
     // read every byte until end of card
-    while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
+    while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
     {
-
+        if (jpeg_start(buffer))
+        {
+            continue;
+        }
 
     }
 
-    // fread(buffer, 512, 1, file);
-
-    // if (jpeg_start(buffer))
-    // {
-    //     // Write data to the file
-    //     BYTE data[512]
-    //     fwrite(buffer, 512, 1, write);
-    // }
-
+  
 
 
         // read 512 bytes into a buffer
@@ -74,7 +70,7 @@ int main(int argc, char *argv[])
 }
 
 // check if start of JPEG
-bool jpeg_start(char *buffer)
+bool jpeg_start(BYTE buffer)
 {
     if (!(buffer[0] == 0xff))
     {

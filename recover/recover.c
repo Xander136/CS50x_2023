@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdbool.h>
 
-bool jpeg_start(char buffer);
+bool jpeg_start(char *buffer);
 
 int main(int argc, char *argv[])
 {

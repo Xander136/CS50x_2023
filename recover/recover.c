@@ -9,5 +9,5 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    FILE *f = fopen()
+    FILE *f = fopen(arv[1])
 }

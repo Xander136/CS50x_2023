@@ -22,6 +22,7 @@ int main(int argc, char *argv[])
     }
 
     // read every byte until end of card
+    char buffer[512];
     fwrite(c, strlen(c) + 1, 1, fp);
         // read 512 bytes into a buffer
         // if start of new JPEG

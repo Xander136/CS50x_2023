@@ -3,6 +3,8 @@
 #include <string.h>
 #include <stdbool.h>
 
+bool jpeg_start(char buffer);
+
 int main(int argc, char *argv[])
 {
     // check if there is exactly one command-line argument
@@ -24,7 +26,7 @@ int main(int argc, char *argv[])
 
     // read every byte until end of card
     char buffer[513];
-    fread(buffer, 512, 1, file);
+    // fread(buffer, 512, 1, file);
 
     // if (jpeg_start(buffer))
     // {
@@ -60,7 +62,7 @@ int main(int argc, char *argv[])
 }
 
 // check if start of JPEG
-bool jpeg_start(char buffer)
+bool jpeg_start(char buffer[])
 {
     if (!buffer[0] == 0xff)
     {

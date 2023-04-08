@@ -4,6 +4,7 @@
 #include <stdbool.h>
 
 bool jpeg_start(char *buffer);
+typedef uint8_t BYTE;
 
 int main(int argc, char *argv[])
 {

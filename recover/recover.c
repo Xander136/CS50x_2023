@@ -33,6 +33,8 @@ int main(int argc, char *argv[])
 
     }
 
+    // check if start of JPEG
+
         // read 512 bytes into a buffer
         // if start of new JPEG
             // if first JPEG

@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     while (not end of file)
     {
 
-        BYTE buffer = malloc(512);
+        char *buffer = malloc(512);
         fread(buffer, 512, 1, file);
     }
 

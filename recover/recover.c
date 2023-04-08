@@ -9,5 +9,10 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    FILE *f = fopen(arv[1])
+    FILE *file = fopen("arv[1]", "r");
+    if (file == NULL)
+    {
+        printf("Can't open file: %s\n", argv[1]);
+        return 1;
+    }
 }

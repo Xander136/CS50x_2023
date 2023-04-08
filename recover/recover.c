@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 int main(int argc, char *argv[])
 {
@@ -21,6 +22,7 @@ int main(int argc, char *argv[])
     }
 
     // read every byte until end of card
+    fwrite(c, strlen(c) + 1, 1, fp);
         // read 512 bytes into a buffer
         // if start of new JPEG
             // if first JPEG

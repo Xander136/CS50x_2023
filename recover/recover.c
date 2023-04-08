@@ -20,6 +20,6 @@ int main(int argc, char *argv[])
         return 1;
     }
     // filename for generated image
-    char *filename;
-
+    char buffer[4];
+    
 }

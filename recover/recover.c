@@ -62,9 +62,9 @@ int main(int argc, char *argv[])
 }
 
 // check if start of JPEG
-bool jpeg_start(char buffer[])
+bool jpeg_start(char buffer)
 {
-    if (!buffer[0] == 0xff)
+    if (!(buffer[0] == 0xff))
     {
         return 1;
     }

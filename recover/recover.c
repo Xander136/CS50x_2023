@@ -64,19 +64,19 @@ int main(int argc, char *argv[])
 // check if start of JPEG
 bool jpeg_start(char buffer)
 {
-    if (!(buffer[0] == 0xff))
+    if !(buffer[0] == 0xff)
     {
         return 1;
     }
-    if (!buffer[1] == 0xd8)
+    if !(buffer[1] == 0xd8)
     {
         return 1;
     }
-    if (!buffer[2] == 0xff)
+    if !(buffer[2] == 0xff)
     {
         return 1;
     }
-    if (!(buffer[3] & 0xf0) == 0xe0)
+    if !((buffer[3] & 0xf0) == 0xe0)
     {
         return 1;
     }

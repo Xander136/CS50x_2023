@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
         printf("Usage: ./recover filename\n");
         return 1;
     }
-
+    // Open memory card
     // If the forensic image cannot be opened for reading,
     // your program should inform the user as much, and main should return 1.
     FILE *file = fopen(argv[1], "r");
@@ -19,7 +19,21 @@ int main(int argc, char *argv[])
         printf("Can't open file: %s\n", argv[1]);
         return 1;
     }
-    
+
+    // read every byte until end of card
+        // read 512 bytes into a buffer
+        // if start of new JPEG
+            // if first JPEG
+                // write 1st file
+                // close file writing into
+            // if 2nd open new file
+                // write 2nd file
+
+
+
+
+
+
     // filename for generated image
     for (int file_number = 0; file_number < 10; file_number++)
     {
@@ -27,4 +41,6 @@ int main(int argc, char *argv[])
         sprintf(buffer, "%03i.jpg", file_number);
         printf("%s\n", buffer);
     }
+
+
 }

@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 
     }
 
-    // check if start of JPEG
+
 
         // read 512 bytes into a buffer
         // if start of new JPEG
@@ -57,4 +57,10 @@ int main(int argc, char *argv[])
     }
 
 
+}
+
+// check if start of JPEG
+bool jpeg_start(char buffer)
+{
+    
 }

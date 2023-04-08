@@ -37,12 +37,11 @@ int main(int argc, char *argv[])
     {
         if (jpeg_start(buffer))
         {
-            continue;
+            printf("nice\n");
         }
-
     }
 
-  
+
 
 
         // read 512 bytes into a buffer

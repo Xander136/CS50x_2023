@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     }
 
     // read every byte until end of card
-    int buffer[513];
+    BYTE buffer[512];
     // fread(buffer, 512, 1, file);
 
     if (jpeg_start(buffer))

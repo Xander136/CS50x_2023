@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 }
 
 // check if start of JPEG
-bool jpeg_start(int buffer)
+bool jpeg_start(BYTE buffer)
 {
     if !(buffer[0] == 0xff)
     {

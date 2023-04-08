@@ -21,27 +21,27 @@ int main(int argc, char *argv[])
         return 1;
     }
 
-    // read every byte until end of card
-    char buffer[513];
-    fread(buffer, 512, 1, file);
+    // // read every byte until end of card
+    // char buffer[513];
+    // fread(buffer, 512, 1, file);
 
-    if (jpeg_start(buffer))
-    {
-        // Write data to the file
-        char write[513]
-        fwrite(buffer, 512, 1, write);
+    // if (jpeg_start(buffer))
+    // {
+    //     // Write data to the file
+    //     char write[513]
+    //     fwrite(buffer, 512, 1, write);
 
-    }
+    // }
 
 
 
-        // read 512 bytes into a buffer
-        // if start of new JPEG
-            // if first JPEG
-                // write 1st file
-                // close file writing into
-            // if 2nd open new file
-                // write 2nd file
+    //     // read 512 bytes into a buffer
+    //     // if start of new JPEG
+    //         // if first JPEG
+    //             // write 1st file
+    //             // close file writing into
+    //         // if 2nd open new file
+    //             // write 2nd file
 
 
 

@@ -2,8 +2,9 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include <stdint.h>
 
-bool jpeg_start(char *buffer);
+bool jpeg_start(BYTE buffer);
 
 
 int main(int argc, char *argv[])

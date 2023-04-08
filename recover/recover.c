@@ -4,7 +4,7 @@
 #include <stdbool.h>
 
 bool jpeg_start(char *buffer);
-typedef uint8_t BYTE;
+
 
 int main(int argc, char *argv[])
 {
@@ -24,18 +24,18 @@ int main(int argc, char *argv[])
         printf("Can't open file: %s\n", argv[1]);
         return 1;
     }
+    // counter for images recovered
+    int jpeg_count = 0;
+
+    // create a new type to store a byte of data
+    typedef uint8_t BYTE;
+    BYTE buffer[513];
 
     // read every byte until end of card
-    int count = 0;
-    while (count == 0)
+    while (fread(buffer, 1, BLOCK_SIZE, raw_file) == BLOCK_SIZE)
     {
 
-        char *buffer = malloc(512);
-        fread(buffer, 512, 1, file);
-        if (jpeg_start(buffer))
-        {
-            count++;
-        }
+
     }
 
     // fread(buffer, 512, 1, file);

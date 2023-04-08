@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
     while (count == 0)
     {
 
-        BYTE buffer = malloc(512);
+        char *buffer = malloc(512);
         fread(buffer, 512, 1, file);
         if (jpeg_start(buffer))
         {
@@ -39,12 +39,12 @@ int main(int argc, char *argv[])
 
     // fread(buffer, 512, 1, file);
 
-    if (jpeg_start(buffer))
-    {
-        // Write data to the file
-        BYTE data[512]
-        fwrite(buffer, 512, 1, write);
-    }
+    // if (jpeg_start(buffer))
+    // {
+    //     // Write data to the file
+    //     BYTE data[512]
+    //     fwrite(buffer, 512, 1, write);
+    // }
 
 
 
@@ -73,7 +73,7 @@ int main(int argc, char *argv[])
 }
 
 // check if start of JPEG
-bool jpeg_start(char buffer)
+bool jpeg_start(char *buffer)
 {
     if !(buffer[0] == 0xff)
     {

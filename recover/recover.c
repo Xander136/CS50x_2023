@@ -28,12 +28,12 @@ int main(int argc, char *argv[])
     char buffer[513];
     // fread(buffer, 512, 1, file);
 
-    // if (jpeg_start(buffer))
-    // {
-    //     // Write data to the file
-    //     char write[513]
-    //     fwrite(buffer, 512, 1, write);
-    // }
+    if (jpeg_start(buffer))
+    {
+        // Write data to the file
+        char write[513]
+        fwrite(buffer, 512, 1, write);
+    }
 
 
 

@@ -20,6 +20,6 @@ int main(int argc, char *argv[])
         return 1;
     }
     // filename for generated image
-    char buffer[4];
-    
+    char buffer[8];
+    sprintf(buffer, "%03i.jpg", 2);
 }

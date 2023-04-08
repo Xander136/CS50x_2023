@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
     }
 
     // read every byte until end of card
-    char buffer[513];
+    int buffer[513];
     // fread(buffer, 512, 1, file);
 
     if (jpeg_start(buffer))
@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
 }
 
 // check if start of JPEG
-bool jpeg_start(char *buffer)
+bool jpeg_start(int buffer)
 {
     if !(buffer[0] == 0xff)
     {

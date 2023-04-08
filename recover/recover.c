@@ -25,11 +25,16 @@ int main(int argc, char *argv[])
     }
 
     // read every byte until end of card
-    while (not end of file)
+    int count = 0;
+    while (count == 0)
     {
 
-        char *buffer = malloc(512);
+        BYTE buffer = malloc(512);
         fread(buffer, 512, 1, file);
+        if (jpeg_start(buffer))
+        {
+            count++;
+        }
     }
 
     // fread(buffer, 512, 1, file);
@@ -68,7 +73,7 @@ int main(int argc, char *argv[])
 }
 
 // check if start of JPEG
-bool jpeg_start(BYTE buffer)
+bool jpeg_start(char buffer)
 {
     if !(buffer[0] == 0xff)
     {

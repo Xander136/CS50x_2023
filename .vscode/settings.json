@@ -6,6 +6,8 @@
         "math.h": "c",
         "stdio.h": "c",
         "type_traits": "c",
-        "algorithm": "c"
+        "algorithm": "c",
+        "*.tcc": "c",
+        "streambuf": "c"
     }
 }

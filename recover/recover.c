@@ -4,9 +4,9 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+#define BLOCK_SIZE 512;
 typedef uint8_t BYTE;
-char* filename(int img_count);
-int jpeg_start(BYTE buffer[]);
+int jpeg_header(BYTE buffer[]);
 
 int main(int argc, char *argv[])
 {
@@ -19,56 +19,32 @@ int main(int argc, char *argv[])
     }
 
     // Open memory card
-    FILE *file = fopen(argv[1], "r");
+    FILE *inputFile = fopen(argv[1], "r");
     if (file == NULL)
     {
         printf("Can't open file: %s\n", argv[1]);
         return 1;
     }
 
-    // counter for images recovered
-    int jpeg_count = 0;
+    // declare variables
+    int counter = 0;
+    char filename[8];
+    BYTE buffer;
+    char *filePointer = NULL;
 
-    // create a new type to store a 512 byte of data
-    int BLOCK_SIZE = 512;
-    BYTE buffer[512];
-    bool found_new = false;
-
-
-    // read every byte until end of card
-    while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
+    while ((fread(buffer, 1, BLOCK_SIZE, inputFile) == BLOCK_SIZE) || eof(buffer) != 0)
     {
-        if (jpeg_start(buffer) == 0)
-        {
-            file_open = true;
-            char *filename = filename(jpeg_count);
-            FILE *img = fopen(filename, "w");
-            fwrite(buffer, 1, BLOCK_SIZE, filename);
-        }
-        else if (file open)
+
 
     }
 
 
 
 
-
-
 }
-
-// create file name
-char* filename(int jpeg_count)
-{
-    // filename for generated image
-    char filename[8];
-    sprintf(filename, "%03i.jpg\0", jpeg_count);
-    return filename;
-}
-
-
 
 // check if start of JPEG
-int jpeg_start(BYTE buffer[])
+int jpeg_header(BYTE buffer[])
 {
     if ((buffer[0] == 0xff) && (buffer[1] == 0xd8) && (buffer[2] == 0xff) && (buffer[3] & 0xf0) == 0xe0)
     {

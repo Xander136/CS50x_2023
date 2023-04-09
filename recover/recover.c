@@ -5,8 +5,7 @@
 #include <stdint.h>
 
 typedef uint8_t BYTE;
-bool jpeg_start(BYTE buffer);
-
+char* filename(int img_count);
 
 int main(int argc, char *argv[])
 {
@@ -29,33 +28,37 @@ int main(int argc, char *argv[])
     // counter for images recovered
     int jpeg_count = 0;
 
-    // create a new type to store a 512 byte of data
-    int BLOCK_SIZE = 512;
-    BYTE *buffer[512];
+    // // create a new type to store a 512 byte of data
+    // int BLOCK_SIZE = 512;
+    // BYTE *buffer[512];
 
-    // read every byte until end of card
-    while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
-    {
-        if (jpeg_start(buffer))
-        {
-            printf("nice\n");
-        }
-    }
-
-
-
-
-
-    // // filename for generated image
-    // for (int file_number = 0; file_number < 10; file_number++)
+    // // read every byte until end of card
+    // while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
     // {
-    //     char buffer[8];
-    //     sprintf(buffer, "%03i.jpg", file_number);
-    //     printf("%s\n", buffer);
+    //     if (jpeg_start(buffer))
+    //     {
+    //         printf("nice\n");
+    //     }
     // }
 
 
+
+
+
+
 }
+
+// create file name
+char* filename(int jpeg_count)
+{
+    // filename for generated image
+    char *buffer = malloc(8);
+    buffer[7] = '\0';
+    sprintf(buffer, "%03i.jpg", jpeg_count);
+    return buffer;
+}
+
+
 
 // check if start of JPEG
 bool jpeg_start(BYTE buffer)

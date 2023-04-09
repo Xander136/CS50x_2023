@@ -67,9 +67,9 @@ char* filename(int jpeg_count)
 
 
 // check if start of JPEG
-bool jpeg_start(BYTE buffer[])
+int jpeg_start(BYTE buffer[])
 {
-    if (!(buffer[0] == 0xff))
+    if ((buffer[0] == 0xff) )
     {
         return false;
     }

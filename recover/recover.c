@@ -4,6 +4,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 
+typedef uint8_t BYTE;
 bool jpeg_start(BYTE buffer);
 
 
@@ -17,8 +18,6 @@ int main(int argc, char *argv[])
         return 1;
     }
     // Open memory card
-    // If the forensic image cannot be opened for reading,
-    // your program should inform the user as much, and main should return 1.
     FILE *file = fopen(argv[1], "r");
     if (file == NULL)
     {
@@ -29,7 +28,7 @@ int main(int argc, char *argv[])
     int jpeg_count = 0;
 
     // create a new type to store a byte of data
-    typedef uint8_t BYTE;
+
     int BLOCK_SIZE = 512;
     BYTE buffer[BLOCK_SIZE];
 
@@ -41,18 +40,6 @@ int main(int argc, char *argv[])
             printf("nice\n");
         }
     }
-
-
-
-
-        // read 512 bytes into a buffer
-        // if start of new JPEG
-            // if first JPEG
-                // write 1st file
-                // close file writing into
-            // if 2nd open new file
-                // write 2nd file
-
 
 
 

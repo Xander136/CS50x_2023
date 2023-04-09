@@ -17,6 +17,7 @@ int main(int argc, char *argv[])
         printf("Usage: ./recover filename\n");
         return 1;
     }
+
     // Open memory card
     FILE *file = fopen(argv[1], "r");
     if (file == NULL)
@@ -24,11 +25,11 @@ int main(int argc, char *argv[])
         printf("Can't open file: %s\n", argv[1]);
         return 1;
     }
+
     // counter for images recovered
     int jpeg_count = 0;
 
-    // create a new type to store a byte of data
-
+    // create a new type to store a 512 byte of data
     int BLOCK_SIZE = 512;
     BYTE buffer[BLOCK_SIZE];
 

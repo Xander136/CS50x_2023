@@ -6,7 +6,7 @@
 
 typedef uint8_t BYTE;
 char* filename(int img_count);
-bool jpeg_start(BYTE buffer[]);
+int jpeg_start(BYTE buffer[]);
 
 int main(int argc, char *argv[])
 {
@@ -31,20 +31,18 @@ int main(int argc, char *argv[])
 
     // create a new type to store a 512 byte of data
     int BLOCK_SIZE = 512;
-    BYTE *buffer[512];
+    BYTE buffer[512];
     bool file_open = false;
 
+
     // read every byte until end of card
-    while (fread(buffer, BLOCK_SIZE, 1, file) == BLOCK_SIZE)
+    while (fread(buffer, BLOCK_SIZE, 1, file) == 1)
     {
-        if (jpeg_start(buffer) == true)
+        if (jpeg_start(buffer) == 0)
         {
-            printf("nice\n");
+            
         }
-        // if (jpeg_start(*buffer))
-        // {
-        //     printf("nice\n");
-        // }
+
     }
 
 
@@ -69,21 +67,12 @@ char* filename(int jpeg_count)
 // check if start of JPEG
 int jpeg_start(BYTE buffer[])
 {
-    if ((buffer[0] == 0xff) )
+    if ((buffer[0] == 0xff) && (buffer[1] == 0xd8) && (buffer[2] == 0xff) && (buffer[3] & 0xf0) == 0xe0)
     {
-        return false;
+        return 0;
     }
-    if (!(buffer[1] == 0xd8))
+    else
     {
-        return false;
+        return 1;
     }
-    if (!(buffer[2] == 0xff))
-    {
-        return false;
-    }
-    if (!((buffer[3] & 0xf0) == 0xe0))
-    {
-        return false;
-    }
-    return true;
 }

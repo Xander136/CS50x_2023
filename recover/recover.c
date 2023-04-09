@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     // create a new type to store a 512 byte of data
     int BLOCK_SIZE = 512;
     BYTE buffer[512];
-    bool file_open = false;
+    bool found_new = false;
 
 
     // read every byte until end of card
@@ -40,10 +40,12 @@ int main(int argc, char *argv[])
     {
         if (jpeg_start(buffer) == 0)
         {
+            file_open = true;
             char *filename = filename(jpeg_count);
             FILE *img = fopen(filename, "w");
             fwrite(buffer, 1, BLOCK_SIZE, filename);
         }
+        else if (file open)
 
     }
 

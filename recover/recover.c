@@ -50,11 +50,14 @@ int main(int argc, char *argv[])
         }
 
     }
-    if (fread == NULL)
+    if (filePointer != NULL)
     {
-        return 1;
+        fclose(filePointer);
     }
-
+    if (inputFile != NULL)
+    {
+        fclose(inputFile);
+    }
     return 0;
 }
 

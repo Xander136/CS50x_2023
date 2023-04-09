@@ -32,9 +32,16 @@ int main(int argc, char *argv[])
     BYTE buffer[BLOCK_SIZE];
     char *filePointer = NULL;
 
-    while ((fread(buffer, 1, BLOCK_SIZE, inputFile) == BLOCK_SIZE) || eof(buffer) != 0)
+    while ((fread(buffer, 1, BLOCK_SIZE, inputFile) == BLOCK_SIZE) || feof(inputFile) == 0)
     {
-
+        if (jpeg_header(buffer) == 0)
+        {
+            if (filePointer == NULL)
+            {
+                fclose(filePointer);
+            }
+            
+        }
 
     }
 

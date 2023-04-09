@@ -6,6 +6,7 @@
 
 typedef uint8_t BYTE;
 char* filename(int img_count);
+bool jpeg_start(BYTE *buffer);
 
 int main(int argc, char *argv[])
 {
@@ -35,10 +36,10 @@ int main(int argc, char *argv[])
     // read every byte until end of card
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
     {
-        // if (jpeg_start(*buffer))
-        // {
-        printf("nice\n");
-        // }
+        if (jpeg_start(*buffer))
+        {
+            printf("nice\n");
+        }
     }
 
 

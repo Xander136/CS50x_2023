@@ -50,6 +50,11 @@ int main(int argc, char *argv[])
         }
 
     }
+    if (fread == NULL)
+    {
+        return 1;
+    }
+
     return 0;
 }
 

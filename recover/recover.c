@@ -42,6 +42,7 @@ int main(int argc, char *argv[])
         {
             char *filename = filename(jpeg_count);
             FILE *img = fopen(filename, "w");
+            while (file_open == true)
             fwrite(buffer, BLOCK_SIZE, 1, filename);
         }
 

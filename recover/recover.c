@@ -35,9 +35,9 @@ int main(int argc, char *argv[])
     bool file_open = false;
 
     // read every byte until end of card
-    while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
+    while (fread(buffer, BLOCK_SIZE, 1, file) == BLOCK_SIZE)
     {
-        if (jpeg_start(buffer[]) == true)
+        if (jpeg_start(buffer) == true)
         {
             printf("nice\n");
         }

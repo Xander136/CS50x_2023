@@ -58,8 +58,8 @@ int main(int argc, char *argv[])
 char* filename(int jpeg_count)
 {
     // filename for generated image
-    char *buffer = malloc(8);
-    buffer[7] = '\0';
+    char *filename = malloc(8);
+    filename[8] = '\0';
     sprintf(buffer, "%03i.jpg", jpeg_count);
     return buffer;
 }

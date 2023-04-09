@@ -37,8 +37,7 @@ int main(int argc, char *argv[])
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
     {
         jpeg_count++;
-        char* file = filename(jpeg_count);
-        printf("file\n");
+        printf("file%i\n", jpeg_count);
 
         // if (jpeg_start(*buffer))
         // {

@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 
     // declare variables
     int counter = 0;
-    char filename[8];
+    char filename[9];
     BYTE buffer[512];
     FILE *filePointer = NULL;
 
@@ -40,7 +40,7 @@ int main(int argc, char *argv[])
             {
                 fclose(filePointer);
             }
-            sprintf(filename, "%03i\n", counter);
+            sprintf(filename, "%03i.jpg\n", counter);
             filePointer = fopen(filename, "w");
             counter++;
         }

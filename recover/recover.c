@@ -28,18 +28,18 @@ int main(int argc, char *argv[])
     // counter for images recovered
     int jpeg_count = 0;
 
-    // // create a new type to store a 512 byte of data
-    // int BLOCK_SIZE = 512;
-    // BYTE *buffer[512];
+    // create a new type to store a 512 byte of data
+    int BLOCK_SIZE = 512;
+    BYTE *buffer[512];
 
-    // // read every byte until end of card
-    // while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
-    // {
-    //     if (jpeg_start(buffer))
-    //     {
-    //         printf("nice\n");
-    //     }
-    // }
+    // read every byte until end of card
+    while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
+    {
+        if (jpeg_start(*buffer))
+        {
+            printf("nice\n");
+        }
+    }
 
 
 
@@ -61,7 +61,7 @@ char* filename(int jpeg_count)
 
 
 // check if start of JPEG
-bool jpeg_start(BYTE buffer)
+bool jpeg_start(BYTE *buffer)
 {
     if (!(buffer[0] == 0xff))
     {

@@ -41,7 +41,8 @@ int main(int argc, char *argv[])
         if (jpeg_start(buffer) == 0)
         {
             char *filename = filename(jpeg_count);
-
+            FILE *img = fopen(filename, "w");
+            fwrite(buffer, BLOCK_SIZE, 1, filename);
         }
 
     }
@@ -57,7 +58,7 @@ int main(int argc, char *argv[])
 char* filename(int jpeg_count)
 {
     // filename for generated image
-    char *filename = malloc(8);
+    char *filename[] = malloc(8);
     filename[7] = '\0';
     sprintf(filename, "%03i.jpg", jpeg_count);
     return filename;

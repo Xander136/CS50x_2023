@@ -4,7 +4,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 
-#define BLOCK_SIZE 512;
+#define BLOCK_SIZE 512
 typedef uint8_t BYTE;
 int jpeg_header(BYTE buffer[]);
 

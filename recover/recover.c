@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 char* filename(int jpeg_count)
 {
     // filename for generated image
-    char *filename = malloc(8);
+    char filename[8];
     sprintf(filename, "%03i.jpg\0", jpeg_count);
     return filename;
 }

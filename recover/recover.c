@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
     BYTE buffer[512];
     FILE *filePointer = NULL;
 
-    while ((fread(buffer, 1, BLOCK_SIZE, inputFile) == BLOCK_SIZE) && feof(inputFile) != 0)
+    while ((fread(buffer, 1, BLOCK_SIZE, inputFile) == BLOCK_SIZE) && feof(inputFile) == 0)
     {
         if (jpeg_header(buffer) == 0)
         {

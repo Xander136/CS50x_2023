@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 
     // create a new type to store a 512 byte of data
     int BLOCK_SIZE = 512;
-    BYTE buffer[BLOCK_SIZE];
+    BYTE *buffer[BLOCK_SIZE];
 
     // read every byte until end of card
     while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)

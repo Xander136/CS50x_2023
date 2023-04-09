@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 
     // Open memory card
     FILE *inputFile = fopen(argv[1], "r");
-    if (file == NULL)
+    if (inputFile == NULL)
     {
         printf("Can't open file: %s\n", argv[1]);
         return 1;

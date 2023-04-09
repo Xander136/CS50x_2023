@@ -29,7 +29,7 @@ int main(int argc, char *argv[])
     // declare variables
     int counter = 0;
     char filename[8];
-    BYTE buffer;
+    BYTE buffer[BLOCK_SIZE];
     char *filePointer = NULL;
 
     while ((fread(buffer, 1, BLOCK_SIZE, inputFile) == BLOCK_SIZE) || eof(buffer) != 0)

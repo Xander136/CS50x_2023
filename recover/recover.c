@@ -40,7 +40,8 @@ int main(int argc, char *argv[])
     {
         if (jpeg_start(buffer) == 0)
         {
-            
+            char *filename = filename(jpeg_count);
+
         }
 
     }
@@ -57,7 +58,7 @@ char* filename(int jpeg_count)
 {
     // filename for generated image
     char *filename = malloc(8);
-    filename[8] = '\0';
+    filename[7] = '\0';
     sprintf(filename, "%03i.jpg", jpeg_count);
     return filename;
 }

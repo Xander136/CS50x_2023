@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 
     // create a new type to store a 512 byte of data
     int BLOCK_SIZE = 512;
-     malloc(buffer[512]);
+    BYTE *buffer[512];
     bool file_open = false;
 
     // read every byte until end of card
@@ -60,8 +60,8 @@ char* filename(int jpeg_count)
     // filename for generated image
     char *filename = malloc(8);
     filename[8] = '\0';
-    sprintf(buffer, "%03i.jpg", jpeg_count);
-    return buffer;
+    sprintf(filename, "%03i.jpg", jpeg_count);
+    return filename;
 }
 
 

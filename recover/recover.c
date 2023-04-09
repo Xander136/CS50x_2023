@@ -46,14 +46,11 @@ int main(int argc, char *argv[])
         }
         else if (filePointer != NULL)
         {
-            fwrite(buffer, )
+            fwrite(buffer, sizeof(buffer), 1, filePointer);
         }
 
     }
-
-
-
-
+    return 0;
 }
 
 // check if start of JPEG

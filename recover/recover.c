@@ -44,6 +44,10 @@ int main(int argc, char *argv[])
             filePointer = fopen(filename, "w");
             count++;
         }
+        else if (filePointer != NULL)
+        {
+            fwrite(buffer, )
+        }
 
     }
 

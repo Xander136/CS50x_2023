@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
     int counter = 0;
     char filename[8];
     BYTE buffer[512];
-    char *filePointer = NULL;
+    FILE *filePointer = NULL;
 
     while ((fread(buffer, 1, BLOCK_SIZE, inputFile) == BLOCK_SIZE) || feof(inputFile) == 0)
     {
@@ -40,9 +40,9 @@ int main(int argc, char *argv[])
             {
                 fclose(filePointer);
             }
-            sprintf(filename, "%03i\n", counter)
+            sprintf(filename, "%03i\n", counter);
             filePointer = fopen(filename, "w");
-            count++;
+            counter++;
         }
         else if (filePointer != NULL)
         {

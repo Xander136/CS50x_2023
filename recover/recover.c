@@ -40,7 +40,9 @@ int main(int argc, char *argv[])
             {
                 fclose(filePointer);
             }
-            
+            sprintf(filename, "%03i\n", counter)
+            filePointer = fopen(filename, "w");
+            count++;
         }
 
     }

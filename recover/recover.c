@@ -61,19 +61,19 @@ bool jpeg_start(BYTE buffer)
 {
     if (!(buffer[0] == 0xff))
     {
-        return 1;
+        return false;
     }
     if (!(buffer[1] == 0xd8))
     {
-        return 1;
+        return false;
     }
     if (!(buffer[2] == 0xff))
     {
-        return 1;
+        return false;
     }
     if (!((buffer[3] & 0xf0) == 0xe0))
     {
-        return 1;
+        return false;
     }
     return true;
 }

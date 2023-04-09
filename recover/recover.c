@@ -29,14 +29,14 @@ int main(int argc, char *argv[])
     // declare variables
     int counter = 0;
     char filename[8];
-    BYTE buffer[BLOCK_SIZE];
+    BYTE buffer[512];
     char *filePointer = NULL;
 
     while ((fread(buffer, 1, BLOCK_SIZE, inputFile) == BLOCK_SIZE) || feof(inputFile) == 0)
     {
         if (jpeg_header(buffer) == 0)
         {
-            if (filePointer == NULL)
+            if (filePointer != NULL)
             {
                 fclose(filePointer);
             }

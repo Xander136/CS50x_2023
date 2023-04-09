@@ -36,14 +36,13 @@ int main(int argc, char *argv[])
 
 
     // read every byte until end of card
-    while (fread(buffer, BLOCK_SIZE, 1, file) == 1)
+    while (fread(buffer, 1, BLOCK_SIZE, file) == BLOCK_SIZE)
     {
         if (jpeg_start(buffer) == 0)
         {
             char *filename = filename(jpeg_count);
             FILE *img = fopen(filename, "w");
-            while (file_open == true)
-            fwrite(buffer, BLOCK_SIZE, 1, filename);
+            fwrite(buffer, 1, BLOCK_SIZE, filename);
         }
 
     }

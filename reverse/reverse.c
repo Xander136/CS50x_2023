@@ -40,7 +40,13 @@ int main(int argc, char *argv[])
 
     // Open output file for writing
     // TODO #5
-
+    char* outputFile = argv[2];
+    FILE *outPtr = fopen(outputFile, "w");
+    if (outPtr == NULL)
+    {
+        printf("Unable to open file: %s\n", outputFile);
+        return 1;
+    }
     // Write header to file
     // TODO #6
 

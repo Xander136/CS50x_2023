@@ -63,20 +63,18 @@ int main(int argc, char *argv[])
     // TODO #8
     // declare an array to store each block we read in
     BYTE buffer[block_size];
-
+    // go to end of file
     fseek(inputPtr, block_size, SEEK_END);
 
-    // read each block_size from the end
+    // read each audio data from the end of the file
     while (ftell(inputPtr) - block_size > sizeof(header))
     {
+        // write to outfile
         fseek(inputPtr, - 2 * block_size, SEEK_CUR);
         fread(&buffer, block_size, 1, inputPtr);
         fwrite(&buffer, block_size, 1, outPtr);
 
     }
-    // write to outfile
-    //
-
     // close input file
     if (inputPtr != NULL)
     {

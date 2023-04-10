@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
     // Read header
     // TODO #3
     WAVHEADER *header = NULL;
-    fread(header, 1, sizeof(header), inputFile);
+    fread(header, 1, 43, inputFile);
     if (header == NULL)
     {
         printf("can't read file\n");

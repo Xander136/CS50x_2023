@@ -30,11 +30,6 @@ int main(int argc, char *argv[])
     // TODO #3
     WAVHEADER header;
     fread(&header, sizeof(WAVHEADER), 1, inputPtr);
-    if (header == NULL)
-    {
-        printf("can't read file\n");
-        return 1;
-    }
 
     // Use check_format to ensure WAV format
     // TODO #4
@@ -52,9 +47,9 @@ int main(int argc, char *argv[])
     // TODO #8
 
     // close input file
-    if (inputFile != NULL)
+    if (inputPtr != NULL)
     {
-        fclose(inputFile);
+        fclose(inputPtr);
     }
 }
 

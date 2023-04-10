@@ -65,8 +65,12 @@ int main(int argc, char *argv[])
     BYTE buffer[block_size];
 
     // read each block_size from the end
-    
-    fread(&buffer; 1, block_size, inputPtr);
+    while (ftell(inputPtr) - block_size > sizeof(header))
+    {
+        fread(&buffer, block_size, 1, inputPtr);
+        fwrite(&buffer, block_size, 1, outPtr);
+
+    }
     // write to outfile
     //
 

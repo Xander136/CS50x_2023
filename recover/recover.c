@@ -6,7 +6,7 @@
 
 #define BLOCK_SIZE 512
 typedef uint8_t BYTE;
-int jpeg_header(BYTE buffer[]);
+bool jpeg_header(BYTE buffer[]);
 
 int main(int argc, char *argv[])
 {
@@ -62,14 +62,14 @@ int main(int argc, char *argv[])
 }
 
 // check if start of JPEG
-int jpeg_header(BYTE buffer[])
+bool jpeg_header(BYTE buffer[])
 {
-    if ((buffer[0] == 0xff) && (buffer[1] == 0xd8) && (buffer[2] == 0xff) && ((buffer[3] & 0xf0) == 0xe0))
+    if (buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] & 0xf0) == 0xe0)
     {
-        return 0;
+        return true;
     }
     else
     {
-        return 1;
+        return false;
     }
 }

@@ -57,7 +57,10 @@ int main(int argc, char *argv[])
 int check_format(WAVHEADER header)
 {
     // TODO #4
-    if (header.format[4];)
+    if (header.format[0] == 'W'
+    && header.format[1] == 'A'
+    && header.format[2] == 'V'
+    && header.format[3] == 'E')
     return 0;
 }
 

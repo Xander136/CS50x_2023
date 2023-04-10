@@ -63,7 +63,9 @@ int main(int argc, char *argv[])
     // TODO #8
     // declare an array to store each block we read in
     BYTE buffer[block_size];
+
     // read each block_size from the end
+    
     fread(&buffer; 1, block_size, inputPtr);
     // write to outfile
     //

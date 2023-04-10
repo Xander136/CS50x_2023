@@ -64,10 +64,11 @@ int main(int argc, char *argv[])
     // declare an array to store each block we read in
     BYTE buffer[block_size];
 
+    fseek(inputPtr, block_size, SEEK_END);
+
     // read each block_size from the end
     while (ftell(inputPtr) - block_size > sizeof(header))
     {
-        fseek(inputPtr, block_size, SEEK_END);
         fseek(inputPtr, - 2 * block_size, SEEK_CUR);
         fread(&buffer, block_size, 1, inputPtr);
         fwrite(&buffer, block_size, 1, outPtr);

@@ -19,16 +19,17 @@ int main(int argc, char *argv[])
     }
     // Open input file for reading
     // TODO #2
-    FILE *inputFile = fopen(argv[1], "r");
-    if (inputFile == NULL)
+    char* inputFile = argv[1];
+    FILE *inputPtr = fopen(inputFile, "r");
+    if (inputPtr == NULL)
     {
-        printf("Unable to open file: %s\n", argv[1]);
+        printf("Unable to open file: %s\n", inputFile);
         return 1;
     }
     // Read header
     // TODO #3
     WAVHEADER header;
-    fread(header, sizeof(WAVHEADER), 1, inputFile);
+    fread(&header, sizeof(WAVHEADER), 1, inputPtr);
     if (header == NULL)
     {
         printf("can't read file\n");

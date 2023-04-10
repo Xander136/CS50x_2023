@@ -32,28 +32,39 @@ int main(int argc, char *argv[])
     BYTE buffer[512];
     FILE *filePointer = NULL;
 
+    // read into buffer the current block until there are no more blocks to read
     while (fread(buffer, 1, BLOCK_SIZE, inputFile) == BLOCK_SIZE)
     {
-        if (jpeg_header(buffer) == 0)
+        // if current block is a jpeg header
+        if (jpeg_header(buffer))
         {
+            // check if there is currently a file open
             if (filePointer != NULL)
             {
+                // close current file
                 fclose(filePointer);
             }
+            // create filename
             sprintf(filename, "%03i.jpg", counter);
+            // open new file to write into
             filePointer = fopen(filename, "w");
+            // increase counter for images found
             counter++;
         }
-        else if (filePointer != NULL)
+
+        // if there is a file opened
+        if (filePointer != NULL)
         {
+            // write into the file
             fwrite(buffer, 1, BLOCK_SIZE, filePointer);
         }
-
     }
+    // close last file
     if (filePointer != NULL)
     {
         fclose(filePointer);
     }
+    // close the input file
     if (inputFile != NULL)
     {
         fclose(inputFile);

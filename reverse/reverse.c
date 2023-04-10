@@ -61,6 +61,7 @@ int main(int argc, char *argv[])
 
     // Write reversed audio to file
     // TODO #8
+    // read each block_size from the end
 
     // close input file
     if (inputPtr != NULL)

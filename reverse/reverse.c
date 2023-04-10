@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 
     // Open input file for reading
     // TODO #2
-    char* inputFile = argv[1];
+    char *inputFile = argv[1];
     FILE *inputPtr = fopen(inputFile, "r");
     if (inputPtr == NULL)
     {
@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 
     // Open output file for writing
     // TODO #5
-    char* outputFile = argv[2];
+    char *outputFile = argv[2];
     FILE *outPtr = fopen(outputFile, "w");
     if (outPtr == NULL)
     {
@@ -70,6 +70,7 @@ int main(int argc, char *argv[])
     while (ftell(inputPtr) - block_size > sizeof(header))
     {
         // write to outfile
+        // move back 2 block_sizes
         fseek(inputPtr, - 2 * block_size, SEEK_CUR);
         fread(&buffer, block_size, 1, inputPtr);
         fwrite(&buffer, block_size, 1, outPtr);
@@ -90,10 +91,7 @@ int main(int argc, char *argv[])
 int check_format(WAVHEADER header)
 {
     // TODO #4
-    return (header.format[0] == 'W'
-    && header.format[1] == 'A'
-    && header.format[2] == 'V'
-    && header.format[3] == 'E');
+    return (header.format[0] == 'W' && header.format[1] == 'A' && header.format[2] == 'V' && header.format[3] == 'E');
 }
 
 int get_block_size(WAVHEADER header)

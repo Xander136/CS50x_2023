@@ -67,6 +67,7 @@ int main(int argc, char *argv[])
     // read each block_size from the end
     while (ftell(inputPtr) - block_size > sizeof(header))
     {
+        fseek(inputPtr, -2, SEEK_END)
         fread(&buffer, block_size, 1, inputPtr);
         fwrite(&buffer, block_size, 1, outPtr);
 

@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
     }
     // Read header
     // TODO #3
-    WAVHEADER header;
+    WAVHEADER *header = NULL;
     fread(header, 1, sizeof(header), inputFile);
     if (header == NULL)
     {

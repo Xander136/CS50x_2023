@@ -33,9 +33,14 @@ int main(int argc, char *argv[])
 
     // Use check_format to ensure WAV format
     // TODO #4
-    if (check_format(header))
+    if (!check_format(header))
     {
-        printf("nice\n");
+        printf("Invalid file: %s\n", inputFile);
+        return 1;
+    }
+    else
+    {
+        printf("Valid file: %s\n", inputFile);
     }
 
     // Open output file for writing

@@ -62,7 +62,7 @@ int main(int argc, char *argv[])
     // Write reversed audio to file
     // TODO #8
     // declare an array to store each block we read in
-    BYTE block[block_size];
+    BYTE buffer[block_size];
     // read each block_size from the end
     //
     // write to outfile
@@ -72,6 +72,11 @@ int main(int argc, char *argv[])
     if (inputPtr != NULL)
     {
         fclose(inputPtr);
+    }
+    // close output file
+    if (outPtr != NULL)
+    {
+        fclose(outPtr);
     }
 }
 

@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
         printf("Usage: ./reverse input.wav output.wav\n");
         return 1;
     }
-    
+
     // Open input file for reading
     // TODO #2
     char* inputFile = argv[1];
@@ -50,8 +50,10 @@ int main(int argc, char *argv[])
         printf("Unable to open file: %s\n", outputFile);
         return 1;
     }
+
     // Write header to file
     // TODO #6
+    
 
     // Use get_block_size to calculate size of block
     // TODO #7

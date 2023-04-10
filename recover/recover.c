@@ -46,7 +46,7 @@ int main(int argc, char *argv[])
         }
         else if (filePointer != NULL)
         {
-            fwrite(buffer, sizeof(buffer), 1, filePointer);
+            fwrite(buffer, 1, BLOCK_SIZE, filePointer);
         }
 
     }

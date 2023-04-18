@@ -117,8 +117,10 @@ bool check(char *word)
     for (int i = 0, n = strlen(word); i < n; i++)
     {
         int index = tolower(word[i]) - 'a';
+        // if current node is not NULL
         if (cursor->children[index] != NULL)
         {
+            // point the cursor to the next node
             cursor = cursor->children[index];
         }
         if (cursor->is_word)

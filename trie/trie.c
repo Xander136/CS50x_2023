@@ -121,7 +121,7 @@ bool check(char* word)
         {
             cursor = children[index];
         }
-        
+
 
         // Go to node which we may have just been made
         cursor = cursor->children[index];

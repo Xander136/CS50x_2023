@@ -119,7 +119,7 @@ bool check(char* word)
         int index = tolower(word[i]) - 'a';
         if (cursor->children[index] == word[i])
         {
-            return false;
+            cursor = children[index];
         }
         // Make node
         node *new = malloc(sizeof(node));

@@ -121,7 +121,7 @@ bool check(char* word)
         {
             cursor = cursor->children[index];
         }
-        if (cursor->)
+        if (cursor->children[n - 1] != )
 
 
     }

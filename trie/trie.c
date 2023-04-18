@@ -117,14 +117,14 @@ bool check(char* word)
     for (int i = 0, n = strlen(word); i < n; i++)
     {
         int index = tolower(word[i]) - 'a';
-        if (cursor->children[index] == word[i])
+        if (cursor->children[index] != NULL)
         {
-            cursor = children[index];
+            cursor = cursor->children[index];
         }
 
 
         // Go to node which we may have just been made
-        cursor = cursor->children[index];
+        //cursor = cursor->children[index];
     }
 
 

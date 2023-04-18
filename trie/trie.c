@@ -121,15 +121,7 @@ bool check(char* word)
         {
             cursor = children[index];
         }
-        // Make node
-        node *new = malloc(sizeof(node));
-        new->is_word = false;
-        for (int j = 0; j < SIZE_OF_ALPHABET; j++)
-        {
-            new->children[j] = NULL;
-        }
-        cursor->children[index] = new;
-
+        
 
         // Go to node which we may have just been made
         cursor = cursor->children[index];

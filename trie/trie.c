@@ -122,7 +122,7 @@ bool check(char* word)
             cursor = cursor->children[index];
         }
         if (cursor->children[n - 1] != )
-
+        
 
     }
 

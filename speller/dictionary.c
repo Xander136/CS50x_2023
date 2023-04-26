@@ -46,7 +46,17 @@ bool load(const char *dictionary)
     {
         return false;
     }
-    printf("Nice\n");
+    while (fscanf(file, "%s", word) != EOF);
+    {
+        node *current_word = malloc(sizeof(word));
+        if (current_word == NULL)
+        {
+            return false;
+        }
+        strcpy()
+    }
+
+
     return true;
 }
 

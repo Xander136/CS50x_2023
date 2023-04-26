@@ -74,10 +74,6 @@ bool load(const char *dictionary)
         // total word counter
         word_count++;
     }
-
-    // free word
-    free(word);
-
     return true;
 }
 

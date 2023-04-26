@@ -48,7 +48,7 @@ bool load(const char *dictionary)
         return false;
     }
     // Read file
-    char *word = NULL;
+    char *word = malloc(N);
     while (fscanf(file, "%s", word) != EOF)
     {
         // create new node for new word

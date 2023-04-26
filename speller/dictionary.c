@@ -67,6 +67,9 @@ bool load(const char *dictionary)
         // insert new node to hash table
         new_node->next = table[index];
         table[index] = new_node;
+
+        // total word counter
+        word_count++;
     }
 
     // free word

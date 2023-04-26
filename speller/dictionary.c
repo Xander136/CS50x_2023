@@ -49,7 +49,6 @@ bool load(const char *dictionary)
     }
     // Read file
     char *word = NULL;
-    node *head = table[0];
     while (fscanf(file, "%s", word) != EOF);
     {
         // create new node for new word
@@ -66,7 +65,7 @@ bool load(const char *dictionary)
         unsigned int index = hash(word);
 
         // insert new node to hash table
-        
+        table[index];
 
 
 

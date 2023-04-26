@@ -48,6 +48,7 @@ bool load(const char *dictionary)
         return false;
     }
     // Read file
+    char *word = NULL;
     while (fscanf(file, "%s", word) != EOF);
     {
         node *current_word = malloc(sizeof(word));

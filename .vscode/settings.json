@@ -8,6 +8,7 @@
         "type_traits": "c",
         "algorithm": "c",
         "*.tcc": "c",
-        "streambuf": "c"
+        "streambuf": "c",
+        "dictionary.h": "c"
     }
 }

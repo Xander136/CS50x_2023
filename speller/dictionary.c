@@ -53,7 +53,8 @@ bool load(const char *dictionary)
         {
             return false;
         }
-        strcpy()
+        strcpy(current_word->word, word);
+        
     }
 
 

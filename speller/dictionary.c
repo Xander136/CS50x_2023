@@ -65,7 +65,8 @@ bool load(const char *dictionary)
         unsigned int index = hash(word);
 
         // insert new node to hash table
-        table[index];
+        node *head = table[index];
+        new
 
 
 

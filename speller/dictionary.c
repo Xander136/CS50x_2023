@@ -24,7 +24,7 @@ const unsigned int N = 26;
 node *table[N];
 
 // Total Word Counter
-unsigned int word_counter = 0;
+unsigned int word_count = 0;
 
 // Returns true if word is in dictionary, else false
 bool check(const char *word)

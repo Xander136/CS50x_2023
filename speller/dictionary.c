@@ -66,8 +66,8 @@ bool load(const char *dictionary)
 
         // insert new node to hash table
         node *head = table[index]->next;
-        new_node->next = head->word;
-        head->next = new_node->word;
+        new_node->next = head;
+        head->next = new_node;
 
 
 

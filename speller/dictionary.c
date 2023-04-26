@@ -69,6 +69,10 @@ bool load(const char *dictionary)
         new_node->next = table[index]->next;
         head->next = new_node;
     }
+
+    // free word
+    free(word);
+
     return true;
 }
 

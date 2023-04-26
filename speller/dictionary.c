@@ -51,13 +51,22 @@ bool load(const char *dictionary)
     char *word = NULL;
     while (fscanf(file, "%s", word) != EOF);
     {
-        node *current_word = malloc(sizeof(word));
-        if (current_word == NULL)
+        // create new node for new word
+        node *new_node = malloc(sizeof(word));
+        if (new_node == NULL)
         {
             return false;
         }
-        strcpy(current_word->word, word);
+
+        // copy current word into new node
+        strcpy(new_node->word, word);
+
+        // get hash of word
         unsigned int index = hash(word);
+
+        // insert new node to hash table
+        node *head = table[0];
+        
 
 
     }

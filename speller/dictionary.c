@@ -37,7 +37,14 @@ bool check(const char *word)
     node *cursor = table[hash_value];
     while (cursor->next != NULL)
     {
-        strcmp(head->word, )
+        if (strcmp(head->word, ))
+        {
+            return true;
+        }
+        else
+        {
+            cursor = cursor->next
+        }
     }
     return false;
     // set cursor to root

@@ -123,7 +123,11 @@ bool unload(void)
     for (int i = 0; i < N; i++)
     {
         cursor = table[i];
-        
+        while (cursor != NULL)
+        {
+            temp = table[i];
+
+        }
 
     }
     return false;

@@ -34,10 +34,10 @@ bool check(const char *word)
 {
     // TODO
     hash_value = hash(word);
-    node *head = table[hash_value];
+    node *cursor = table[hash_value];
     while (head->next != NULL)
     {
-        strcmp(head->word,)
+        strcmp(head->word, )
     }
     return false;
 }

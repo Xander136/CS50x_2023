@@ -77,13 +77,14 @@ bool load(const char *dictionary)
         return false;
     }
     // Read file
-    char word[N + 1];
+    char word[LENGTH + 1];
     while (fscanf(file, "%s", word) != EOF)
     {
         // create new node for new word
         node *new_node = malloc(sizeof(node));
         if (new_node == NULL)
         {
+            printf("Failed to allocate memory for word: %s\n", word);
             return false;
         }
 

@@ -23,6 +23,9 @@ const unsigned int N = 26;
 // Hash table
 node *table[N];
 
+// Hash Value
+unsigned int hash_value = 0;
+
 // Total Word Counter
 unsigned int word_count = 0;
 
@@ -30,6 +33,12 @@ unsigned int word_count = 0;
 bool check(const char *word)
 {
     // TODO
+    hash_value = hash(word);
+    node *head = table[hash_value];
+    while (head->next != NULL)
+    {
+        
+    }
     return false;
 }
 
@@ -65,11 +74,11 @@ bool load(const char *dictionary)
         strcpy(new_node->word, word);
 
         // get hash of word
-        unsigned int index = hash(word);
+        hash_value = hash(word);
 
         // insert new node to hash table
-        new_node->next = table[index];
-        table[index] = new_node;
+        new_node->next = table[hash_value];
+        table[hash_value] = new_node;
 
         // total word counter
         word_count++;

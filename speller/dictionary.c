@@ -35,9 +35,28 @@ bool check(const char *word)
     // TODO
     hash_value = hash(word);
     node *cursor = table[hash_value];
-    while (head->next != NULL)
+    while (cursor->next != NULL)
     {
         strcmp(head->word, )
+    }
+    return false;
+    // set cursor to root
+    node *cursor = root;
+
+    // iterate through every letter of word
+    for (int i = 0, n = strlen(word); i < n; i++)
+    {
+        int index = tolower(word[i]) - 'a';
+        // if current node is not NULL
+        if (cursor->children[index] != NULL)
+        {
+            // point the cursor to the next node
+            cursor = cursor->children[index];
+        }
+        if (cursor->is_word)
+        {
+            return true;
+        }
     }
     return false;
 }

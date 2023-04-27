@@ -101,6 +101,9 @@ bool load(const char *dictionary)
         // total word counter
         word_count++;
     }
+    // close file
+    fclose(file);
+
     return true;
 }
 
@@ -115,5 +118,13 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
+    node *cursor;
+    node *temp;
+    for (int i = 0; i < N; i++)
+    {
+        cursor = table[i];
+        
+
+    }
     return false;
 }

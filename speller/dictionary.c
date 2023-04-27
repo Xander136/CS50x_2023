@@ -5,6 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <strings.h>
 
 
 #include "dictionary.h"
@@ -38,7 +39,8 @@ bool check(const char *word)
 
     // point cursor to array index
     node *cursor = table[hash_value];
-    do
+
+    while (cursor != NULL)
     {
         // compare word to current node word
         if (strcasecmp(cursor->word, word))
@@ -51,7 +53,6 @@ bool check(const char *word)
             cursor = cursor->next;
         }
     }
-    while (cursor->next != NULL);
 
     // if not found
     return false;

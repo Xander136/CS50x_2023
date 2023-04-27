@@ -130,9 +130,5 @@ bool unload(void)
             free(temp);
         }
     }
-    if (table == NULL)
-    {
-        return true;
-    }
-    return false;
+    return true;
 }

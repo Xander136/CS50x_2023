@@ -73,6 +73,7 @@ bool load(const char *dictionary)
     FILE *file = fopen(dictionary, "r");
     if (file == NULL)
     {
+        printf("Failed to open file: %s\n", dictionary);
         return false;
     }
     // Read file

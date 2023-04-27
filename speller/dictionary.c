@@ -129,7 +129,10 @@ bool unload(void)
             cursor = cursor->next;
             free(temp);
         }
-
+    }
+    if (table == NULL)
+    {
+        return true;
     }
     return false;
 }

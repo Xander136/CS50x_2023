@@ -37,7 +37,7 @@ bool check(const char *word)
     node *cursor = table[hash_value];
     while (cursor->next != NULL)
     {
-        if (strcmp(head->word, ))
+        if (strcmp(head->word, word))
         {
             return true;
         }

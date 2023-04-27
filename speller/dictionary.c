@@ -33,38 +33,27 @@ unsigned int word_count = 0;
 bool check(const char *word)
 {
     // TODO
+    // get hash value
     hash_value = hash(word);
+
+    // point cursor to array index
     node *cursor = table[hash_value];
-    while (cursor->next != NULL)
+    do
     {
-        if (strcmp(head->word, word))
+        // compare word to current node word
+        if (strcmp(cursor->word, word))
         {
             return true;
         }
+        // point to the next node if not found
         else
         {
-            cursor = cursor->next
+            cursor = cursor->next;
         }
     }
-    return false;
-    // set cursor to root
-    node *cursor = root;
+    while (cursor->next != NULL);
 
-    // iterate through every letter of word
-    for (int i = 0, n = strlen(word); i < n; i++)
-    {
-        int index = tolower(word[i]) - 'a';
-        // if current node is not NULL
-        if (cursor->children[index] != NULL)
-        {
-            // point the cursor to the next node
-            cursor = cursor->children[index];
-        }
-        if (cursor->is_word)
-        {
-            return true;
-        }
-    }
+    // if not found
     return false;
 }
 

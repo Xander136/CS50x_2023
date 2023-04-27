@@ -90,7 +90,6 @@ bool load(const char *dictionary)
         node *new_node = malloc(sizeof(node));
         if (new_node == NULL)
         {
-            printf("Failed to allocate memory for word: %s\n", word);
             return false;
         }
 

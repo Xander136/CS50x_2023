@@ -41,7 +41,7 @@ bool check(const char *word)
     do
     {
         // compare word to current node word
-        if (strcmp(cursor->word, word))
+        if (strcasecmp(cursor->word, word))
         {
             return true;
         }

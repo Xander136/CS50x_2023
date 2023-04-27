@@ -43,7 +43,7 @@ bool check(const char *word)
     while (cursor != NULL)
     {
         // compare word to current node word
-        if (strcasecmp(cursor->word, word))
+        if (strcasecmp(cursor->word, word) == 0)
         {
             return true;
         }

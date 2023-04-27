@@ -40,7 +40,7 @@ bool check(const char *word)
     // point cursor to array index
     node *cursor = table[hash_value];
 
-    while (cursor != NULL)
+    while (cursor != 0)
     {
         // compare word to current node word
         if (strcasecmp(cursor->word, word) == 0)

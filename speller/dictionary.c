@@ -40,7 +40,7 @@ bool check(const char *word)
     // point cursor to array index
     node *cursor = table[hash_value];
 
-    while (cursor != 0)
+    while (cursor != NULL)
     {
         // compare word to current node word
         if (strcasecmp(cursor->word, word) == 0)
@@ -62,13 +62,7 @@ bool check(const char *word)
 unsigned int hash(const char *word)
 {
     // TODO: Improve this hash function
-    // return toupper(word[0]) - 'A';
-    unsigned int total = 0;
-    for (int i = 0, len = strlen(word); i < len; i++)
-    {
-        total += tolower(word[i]);
-    }
-    return total;
+    return toupper(word[0]) - 'A';
 }
 
 // Loads dictionary into memory, returning true if successful, else false
@@ -99,8 +93,17 @@ bool load(const char *dictionary)
         // get hash of word
         hash_value = hash(word);
 
+        // check if hash table head is NULL
+        if (table[hash_value] == NULL)
+        {
+            new_node->next = NULL;
+        }
         // insert new node to hash table
-        new_node->next = table[hash_value];
+        else
+        {
+            new_node->next = table[hash_value];
+        }
+        // point head to new node
         table[hash_value] = new_node;
 
         // total word counter
@@ -125,9 +128,11 @@ bool unload(void)
     // TODO
     node *cursor;
     node *temp;
+    // loop over hash table
     for (int i = 0; i < N; i++)
     {
         cursor = table[i];
+        // loop over the linked list
         while (cursor != NULL)
         {
             temp = cursor;

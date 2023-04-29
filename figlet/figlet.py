@@ -37,5 +37,5 @@ else:
 ## Prompts the user for a str of text.
 word = input("Words: ")
 ## Outputs that text in the desired font.
-figlet.setFont(font)
+figlet.setFont(font=font)
 print(figlet.renderText(word))

@@ -2,7 +2,7 @@ from sys import argv
 from sys import exit
 from pyfiglet import Figlet as figlet
 
-fonts = figlet.getFonts()
+fonts = figlet.getFonts
 
 
 

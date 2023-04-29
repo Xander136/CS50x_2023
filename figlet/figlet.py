@@ -8,4 +8,6 @@ from pyfiglet import Figlet
 ## Prompts the user for a str of text.
 
 ## Outputs that text in the desired font.
-figlet = Figlet()
+fonts = Figlet.getFonts(self)
+print(fonts)
+# figlet = Figlet()

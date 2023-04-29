@@ -1,6 +1,6 @@
-from pyfiglet import Figlet
+import pyfiglet
 from sys import argv
-
+'''
 fonts = []
 ## Expects zero or two command-line arguments:
 ## Zero if the user would like to output text in a random font.
@@ -14,11 +14,13 @@ elif len(argv) == 2:
         exit(1)
     ## and the second of the two should be the name of the font.
     if (argv[2] not in fonts)
+
 else:
     print("Usage: Expects zero or two command-line arguments ")
 ## Prompts the user for a str of text.
 
 ## Outputs that text in the desired font.
-fonts = Figlet.getFonts()
+'''
+fonts = pyfiglet.getFonts()
 print(fonts)
 # figlet = Figlet()

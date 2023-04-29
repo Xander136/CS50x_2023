@@ -1,9 +1,11 @@
 class Jar:
     def __init__(self, capacity=12):
         while True:
-            capacity > 0:
+            try:
+                capacity > 0:
+                self.capacity = capacity
+            except ValueError:
 
-        self.capacity = capacity
 
 
     def __str__(self):

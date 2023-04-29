@@ -6,4 +6,5 @@
 # Otherwise,
     # output $100.
 
-# str.lstrip([chars]) Return a copy of the string with leading characters removed. 
+# str.strip([chars]) str.strip([chars])
+# str.startswith(prefix[, start[, end]]) Return True if string starts with the prefix, otherwise return False

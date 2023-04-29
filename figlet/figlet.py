@@ -1,6 +1,8 @@
 from sys import argv
 from sys import exit
-from pyfiglet import Figlet as figlet
+from pyfiglet import Figlet
+
+figlet = Figlet()
 
 fonts = figlet.getFonts()
 
@@ -15,20 +17,20 @@ if len(argv) == 0:
 elif len(argv) == 2:
     ## in which case the first of the two should be -f or --font
     if (argv[1] != "-f" or argv[1] != "--font"):
-        print("Invalid usage")
+        print("Invalid usage of font")
         exit(1)
 
     ## and the second of the two should be the name of the font.
     ## check if font is valid
     if (argv[2] not in fonts):
-        print("2nd argument should be a valiid font")
+        print("2nd argument should be a valid font")
     ## set font user chose
     if (argv[2] in fonts):
         font = argv[2]
 
 ## if not zero or two command-line arguments
 else:
-    print("Invalid usage")
+    print("Invalid usage of arg")
     exit(1)
 
 ## Prompts the user for a str of text.

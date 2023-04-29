@@ -1,3 +1,4 @@
-from pyfiglet import Figlet as figlet
+from pyfiglet import Figlet
+figlet = Figlet()
 fonts = figlet.getFonts()
 print(fonts)

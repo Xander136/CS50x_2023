@@ -1,6 +1,8 @@
 from pyfiglet import Figlet
 
-figlet = Figlet("wow")
+figlet = Figlet()
+figlet.getFonts()
+
 # from sys import argv
 '''
 fonts = []

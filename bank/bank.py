@@ -5,3 +5,5 @@
     #output $20.
 # Otherwise,
     # output $100.
+
+# str.lstrip([chars]) Return a copy of the string with leading characters removed. 

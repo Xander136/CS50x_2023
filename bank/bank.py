@@ -1,5 +1,4 @@
 
-
 # prompts the user for a greeting
 greeting = input("Greeting: ")
 greeting = greeting.lower()
@@ -17,5 +16,3 @@ elif greeting.startswith("h"):
 else:
     print("$100")
 
-# str.strip([chars]) str.strip([chars])
-# str.startswith(prefix[, start[, end]]) Return True if string starts with the prefix, otherwise return False

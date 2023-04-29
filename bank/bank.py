@@ -3,6 +3,7 @@
 # prompts the user for a greeting
 greeting = input("Greeting: ")
 greeting = greeting.lower()
+greeting = greeting.strip()
 
 # If the greeting starts with “hello”,
 if greeting.startswith("hello"):

@@ -16,7 +16,7 @@ if len(argv) == 1:
 ## Two if the user would like to output text in a specific font
 elif len(argv) == 3:
     ## in which case the first of the two should be -f or --font
-    if (argv[1] != "-f" or argv[1] != "--font"):
+    if not (argv[1] == '-f' or argv[1] == '--font'):
         print("Invalid usage of font")
         exit(1)
 
@@ -24,6 +24,7 @@ elif len(argv) == 3:
     ## check if font is valid
     if (argv[2] not in fonts):
         print("2nd argument should be a valid font")
+        exit(1)
     ## set font user chose
     if (argv[2] in fonts):
         font = argv[2]

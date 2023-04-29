@@ -14,13 +14,17 @@ class Jar:
     def withdraw(self, n):
         ...
 
-    @property
-    def capacity(self):
-        ...
+    # @property
+    # def capacity(self):
+    #     ...
 
-    @property
-    def size(self):
-        ...
+    # @property
+    # def size(self):
+    #     ...
 
 def main():
-    
+    jar = Jar()
+    print(jar.capacity)
+
+
+main()

@@ -1,5 +1,7 @@
-import pyfiglet
-from sys import argv
+from pyfiglet import Figlet
+
+figlet = Figlet("wow")
+# from sys import argv
 '''
 fonts = []
 ## Expects zero or two command-line arguments:
@@ -21,6 +23,6 @@ else:
 
 ## Outputs that text in the desired font.
 '''
-fonts = pyfiglet.getFonts()
-print(fonts)
+# fonts = pyfiglet.getFonts()
+# print(fonts)
 # figlet = Figlet()

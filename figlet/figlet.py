@@ -1,6 +1,7 @@
 from sys import argv
 from sys import exit
 from pyfiglet import Figlet
+import random
 
 figlet = Figlet()
 
@@ -25,7 +26,7 @@ elif len(argv) == 3:
     if not (argv[2] in fonts):
         print("2nd argument should be a valid font")
         exit(1)
-        
+
     ## set font user chose
     font = argv[2]
 

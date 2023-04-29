@@ -1,4 +1,5 @@
 from sys import argv
+from sys import exit
 from pyfiglet import Figlet as figlet
 
 fonts = figlet.getFonts()
@@ -9,21 +10,29 @@ fonts = figlet.getFonts()
 ## Zero if the user would like to output text in a random font.
 if len(argv) == 0:
     font = random.choice(fonts)
+
 ## Two if the user would like to output text in a specific font
 elif len(argv) == 2:
     ## in which case the first of the two should be -f or --font
     if (argv[1] != "-f" or argv[1] != "--font"):
-        print("2nd argument should be -f or --font")
+        print("Invalid usage")
         exit(1)
+
     ## and the second of the two should be the name of the font.
+    ## check if font is valid
     if (argv[2] not in fonts):
         print("2nd argument should be a valiid font")
+    ## set font user chose
+    if (argv[2] in fonts):
+        font = argv[2]
 
-
+## if not zero or two command-line arguments
 else:
-    print("Usage: Expects zero or two command-line arguments ")
-## Prompts the user for a str of text.
+    print("Invalid usage")
+    exit(1)
 
+## Prompts the user for a str of text.
+word = input("Words: ")
 ## Outputs that text in the desired font.
 figlet.setFont(font="slant")
-print(figlet.renderText("wow"))
+print(figlet.renderText(word))

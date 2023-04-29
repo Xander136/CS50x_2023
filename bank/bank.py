@@ -1,9 +1,11 @@
 import sys
 
 # prompts the user for a greeting
-print("Input a")
-if argv < 2:
+greeting = input("Greeting: ")
+greeting = greeting.islower()
+
 # If the greeting starts with “hello”,
+if greeting.startswith(prefix[hello, start[, end]])
     # output $0.
 # If the greeting starts with an “h” (but not “hello”),
     #output $20.

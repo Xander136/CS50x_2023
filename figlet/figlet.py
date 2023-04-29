@@ -8,7 +8,7 @@ fonts = figlet.getFonts()
 ## Expects zero or two command-line arguments:
 ## Zero if the user would like to output text in a random font.
 if len(argv) == 0:
-    font = random()
+    font = random.choice(fonts)
 ## Two if the user would like to output text in a specific font
 elif len(argv) == 2:
     ## in which case the first of the two should be -f or --font

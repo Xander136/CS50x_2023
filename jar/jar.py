@@ -10,6 +10,8 @@ class Jar:
         return "🍪" * self.number
 
     def deposit(self, n):
+        if self.capacity + n > self.capacity:
+            raise ValueError
         self.number += n
 
     def withdraw(self, n):
@@ -25,7 +27,7 @@ class Jar:
 
 def main():
     jar = Jar(100)
-    Jar.deposit(3)
+    # Jar.deposit(3)
     print(jar)
 
 

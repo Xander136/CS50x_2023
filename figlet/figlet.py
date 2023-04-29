@@ -10,11 +10,11 @@ fonts = figlet.getFonts()
 
 ## Expects zero or two command-line arguments:
 ## Zero if the user would like to output text in a random font.
-if len(argv) == 0:
+if len(argv) == 1:
     font = random.choice(fonts)
 
 ## Two if the user would like to output text in a specific font
-elif len(argv) == 2:
+elif len(argv) == 3:
     ## in which case the first of the two should be -f or --font
     if (argv[1] != "-f" or argv[1] != "--font"):
         print("Invalid usage of font")

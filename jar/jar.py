@@ -3,34 +3,35 @@ class Jar:
         if capacity < 0:
             raise ValueError
         self.capacity = capacity
-        self.number = 0
+        self.size = 0
 
 
     def __str__(self):
-        return "🍪" * self.number
+        return "🍪" * self.size
 
     def deposit(self, n):
-        if self.number + n > self.capacity or n > self.capacity:
+        if self.size + n > self.capacity or n > self.capacity:
             raise ValueError
-        self.number += n
+        self.size += n
 
     def withdraw(self, n):
-        if self.number - n < 0:
+        if self.size - n < 0:
             raise ValueError
-        self.number -= n
+        self.size -= n
 
-    # @property
-    # def capacity(self):
-    #     ...
+    @property
+    def capacity(self):
+        return self.capacity
 
-    # @property
-    # def size(self):
-    #     ...
+    @property
+    def size(self):
+        return self.size
 
 def main():
-    jar = Jar(100)
-    # Jar.deposit(3)
-    print(jar)
+    jar = Jar(5)
+    jar.deposit(3)
+    # jar.withdraw(4)
+    print(jar.size)
 
 
 main()

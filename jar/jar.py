@@ -1,7 +1,8 @@
 class Jar:
     def __init__(self, capacity=12):
-        if not capacity > 0:
-            
+        while True:
+            capacity > 0:
+
         self.capacity = capacity
 
 

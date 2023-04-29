@@ -2,7 +2,7 @@
 
 # prompts the user for a greeting
 greeting = input("Greeting: ")
-greeting = greeting.islower()
+greeting = greeting.lower()
 
 # If the greeting starts with “hello”,
 if (greeting.startswith("hello") == True):

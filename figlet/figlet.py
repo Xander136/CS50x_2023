@@ -1,4 +1,4 @@
-from pyfiglet import Figlet\
+from pyfiglet import Figlet
 from sys import argv
 
 ## Expects zero or two command-line arguments:

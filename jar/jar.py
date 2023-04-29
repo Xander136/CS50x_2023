@@ -2,7 +2,7 @@ class Jar:
     def __init__(self, capacity=12):
         while True:
             try:
-                capacity > 0:
+                capacity.isdigit
                 self.capacity = capacity
             except ValueError:
 

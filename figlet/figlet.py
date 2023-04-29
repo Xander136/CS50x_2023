@@ -2,7 +2,7 @@ from sys import argv
 from sys import exit
 from pyfiglet import Figlet as figlet
 
-fonts = figlet.getFonts
+fonts = figlet.getFonts()
 
 
 
@@ -34,5 +34,5 @@ else:
 ## Prompts the user for a str of text.
 word = input("Words: ")
 ## Outputs that text in the desired font.
-figlet.setFont(font="slant")
+figlet.setFont(font)
 print(figlet.renderText(word))

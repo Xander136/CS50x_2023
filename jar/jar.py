@@ -23,7 +23,7 @@ class Jar:
     #     ...
 
 def main():
-    jar = Jar()
+    jar = Jar(11111)
     print(jar.capacity)
 
 

@@ -2,7 +2,7 @@ from pyfiglet import Figlet
 
 figlet = Figlet()
 figlet.getFonts()
-figlet.setFont(font=f)
+figlet.setFont(font="slant")
 print(figlet.renderText(s))
 # from sys import argv
 '''

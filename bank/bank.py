@@ -1,4 +1,8 @@
+import sys
+
 # prompts the user for a greeting
+print("Input a")
+if argv < 2:
 # If the greeting starts with “hello”,
     # output $0.
 # If the greeting starts with an “h” (but not “hello”),

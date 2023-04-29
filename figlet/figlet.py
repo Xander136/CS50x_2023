@@ -22,12 +22,12 @@ elif len(argv) == 3:
 
     ## and the second of the two should be the name of the font.
     ## check if font is valid
-    if (argv[2] not in fonts):
+    if not (argv[2] in fonts):
         print("2nd argument should be a valid font")
         exit(1)
+        
     ## set font user chose
-    if (argv[2] in fonts):
-        font = argv[2]
+    font = argv[2]
 
 ## if not zero or two command-line arguments
 else:

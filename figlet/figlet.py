@@ -1,3 +1,5 @@
+from pyfiglet import Figlet
+
 ## Expects zero or two command-line arguments:
     ## Zero if the user would like to output text in a random font.
     ## Two if the user would like to output text in a specific font
@@ -6,3 +8,4 @@
 ## Prompts the user for a str of text.
 
 ## Outputs that text in the desired font.
+figlet = Figlet()

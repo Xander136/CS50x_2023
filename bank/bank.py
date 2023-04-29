@@ -5,11 +5,11 @@ greeting = input("Greeting: ")
 greeting = greeting.islower()
 
 # If the greeting starts with “hello”,
-if greeting.startswith("hello") == True:
+if (greeting.startswith("hello") == True):
     print("$0")
 
 # If the greeting starts with an “h” (but not “hello”),
-elif greeting.startswith("h") == True:
+elif (greeting.startswith("h") == True):
     print("$20")
 
 # Otherwise,

@@ -28,10 +28,11 @@ class Jar:
         return self._size
 
 def main():
-    jar = Jar(5)
-    jar.deposit(3)
-    # jar.withdraw(4)
-    print(jar.capacity)
+    jar = Jar()
+    print(str(jar.capacity))
+    jar.deposit(2)
+    jar.withdraw(15)
+    print(str(jar))
 
 
 main()

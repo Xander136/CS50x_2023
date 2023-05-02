@@ -52,6 +52,13 @@ def calculate(reader):
         new_cases = cases - previous_cases[state]
         previous_cases[state] = case
 
+        if state not in new_cases:
+            new_state[state] = []
+        if len(new_state[state]) >= 14:
+            new_state[state].pop(0)
+        new_cases[state].append(new_cases)
+
+
     # store 14 values in the list
     # for each state
     # for state in states:

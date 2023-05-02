@@ -50,7 +50,7 @@ def calculate(reader):
         new_cases[state] = []
     else:
         new_cases = cases - previous_cases[state]
-        previous_cases[state] = case
+        previous_cases[state] = cases
 
         if state not in new_cases:
             new_state[state] = []
@@ -75,7 +75,8 @@ def calculate(reader):
 
         #  keeps track of each day’s new cases as it’s calculated.
 
-    # return the new_cases dictionary
+    # return new_cases dictionary
+    return new_cases
 
 # TODO: Calculate and print out seven day average for given state
 def comparative_averages(new_cases, states):

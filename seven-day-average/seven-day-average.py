@@ -49,7 +49,7 @@ def calculate(reader):
         previous_cases[state] = cases
         new_cases[state] = []
     else:
-        new_cases = cases - previous_cases[state]
+        new_cases[state] = cases - previous_cases[state]
         previous_cases[state] = cases
 
         if state not in new_cases:

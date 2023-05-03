@@ -45,19 +45,6 @@ def calculate(reader):
         date = row["date"]
         cases = int(row["cases"])
 
-        if state not in previous_cases:
-            previous_cases[state] = cases
-            new_cases[state] = []
-        else:
-            new_cases[state] = cases - previous_cases[state]
-            previous_cases[state] = cases
-
-            if state not in new_cases:
-                new_cases[state] = []
-            if len(new_cases[state]) >= 14:
-                new_cases[state].pop(0)
-            new_cases[state].append(new_cases)
-
 
     # store 14 values in the list
     # for each state

@@ -57,8 +57,9 @@ def calculate(reader):
             new_case = cases - previous_cases[state]
             previous_cases[state] = cases
 
-            if len(new_cases[state]) >= 14:
-                new_cases
+            if len(new_cases[state]) > 13:
+                new_cases[state].pop(0)
+            new_cases[state].append(cases)
 
     # return new_cases dictionary
     return new_cases

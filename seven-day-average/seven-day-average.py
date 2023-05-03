@@ -43,7 +43,6 @@ def calculate(reader):
     # go through every row
     for row in reader:
         state = row["state"]
-        date = row["date"]
         cases = int(row["cases"])
 
         # if there is no data of the state
@@ -58,7 +57,8 @@ def calculate(reader):
             new_case = cases - previous_cases[state]
             previous_cases[state] = cases
 
-            if state
+            if len(new_cases[state]) >= 14:
+                new_cases
 
     # return new_cases dictionary
     return new_cases

@@ -40,27 +40,23 @@ def calculate(reader):
     # create a second dictionary previous_cases
     previous_cases = dict()
 
+    # go through every row
     for row in reader:
         state = row["state"]
         date = row["date"]
         cases = int(row["cases"])
 
-
-    # store 14 values in the list
-    # for each state
-    # for state in states:
-    #     new_cases = {}
-    #     new_cases['State'] = state
-
-
-        # when the length of the list is great they 14
-            # removing the first element from the list.
-        # by appending each new day’s data to end of the list
-
-        # Keys in this dict will be the names of states
-        # values for each of those keys will be the most recent 14 days of new cases
-
-        #  keeps track of each day’s new cases as it’s calculated.
+        # if there is no data of the state
+        if state not in previous_cases:
+            # create new entry in the dictionary
+            previous_cases[state] = cases
+            # create empty entry in new cases
+            new_cases[state] = []
+        # if there is already an entry for the state
+        else:
+            # get number of new cases
+            new_cases[state] = cases - previous_cases[state]
+            
 
     # return new_cases dictionary
     return new_cases

@@ -55,8 +55,10 @@ def calculate(reader):
         # if there is already an entry for the state
         else:
             # get number of new cases
-            new_cases[state] = cases - previous_cases[state]
-            
+            new_case = cases - previous_cases[state]
+            previous_cases[state] = cases
+
+            if state
 
     # return new_cases dictionary
     return new_cases

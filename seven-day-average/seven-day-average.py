@@ -58,20 +58,26 @@ def calculate(reader):
         update previous
 
         '''
+        # create new entry if state does not yet exist in previous_cases
         if state not in previous_cases:
             previous_cases[state] = 0
 
+        # create new entry if state does not yet exist in new_cases
         if state not in new_cases:
             new_cases[state] = [total_cases]
 
+        # if state already has a record
         elif state in new_cases:
+            # get todays cases
             todays_cases = total_cases - previous_cases[state]
 
+            # pop 1st element if > 14
             if len(new_cases[state]) > 13:
                 new_cases[state].pop()
 
             new_cases[state].append(todays_cases)
 
+        # update previous cases
         previous_cases[state] = total_cases
 
 

@@ -86,9 +86,9 @@ def calculate(reader):
 
 # TODO: Calculate and print out seven day average for given state
 def comparative_averages(new_cases, states):
-    ...
+
     # calculate this week’s 7-day average
-    for cases in new_cases[state][7:]
+    for cases in new_cases[state][7:]:
         # summing up the last 7 elements in the list for a selected state
         this_week_total += cases
 
@@ -97,18 +97,17 @@ def comparative_averages(new_cases, states):
 
 
     # create a 7-day average for the previous week
-    for cases in new_cases[state][:7]
+    for cases in new_cases[state][:7]:
     # summing up the last 7 elements in the list for a selected state
         last_week_total += cases
     # then dividing this by 7
     last_week_ave = last_week_total / 7.0
 
     # calculate the percent increase or decrease,
+    # difference of the two 7-day averages, and dividing by last week’s average
     try:
-    numerator / denominator
+        difference = (this_week_ave - last_week_ave) / last_week_ave
     except ZeroDivisionError:
-    ...
-    # taking the difference of the two 7-day averages
-    # and dividing by last week’s average
+        raise ZeroDivisionError
 
 main()

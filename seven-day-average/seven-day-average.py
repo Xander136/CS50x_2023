@@ -88,7 +88,8 @@ def calculate(reader):
 def comparative_averages(new_cases, states):
     ...
     # calculate this week’s 7-day average
-    new_cases[state][7:]
+    enumerate new_cases[state][7:]
+        this_week_total += 
     # summing up the last 7 elements in the list for a selected state
     # then dividing this by 7
 

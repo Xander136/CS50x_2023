@@ -54,7 +54,7 @@ def calculate(reader):
         # if there is already an entry for the state
         else:
             # get number of new cases
-            new_case = cases - previous_cases[state]
+            new_cases = cases - previous_cases[state]
             previous_cases[state] = cases
 
             if len(new_cases[state]) > 13:

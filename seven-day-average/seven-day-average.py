@@ -45,23 +45,6 @@ def calculate(reader):
         state = row["state"]
         cases = int(row["cases"])
 
-        # if there is no data of the state
-        if state not in previous_cases:
-            # create new entry in the dictionary
-            previous_cases[state] = cases
-            # create empty entry in new cases
-            new_cases[state] = []
-        # if there is already an entry for the state
-        else:
-            # get number of new cases
-            new_cases = cases - previous_cases[state]
-            previous_cases[state] = cases
-
-            if len(new_cases[state]) > 13:
-                new_cases[state].pop(0)
-            new_cases[state].append(cases)
-
-    # return new_cases dictionary
     return new_cases
 
 # TODO: Calculate and print out seven day average for given state

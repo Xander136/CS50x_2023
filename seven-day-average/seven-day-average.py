@@ -75,9 +75,10 @@ def calculate(reader):
             if len(new_cases[state]) > 13:
                 new_cases[state].pop()
 
+            # insert todays cases
             new_cases[state].append(todays_cases)
 
-        # update previous cases
+        # update previous cases to current total cases
         previous_cases[state] = total_cases
 
 

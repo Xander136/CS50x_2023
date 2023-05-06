@@ -50,10 +50,12 @@ def calculate(reader):
         if state not in new_cases:
             new_cases[state] = [cases]
 
+        previous_cases[state] = 
+
         if len(new_cases[state]) > 13:
             new_cases[state].pop
 
-        elif 
+
 
 
 

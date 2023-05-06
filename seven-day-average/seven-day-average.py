@@ -35,6 +35,8 @@ def main():
 # TODO: Create a dictionary to store 14 most recent days of new cases by state
 def calculate(reader):
     # create a dictionary new_cases
+    # key = states
+    # value = list of 14 
     new_cases = dict()
 
     # create a second dictionary previous_cases

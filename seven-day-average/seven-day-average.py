@@ -36,7 +36,7 @@ def main():
 def calculate(reader):
     # create a dictionary new_cases
     # key = states
-    # value = list of 14 
+    # value = list of 14
     new_cases = dict()
 
     # create a second dictionary previous_cases
@@ -46,6 +46,13 @@ def calculate(reader):
     for row in reader:
         state = row["state"]
         cases = int(row["cases"])
+
+        if state not in new_cases:
+            new_cases[state] = [cases]
+
+        if state in new_cases:
+            cases
+
 
     return new_cases
 

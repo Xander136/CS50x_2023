@@ -71,7 +71,7 @@ def calculate(reader):
 
         new_cases[state].append(todays_cases)
 
-        previous_cases[state] -= total_cases
+        previous_cases[state] = total_cases
 
 
     return new_cases

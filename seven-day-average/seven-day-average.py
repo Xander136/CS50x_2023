@@ -45,16 +45,18 @@ def calculate(reader):
     # go through every row
     for row in reader:
         state = row["state"]
-        cases = int(row["cases"])
+        total_cases = int(row["cases"])
+        todays_cases 
 
         if state not in new_cases:
-            new_cases[state] = [cases]
+            new_cases[state] = [total_cases]
 
-        previous_cases[state] += cases
+        previous_cases[state] -= total_cases
 
         if len(new_cases[state]) > 13:
             new_cases[state].pop
 
+        new_cases[state].append(cases)
 
 
 

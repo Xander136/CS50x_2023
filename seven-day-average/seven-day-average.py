@@ -52,7 +52,9 @@ def calculate(reader):
 
         if len(new_cases[state]) > 13:
             new_cases[state].pop
-            
+
+        elif 
+
 
 
     return new_cases

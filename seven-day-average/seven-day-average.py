@@ -46,11 +46,10 @@ def calculate(reader):
     for row in reader:
         state = row["state"]
         total_cases = int(row["cases"])
-        todays_cases = total_cases - previous_cases[state]
 
         '''
         get todays cases
-            previous - today
+            total - previous
         append today to list
             if > 14
                 pop 1st
@@ -65,8 +64,10 @@ def calculate(reader):
         if state not in previous_cases:
             previous_cases[state] = 0
 
+        todays_cases = total_cases - previous_cases[state]
+
         if len(new_cases[state]) > 13:
-            new_cases[state].pop
+            new_cases[state].pop()
 
         new_cases[state].append(todays_cases)
 

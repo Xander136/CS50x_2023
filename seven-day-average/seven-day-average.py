@@ -94,7 +94,7 @@ def comparative_averages(new_cases, states):
         this_week_total = sum(new_cases[state][7:])
 
         # then dividing this by 7
-        this_week_ave = this_week_total / 7.0
+        this_week_ave = this_week_total / 7
 
 
         # create a 7-day average for the previous week
@@ -102,12 +102,12 @@ def comparative_averages(new_cases, states):
         last_week_total = sum(new_cases[state][:7])
 
         # then dividing this by 7
-        last_week_ave = last_week_total / 7.0
+        last_week_ave = last_week_total / 7
 
         # calculate the percent increase or decrease,
         # difference of the two 7-day averages, and dividing by last week’s average
         try:
-            difference = ((this_week_ave - last_week_ave) / last_week_ave) * 100
+            int difference = ((this_week_ave - last_week_ave) / last_week_ave) * 100
             print(f"{state} had a 7-day average of {this_week_ave:.2f} and a decrease of {difference}%.")
 
         except ZeroDivisionError:

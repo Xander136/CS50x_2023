@@ -108,10 +108,10 @@ def comparative_averages(new_cases, states):
 
         # calculate the percent increase or decrease,
         # difference of the two 7-day averages, and dividing by last week’s average
-    try:
-        return (this_week_ave - last_week_ave) / last_week_ave
-
-    except ZeroDivisionError:
-        raise ZeroDivisionError
+        try:
+            difference = (this_week_ave - last_week_ave) / last_week_ave
+            print(f"{state} had a 7-day average of {this_week_ave} and a decrease of {difference}%.")
+        except ZeroDivisionError:
+            raise ZeroDivisionError
 
 main()

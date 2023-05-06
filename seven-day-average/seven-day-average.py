@@ -65,13 +65,12 @@ def calculate(reader):
         if state not in previous_cases:
             previous_cases[state] = 0
 
-        previous_cases[state] -= total_cases
-
         if len(new_cases[state]) > 13:
             new_cases[state].pop
 
         new_cases[state].append(todays_cases)
 
+        previous_cases[state] -= total_cases
 
 
 

@@ -73,7 +73,6 @@ def calculate(reader):
         previous_cases[state] -= total_cases
 
 
-
     return new_cases
 
 # TODO: Calculate and print out seven day average for given state

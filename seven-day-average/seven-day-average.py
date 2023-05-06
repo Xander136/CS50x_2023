@@ -90,6 +90,7 @@ def comparative_averages(new_cases, states):
     # calculate this week’s 7-day average for each given state
     for state in states:
         # summing up the last 7 elements in the list for a selected state
+        print(new_cases[state])
         this_week_total = sum(new_cases[state][7:])
 
         # then dividing this by 7

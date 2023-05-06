@@ -48,6 +48,22 @@ def calculate(reader):
         total_cases = int(row["cases"])
         todays_cases = total_cases - previous_cases[state]
 
+        '''
+        get todays cases
+            previous - today
+        append today to list
+            if > 14
+                pop 1st
+                append
+
+        update previous
+
+        '''
+
+
+
+
+
         if state not in new_cases:
             new_cases[state] = [total_cases]
 

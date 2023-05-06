@@ -58,18 +58,19 @@ def calculate(reader):
         update previous
 
         '''
-        if state not in new_cases:
-            new_cases[state] = [total_cases]
-
         if state not in previous_cases:
             previous_cases[state] = 0
 
-        todays_cases = total_cases - previous_cases[state]
+        if state not in new_cases:
+            new_cases[state] = [total_cases]
 
-        if len(new_cases[state]) > 13:
-            new_cases[state].pop()
+        elif state in new_cases:
+            todays_cases = total_cases - previous_cases[state]
 
-        new_cases[state].append(todays_cases)
+            if len(new_cases[state]) > 13:
+                new_cases[state].pop()
+
+            new_cases[state].append(todays_cases)
 
         previous_cases[state] = total_cases
 

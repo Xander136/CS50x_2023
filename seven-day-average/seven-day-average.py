@@ -59,13 +59,11 @@ def calculate(reader):
         update previous
 
         '''
-
-
-
-
-
         if state not in new_cases:
             new_cases[state] = [total_cases]
+
+        if state not in previous_cases:
+            previous_cases[state] = 0
 
         previous_cases[state] -= total_cases
 

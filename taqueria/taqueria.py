@@ -23,7 +23,8 @@ while True:
         print(f"Total: ${total:.2f}", end="\n")
 
     except EOFError:
-        exit
+        print("\n")
+        exit(1)
 #     prompting them for items
 #         one per line,
 

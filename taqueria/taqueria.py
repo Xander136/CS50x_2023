@@ -17,20 +17,19 @@ total = 0
 # until the user inputs control-d
 while True:
     try:
-        item = input("Item: ").title()
-        if item in menu:
-            total = total + menu[item]
-        print(f"Total: ${total:.2f}", end="\n")
-
-    except EOFError:
-        print("\n")
-        exit(1)
 #     prompting them for items
 #         one per line,
-
-#         After each inputted item,
-#         display the total cost of all items inputted thus far
-#         prefixed with a dollar sign ($) and formatted to two decimal places
 #         Treat the user’s input case insensitively.
+        item = input("Item: ").title()
+#         After each inputted item,
 #         Ignore any input that isn’t an item
+        if item in menu:
+#         display the total cost of all items inputted thus far
+            total = total + menu[item]
+#         prefixed with a dollar sign ($) and formatted to two decimal places
+        print(f"Total: ${total:.2f}", end="\n")
 
+# end if ctrl-D is detected
+    except EOFError:
+        break
+print("\n")

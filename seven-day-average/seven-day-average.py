@@ -94,7 +94,7 @@ def comparative_averages(new_cases, states):
         this_week_total = sum(new_cases[state][7:])
 
         # then dividing this by 7
-        this_week_ave = this_week_total / 7
+        this_week_ave = round(this_week_total / 7)
 
 
         # create a 7-day average for the previous week
@@ -102,7 +102,7 @@ def comparative_averages(new_cases, states):
         last_week_total = sum(new_cases[state][:7])
 
         # then dividing this by 7
-        last_week_ave = last_week_total / 7
+        last_week_ave = round(last_week_total / 7)
 
         # calculate the percent increase or decrease,
         # difference of the two 7-day averages, and dividing by last week’s average

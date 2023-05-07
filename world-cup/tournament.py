@@ -23,7 +23,7 @@ def main():
             team_name = row["team"]
             team_rating = int(row["rating"])
 
-            teams.append(team)
+            teams.append(team_name)
 
 
 

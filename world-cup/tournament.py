@@ -5,7 +5,7 @@ import sys
 import random
 
 # Number of simluations to run
-N = 1000000
+N = 1000
 
 
 def main():
@@ -23,7 +23,6 @@ def main():
             team = dict(team = row["team"], rating = int(row["rating"]))
 
             teams.append(team)
-
 
 
     counts = {}
@@ -68,8 +67,6 @@ def simulate_tournament(teams):
 
     while len(teams) != 1:
         teams = simulate_round(teams)
-
-
 
     return teams[0]["team"]
 

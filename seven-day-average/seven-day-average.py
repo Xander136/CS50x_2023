@@ -115,7 +115,7 @@ def comparative_averages(new_cases, states):
 
             percent = difference
 
-            print(f"{state} had a 7-day average of {this_week_ave:.2f} and a {change} of {percent:.0f}%.")
+            print(f"{state} had a 7-day average of {this_week_ave:.0f} and a {change} of {percent:.0f}%.")
 
         except ZeroDivisionError:
             raise ZeroDivisionError

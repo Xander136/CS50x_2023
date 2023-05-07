@@ -17,12 +17,13 @@ total = 0
 # until the user inputs control-d
 while True:
     try:
-        item = input("Item: ")
+        item = input("Item: ").title()
         if item in menu:
             total = total + menu[item]
-        print(f"Total: ", end="\n")
+        print(f"Total: ${total:.2f}", end="\n")
+
     except EOFError:
-        return False
+        False
 #     prompting them for items
 #         one per line,
 

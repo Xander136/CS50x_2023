@@ -3,7 +3,7 @@
 
 
 while True:
-    no_blocks = int("Height: ")
+    no_blocks = int(input("Height: "))
     if no_blocks in range(1, 10):
         break
 
@@ -12,8 +12,8 @@ space = 0
 n = 1
 
 while True:
-    space = no_block - n
-    block = no_block - space
+    space = no_blocks - n
+    block = no_blocks - space
 
     while space > 0:
         print(" ", end="")
@@ -26,5 +26,5 @@ while True:
     print("")
     n += 1
 
-    if no_block >= n:
+    if no_blocks >= n:
         break

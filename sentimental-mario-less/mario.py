@@ -3,9 +3,12 @@
 from cs50 import get_int
 
 while True:
-    no_blocks = get_int("Height: ")
-    if no_blocks in range(1, 9):
-        break
+    try:
+        no_blocks = int(input("Height: "))
+        if no_blocks in range(1, 9):
+            break
+    except ValueError:
+        print("The input was not a valid integer.")
 
 block = 0
 space = 0

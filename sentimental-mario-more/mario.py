@@ -20,7 +20,7 @@ while True:
     space = no_blocks - n
     gap = "  "
     block = no_blocks - space
-    left_block, right_block = block
+    left_block, right_block = block, block
 
     # print space
     while space > 0:
@@ -44,5 +44,5 @@ while True:
     n += 1
 
     # loop until all blocks are printed
-    if no_blocks < n:
+    if right_blocks < n:
         break

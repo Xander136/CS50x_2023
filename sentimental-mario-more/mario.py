@@ -1,18 +1,20 @@
 # create mario more with python
 
 # get value of 1 - 8; reject any other input
-while True:
-    try:
-        no_blocks = int(input("Height: "))
-        if no_blocks in range(1, 9):
-            break
-    except ValueError:
-        print("The input was not a valid integer.")
+def main():
 
-# set variables
-block = 0
-space = 0
-n = 1
+    while True:
+        try:
+            no_blocks = int(input("Height: "))
+            if no_blocks in range(1, 9):
+                break
+        except ValueError:
+            print("The input was not a valid integer.")
+
+    # set variables
+    block = 0
+    space = 0
+    n = 1
 
 while True:
     # get number of blocks and spaces to print

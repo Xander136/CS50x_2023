@@ -4,7 +4,7 @@
 
 while True:
     no_blocks = int(input("Height: "))
-    if no_blocks in range(1, 10):
+    if no_blocks in range(1, 9):
         break
 
 block = 0

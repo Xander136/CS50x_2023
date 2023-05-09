@@ -26,5 +26,5 @@ while True:
     print("")
     n += 1
 
-    if no_blocks >= n:
+    if no_blocks == n:
         break

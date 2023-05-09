@@ -18,7 +18,6 @@ n = 1
 while True:
     # get number of blocks and spaces to print
     space = no_blocks - n
-    gap = "  "
     block = no_blocks - space
     left_block, right_block = block, block
 
@@ -30,14 +29,14 @@ while True:
     # print blocks
     while left_block > 0:
         print("#", end="")
-        block -= 1
+        left_block -= 1
 
-    print(gap)
+    print("  ", end="")
 
     # print blocks
     while right_block > 0:
         print("#", end="")
-        block -= 1
+        right_block -= 1
 
     # print new line
     print("")

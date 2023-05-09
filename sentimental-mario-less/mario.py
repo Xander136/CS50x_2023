@@ -1,9 +1,9 @@
 # create mario less with python
 
-import cs50
+
 
 while True:
-    no_blocks = get_int("Height: ")
+    no_blocks = int("Height: ")
     if no_blocks in range(1, 10):
         break
 
@@ -17,4 +17,14 @@ while True:
 
     while space > 0:
         print(" ", end="")
-        space
+        space -= 1
+
+    while block > 0:
+        print("#", end="")
+        block -= 1
+
+    print("")
+    n += 1
+
+    if no_block >= n:
+        break

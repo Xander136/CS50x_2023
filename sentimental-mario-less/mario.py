@@ -1,6 +1,6 @@
 # create mario less with python
 
-import cs50
+from cs50 import get_int
 
 while True:
     no_blocks = get_int("Height: ")

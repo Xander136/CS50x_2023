@@ -44,5 +44,5 @@ while True:
     n += 1
 
     # loop until all blocks are printed
-    if right_blocks < n:
+    if right_block < n:
         break

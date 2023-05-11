@@ -20,15 +20,15 @@ while coins_owed > 0:
     if coins_owed >= 25:
         coins_owed -= 25
         coins += 1
-    # get number of quarters
+    # get number of dimes
     elif coins_owed >= 10:
         coins_owed -= 10
         coins += 1
-
+    # get number of nickel
     elif coins_owed >= 5:
         coins_owed -= 5
         coins += 1
-
+    # get number of pennies
     else:
         coins_owed -= 1
         coins += 1

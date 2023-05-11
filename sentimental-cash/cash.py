@@ -28,10 +28,20 @@ def main():
     printf("%i\n", coins)
 
 def get_cents():
-def calculate_quarters(self, cents):
-def 
-def
-def
+    # Prompt user for number of cents
+    while True:
+        try:
+            cents = float(input("Change owed: "))
+            if cents > 0:
+                break
+
+        except ValueError:
+            print("Input how much change is owed.")
+
+def calculate_quarters(cents):
+def calculate_dimes(cents):
+def calculate_nickels(cents):
+def calculate_pennies(cents):
 
 
 

@@ -41,7 +41,7 @@ def get_cents():
 def calculate_quarters(cents):
     # divide cents by 25 to get number of quarters
     quarters = 0
-    quarters = (cents / 25.0)
+    quarters = (cents/25.0)
     return quarters
 
 def calculate_dimes(cents):

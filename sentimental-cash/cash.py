@@ -32,13 +32,9 @@ def main():
 def get_cents():
     # Prompt user for number of cents
     while True:
-        try:
-            cents = get_float(input("Change owed: "))
-            if cents > 0:
-                break
-
-        except ValueError:
-            print("Input how much change is owed.")
+        cents = get_float(input("Change owed: "))
+        if cents > 0:
+            break
 
 def calculate_quarters(cents):
     # divide cents by 25 to get number of quarters

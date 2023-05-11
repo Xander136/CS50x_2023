@@ -25,7 +25,7 @@ def main():
     coins = quarters + dimes + nickels + pennies
 
     # Print total number of coins to give the customer
-    printf("%i\n", coins)
+    print("%i\n", coins)
 
 def get_cents():
     # Prompt user for number of cents
@@ -41,23 +41,23 @@ def get_cents():
 def calculate_quarters(cents):
     # divide cents by 25 to get number of quarters
     quarters = 0
-    quarters = (cents / 25)
+    quarters = (cents / 25.0)
     return quarters
 
 def calculate_dimes(cents):
     # divide cents by 10 to get number of quarters
-    dimes = (cents / 10)
+    dimes = (cents / 10.0)
     return dimes
 
 def calculate_nickels(cents):
     # divide cents by 5 to get number of nickels
-    nickels = (cents / 5)
+    nickels = (cents / 5.0)
     return nickels
 
 
 def calculate_pennies(cents):
     pennies = 0
-    pennies = (cents / 1)
+    pennies = (cents / 1.0)
     return pennies
 
 main()

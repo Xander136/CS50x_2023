@@ -26,8 +26,8 @@ def main():
 
     # Print total number of coins to give the customer
     print(f"{coins}")
+    
 
-    exit(0)
 
 def get_cents():
     # Prompt user for number of cents

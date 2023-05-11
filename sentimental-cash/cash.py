@@ -39,13 +39,25 @@ def get_cents():
             print("Input how much change is owed.")
 
 def calculate_quarters(cents):
+    # divide cents by 25 to get number of quarters
+    quarters = 0
+    quarters = (cents / 25)
+    return quarters
+
 def calculate_dimes(cents):
+    # divide cents by 10 to get number of quarters
+    dimes = (cents / 10)
+    return dimes
+
 def calculate_nickels(cents):
+    # divide cents by 5 to get number of nickels
+    nickels = (cents / 5)
+    return nickels
+
+
 def calculate_pennies(cents):
-
-
-
-
-
+    pennies = 0
+    pennies = (cents / 1)
+    return pennies
 
 main()

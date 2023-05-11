@@ -18,9 +18,9 @@ coins = 0
 while coins_owed > 0:
     # get number of quarters
     if coins_owed >= 25:
-      coins_owed -= 25
-      coins += 1
-
+        coins_owed -= 25
+        coins += 1
+    # get number of quarters
     elif coins_owed >= 10:
         coins_owed -= 10
         coins += 1

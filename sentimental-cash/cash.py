@@ -26,7 +26,7 @@ def main():
 
     # Print total number of coins to give the customer
     print(f"{coins}")
-    
+
 
 
 def get_cents():
@@ -42,7 +42,6 @@ def get_cents():
 
 def calculate_quarters(cents):
     # divide cents by 25 to get number of quarters
-    quarters = 0
     quarters = (cents/25.0)
     return quarters
 
@@ -58,7 +57,6 @@ def calculate_nickels(cents):
 
 
 def calculate_pennies(cents):
-    pennies = 0
     pennies = (cents / 1.0)
     return pennies
 

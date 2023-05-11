@@ -1,7 +1,7 @@
 # create cash in python
+from cs50 import get_float
 
 def main():
-    cents = get_cents()
     # Ask how many cents the customer is owed
     cents = get_cents()
 
@@ -25,13 +25,15 @@ def main():
     coins = quarters + dimes + nickels + pennies
 
     # Print total number of coins to give the customer
-    print("%i\n", coins)
+    print(f"{coins}")
+
+    exit(0)
 
 def get_cents():
     # Prompt user for number of cents
     while True:
         try:
-            cents = float(input("Change owed: "))
+            cents = get_float(input("Change owed: "))
             if cents > 0:
                 break
 

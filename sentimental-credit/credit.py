@@ -14,7 +14,11 @@ card_no = get_int("Number: ")
 
 # check sum
 def check_sum(card_no):
-    
+    # Multiply every other digit by 2,
+    for i in range(card_no, )
+    # starting with the number’s second-to-last digit,
+    # and then add those products’ digits together.
+
 
     # if valid
     return true

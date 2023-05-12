@@ -5,7 +5,7 @@ from cs50 import get_string
 
  # prompts the user for a credit card number
 
-card_no = get_int("Number: ")
+card_no = get_string("Number: ")
 
 # check card numbers
 # American Express uses 15-digit numbers, start with 34 or 37
@@ -15,7 +15,7 @@ card_no = get_int("Number: ")
 # check sum
 def check_sum(card_no):
     # Multiply every other digit by 2,
-    for digit in range(card_no, )\
+    for digit in card_no[:-1]
         total += sum(digit * 2)
     # starting with the number’s second-to-last digit,
     # and then add those products’ digits together.

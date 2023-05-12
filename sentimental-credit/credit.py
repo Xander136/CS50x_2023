@@ -7,6 +7,14 @@ from cs50 import get_string
 
 card_no = get_int("Number: ")
 
+# check card numbers
 # American Express uses 15-digit numbers, start with 34 or 37
 # MasterCard uses 16-digit numbers, start with 51, 52, 53, 54, or 55
 # Visa uses 13- and 16-digit, start with 4
+
+# check sum
+def check_sum(card_no):
+    
+
+    # if valid
+    return true

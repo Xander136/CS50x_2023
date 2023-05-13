@@ -2,53 +2,67 @@
 
 from cs50 import get_string, get_int
 
-main():
+def main():
     # get string of text
     text = get_string("Text: ")
-    # print("%s\n", text)
 
     # count letters
     letters = count_letters(text)
     # print number of letters
-    print("%i letters", letters)
+    print(f"{letters} letters")
 
     # count words
     words = count_words(text) + 1
     # print number of words
-    print("%i words", words)
+    print(f"{words} words")
 
     # count sentences
     sentences = count_sentence(text)
     # print number of sentences
-    print("%i sentences", sentences)
+    print(f"{sentences} sentences")
 
     # Compute Coleman-Liau index
-    l = (100 * ((float) letters / words))
-    s = (100 * ((float) sentences / words))
+    l = 100 * (float(letters / words))
+    s = 100 * (float(sentences / words))
     index = round(0.0588 * l - 0.296 * s - 15.8)
 
-    if (index < 1)
-    {
+    if (index < 1):
         print("Before Grade 1")
-    }
-    else if (index > 15)
-    {
+
+    elif (index > 15):
         print("Grade 16+")
-    }
-    else //Grade 1 to 15
-    {
-        print("Grade %i", (int) index)
-    }
+
+    else: # Grade 1 to 15
+        print(f"Grade {int(index)}")
+
+# Function for counting letters from user input
+def def count_letters(text):
+    letters = 0
+    # Loop over the string
+    for i in len(text):
+        if text[i].isalpha
+            letters += 1
+
+    return letters
 
 
-count_letters(text):
+# Function for counting words from user input
+def count_words(text):
+    words = 0
+    # Loop over the string
+    for i in len(text)
+        if text[i] == ' ':
+            words += 1
+
+    return words
 
 
-count_words(text):
-
-
-count_sentence(text):
-
+# Function for counting sentences from user input
+def count_sentence(text):
+    sentences = 0
+    # Loop over the string
+    for in in len(text):
+        
 
  if __name__ == '__main__':
     main()

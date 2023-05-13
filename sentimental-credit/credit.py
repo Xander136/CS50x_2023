@@ -18,7 +18,7 @@ def check_sum(card_no):
     total = 0
     card_no = list(card_no)
     card_no.reverse()
-    for number in card_no[::2]:
+    for number in card_no[1::2]:
         number = int(number)
         product.append(number * 2)
 

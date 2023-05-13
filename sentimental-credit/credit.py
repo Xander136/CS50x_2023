@@ -13,12 +13,27 @@ from cs50 import get_string
 # check sum
 def check_sum(card_no):
     # Multiply every other digit by 2,
+    product = []
+    sum = 0
+    total = 0
     card_no = list(card_no)
     card_no.reverse()
-    
+    for number in card_no[::2]:
+        product.append(number * 2)
+
+    for number in product:
+        total += number
 
 
-    # if valid
-    #return true
+    for number in card_no[1::2]:
+        sum += number
+
+    sum += total
+
+    if sum % 10 == 0:
+        return True
+    else:
+        return False
+
 card_no = get_string("Number: ")
 check_sum(card_no)

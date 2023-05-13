@@ -12,19 +12,13 @@ def main():
 
     # TODO: Read database file into a variable
     with open(sys.argv[1], mode='r') as csv_file:
-        csv_reader = csv.DictReader(csv_file)
-        line_count = 0
-        column_name = []
-        dict = {}
-        for row in csv_reader:
-            if line_count == 0:
-                for column in row:
-                    column_name.append(column)
+        database = csv.DictReader(csv_file)
 
-                    
+    print(database)
+
     # TODO: Read DNA sequence file into a variable
-    sequence = list(with open(sys.argv[2], mode='r'))
-    print(sequence)
+    # sequence = list(with open(sys.argv[2], mode='r'))
+    # print(sequence)
 
     # TODO: Find longest match of each STR in DNA sequence
 

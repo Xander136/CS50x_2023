@@ -22,6 +22,7 @@ def check_sum(card_no):
         number = int(number)
         product.append(number * 2)
 
+    for product
     for number in product:
         total += number
 

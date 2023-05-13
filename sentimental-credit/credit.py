@@ -22,7 +22,7 @@ def check_sum(card_no):
         number = int(number)
         product.append(number * 2)
 
-    product = ''.join(product)
+    product = ''.join(product[])
     for number in product:
         total += number
 

@@ -1,6 +1,7 @@
 # create readability in python
 
-from cs50 import get_string, get_int
+from cs50 import get_string
+
 
 def main():
     # get string of text
@@ -32,8 +33,10 @@ def main():
     elif (index > 15):
         print("Grade 16+")
 
-    else: # Grade 1 to 15
+    else:
+        # Grade 1 to 15
         print(f"Grade {int(index)}")
+
 
 # Function for counting letters from user input
 def count_letters(text):

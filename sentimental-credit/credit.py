@@ -13,11 +13,9 @@ from cs50 import get_string
 # check sum
 def check_sum(card_no):
     # Multiply every other digit by 2,
-    for digit in range(card_no[::-2]:
-        print(digit)
-        # total += sum(digit * 2)
-    # starting with the number’s second-to-last digit,
-    # and then add those products’ digits together.
+    card_no = list(card_no)
+    card_no.reverse()
+    
 
 
     # if valid

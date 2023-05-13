@@ -26,7 +26,7 @@ def check_sum(card_no):
         total += number
 
 
-    for number in card_no[1::2]:
+    for number in card_no[0::2]:
         number = int(number)
         sum += number
 

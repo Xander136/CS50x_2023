@@ -36,11 +36,11 @@ def main():
         print(f"Grade {int(index)}")
 
 # Function for counting letters from user input
-def def count_letters(text):
+def count_letters(text):
     letters = 0
     # Loop over the string
     for i in len(text):
-        if text[i].isalpha
+        if text[i].isalpha:
             letters += 1
 
     return letters
@@ -50,7 +50,7 @@ def def count_letters(text):
 def count_words(text):
     words = 0
     # Loop over the string
-    for i in len(text)
+    for i in len(text):
         if text[i] == ' ':
             words += 1
 
@@ -61,8 +61,12 @@ def count_words(text):
 def count_sentence(text):
     sentences = 0
     # Loop over the string
-    for in in len(text):
-        
+    for i in len(text):
+        if ((text[i]) == '!' or (text[i]) == '.' or (text[i]) == '?'):
+            sentences += 1
 
- if __name__ == '__main__':
+    return sentences
+
+
+if __name__ == '__main__':
     main()

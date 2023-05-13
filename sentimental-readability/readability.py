@@ -39,8 +39,8 @@ def main():
 def count_letters(text):
     letters = 0
     # Loop over the string
-    for i in len(text):
-        if text[i].isalpha:
+    for char in text:
+        if char.isalpha():
             letters += 1
 
     return letters
@@ -50,8 +50,8 @@ def count_letters(text):
 def count_words(text):
     words = 0
     # Loop over the string
-    for i in len(text):
-        if text[i] == ' ':
+    for char in text:
+        if char == ' ':
             words += 1
 
     return words
@@ -61,8 +61,8 @@ def count_words(text):
 def count_sentence(text):
     sentences = 0
     # Loop over the string
-    for i in len(text):
-        if ((text[i]) == '!' or (text[i]) == '.' or (text[i]) == '?'):
+    for char in text:
+        if (char == '!' or char == '.' or char == '?'):
             sentences += 1
 
     return sentences

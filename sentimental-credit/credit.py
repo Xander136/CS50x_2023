@@ -19,7 +19,7 @@ def check_sum(card_no):
     card_no = list(card_no)
     card_no.reverse()
     for number in card_no[::2]:
-        int(number)
+        number = int(number)
         product.append(number * 2)
 
     for number in product:
@@ -27,6 +27,7 @@ def check_sum(card_no):
 
 
     for number in card_no[1::2]:
+        number = int(number)
         sum += number
 
     sum += total
@@ -37,4 +38,8 @@ def check_sum(card_no):
         return False
 
 card_no = get_string("Number: ")
-check_sum(card_no)
+if check_sum(card_no):
+    print("okay")
+else:
+    print("not okay")
+

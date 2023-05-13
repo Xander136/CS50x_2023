@@ -6,7 +6,8 @@ def main():
 
     # TODO: Check for command-line usage
     try:
-        filename = 
+        filename =
+    except 
     # TODO: Read database file into a variable
 
     # TODO: Read DNA sequence file into a variable

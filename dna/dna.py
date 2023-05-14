@@ -35,6 +35,7 @@ def main():
     # TODO: Check database for matching profiles
     str_to_match = len(str)
     matched_str = 0
+    match_found = False
     for person in range(len(data)):
         for pattern in str:
             if int(data[person][pattern]) == sequence_dict[pattern]:

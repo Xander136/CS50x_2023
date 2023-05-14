@@ -37,10 +37,16 @@ def main():
 
 
     # TODO: Check database for matching profiles
-    for 
+    for person in data:
+        for pattern in str:
+            if not data[person][pattern] == sequence_dict[pattern]:
+                continue
+            else:
+                
 
 
-    return
+
+    return data[row]
 
 
 def longest_match(sequence, subsequence):

@@ -33,19 +33,31 @@ def main():
         sequence_dict[pattern] = longest_match(dna, pattern)
 
     # TODO: Check database for matching profiles
+    # number of str patterns needed for a match
     str_to_match = len(str)
+
+    # change to True if match is found
     match_found = False
+
+    # Loop over people in data dictionary
     for person in range(len(data)):
+        # number of matched str for the current person
         matched_str = 0
+        # Loop over str patterns from csv file header
         for pattern in str:
+            # if an str matches
             if int(data[person][pattern]) == sequence_dict[pattern]:
+                # increment matched str count
                 matched_str += 1
 
+        # if needed matches are satisfied
         if matched_str == str_to_match:
+            # print persons name
             print(data[person]["name"])
             match_found = True
             break
 
+    # if no matches found
     if not match_found:
         print("No match")
 

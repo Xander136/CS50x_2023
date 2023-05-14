@@ -42,7 +42,7 @@ def main():
             if not data[person][pattern] == sequence_dict[pattern]:
                 continue
             else:
-                
+
 
 
 

@@ -23,7 +23,8 @@ def main():
         # print(dna)
 
     # TODO: Find longest match of each STR in DNA sequence
-    for 
+    for keys in data:
+        
     # TODO: Check database for matching profiles
 
     return

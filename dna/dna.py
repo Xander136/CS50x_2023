@@ -41,13 +41,13 @@ def main():
     matched_str = 0
     for person in data:
         for pattern in str:
-            if data[person][pattern] == sequence_dict[pattern]:
+            if data[pattern][pattern] == sequence_dict[pattern]:
                 matched_str += 1
 
         if matched_str == str_to_match:
             print(data[person][name])
 
-   print("No match")
+    print("No match")
 
 
 def longest_match(sequence, subsequence):

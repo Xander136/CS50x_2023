@@ -41,7 +41,7 @@ def main():
     matched_str = 0
     for person in range(len(data)):
         for pattern in str:
-            if data[person][pattern] == sequence_dict[pattern]:
+            if int(data[person][pattern]) == sequence_dict[pattern]:
                 matched_str += 1
 
         if matched_str == str_to_match:

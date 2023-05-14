@@ -37,8 +37,8 @@ def main():
     matched_str = 0
     match_found = False
     for person in range(len(data)):
-        for pattern in str:
-            if int(data[person][pattern]) == sequence_dict[pattern]:
+        for pattern in range(len(str)):
+            if int(data[person][str[pattern]]) == sequence_dict[str[pattern]]:
                 matched_str += 1
 
         if matched_str == str_to_match:

@@ -22,11 +22,23 @@ def main():
         dna = file.read()
         # print(dna)
 
+
     # TODO: Find longest match of each STR in DNA sequence
+    # str patterns list
     str = list(data[0].keys())
     str.pop(0)
-    print(str)
+
+    # dictiory for file sequences
+    sequence_dict = {}
+
+    # loop over patterns
+    for pattern in str:
+        sequence_dict[pattern] = longest_match(dna, pattern)
+
+
     # TODO: Check database for matching profiles
+    for 
+
 
     return
 

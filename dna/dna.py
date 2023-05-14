@@ -46,6 +46,7 @@ def main():
 
         if matched_str == str_to_match:
             print(data[person][name])
+            break
 
     print("No match")
 

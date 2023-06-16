@@ -24,5 +24,6 @@ SELECT AVG(danceability) FROM songs;
 
 Hypothesize about why the way you’ve calculated this aura might not be very representative of the listener. What better ways of calculating this aura would you propose?
 
-
+this might not be very representative of the listener because it doest not take into account the times the listener just randomly plays their music.
+We can improve this by also taking into account the time where the listener actively listens to a song or the times where he skips or forward the songs.
 

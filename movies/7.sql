@@ -2,6 +2,4 @@
 -- Your query should output a table with two columns, one for the title of each movie and one for the rating of each movie.
 -- Movies that do not have ratings should not be included in the result.
 
-SELECT title, ratings FROM movies WHERE year='2010'
-UNION ALL
-SELECT rating FROM ratings ORDER BY rating DESC LIMIT 5;
+SELECT title.movies, ratings.rating FROM movies WHERE id IN (SELECT id FROM movies WHERE year='2010') ORDER BY ratings.rating DESC LIMIT 5;

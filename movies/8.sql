@@ -3,5 +3,5 @@
 -- You may assume that there is only one movie in the database with the title Toy Story.
 
 SELECT people.name FROM people WHERE people.id IN
-(SELECT person_id FROM stars
-WHERE movie_id = (SELECT id FROM movies WHERE title = 'Toy Story'))
+(SELECT stars.person_id FROM stars
+WHERE stars.movie_id = (SELECT movies.id FROM movies WHERE movies.title = 'Toy Story'));

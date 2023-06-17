@@ -3,4 +3,4 @@
 -- Movies that do not have ratings should not be included in the result.
 
 
-SELECT title, rating FROM movies, ratings WHERE movies.year = '2010' AND rating NOT NULL ORDER BY rating DESC;
+SELECT rating FROM ratings WHERE id = (SELECT id FROM movies WHERE year = '2010');

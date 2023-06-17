@@ -3,3 +3,9 @@
 -- You may assume that there is only one person in the database with the name Johnny Depp.
 -- You may assume that there is only one person in the database with the name Helena Bonham Carter.
 
+SELECT m.title FROM movies m
+JOIN stars s ON s.movie_id = m.id
+JOIN people p ON p.id = s.person_id
+JOIN ratings r ON r.movie_id = m.id
+WHERE p.name = 'Johnny Depp' AND 'Helena Bonham Carter'
+;

@@ -3,4 +3,4 @@
 -- Movies that do not have ratings should not be included in the result.
 
 
-SELECT movies.title, ratings.rating FROM movies, ratings WHERE movies.id, rating.movie_id IN (SELECT id FROM movies WHERE year = '2010') ORDER BY rating DESC;
+SELECT movies.title, ratings.rating FROM movies, ratings WHERE movie_id IN (SELECT id FROM movies WHERE year = '2010') ORDER BY rating DESC;

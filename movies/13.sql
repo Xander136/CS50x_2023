@@ -8,8 +8,7 @@ JOIN stars s ON s.person_id = p.id
 JOIN movies m ON m.id = s.movie_id
 WHERE m.id IN (
     SELECT m.id FROM movies m
-    WHERE p.id = (
-        SELECT p.id FROM p
-        WHERE p.name = 'Kevin Bacon' AND p.year = 1958
-    )
-)
+    JOIN stars s ON s.movie_id = m.id
+    JOIN people p ON p.id = s.person_id
+    WHERE p.name = 'Kevin Bacon' AND p.birth = 1958
+)   AND p.name != 'Kevin Bacon';

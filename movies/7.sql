@@ -2,4 +2,4 @@
 -- Your query should output a table with two columns, one for the title of each movie and one for the rating of each movie.
 -- Movies that do not have ratings should not be included in the result.
 
-SELECT title FROM movies WHERE year='2010' AND ;
+SELECT movies.title, ratings.rating FROM movies, ratings WHERE movies.year='2010' ORDER BY ratings.rating DESC;

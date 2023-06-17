@@ -3,3 +3,7 @@
 -- There may be multiple people named Kevin Bacon in the database. Be sure to only select the Kevin Bacon born in 1958.
 -- Kevin Bacon himself should not be included in the resulting list.
 
+SELECT m. FROM movies m
+JOIN stars s ON s.movie_id = m.id
+JOIN people p ON p.id = s.person_id
+WHERE p.name IN ('Johnny Depp', 'Helena Bonham Carter')

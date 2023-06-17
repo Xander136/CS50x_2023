@@ -3,3 +3,8 @@
 -- Movies that do not have ratings should not be included in the result.
 
 SELECT title.movies, ratings.rating FROM movies WHERE id IN (SELECT movies.id FROM movies WHERE year='2010') ORDER BY ratings.rating DESC LIMIT 5;
+
+
+SELECT title.movies, ratings.rating
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;

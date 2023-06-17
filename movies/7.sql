@@ -3,3 +3,5 @@
 -- Movies that do not have ratings should not be included in the result.
 
 SELECT title, rating FROM movies, ratings WHERE movies.year = '2010' ORDER BY ratings.rating DESC LIMIT 5;
+
+SELECT title, rating FROM movies, ratings WHERE movies.year = '2010' AND rating NOT NULL LIMIT 5;

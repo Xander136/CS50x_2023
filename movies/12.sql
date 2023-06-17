@@ -3,12 +3,12 @@
 -- You may assume that there is only one person in the database with the name Johnny Depp.
 -- You may assume that there is only one person in the database with the name Helena Bonham Carter.
 
-(SELECT m.title FROM movies m
+SELECT m.title FROM movies m
 JOIN stars s ON s.movie_id = m.id
 JOIN people p ON p.id = s.person_id
-WHERE p.name = 'Johnny Depp')
-INNER JOIN
-(SELECT m.title FROM movies m
+WHERE p.name = 'Johnny Depp' AS j
+
+SELECT m.title FROM movies m
 JOIN stars s ON s.movie_id = m.id
 JOIN people p ON p.id = s.person_id
 WHERE p.name = 'Helena Bonham Carter starred');

@@ -3,19 +3,11 @@
 -- You may assume that there is only one person in the database with the name Chadwick Boseman.
 
 SELECT m.title FROM movies m
-WHERE m.id IN
-(SELECT s.movie_id FROM stars s
-WHERE s.person_id =
-(SELECT p.id FROM people p
-WHERE p.name = 'Chadwick Boseman'))
-ORDER BY (SELECT r.rating FROM ratings r WHERE r.movie_id IN
-
-
-)
-LIMIT 5;
-
-SELECT m.title FROM movies m
 JOIN stars s ON s.movie_id = m.id
 JOIN people p ON p.id = s.person_id
-JOIN 
+JOIN ratings r ON r.movie_id = m.id
+WHERE p.name = 'Chadwick Boseman'
+ORDER BY r.rating
+DESC
+LIMIT 5;
 

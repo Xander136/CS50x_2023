@@ -8,4 +8,9 @@ WHERE m.id IN
 WHERE s.person_id =
 (SELECT p.id FROM people p
 WHERE p.name = 'Chadwick Boseman'))
+ORDER BY (SELECT r.rating FROM ratings r WHERE r.movie_id IN
+(SELECT s.movie_id FROM stars s
+WHERE s.person_id =
+(SELECT p.id FROM people p
+WHERE p.name = 'Chadwick Boseman')))
 LIMIT 5;

@@ -14,5 +14,6 @@ ORDER BY (SELECT r.rating FROM ratings r WHERE r.movie_id IN
 )
 LIMIT 5;
 
-SELECT
+SELECT m.title FROM movies m
+
 

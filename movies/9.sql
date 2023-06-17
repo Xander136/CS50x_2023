@@ -5,5 +5,8 @@
 -- If a person appeared in more than one movie in 2004, they should only appear in your results once.
 
 SELECT people.name FROM people
-WHERE peole.id IN
-(SELECT )
+WHERE people.id IN
+(SELECT stars.person_id FROM stars WHERE stars.movie_id IN
+(SELECT movies.id FROM movies WHERE movies.year = 2004))
+ORDER BY people.birth;
+

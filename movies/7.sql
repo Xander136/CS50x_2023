@@ -3,9 +3,7 @@
 -- Movies that do not have ratings should not be included in the result.
 
 
-SELECT movies.title, ratings.rating FROM movies, ratings WHERE id AND movie_id IN (SELECT id FROM movies WHERE year = '2010') ORDER BY rating DESC;
-
 SELECT m.title, r.rating FROM movies m
 JOIN ratings r ON m.id = r.movie_id
 WHERE m. year = 2010
-ORDER BY r.rating DESC, m.title ASC LIMIT 10;
+ORDER BY r.rating DESC, m.title ASC;

@@ -6,6 +6,6 @@
 SELECT m.title FROM movies m
 JOIN stars s ON s.movie_id = m.id
 JOIN people p ON p.id = s.person_id
-WHERE p.name IN ('Johnny Depp', 'Helena Bonham Carter starred')
+WHERE p.name IN ('Johnny Depp', 'Helena Bonham Carter')
 GROUP BY m.title
 HAVING COUNT (DISTINCT p.name) = 2;

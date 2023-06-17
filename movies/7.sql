@@ -5,6 +5,6 @@
 SELECT title.movies, ratings.rating FROM movies WHERE id IN (SELECT movies.id FROM movies WHERE year='2010') ORDER BY ratings.rating DESC LIMIT 5;
 
 
-SELECT title.movies, ratings.rating
-FROM Orders
-INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID;
+SELECT movies.title, ratings.rating
+FROM movies, ratings
+INNER JOIN title ON movies.id = Customers.CustomerID;

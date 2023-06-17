@@ -6,4 +6,10 @@
 SELECT p.name FROM people p
 JOIN stars s ON s.person_id = p.id
 JOIN movies m ON m.id = s.movie_id
-WHERE s.person_id = s.
+WHERE m.id IN (
+    SELECT m.id FROM movies m
+    WHERE p.id = (
+        SELECT p.id FROM p
+        WHERE p.name = 'Kevin Bacon' AND p.year = 1958
+    )
+)

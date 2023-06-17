@@ -3,4 +3,5 @@
 -- You may assume that there is only one person in the database with the name Chadwick Boseman.
 
 SELECT m.title FROM movies m
-WHERE 
+WHERE m.id IN
+(SELECT s.movie_id WHERE)

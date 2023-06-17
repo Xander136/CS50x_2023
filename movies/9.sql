@@ -5,4 +5,5 @@
 -- If a person appeared in more than one movie in 2004, they should only appear in your results once.
 
 SELECT people.name FROM people
-WHERE 
+WHERE peole.id IN
+(SELECT )

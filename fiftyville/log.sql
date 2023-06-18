@@ -72,7 +72,7 @@ SELECT DISTINCT p.name
         ON p.license_plate = bsl.license_plate
     -- match phone number of registered phone number to phone number of people who called , 60 secs on the day of theft
     JOIN phone_calls AS pc
-        ON p.phone_number = pc.receiver
+        ON p.phone_number = pc.caller
     -- match passport number to flight
     JOIN passengers AS psn
         ON p.passport_number = psn.passport_number

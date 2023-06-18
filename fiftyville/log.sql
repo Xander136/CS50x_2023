@@ -123,7 +123,7 @@ SELECT DISTINCT p.name
 
 -- accomplice is the phone number bruce called
 
-SELECT p.name
+SELECT DISTINCT p.name
   FROM people AS p
   JOIN phone_calls AS pc
     ON pc.receiver = p.phone_number

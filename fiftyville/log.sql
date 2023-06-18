@@ -135,4 +135,8 @@ SELECT p.name
           FROM people AS p
          WHERE p.name = 'Bruce'
       )
+      AND pc.year = 2021
+      AND pc.month = 7
+      AND pc.day = 28
+      AND pc.duration < 60
  );

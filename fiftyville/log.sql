@@ -125,4 +125,13 @@ SELECT DISTINCT p.name
 
 SELECT p.name
   FROM people AS p
- WHERE 
+  JOIN phone_calls AS pc
+    ON pc.receiver = p.phone_number
+ WHERE p.number = (
+    SELECT pc.receiver
+      FROM phone_calls AS pc
+      WHERE pc.caller = (
+        SELECT p.number
+          FROM 
+      )
+ )

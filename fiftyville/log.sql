@@ -125,4 +125,4 @@ SELECT DISTINCT p.name
 
 SELECT p.name
   FROM people AS p
-WHERE
+ WHERE 

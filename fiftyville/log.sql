@@ -130,13 +130,13 @@ SELECT p.name
  WHERE p.phone_number = (
     SELECT pc.receiver
       FROM phone_calls AS pc
-      WHERE pc.caller = (
+     WHERE pc.caller = (
         SELECT p.phone_number
           FROM people AS p
          WHERE p.name = 'Bruce'
       )
-      AND pc.year = 2021
-      AND pc.month = 7
-      AND pc.day = 28
-      AND pc.duration < 60
+       AND pc.year = 2021
+       AND pc.month = 7
+       AND pc.day = 28
+       AND pc.duration < 60
  );

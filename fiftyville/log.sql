@@ -129,6 +129,6 @@ SELECT p.name
     ON p.name = pc.caller
  WHERE pc.caller = (
     SELECT p.phone_number
-      FROM p
+      FROM people AS p
      WHERE p.name = 'Bruce'
- )
+ );

@@ -127,11 +127,12 @@ SELECT p.name
   FROM people AS p
   JOIN phone_calls AS pc
     ON pc.receiver = p.phone_number
- WHERE p.number = (
+ WHERE p.phone_number = (
     SELECT pc.receiver
       FROM phone_calls AS pc
       WHERE pc.caller = (
-        SELECT p.number
-          FROM 
+        SELECT p.phone_number
+          FROM people AS p
+         WHERE p.name = 'Bruce'
       )
- )
+ );

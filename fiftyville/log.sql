@@ -1,7 +1,6 @@
 -- Keep a log of any SQL queries you execute as you solve the mystery.
 
 -- Search for the description of the incident from reports
-SELECT * FROM crime_scene_reports WHERE description LIKE '%duck%';
 SELECT * FROM crime_scene_reports
     WHERE year = 2021
     AND month = 7

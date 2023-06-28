@@ -27,13 +27,13 @@
   background-color: white;
 }
 
-.card-body {
+/* .card-body { */
   display: flex;
   height: 100%
   flex-direction: column;
 }
 
-.card-text {
+/* .card-text { */
   flex-grow: 1;
 }
 

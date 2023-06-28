@@ -1,7 +1,29 @@
-.navbar-brand {
-  color: #aaaaaa
+.navbar {
+  background-color: lightpink;
 }
 
-.nav-item {
-  color: black;
+.navbar-brand {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weigth: bold;
 }
+
+.nav-link {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weigth: bold;
+}
+
+#searchButton {
+  color: white;
+  font-weight: bold;
+}
+
+.navbar-toggler {
+  transition-delay: 0.8s;
+}
+
+.navbar-toggler:hover {
+  background-color: white;
+}
+

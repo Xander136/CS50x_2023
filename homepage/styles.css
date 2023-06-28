@@ -27,3 +27,7 @@
   background-color: white;
 }
 
+.card-text {
+  flex-grow: 1;
+}
+

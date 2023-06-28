@@ -1,5 +1,5 @@
 // TODO: Add code to check answers to questions
-// document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
 
     // When correct answer is clicked, change color to green
     let correct = document.querySelector('.correct');
@@ -27,4 +27,4 @@
             document.querySelector('#feedback2').innerHTML = 'Incorrect';
         }
     });
-// });
+});

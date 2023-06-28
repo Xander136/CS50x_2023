@@ -27,6 +27,11 @@
   background-color: white;
 }
 
+.card-body {
+  display: flex;
+  
+}
+
 .card-text {
   flex-grow: 1;
 }

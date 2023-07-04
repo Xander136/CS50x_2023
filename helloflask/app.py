@@ -1,8 +1,17 @@
-from flask import Flask
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
+colors = ["red", "blue"]
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def index():
-    return "<h1>Hello, World!</h1>"
+    if request.method == "GET":
+        return render_template("index.html")
+    else:
+        print("Form submitted!")
+        color = request.form.get("color")
+        if color in colors:
+            return render_template("color.html", color=color)
+        else:
+            return render_template("error.html")

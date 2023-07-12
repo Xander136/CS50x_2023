@@ -51,8 +51,11 @@ def buy():
     elif request.method == "POST":
         # check if symbol is empty
         symbol = request.form.get("symbol")
+        shares = request.form.get("shares")
         if symbol == "":
             return apology("Missing Symbol")
+        if shares <= 0:
+            return apology("Missing Shares")
 
         # lookup stock price
         symbol_quote = lookup(symbol)

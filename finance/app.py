@@ -64,7 +64,7 @@ def buy():
             return apology("Invalid Symbol")
 
     # SELECT how much cash the user currently has in users.
-    cash = db.execute("SELECT cash FROM users WHERE username = ?", session["user_id"])
+    cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
     return render_template("homepage.html", cash=cash)
 
 

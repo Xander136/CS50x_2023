@@ -117,7 +117,7 @@ def quote():
             # lookup stock price
             symbol_quote = lookup(symbol)
             # check if symbol valid
-            if symbol_quote == "None":
+            if symbol_quote == None:
                 return apology("Invalid Symbol")
             # show stock price
             else:

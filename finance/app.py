@@ -64,11 +64,10 @@ def buy():
             return apology("Invalid Symbol")
 
         # show stock price
-        else:
-            return render_template("quoted.html",
-                                name=symbol_quote["name"],
-                                price=symbol_quote["price"],
-                                symbol=symbol_quote["symbol"])
+
+
+
+    return render_template("homepage.html")
 
 
 

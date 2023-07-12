@@ -116,10 +116,10 @@ def quote():
         else:
             # lookup stock price
             symbol_quote = lookup(symbol)
-            if symbol_quote == "":
+            # check if symbol valid
+            if symbol_quote == "None":
                 return apology("Invalid Symbol")
             # show stock price
-
             else:
                 return render_template("quoted.html",
                                    name=symbol_quote["name"],

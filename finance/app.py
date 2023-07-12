@@ -65,7 +65,7 @@ def buy():
 
     # SELECT how much cash the user currently has in users.
     cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-    return render_template("homepage.html", cash=cash)
+    return render_template("homepage.html", cash=cash[cash])
 
 
 

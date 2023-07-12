@@ -47,19 +47,19 @@ def buy():
     if request.method == "GET":
         return render_template("buy.html")
 
-    # input stock symbol
-    # Require that a user input a stock’s symbol, implemented as a text field whose name is symbol. Render an apology if the input is blank or the symbol does not exist (as per the return value of lookup).
+    # user submitted data
     elif request.method == "POST":
         # check if symbol is empty
         symbol = request.form.get("symbol")
         if symbol == "":
             return apology("Missing Symbol")
-        elif:
-            # lookup stock price
-            symbol_quote = lookup(symbol)
-            # check if symbol valid
-            if symbol_quote == None:
-                return apology("Invalid Symbol")
+
+        # lookup stock price
+        symbol_quote = lookup(symbol)
+        # check if symbol valid
+        if symbol_quote == None:
+            return apology("Invalid Symbol")
+
         # show stock price
         else:
             return render_template("quoted.html",
@@ -67,7 +67,7 @@ def buy():
                                 price=symbol_quote["price"],
                                 symbol=symbol_quote["symbol"])
 
-    return apology("TODO")
+
 
 
 @app.route("/history")
@@ -132,23 +132,25 @@ def quote():
     if request.method == "GET":
         return render_template("quote.html")
 
+    # user submitted data
     elif request.method == "POST":
         # check if symbol is empty
         symbol = request.form.get("symbol")
         if symbol == "":
             return apology("Missing Symbol")
+
+        # lookup stock price
+        symbol_quote = lookup(symbol)
+        # check if symbol valid
+        if symbol_quote == None:
+            return apology("Invalid Symbol")
+
+        # show stock price
         else:
-            # lookup stock price
-            symbol_quote = lookup(symbol)
-            # check if symbol valid
-            if symbol_quote == None:
-                return apology("Invalid Symbol")
-            # show stock price
-            else:
-                return render_template("quoted.html",
-                                   name=symbol_quote["name"],
-                                   price=symbol_quote["price"],
-                                   symbol=symbol_quote["symbol"])
+            return render_template("quoted.html",
+                                name=symbol_quote["name"],
+                                price=symbol_quote["price"],
+                                symbol=symbol_quote["symbol"])
 
 
 @app.route("/register", methods=["GET", "POST"])

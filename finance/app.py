@@ -49,12 +49,12 @@ def buy():
 
     # user submitted data
     elif request.method == "POST":
-        # check if symbol is empty
+        # check if symbol and shares is valid
         symbol = request.form.get("symbol")
         shares = request.form.get("shares")
         if symbol == "":
             return apology("Missing Symbol")
-        if shares <= 0:
+        if shares < 1 or shares == "":
             return apology("Missing Shares")
 
         # lookup stock price

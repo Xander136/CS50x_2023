@@ -54,7 +54,7 @@ def buy():
         shares = request.form.get("shares")
         if symbol == "":
             return apology("Missing Symbol")
-        if shares < 1 or shares == "":
+        if shares == "":
             return apology("Missing Shares")
 
         # lookup stock price

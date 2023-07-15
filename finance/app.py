@@ -72,10 +72,10 @@ def buy():
         db.execute("""
             CREATE TABLE if not exist transactions(
             id int NOT NULL UNIQUE,
-            LAST_NAME VARCHAR(255),
-            AGE int,
-            SEX CHAR(1),
-            INCOME int);
+            name VARCHAR(255) NOT NULL,
+            symbol VARCHAR(255) NOT NULL,
+            shares int NOT NULL,
+            price int);
             """)
 
 

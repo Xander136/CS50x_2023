@@ -66,7 +66,7 @@ def buy():
         # SELECT how much cash the user currently has in users.
         cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
         share_price = symbol_quote["price"] * shares
-        balance = cash - share_price
+        balance = cash[0]["cash"] - share_price
 
         return render_template("homepage.html",
                             symbol=symbol_quote["symbol"],
@@ -74,7 +74,7 @@ def buy():
                             shares=shares,
                             price=symbol_quote["price"],
                             total=share_price,
-                            cash=cash,
+                            cash=cash[0]["cash"],
                             balance=balance)
 
 

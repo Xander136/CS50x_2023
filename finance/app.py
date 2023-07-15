@@ -69,7 +69,8 @@ def buy():
         balance = int(cash[0]["cash"]) - share_price
 
         # Create table for stocks bought
-        CREATE TABLE if not exists transactions (col1 typ1, ..., colN typN)
+        CREATE TABLE if not exists transactions (
+                number NUMBER, ..., colN typN)
 
 
         return render_template("homepage.html",

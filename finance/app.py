@@ -63,16 +63,16 @@ def buy():
         if symbol_quote == None:
             return apology("Invalid Symbol")
 
-    # SELECT how much cash the user currently has in users.
-    cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-    share_price = symbol_quote["latestPrice"] * shares
-    balance = cash - share_price
+        # SELECT how much cash the user currently has in users.
+        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+        share_price = symbol_quote["price"] * shares
+        balance = cash - share_price
 
-    return render_template("homepage.html",
+        return render_template("homepage.html",
                             symbol=symbol_quote["symbol"],
-                            name=symbol_quote["symbol"],
+                            name=symbol_quote["name"],
                             shares=shares,
-                            price=symbol_quote["latestPrice"],
+                            price=symbol_quote["price"],
                             total=share_price,
                             cash=cash,
                             balance=balance)

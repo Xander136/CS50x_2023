@@ -69,7 +69,14 @@ def buy():
         balance = int(cash[0]["cash"]) - share_price
 
         # Create table for stocks bought
-        db.execute("")
+        db.execute("""
+            CREATE TABLE if not exist transactions(
+            id int NOT NULL UNIQUE,
+            LAST_NAME VARCHAR(255),
+            AGE int,
+            SEX CHAR(1),
+            INCOME int);
+            """)
 
 
         return render_template("homepage.html",

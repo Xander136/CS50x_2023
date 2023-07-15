@@ -65,7 +65,8 @@ def buy():
 
     # SELECT how much cash the user currently has in users.
     amount = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
-    return render_template("homepage.html", cash=amount["cash"])
+    share_price = amount[0]["cash"] - 
+    return render_template("homepage.html", cash=amount[0]["cash"])
 
 
 @app.route("/history")

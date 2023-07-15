@@ -75,7 +75,8 @@ def buy():
                             price=symbol_quote["price"],
                             total=share_price,
                             cash=cash[0]["cash"],
-                            balance=balance)
+                            balance=balance
+                            )
 
 
 

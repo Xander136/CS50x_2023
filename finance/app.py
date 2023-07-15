@@ -75,7 +75,9 @@ def buy():
             name VARCHAR(255) NOT NULL,
             symbol VARCHAR(255) NOT NULL,
             shares int NOT NULL,
-            price int);
+            price int
+            date TEXT NOT NULL
+            time TEXT NOT NULL);
             """)
 
 

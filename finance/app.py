@@ -72,7 +72,7 @@ def buy():
         db.execute(
             """
             CREATE TABLE if not exists transactions(
-            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
             type TEXT,
             user_id int,
             symbol TEXT,

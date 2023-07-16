@@ -83,10 +83,12 @@ def buy():
         # insert data
         db.execute(
             "INSERT INTO transactions (type, user_id, symbol, share_qty, price, created_at) VALUES(?, ?, ?, ?, ?, ?)",
-            "buy",
-            session["user_id"],
+            'buy',
+            int(session["user_id"]),
             symbol_quote["symbol"],
-            
+            int(shares),
+            int(symbol_quote["price"]),
+            CURRENT_TIMESTAMP
         )
 
         return render_template("homepage.html",

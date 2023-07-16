@@ -110,7 +110,7 @@ def buy():
             share_qty=shares,
             price=price
         )
-        flash('You bought some stocks!')
+        flash(f"You bought {shares} stocks of {symbol} for {total_cost}!")
         return apology("nice")
 
         # return render_template(

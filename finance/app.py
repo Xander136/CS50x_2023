@@ -69,7 +69,8 @@ def buy():
         balance = int(cash[0]["cash"]) - share_price
 
         # Create table for stocks bought
-        db.execute("""
+        db.execute(
+            """
             CREATE TABLE if not exists transactions(
             id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
             type TEXT,
@@ -78,29 +79,30 @@ def buy():
             share_qty int,
             price int,
             created_at TIMESTAMP)
-            """)
+            """
+        )
 
         # insert data
         db.execute(
             "INSERT INTO transactions (type, user_id, symbol, share_qty, price, created_at) VALUES(?, ?, ?, ?, ?, ?)",
-            'buy',
+            "buy",
             int(session["user_id"]),
             symbol_quote["symbol"],
             int(shares),
             int(symbol_quote["price"]),
-            CURRENT_TIMESTAMP
+            CURRENT_TIMESTAMP,
         )
 
-        return render_template("homepage.html",
-                            symbol=symbol_quote["symbol"],
-                            name=symbol_quote["name"],
-                            shares=shares,
-                            price=symbol_quote["price"],
-                            total=share_price,
-                            cash=cash[0]["cash"],
-                            balance=balance
-                            )
-
+        return render_template(
+            "homepage.html",
+            symbol=symbol_quote["symbol"],
+            name=symbol_quote["name"],
+            shares=shares,
+            price=symbol_quote["price"],
+            total=share_price,
+            cash=cash[0]["cash"],
+            balance=balance,
+        )
 
 
 @app.route("/history")

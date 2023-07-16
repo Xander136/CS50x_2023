@@ -98,7 +98,7 @@ def buy():
         # insert data
         db.execute(
             "INSERT INTO transactions (type, user_id, symbol, share_qty, price, created_at) VALUES(?, ?, ?, ?, ?, ?)",
-            "buy",
+            'buy',
             int(session["user_id"]),
             symbol_quote["symbol"],
             int(shares),

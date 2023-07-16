@@ -59,12 +59,12 @@ def buy():
         if shares == "":
             return apology("Missing Shares")
 
+        # lookup symbol
+        symbol_quote = lookup(symbol)
+
         # check if symbol valid
         if symbol_quote == None:
             return apology("Invalid Symbol")
-
-        # lookup stock price
-        symbol_quote = lookup(symbol)
 
         # price of share
         price = symbol_quote["price"]

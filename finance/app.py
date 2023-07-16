@@ -113,16 +113,6 @@ def buy():
         flash(f"You bought {shares} stocks of {symbol} for {total_cost}!")
         return apology("nice")
 
-        # return render_template(
-        #     "homepage.html",
-        #     symbol=symbol_quote["symbol"],
-        #     name=symbol_quote["name"],
-        #     shares=shares,
-        #     price=symbol_quote["price"],
-        #     total=share_price,
-        #     cash=cash[0]["cash"],
-        #     balance=balance,
-        # )
 
 
 @app.route("/history")

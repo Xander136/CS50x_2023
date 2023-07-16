@@ -36,7 +36,10 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
-    return apology("TODO")
+    transactions = db.execute(
+        "SELECT * FROM transactions WHERE user_id = :id", id=session["user_id"]
+    )
+    render
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -111,7 +114,7 @@ def buy():
             price=price
         )
         flash(f"You bought {shares} stocks of {symbol} for {total_cost}!")
-        return redirect("index.html")
+        return redirect("/")
 
 
 

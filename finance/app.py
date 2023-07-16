@@ -74,6 +74,8 @@ def buy():
 
         # check how much cash the user currently has in users.
         cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])
+
+        # check if user has enough money for the purchase
         share_price = int(symbol_quote["price"]) * int(shares)
         balance = int(cash[0]["cash"]) - share_price
 

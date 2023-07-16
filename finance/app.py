@@ -76,7 +76,7 @@ def buy():
             user_id integer,
             symbol VARCHAR(255) NOT NULL,
             share_qty int NOT NULL,
-            price int
+            price int,
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL);
             """)
 

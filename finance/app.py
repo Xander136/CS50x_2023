@@ -67,7 +67,7 @@ def buy():
         symbol_quote = lookup(symbol)
 
         # price of share
-        price = int(symbol_quote["price"])
+        price = symbol_quote["price"]
 
         # total cost of stock
         total_cost = price * int(shares)

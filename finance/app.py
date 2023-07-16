@@ -71,25 +71,19 @@ def buy():
         # Create table for stocks bought
         db.execute("""
             CREATE TABLE if not exist transactions(
-            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-            type VARCHAR(255) NOT NULL,
-            user_id integer,
-            symbol VARCHAR(255) NOT NULL,
-            share_qty int NOT NULL,
-            price int,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL);
+            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)
             """)
 
-        return apology("Okay")
-        # return render_template("homepage.html",
-        #                     symbol=symbol_quote["symbol"],
-        #                     name=symbol_quote["name"],
-        #                     shares=shares,
-        #                     price=symbol_quote["price"],
-        #                     total=share_price,
-        #                     cash=cash[0]["cash"],
-        #                     balance=balance
-        #                     )
+        # return apology("Okay")
+        return render_template("homepage.html",
+                            symbol=symbol_quote["symbol"],
+                            name=symbol_quote["name"],
+                            shares=shares,
+                            price=symbol_quote["price"],
+                            total=share_price,
+                            cash=cash[0]["cash"],
+                            balance=balance
+                            )
 
 
 

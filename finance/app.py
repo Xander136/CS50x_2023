@@ -80,9 +80,11 @@ def buy():
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL)
             """)
 
-        # return apology("Okay")
-        db.execute("""INSERT INTO transactions (type, user_id, symbol, share_qty, price,)
-                        VALUES(?,?,?,?,?)""", "buy", session["user_id"], symbol_quote["symbol"], int(symbol_quote["price"]))
+        # insert data
+        db.execute("""INSERT INTO transactions
+                   (type, user_id, symbol, share_qty, price,)
+                    VALUES
+                   (?,?,?,?,?)""", "buy", session["user_id"], symbol_quote["symbol"], shares, int(symbol_quote["price"]))
 
         return render_template("homepage.html",
                             symbol=symbol_quote["symbol"],

@@ -53,20 +53,27 @@ def buy():
         symbol = request.form.get("symbol")
         if symbol == "":
             return apology("Missing Symbol")
-        
+
         # check if number of shares is valid
         shares = request.form.get("shares")
         if shares == "":
             return apology("Missing Shares")
 
-        # lookup stock price
-        symbol_quote = lookup(symbol)
         # check if symbol valid
         if symbol_quote == None:
             return apology("Invalid Symbol")
 
-        # SELECT how much cash the user currently has in users.
-        cash = db.execute("SELECT cash FROM users WHERE id = ?", session["user_id"])
+        # lookup stock price
+        symbol_quote = lookup(symbol)
+
+        # price of share
+        price = int(symbol_quote["price"])
+
+        # total cost of stock
+        total_cost = price * int(shares)
+
+        # check how much cash the user currently has in users.
+        cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])
         share_price = int(symbol_quote["price"]) * int(shares)
         balance = int(cash[0]["cash"]) - share_price
 
@@ -96,16 +103,16 @@ def buy():
             CURRENT_TIMESTAMP,
         )
 
-        return render_template(
-            "homepage.html",
-            symbol=symbol_quote["symbol"],
-            name=symbol_quote["name"],
-            shares=shares,
-            price=symbol_quote["price"],
-            total=share_price,
-            cash=cash[0]["cash"],
-            balance=balance,
-        )
+        # return render_template(
+        #     "homepage.html",
+        #     symbol=symbol_quote["symbol"],
+        #     name=symbol_quote["name"],
+        #     shares=shares,
+        #     price=symbol_quote["price"],
+        #     total=share_price,
+        #     cash=cash[0]["cash"],
+        #     balance=balance,
+        # )
 
 
 @app.route("/history")

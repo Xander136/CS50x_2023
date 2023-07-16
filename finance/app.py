@@ -97,12 +97,12 @@ def buy():
 
         # insert data
         db.execute(
-            "INSERT INTO transactions (type, user_id, symbol, share_qty, price, created_at) priceVALUES(?, ?, ?, ?, ?, ?)",
-            'buy',
-            session["user_id"],
-            symbol,
-            shares,
-            price
+            "INSERT INTO transactions (type, user_id, symbol, share_qty, price, created_at) priceVALUES(:type, :user_id, :symbol, :share_qty, :price)",
+            type="buy",
+            user_id=session["user_id"],
+            symbol=symbol,
+            share_qty=shares,
+            price=price
         )
 
         # return render_template(

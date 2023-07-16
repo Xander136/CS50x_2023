@@ -82,9 +82,9 @@ def buy():
 
         # insert data
         db.execute("""INSERT INTO transactions
-                   (type, user_id, symbol, share_qty, price,)
+                   (type, user_id, symbol, share_qty, price, created_at)
                     VALUES
-                   (?,?,?,?,?)""", "buy", session["user_id"], symbol_quote["symbol"], shares, int(symbol_quote["price"]))
+                   (?,?,?,?,?,?)""", "buy", session["user_id"], symbol_quote["symbol"], shares, int(symbol_quote["price"]))
 
         return render_template("homepage.html",
                             symbol=symbol_quote["symbol"],

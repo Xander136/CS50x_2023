@@ -80,41 +80,43 @@ def buy():
         if balance < 0:
             return apology("Not enough cash for this purchase.")
 
+
         # Create table for stocks bought
-        # db.execute(
-        #     """
-        #     CREATE TABLE if not exists transactions(
-        #     id INTEGER PRIMARY KEY AUTOINCREMENT,
-        #     type TEXT NOT NULL,
-        #     user_id INTEGER NOT NULL,
-        #     symbol TEXT NOT NULL,
-        #     share_qty INTEGER NOT NULL,
-        #     price INTEGER NOT NULL,
-        #     created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-        #     FOREIGN KEY (user_id) REFERENCES users(id))
-        #     """
-        # )
-
-        # # insert data
-        # db.execute(
-        #     "INSERT INTO transactions (type, user_id, symbol, share_qty, price, created_at) priceVALUES(:type, :user_id, :symbol, :share_qty, :price)",
-        #     type="buy",
-        #     user_id=session["user_id"],
-        #     symbol=symbol,
-        #     share_qty=shares,
-        #     price=price
-        # )
-
-        return render_template(
-            "homepage.html",
-            symbol=symbol_quote["symbol"],
-            name=symbol_quote["name"],
-            shares=shares,
-            price=symbol_quote["price"],
-            total=share_price,
-            cash=cash[0]["cash"],
-            balance=balance,
+        db.execute(
+            """
+            CREATE TABLE if not exists transactions(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            type TEXT NOT NULL,
+            user_id INTEGER NOT NULL,
+            symbol TEXT NOT NULL,
+            share_qty INTEGER NOT NULL,
+            price INTEGER NOT NULL,
+            created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+            FOREIGN KEY (user_id) REFERENCES users(id))
+            """
         )
+
+        # insert data
+        db.execute(
+            "INSERT INTO transactions (type, user_id, symbol, share_qty, price, created_at) priceVALUES(:type, :user_id, :symbol, :share_qty, :price)",
+            type="buy",
+            user_id=session["user_id"],
+            symbol=symbol,
+            share_qty=shares,
+            price=price
+        )
+        return apology("nice")
+
+        # return render_template(
+        #     "homepage.html",
+        #     symbol=symbol_quote["symbol"],
+        #     name=symbol_quote["name"],
+        #     shares=shares,
+        #     price=symbol_quote["price"],
+        #     total=share_price,
+        #     cash=cash[0]["cash"],
+        #     balance=balance,
+        # )
 
 
 @app.route("/history")

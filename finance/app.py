@@ -96,6 +96,11 @@ def buy():
             """
         )
 
+        # update user balance
+        db.execute(
+            "UPDATE cash FROM users WHERE id=:id", id=session["user_id"]
+        )
+
         # insert data
         db.execute(
             "INSERT INTO transactions (type, user_id, symbol, share_qty, price) VALUES (:type, :user_id, :symbol, :share_qty, :price)",

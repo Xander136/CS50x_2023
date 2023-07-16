@@ -73,7 +73,7 @@ def buy():
             CREATE TABLE if not exists transactions(
             id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
             type TEXT,
-            user_id integer,
+            user_id int,
             symbol TEXT,
             share_qty int,
             price int,
@@ -81,10 +81,13 @@ def buy():
             """)
 
         # insert data
-        db.execute("""INSERT INTO transactions
-                   (type, user_id, symbol, share_qty, price, created_at)
-                    VALUES
-                   (?,?,?,?,?,?)""", 'buy', session["user_id"], symbol_quote["symbol"], shares, int(symbol_quote["price"]), CURRENT_TIMESTAMP)
+        db.execute(
+            "INSERT INTO transactions (type, user_id, symbol, share_qty, price, created_at) VALUES(?, ?, ?, ?, ?, ?)",
+            "buy",
+            session["user_id"],
+            symbol_quote["symbol"],
+            
+        )
 
         return render_template("homepage.html",
                             symbol=symbol_quote["symbol"],

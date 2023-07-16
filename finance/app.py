@@ -72,12 +72,12 @@ def buy():
         db.execute("""
             CREATE TABLE if not exists transactions(
             id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-            type VARCHAR(255) NOT NULL,
+            type TEXT,
             user_id integer,
-            symbol VARCHAR(255) NOT NULL,
-            share_qty int NOT NULL,
+            symbol TEXT,
+            share_qty int,
             price int,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL)
+            created_at TIMESTAMP)
             """)
 
         # insert data

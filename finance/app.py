@@ -81,7 +81,7 @@ def buy():
             return apology("Not enough cash for this purchase.")
 
 
-        # Create table for stocks bought
+        # Create table for transactions
         db.execute(
             """
             CREATE TABLE if not exists transactions(
@@ -98,7 +98,7 @@ def buy():
 
         # update user balance
         db.execute(
-            "UPDATE cash FROM users WHERE id=:id", id=session["user_id"]
+            "UPDATE users SET cash = :balance WHERE id = :id", balance=balance, id=session["user_id"]
         )
 
         # insert data

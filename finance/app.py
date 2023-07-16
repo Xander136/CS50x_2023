@@ -51,9 +51,11 @@ def buy():
     elif request.method == "POST":
         # check if symbol and shares is valid
         symbol = request.form.get("symbol")
-        shares = request.form.get("shares")
         if symbol == "":
             return apology("Missing Symbol")
+        
+        # check if number of shares is valid
+        shares = request.form.get("shares")
         if shares == "":
             return apology("Missing Shares")
 

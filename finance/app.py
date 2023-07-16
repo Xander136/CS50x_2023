@@ -86,10 +86,10 @@ def buy():
             CREATE TABLE if not exists transactions(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             type TEXT NOT NULL,
-            user_id int NOT NULL,
+            user_id INTEGER NOT NULL,
             symbol TEXT NOT NULL,
-            share_qty int NOT NULL,
-            price int NOT NULL,
+            share_qty INTEGER NOT NULL,
+            price INTEGER NOT NULL,
             created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
             FOREIGN KEY (user_id) REFERENCES users(id))
             """

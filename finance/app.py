@@ -100,7 +100,7 @@ def buy():
             "INSERT INTO transactions (type, user_id, symbol, share_qty, price, created_at) VALUES(?, ?, ?, ?, ?, ?)",
             'buy',
             int(session["user_id"]),
-            symbol_quote["symbol"],
+            symbol,
             int(shares),
             int(symbol_quote["price"]),
             CURRENT_TIMESTAMP,

@@ -76,8 +76,9 @@ def buy():
         cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])
 
         # check if user has enough money for the purchase
-        share_price = int(symbol_quote["price"]) * int(shares)
-        balance = int(cash[0]["cash"]) - share_price
+        balance = int(cash[0]["cash"]) - total_cost
+        if balance < 0:
+            return apology("Not enough cash for this purchase.")
 
         # Create table for stocks bought
         db.execute(

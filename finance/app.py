@@ -77,7 +77,7 @@ def buy():
             symbol VARCHAR(255) NOT NULL,
             share_qty int NOT NULL,
             price int
-            created_at );
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL);
             """)
 
 

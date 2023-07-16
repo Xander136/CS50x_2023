@@ -81,20 +81,9 @@ def buy():
             """)
 
         # return apology("Okay")
-        with db:
-            db.execute("""INSERT INTO transactions (
-                        type,
-                        user_id,
-                        symbol,
-                        share_qty,
-                        price,
-                ) VALUES(
-                        ?,
-                        ?,
-                        ?,
-                        ?,
-                        ?
-                )""", "buy", session["user_id"], symbol_quote["symbol"], int(symbol_quote["price"]))
+        db.execute("""INSERT INTO transactions (type, user_id, symbol, share_qty, price,)
+                        VALUES(?,?,?,?,?)""", "buy", session["user_id"], symbol_quote["symbol"], int(symbol_quote["price"]))
+
         return render_template("homepage.html",
                             symbol=symbol_quote["symbol"],
                             name=symbol_quote["name"],

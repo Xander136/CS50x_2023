@@ -5,7 +5,12 @@
 {% endblock %}
 
 {% block main %}
-    { for }
+    {% for name in registrants %}
+    <tr>
+        <td>{{ name }}</td>
+        <td>{{ registrants[name] }}</td>
+    </tr>
+    {% endfor %}
         symbol is {{ symbol }}
         name is {{ name }}
         shares is {{ shares }}

@@ -70,8 +70,14 @@ def buy():
 
         # Create table for stocks bought
         db.execute("""
-            CREATE TABLE if not exist transactions(
-            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL)
+            CREATE TABLE if not exists transactions(
+            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+            type VARCHAR(255) NOT NULL,
+            user_id integer,
+            symbol VARCHAR(255) NOT NULL,
+            share_qty int NOT NULL,
+            price int,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL)
             """)
 
         # return apology("Okay")

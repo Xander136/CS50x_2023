@@ -71,13 +71,13 @@ def buy():
         # Create table for stocks bought
         db.execute("""
             CREATE TABLE if not exist transactions(
-            id int NOT NULL UNIQUE,
-            name VARCHAR(255) NOT NULL,
+            id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+            type VARCHAR(255) NOT NULL,
+            user_id integer,
             symbol VARCHAR(255) NOT NULL,
-            shares int NOT NULL,
+            share_qty int NOT NULL,
             price int
-            date TEXT NOT NULL
-            time TEXT NOT NULL);
+            created_at );
             """)
 
 

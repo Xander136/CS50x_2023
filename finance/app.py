@@ -39,8 +39,8 @@ def index():
     transactions = db.execute(
         "SELECT * FROM transactions WHERE user_id = :id", id=session["user_id"]
     )
-    for transaction in transactions:
-        transaction
+    for key, value in transactions.items():
+        
 
     return render_template("index.html", transactions=transactions)
 

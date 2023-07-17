@@ -41,7 +41,6 @@ def index():
     )
     dict(stocks)
     for key, value in transactions.items():
-        # initialize lists
         if key in stocks:
             stocks["key"] = value + stocks["key"]
         else:

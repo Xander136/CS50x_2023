@@ -39,13 +39,6 @@ def index():
     transactions = db.execute(
         "SELECT * FROM transactions WHERE user_id = :id", id=session["user_id"]
     )
-    dict(stocks)
-    for key, value in transactions.items():
-        if key in stocks:
-            stocks["key"] = value + stocks["key"]
-        else:
-            stocks["key"] = value
-
 
         # , which stocks the user owns,
 

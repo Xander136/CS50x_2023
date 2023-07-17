@@ -5,17 +5,10 @@
 {% endblock %}
 
 {% block main %}
-    {% for transaction in transactions %}
-    <tr>
-        <td>{{ name }}</td>
-        <td>{{ registrants[name] }}</td>
-    </tr>
-    {% endfor %}
-        symbol is {{ symbol }}
-        name is {{ name }}
-        shares is {{ shares }}
-        price is {{ price }}
-        total is {{ total }}
-        cash is {{ cash }}
-        balance is {{ balance }}
+    <dl>
+        {% for key, value in my_dict.items() %}
+            <dt>{{ key|e }}</dt>
+            <dd>{{ value|e }}</dd>
+        {% endfor %}
+    </dl>
 {% endblock %}

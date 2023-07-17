@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block main %}
-    {% for dict_item in transactions %}
+    {% for dict_item in stocks %}
         {% for key, value in dict_item.items() %}
             <h1>Key: {{key}}</h1>
             <h2>Value: {{value}}</h2>

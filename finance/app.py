@@ -45,7 +45,7 @@ def index():
         if key in stocks:
             stocks["key"] = value + stocks["key"]
         else:
-            
+            stocks["key"] = value
 
 
         # , which stocks the user owns,
@@ -55,7 +55,7 @@ def index():
         # and the total value of each holding (i.e., shares times price).
         # Also display the user’s current cash balance along with a grand total (i.e., stocks’ total value plus cash).
 
-    return render_template("index.html", transactions=transactions)
+    return render_template("index.html", stocks=stocks)
 
 
 @app.route("/buy", methods=["GET", "POST"])

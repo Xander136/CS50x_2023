@@ -40,8 +40,11 @@ def index():
         "SELECT * FROM transactions WHERE user_id = :id", id=session["user_id"]
     )
     for key, value in transactions.items():
+        # initialize lists
+        symbol = []
+        
         # , which stocks the user owns,
-        symbol = 
+
         # the numbers of shares owned,
         # the current price of each stock,
         # and the total value of each holding (i.e., shares times price).

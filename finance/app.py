@@ -41,8 +41,10 @@ def index():
     )
     for key, value in transactions.items():
         # initialize lists
-        symbol = {}
-        
+        stocks = {}
+        if key in stocks:
+            stocks["key"] = value + stocks["key"]
+
 
         # , which stocks the user owns,
 

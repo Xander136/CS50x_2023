@@ -41,8 +41,9 @@ def index():
     )
     for key, value in transactions.items():
         # initialize lists
-        symbol = []
+        symbol = {}
         
+
         # , which stocks the user owns,
 
         # the numbers of shares owned,

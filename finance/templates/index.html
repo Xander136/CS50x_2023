@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block main %}
-    <dl>
-        {% for key, value in my_dict.items() %}
-            <dt>{{ key|e }}</dt>
-            <dd>{{ value|e }}</dd>
+    {% for dict_item in transactions %}
+        {% for key, value in dict_item.items() %}
+            <h1>Key: {{key}}</h1>
+            <h2>Value: {{value}}</h2>
         {% endfor %}
-    </dl>
+    {% endfor %}
 {% endblock %}

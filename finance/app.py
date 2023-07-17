@@ -41,7 +41,7 @@ def index():
     )
     for key, value in transactions.items():
         # , which stocks the user owns,
-        stock
+        symbol = 
         # the numbers of shares owned,
         # the current price of each stock,
         # and the total value of each holding (i.e., shares times price).

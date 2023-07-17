@@ -37,7 +37,7 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
     transactions = db.execute(
-        "SELECT * FROM transactions WHERE user_id = :id", id=session["user_id"]
+        "SELECT symbol, SUM(value) FROM transactions WHERE user_id = :id", id=session["user_id"]
     )
 
         # , which stocks the user owns,

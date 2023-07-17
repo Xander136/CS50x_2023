@@ -40,7 +40,12 @@ def index():
         "SELECT * FROM transactions WHERE user_id = :id", id=session["user_id"]
     )
     for key, value in transactions.items():
-        
+        # , which stocks the user owns,
+        stock
+        # the numbers of shares owned,
+        # the current price of each stock,
+        # and the total value of each holding (i.e., shares times price).
+        # Also display the user’s current cash balance along with a grand total (i.e., stocks’ total value plus cash).
 
     return render_template("index.html", transactions=transactions)
 

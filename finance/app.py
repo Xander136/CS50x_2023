@@ -44,6 +44,8 @@ def index():
         stocks = {}
         if key in stocks:
             stocks["key"] = value + stocks["key"]
+        else:
+            
 
 
         # , which stocks the user owns,

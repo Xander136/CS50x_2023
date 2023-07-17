@@ -39,8 +39,10 @@ def index():
     transactions = db.execute(
         "SELECT * FROM transactions WHERE user_id = :id", id=session["user_id"]
     )
-    transactions[]
-    return render_template("index.html")
+    for transaction in transactions:
+        transaction
+
+    return render_template("index.html", transactions=transactions)
 
 
 @app.route("/buy", methods=["GET", "POST"])

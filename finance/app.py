@@ -49,10 +49,10 @@ def index():
     for transaction in transactions:
         # which stocks the user owns
         symbol = transaction["symbol"]
-
+        
         # the numbers of shares owned
         shares = transaction["shares"]
-        
+
         # the current price of each stock,
         price = lookup("symbol")
 

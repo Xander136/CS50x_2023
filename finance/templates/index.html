@@ -21,11 +21,11 @@
             {% for key, value in dict_item.items() %}
                 <tbody>
                     <tr>
-                        <td class="text-start">{{ dict_items.symbol }}</td>
-                        <td class="text-start">{{ dict_items.name }}</td>
-                        <td class="text-end">{{ dict_items.shares}}</td>
-                        <td class="text-end">${{ dict_items.price }}</td>
-                        <td class="text-end">${{ dict_items.total}}</td>
+                        <td class="text-start">{{ dict_item.symbol }}</td>
+                        <td class="text-start">{{ dict_item.name }}</td>
+                        <td class="text-end">{{ dict_item.shares}}</td>
+                        <td class="text-end">${{ dict_item.price }}</td>
+                        <td class="text-end">${{ dict_item.total}}</td>
                     </tr>
                 </tbody>
             {% endfor %}

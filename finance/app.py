@@ -59,8 +59,13 @@ def index():
 
         # and the total value of each holding (i.e., shares times price).
         # Also display the user’s current cash balance along with a grand total (i.e., stocks’ total value plus cash).
-    return apology("todo")
-    # return render_template("index.html", stocks=stocks)
+    # return apology("todo")
+    return render_template("index.html", stocks=stocks,
+                                        symbol,
+                                        name,
+                                        shares,
+                                        price,
+                                            total)
 
 
 @app.route("/buy", methods=["GET", "POST"])

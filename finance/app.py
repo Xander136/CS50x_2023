@@ -47,14 +47,14 @@ def index():
     total = cash
     portfolio_total = cash
 
-    for transaction in transactions:
-        # Look up quote for symbol.
-        quote = lookup(transaction["symbol"])
-        # which stocks the user owns
-        symbol = quote["symbol"]
+    # for transaction in transactions:
+    #     # Look up quote for symbol.
+    #     quote = lookup(transaction["symbol"])
+    #     # which stocks the user owns
+    #     symbol = quote["symbol"]
 
-        # the numbers of shares owned
-        shares = transaction["shares"]
+    #     # the numbers of shares owned
+    #     shares = transaction["shares"]
 
         # the current price of each stock,
 

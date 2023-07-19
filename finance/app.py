@@ -68,7 +68,8 @@ def index():
                            price="1,000.00",
                            total="123,000.00",
                            cash=cash,
-                           portfolio_total="1,234,000.00")
+                           portfolio_total="1,234,000.00",
+                           transactions=transactions)
 
 
 @app.route("/buy", methods=["GET", "POST"])

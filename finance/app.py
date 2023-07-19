@@ -133,7 +133,7 @@ def buy():
             share_qty=shares,
             price=price
         )
-        flash(f"You bought {shares} stocks of {symbol} for {total_cost}!")
+        flash(f"You bought {shares} stocks of {symbol} for ${total_cost}!")
         return redirect("/")
 
 

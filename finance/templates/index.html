@@ -5,15 +5,8 @@
 {% endblock %}
 
 {% block main %}
-    {% for dict_item in stocks %}
-        {% for key, value in dict_item.items() %}
-            <th>Key: {{key}}</th>
-            <td>Value: {{value}}</td>
-        {% endfor %}
-    {% endfor %}
 
-
-    <table class="table table-striped">
+<table class="table table-striped">
         <thead>
             <tr>
                 <th class="text-start">Symbol</th>
@@ -23,16 +16,21 @@
                 <th class="text-end">TOTAL</th>
             </tr>
         </thead>
-       <tbody>
 
-                <tr>
-                    <td class="text-start">{{ dict_items.symbol }}</td>
-                    <td class="text-start">{{ dict_items.name }}</td>
-                    <td class="text-end">{{ dict_items.shares}}</td>
-                    <td class="text-end">${{ dict_items.price }}</td>
-                    <td class="text-end">${{ dict_items.total}}</td>
-                </tr>
-        </tbody>
+        {% for dict_item in stocks %}
+            {% for key, value in dict_item.items() %}
+                <tbody>
+                    <tr>
+                        <td class="text-start">{{ dict_items.symbol }}</td>
+                        <td class="text-start">{{ dict_items.name }}</td>
+                        <td class="text-end">{{ dict_items.shares}}</td>
+                        <td class="text-end">${{ dict_items.price }}</td>
+                        <td class="text-end">${{ dict_items.total}}</td>
+                    </tr>
+                </tbody>
+            {% endfor %}
+        {% endfor %}
+
         <tfoot>
             <tr>
                 <td class="border-0 fw-bold text-end" colspan="4">Cash</td>

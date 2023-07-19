@@ -7,8 +7,8 @@
 {% block main %}
     {% for dict_item in stocks %}
         {% for key, value in dict_item.items() %}
-            <h1>Key: {{key}}</h1>
-            <h2>Value: {{value}}</h2>
+            <th>Key: {{key}}</th>
+            <td>Value: {{value}}</td>
         {% endfor %}
     {% endfor %}
 {% endblock %}

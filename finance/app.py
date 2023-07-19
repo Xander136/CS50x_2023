@@ -64,10 +64,10 @@ def index():
                            symbol="usd",
                            name="usd",
                            shares="2",
-                           price="$1,000.00",
-                           total="$123,000.00",
-                           cash="$11,000.00",
-                           portfolio_total="$1,234,000.00")
+                           price="1,000.00",
+                           total="123,000.00",
+                           cash="11,000.00",
+                           portfolio_total="1,234,000.00")
 
 
 @app.route("/buy", methods=["GET", "POST"])

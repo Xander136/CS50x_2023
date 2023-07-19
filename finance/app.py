@@ -43,9 +43,9 @@ def index():
     # get balance
     cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])[0]["cash"]
 
-    # # total values
-    # total_share_value = cash
-    # total_portfolio_value = cash
+    # total values
+    total = cash
+    portfolio_total = cash
 
     # for transaction in transactions:
     #     # which stocks the user owns

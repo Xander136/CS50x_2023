@@ -26,21 +26,12 @@
        <tbody>
 
                 <tr>
-                    <td class="text-start">META</td>
-                    <td class="text-start">META</td>
-                    <td class="text-end">2</td>
-                    <td class="text-end">$312.05</td>
-                    <td class="text-end">$624.10</td>
+                    <td class="text-start">{{ dict_items.symbol }}</td>
+                    <td class="text-start">{{ dict_items.name }}</td>
+                    <td class="text-end">{{ dict_items.shares}}</td>
+                    <td class="text-end">${{ dict_items.price }}</td>
+                    <td class="text-end">${{ dict_items.total}}</td>
                 </tr>
-
-                <tr>
-                    <td class="text-start">USD</td>
-                    <td class="text-start">USD</td>
-                    <td class="text-end">7</td>
-                    <td class="text-end">$47.84</td>
-                    <td class="text-end">$334.88</td>
-                </tr>
-
         </tbody>
         <tfoot>
             <tr>

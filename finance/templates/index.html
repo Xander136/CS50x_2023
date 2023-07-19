@@ -11,4 +11,46 @@
             <td>Value: {{value}}</td>
         {% endfor %}
     {% endfor %}
+
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th class="text-start">Symbol</th>
+                <th class="text-start">Name</th>
+                <th class="text-end">Shares</th>
+                <th class="text-end">Price</th>
+                <th class="text-end">TOTAL</th>
+            </tr>
+        </thead>
+       <tbody>
+
+                <tr>
+                    <td class="text-start">META</td>
+                    <td class="text-start">META</td>
+                    <td class="text-end">2</td>
+                    <td class="text-end">$312.05</td>
+                    <td class="text-end">$624.10</td>
+                </tr>
+
+                <tr>
+                    <td class="text-start">USD</td>
+                    <td class="text-start">USD</td>
+                    <td class="text-end">7</td>
+                    <td class="text-end">$47.84</td>
+                    <td class="text-end">$334.88</td>
+                </tr>
+
+        </tbody>
+        <tfoot>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">Cash</td>
+                <td class="border-0 text-end">$9,074.18</td>
+            </tr>
+            <tr>
+                <td class="border-0 fw-bold text-end" colspan="4">TOTAL</td>
+                <td class="border-0 w-bold text-end">$10,033.16</td>
+            </tr>
+        </tfoot>
+    </table>
 {% endblock %}

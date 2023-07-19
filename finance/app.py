@@ -38,10 +38,10 @@ def index():
     """Show portfolio of stocks"""
     # get sum of transactions
     transactions = db.execute(
-        "SELECT symbol, SUM(share_qty) FROM transactions WHERE user_id = :id GROUP BY symbol HAVING share_qty > 0", id=session["user_id"]
+        "SELECT symbol, SUM(share_qty) as total_shares FROM transactions WHERE user_id = :id GROUP BY symbol HAVING share_qty > 0", id=session["user_id"]
     )
     # get balance
-    # cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])[0]["cash"]
+    cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])[0]["cash"]
 
     # # total values
     # total_share_value = cash
@@ -63,10 +63,10 @@ def index():
     return render_template("index.html",
                            symbol=transactions[0]["symbol"],
                            name="usd",
-                           shares=transactions[0]["share_qty"],
+                           shares=transactions[0]["total_shares"],
                            price="1,000.00",
                            total="123,000.00",
-                           cash="11,000.00",
+                           cash=cash,
                            portfolio_total="1,234,000.00")
 
 

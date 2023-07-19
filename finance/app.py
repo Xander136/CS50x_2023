@@ -61,9 +61,9 @@ def index():
         # Also display the user’s current cash balance along with a grand total (i.e., stocks’ total value plus cash).
     # return apology("todo")
     return render_template("index.html",
-                           symbol=transactions[0]["share_qty"],
+                           symbol=transactions[0]["symbol"],
                            name="usd",
-                           shares="2",
+                           shares=transactions[0]["share_qty"],
                            price="1,000.00",
                            total="123,000.00",
                            cash="11,000.00",

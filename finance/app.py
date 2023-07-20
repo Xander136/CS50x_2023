@@ -296,9 +296,15 @@ def sell():
         # get number of shares from user
         no_shares = request.form.get("shares")
 
+        # check if number of shares from user input is not empty
+        if no_shares == "":
+            return apology("Stock must not be empty!")
+
         # check if number of shares from user input is not a positive integer
-        if no_shares < 0 or no_shares == "":
-            return apology("Stock number must be greater than 0.")
+        no_shares = int(no_shares)
+
+        if no_shares < 0:
+            return apology("Stock must be greater than 0!")
 
         # get symbol from user input
         symbol = request.form.get("symbol")

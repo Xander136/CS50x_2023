@@ -295,4 +295,4 @@ def sell():
         if no_shares < 0:
             return apology("Stock number must be greater than 0.")
         symbol = request.form.get("symbol")
-        if transactions["symbol"]
+        if symbol not in transactions["symbol"]:

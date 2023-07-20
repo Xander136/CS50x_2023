@@ -287,8 +287,8 @@ def sell():
     if request.method == "GET":
         symbols = []
         for transaction in transactions:
-            symbols.append(transaction["symbol"])
+            symbols.append(transaction["symbol"].upper())
 
         return render_template("/sell.html", symbols=symbols)
-    else:
-        return apology("todo")
+    elif request.method == "POST":
+        request.form.get("username")

@@ -19,15 +19,17 @@
         </thead>
         <!-- table data -->
         {% for transaction in transactions %}
-            <tbody>
-                <tr>
-                    <td class="text-start">{{ transaction["key"] }}</td>
-                    <td class="text-start">{{ transaction["value"] }}</td>
-                    <td class="text-start">{{ transaction["total_shares"] }}</td>
-                    <td class="text-end">${{ price }}</td>
-                    <td class="text-end">${{ total }}</td>
-                </tr>
-            </tbody>
+            {% for key, value in transaction.items() %}
+                <tbody>
+                    <tr>
+                        <td class="text-start">{{ value }}</td>
+                        <td class="text-start">{{ value }}</td>
+                        <!-- <td class="text-start">{{ transaction["total_shares"] }}</td> -->
+                        <td class="text-end">${{ price }}</td>
+                        <td class="text-end">${{ total }}</td>
+                    </tr>
+                </tbody>
+            {% endfor %}
         {% endfor %}
         <tfoot>
             <tr>

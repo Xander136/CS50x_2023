@@ -19,15 +19,15 @@
         </thead>
         <!-- table data -->
         <tbody>
-            {% for transaction in transactions %}
-                <tr>
-                    <td class="text-start">{{ transaction.symbol }}</td>
-                    <td class="text-start">{{ transaction.symbol }}</td>
-                    <td class="text-start">{{ transaction.total_shares }}</td>
-                    <td class="text-end">${{ price }}</td>
-                    <td class="text-end">${{ total }}</td>
-                </tr>
-            {% endfor %}
+        {% for transaction in transactions %}
+            <tr>
+                <td class="text-start">{{ transaction.symbol }}</td>
+                <td class="text-start">{{ transaction.symbol }}</td>
+                <td class="text-end">{{ transaction.total_shares }}</td>
+                <td class="text-end">${{ price }}</td>
+                <td class="text-end">${{ total }}</td>
+            </tr>
+        {% endfor %}
         </tbody>
         <tfoot>
             <tr>

@@ -296,3 +296,5 @@ def sell():
             return apology("Stock number must be greater than 0.")
         symbol = request.form.get("symbol")
         if symbol not in transactions["symbol"]:
+        if not any(transaction[symbol] < symbol for transaction in transactions):
+            return apology("Not enough stocks")

@@ -58,6 +58,10 @@ def index():
         # Also display the user’s current cash balance along with a grand total (i.e., stocks’ total value plus cash).
         portfolio_total += transaction["total"]
 
+        # format into usd
+        transaction["price"] = usd(transaction["price"])
+        transaction["total"] = usd(transaction["total"])
+
     # return apology("todo")
     return render_template("index.html",
                            cash=usd(cash),

@@ -291,6 +291,8 @@ def sell():
 
         return render_template("/sell.html", symbols=symbols)
     elif request.method == "POST":
+        no_shares = request.form.get("shares")
+        if no_shares < 0:
+            return apology("Stock number must be greater than 0.")
         symbol = request.form.get("symbol")
-        if symbol not in symbols:
-            return apology("You do not have stocks.")
+        if transactions["symbol"]

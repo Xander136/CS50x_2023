@@ -279,8 +279,16 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
+
     transactions = db.execute(
         "SELECT symbol, SUM(share_qty) as total_shares FROM transactions WHERE user_id = :id GROUP BY symbol HAVING share_qty > 0", id=session["user_id"]
     )
 
-    return render_template("/sell.html")
+    if request.method == "GET":
+        symbols = []
+        for transaction in transactions:
+            symbols.append(transaction["symbol"])
+
+        return render_template("/sell.html", symbols=symbols)
+    else:
+        return apology("todo")

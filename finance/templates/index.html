@@ -22,8 +22,8 @@
             {% for key, value in transaction.items() %}
                 <tbody>
                     <tr>
-                        <td class="text-start">{{ key.upper() }}</td>
-                        <td class="text-start">{{ value.upper() }}</td>
+                        <td class="text-start">{{ key }}</td>
+                        <td class="text-start">{{ value }}</td>
                         <td class="text-start">{{ transaction["total_shares"] }}</td>
                         <td class="text-end">${{ price }}</td>
                         <td class="text-end">${{ total }}</td>

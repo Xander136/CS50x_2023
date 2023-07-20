@@ -284,11 +284,13 @@ def sell():
         "SELECT symbol, SUM(share_qty) as total_shares FROM transactions WHERE user_id = :id GROUP BY symbol HAVING share_qty > 0", id=session["user_id"]
     )
 
+    symbols = []
     if request.method == "GET":
-        symbols = []
         for transaction in transactions:
             symbols.append(transaction["symbol"].upper())
 
         return render_template("/sell.html", symbols=symbols)
     elif request.method == "POST":
-        request.form.get("username")
+        symbol = request.form.get("symbol")
+        if symbol not in symbols:
+            return

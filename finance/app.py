@@ -52,7 +52,7 @@ def index():
         quote = lookup(transaction["symbol"])
 
         # the numbers of shares owned
-        shares = quote["shares"]
+        shares = quote["price"]
 
         # the current price of each stock,
 

@@ -293,4 +293,4 @@ def sell():
     elif request.method == "POST":
         symbol = request.form.get("symbol")
         if symbol not in symbols:
-            return
+            return apology("You do not have stocks.")

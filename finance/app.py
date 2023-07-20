@@ -285,14 +285,16 @@ def sell():
     )
 
     symbols = []
+
     if request.method == "GET":
         for transaction in transactions:
             symbols.append(transaction["symbol"].upper())
 
         return render_template("/sell.html", symbols=symbols)
+
     elif request.method == "POST":
         # get number of shares from user
-        no_shares = request.form.get("shares")
+        no_shares = int(request.form.get("shares"))
 
         # check if number of shares from user input is not a positive integer
         if no_shares < 0:
@@ -304,6 +306,8 @@ def sell():
         # check if the user does not own that many shares of the stock.
         for transaction in transactions:
             if transaction["symbol"] == symbol:
-                if transaction["total_shares"] < no_shares:
+                if int(transaction["total_shares"]) < no_shares:
                     return apology("Not enough Stocks!")
+                else:
+                    return apology("enough Stocks!")
 

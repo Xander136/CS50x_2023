@@ -294,10 +294,10 @@ def sell():
 
     elif request.method == "POST":
         # get number of shares from user
-        no_shares = int(request.form.get("shares"))
+        no_shares = request.form.get("shares")
 
         # check if number of shares from user input is not a positive integer
-        if no_shares < 0 or no_shares == "":
+        if int(no_shares) < 0 or no_shares == "":
             return apology("Stock number must be greater than 0.")
 
         # get symbol from user input
@@ -306,7 +306,7 @@ def sell():
         # check if the user does not own that many shares of the stock.
         for transaction in transactions:
             if transaction["symbol"] == symbol:
-                if int(transaction["total_shares"]) < no_shares:
+                if int(transaction["total_shares"]) < int(no_shares):
                     return apology("Not enough Stocks!")
                 else:
                     return apology("enough Stocks!")

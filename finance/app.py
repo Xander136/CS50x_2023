@@ -52,19 +52,14 @@ def index():
         quote = lookup(transaction["symbol"])
 
         # the current price of each stock,
-        transaction["price"] = quote["price"]
+        transaction["price"] = usd(quote["price"])
 
         # and the total value of each holding (i.e., shares times price).
-        transaction["total"] = transaction["price"] * transaction["total_shares"]
+        transaction["total"] = usd(transaction["price"] * transaction["total_shares"])
         # Also display the user’s current cash balance along with a grand total (i.e., stocks’ total value plus cash).
     # return apology("todo")
     return render_template("index.html",
-                           symbol=transactions[0]["symbol"],
-                           name="usd",
-                           shares=transactions[0]["total_shares"],
-                           price=price",
-                           total="123,000.00",
-                           cash=cash,
+                           cash=usd(cash),
                            portfolio_total="1,234,000.00",
                            transactions=transactions)
 

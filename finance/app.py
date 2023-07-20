@@ -44,7 +44,6 @@ def index():
     cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])[0]["cash"]
 
     # total values
-    total = cash
     portfolio_total = cash
 
     for transaction in transactions:
@@ -52,15 +51,17 @@ def index():
         quote = lookup(transaction["symbol"])
 
         # the current price of each stock,
-        transaction["price"] = usd(quote["price"])
+        transaction["price"] = quote["price"]
 
         # and the total value of each holding (i.e., shares times price).
-        transaction["total"] = usd(transaction["price"] * transaction["total_shares"])
+        transaction["total"] = transaction["price"] * transaction["total_shares"]
         # Also display the user’s current cash balance along with a grand total (i.e., stocks’ total value plus cash).
+        portfolio_total += transaction["total"]
+
     # return apology("todo")
     return render_template("index.html",
                            cash=usd(cash),
-                           portfolio_total="1,234,000.00",
+                           portfolio_total=usd(portfolio_total),
                            transactions=transactions)
 
 

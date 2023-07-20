@@ -9,7 +9,9 @@
         <div class="mb-3">
             <select class="form-select mx-auto w-auto" name="symbol">
                 <option disabled="" selected="">Symbol</option>
-                <option value="META">META</option>
+                {% for symbol in symbols %}
+                    <option value="{{ symbol.symbol }}">{{ symbol.symbol }}</option>
+                {% endfor %}
             </select>
         </div>
         <div class="mb-3">

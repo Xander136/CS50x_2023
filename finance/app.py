@@ -321,6 +321,7 @@ def sell():
                     # error message
                     return apology("Not enough Stocks!")
                 else:
-                    # update stock
+                    # update stock count
+                    # 
                     return apology("enough Stocks!")
 

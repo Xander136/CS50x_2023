@@ -154,23 +154,22 @@ def buy():
             price=price
         )
 
-        # insert or update data into stocks table
+        # check if user already owns the same stocks
         records = db.execute("SELECT * FROM stocks WHERE user_id = :user_id AND symbol = :symbol", user_id=session["user_id"], symbol=symbol)
         # insert
-        if records != 0:
-            
-        inserts = db.execute(
-            """
-            INSERT OR IGNORE INTO stocks (user_id, symbol, share_qty) VALUES (:user_id, :symbol, :share_qty)
-            """,
-            user_id=session["user_id"],
-            symbol=symbol,
-            share_qty=shares
-        )
-        if inserts == 0:
+        if records:
             # update
             db.execute(
                 "UPDATE stocks SET share_qty = share_qty + :shares WHERE user_id = :user_id AND symbol = :symbol", shares=shares, user_id=session["user_id"], symbol=symbol
+            )
+        else:
+            db.execute(
+                """
+                INSERT OR IGNORE INTO stocks (user_id, symbol, share_qty) VALUES (:user_id, :symbol, :share_qty)
+                """,
+                user_id=session["user_id"],
+                symbol=symbol,
+                share_qty=shares
             )
 
 

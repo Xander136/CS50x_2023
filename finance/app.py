@@ -38,10 +38,13 @@ def index():
     """Show portfolio of stocks"""
     # get sum of transactions
     transactions = db.execute(
-        "SELECT symbol, SUM(share_qty) as total_shares FROM transactions WHERE user_id = :id GROUP BY symbol HAVING share_qty > 0", id=session["user_id"]
+        "SELECT symbol, SUM(share_qty) as total_shares FROM transactions WHERE user_id = :id GROUP BY symbol HAVING share_qty > 0",
+        id=session["user_id"],
     )
     # get balance
-    cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])[0]["cash"]
+    cash = db.execute(
+        "SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"]
+    )[0]["cash"]
 
     # total values
     portfolio_total = cash
@@ -65,10 +68,12 @@ def index():
         transaction["total"] = usd(transaction["total"])
 
     # render index template
-    return render_template("index.html",
-                           cash=usd(cash),
-                           portfolio_total=usd(portfolio_total),
-                           transactions=transactions)
+    return render_template(
+        "index.html",
+        cash=usd(cash),
+        portfolio_total=usd(portfolio_total),
+        transactions=transactions,
+    )
 
 
 @app.route("/buy", methods=["GET", "POST"])
@@ -105,13 +110,14 @@ def buy():
         total_cost = price * int(shares)
 
         # check how much cash the user currently has in users.
-        cash = db.execute("SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"])
+        cash = db.execute(
+            "SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"]
+        )
 
         # check if user has enough money for the purchase
         balance = int(cash[0]["cash"]) - total_cost
         if balance < 0:
             return apology("Not enough cash for this purchase.")
-
 
         # Create table for transactions
         db.execute(
@@ -141,7 +147,9 @@ def buy():
 
         # update user balance
         db.execute(
-            "UPDATE users SET cash = :balance WHERE id = :id", balance=balance, id=session["user_id"]
+            "UPDATE users SET cash = :balance WHERE id = :id",
+            balance=balance,
+            id=session["user_id"],
         )
 
         # insert data into transactions table
@@ -151,16 +159,23 @@ def buy():
             user_id=session["user_id"],
             symbol=symbol,
             share_qty=shares,
-            price=price
+            price=price,
         )
 
         # check if user already owns the same stocks
-        records = db.execute("SELECT * FROM stocks WHERE user_id = :user_id AND symbol = :symbol", user_id=session["user_id"], symbol=symbol)
+        records = db.execute(
+            "SELECT * FROM stocks WHERE user_id = :user_id AND symbol = :symbol",
+            user_id=session["user_id"],
+            symbol=symbol,
+        )
         # insert
         if records:
             # update number of stock
             db.execute(
-                "UPDATE stocks SET share_qty = share_qty + :shares WHERE user_id = :user_id AND symbol = :symbol", shares=shares, user_id=session["user_id"], symbol=symbol
+                "UPDATE stocks SET share_qty = share_qty + :shares WHERE user_id = :user_id AND symbol = :symbol",
+                shares=shares,
+                user_id=session["user_id"],
+                symbol=symbol,
             )
         else:
             # insert new stock
@@ -170,13 +185,12 @@ def buy():
                 """,
                 user_id=session["user_id"],
                 symbol=symbol,
-                share_qty=shares
+                share_qty=shares,
             )
 
         # flash message
         flash(f"You bought {shares} stocks of {symbol} for ${total_cost}!")
         return redirect("/")
-
 
 
 @app.route("/history")
@@ -313,7 +327,8 @@ def sell():
     """Sell shares of stock"""
     # get user stocks and owned shares
     transactions = db.execute(
-        "SELECT symbol, SUM(share_qty) as total_shares FROM transactions WHERE user_id = :id GROUP BY symbol HAVING share_qty > 0", id=session["user_id"]
+        "SELECT symbol, SUM(share_qty) as total_shares FROM transactions WHERE user_id = :id GROUP BY symbol HAVING share_qty > 0",
+        id=session["user_id"],
     )
     # list of symbols owned
     symbols = []
@@ -355,17 +370,34 @@ def sell():
                 else:
                     # update stock count
                     db.execute(
-                "UPDATE stocks SET share_qty = share_qty - :no_shares WHERE user_id = :user_id AND symbol = :symbol", no_shares=no_shares, user_id=session["user_id"], symbol=symbol
-            )
+                        "UPDATE stocks SET share_qty = share_qty - :no_shares WHERE user_id = :user_id AND symbol = :symbol",
+                        no_shares=no_shares,
+                        user_id=session["user_id"],
+                        symbol=symbol,
+                    )
                     # get current stock price quote
                     symbol_quote = lookup(symbol)
+
                     # total stock price
                     price = symbol_quote["price"] * no_shares
+
                     # add selling price to total user cash
                     db.execute(
-                        "UPDATE users SET cash = cash + :price WHERE id = :id", price=price, id=session["user_id"]
+                        "UPDATE users SET cash = cash + :price WHERE id = :id",
+                        price=price,
+                        id=session["user_id"],
                     )
+
+                    # insert sold stocks to transactions table
+                    db.execute(
+                        "INSERT INTO transactions (type, user_id, symbol, share_qty, price) VALUES (:type, :user_id, :symbol, :share_qty, :price)",
+                        type="sell",
+                        user_id=session["user_id"],
+                        symbol=symbol,
+                        share_qty=no_shares,
+                        price=price,
+                    )
+
                     # flash message
                     flash(f"You sold {no_shares} stocks of {symbol} for ${price}!")
                     return redirect("/")
-

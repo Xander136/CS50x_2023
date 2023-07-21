@@ -145,7 +145,7 @@ def buy():
             "UPDATE users SET cash = :balance WHERE id = :id", balance=balance, id=session["user_id"]
         )
 
-        # insert data
+        # insert data into transactions table
         db.execute(
             "INSERT INTO transactions (type, user_id, symbol, share_qty, price) VALUES (:type, :user_id, :symbol, :share_qty, :price)",
             type="buy",
@@ -154,6 +154,16 @@ def buy():
             share_qty=shares,
             price=price
         )
+
+        # insert data into stocks table
+        db.execute(
+            "INSERT INTO stocks (user_id, symbol, share_qty) VALUES (:user_id, :symbol, :share_qty)",
+            user_id=session["user_id"],
+            symbol=symbol,
+            share_qty=shares,
+        )
+
+        # flash message
         flash(f"You bought {shares} stocks of {symbol} for ${total_cost}!")
         return redirect("/")
 

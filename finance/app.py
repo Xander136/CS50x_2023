@@ -181,7 +181,7 @@ def buy():
             # insert new stock
             db.execute(
                 """
-                INSERT OR IGNORE INTO stocks (user_id, symbol, share_qty) VALUES (:user_id, :symbol, :share_qty)
+                INSERT INTO stocks (user_id, symbol, share_qty) VALUES (:user_id, :symbol, :share_qty)
                 """,
                 user_id=session["user_id"],
                 symbol=symbol,

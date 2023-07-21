@@ -158,7 +158,10 @@ def buy():
         #
         # insert data into stocks table
         db.execute(
-            "INSERT INTO stocks (user_id, symbol, share_qty) VALUES (:user_id, :symbol, :share_qty)",
+            """
+            INSERT INTO stocks (user_id, symbol, share_qty) VALUES (:user_id, :symbol, :share_qty)
+            ON CONFLICT (symbol)
+            """,
             user_id=session["user_id"],
             symbol=symbol,
             share_qty=shares,

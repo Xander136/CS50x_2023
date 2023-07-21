@@ -165,7 +165,6 @@ def buy():
             symbol=symbol,
             share_qty=shares
         ) == 0:
-
             # update
             db.execute(
                 "UPDATE stocks SET share_qty = share_qty + :shares WHERE id = :id AND symbol = :symbol", shares=shares, id=session["user_id"], symbol=symbol

@@ -128,6 +128,18 @@ def buy():
             """
         )
 
+        # Create table for stocks owned
+        db.execute(
+            """
+            CREATE TABLE if not exists stocks(
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            user_id INTEGER NOT NULL,
+            symbol TEXT NOT NULL,
+            share_qty INTEGER NOT NULL,
+            FOREIGN KEY (user_id) REFERENCES users(id))
+            """
+        )
+
         # update user balance
         db.execute(
             "UPDATE users SET cash = :balance WHERE id = :id", balance=balance, id=session["user_id"]

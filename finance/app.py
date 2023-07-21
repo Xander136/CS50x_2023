@@ -160,7 +160,7 @@ def buy():
             """
             INSERT INTO stocks (user_id, symbol, share_qty) VALUES (:user_id, :symbol, :share_qty)
             ON CONFLICT (symbol) DO
-            UPDATE SET symbol = excluded.share_qty + shares
+            UPDATE SET share_qty = excluded.share_qty + share_qty
             """,
             user_id=session["user_id"],
             symbol=symbol,

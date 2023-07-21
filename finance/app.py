@@ -316,9 +316,11 @@ def sell():
         for transaction in transactions:
             # if user inputted symbol matches current item
             if transaction["symbol"] == symbol:
-                # if user inputted stock number is greater
+                # if user inputted stock number is greater than owned stocks
                 if int(no_shares) > int(transaction["total_shares"]):
+                    # error message
                     return apology("Not enough Stocks!")
                 else:
+                    # update stock
                     return apology("enough Stocks!")
 

@@ -156,14 +156,15 @@ def buy():
 
         # insert or update data into stocks table
         # insert
-        if db.execute(
+        inserts = db.execute(
             """
             INSERT OR IGNORE INTO stocks (user_id, symbol, share_qty) VALUES (:user_id, :symbol, :share_qty)
             """,
             user_id=session["user_id"],
             symbol=symbol,
             share_qty=shares
-        ) == 0:
+        )
+        if inserts == 0:
             # update
             db.execute(
                 "UPDATE stocks SET share_qty = share_qty + :shares WHERE user_id = :user_id AND symbol = :symbol", shares=shares, user_id=session["user_id"], symbol=symbol

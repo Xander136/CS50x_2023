@@ -163,6 +163,10 @@ def buy():
             symbol=symbol,
             share_qty=shares,
         )
+        INSERT INTO Book (ID, Name)
+  VALUES (1001, 'SQLite')
+  ON CONFLICT (ID) DO
+  UPDATE SET Name=excluded.Name;
 
         # flash message
         flash(f"You bought {shares} stocks of {symbol} for ${total_cost}!")

@@ -82,7 +82,7 @@ def buy():
     # user submitted data
     elif request.method == "POST":
         # check if symbol and shares is valid
-        symbol = request.form.get("symbol")
+        symbol = request.form.get("symbol").upper()
         if symbol == "":
             return apology("Missing Symbol")
 

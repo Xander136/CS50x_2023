@@ -295,7 +295,7 @@ def sell():
         return render_template("/sell.html", symbols=symbols)
 
     elif request.method == "POST":
-        # get number of shares from user
+        # get number of shares from user input
         no_shares = request.form.get("shares")
 
         # check if number of shares from user input is not empty

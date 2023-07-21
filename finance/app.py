@@ -354,11 +354,12 @@ def sell():
                     return apology("Not enough Stocks!")
                 else:
                     # update stock count
-                    db.execute("SELECT * FROM stocks WHERE user_id = :user_id AND symbol = :symbol", user_id=session["user_id"], symbol=symbol)
                     db.execute(
-                "UPDATE stocks SET share_qty = share_qty + :shares WHERE user_id = :user_id AND symbol = :symbol", shares=shares, user_id=session["user_id"], symbol=symbol
+                "UPDATE stocks SET share_qty = share_qty - :no_shares WHERE user_id = :user_id AND symbol = :symbol", no_shares=no_shares, user_id=session["user_id"], symbol=symbol
             )
                     # get current stock price quote
+                    quote = 
+                    price=symbol_quote["price"]
                     # total stock price
                     # add selling price to total user cash
                     # flash message

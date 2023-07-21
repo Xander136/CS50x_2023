@@ -312,9 +312,12 @@ def sell():
         symbol = request.form.get("symbol")
 
         # check if the user does not own that many shares of the stock.
+        # iterate over all owned stocks
         for transaction in transactions:
+            # if user inputted symbol matches current item
             if transaction["symbol"] == symbol:
-                if int(transaction["total_shares"]) < int(no_shares):
+                # if user inputted stock number is greater
+                if int(no_shares) > int(transaction["total_shares"]):
                     return apology("Not enough Stocks!")
                 else:
                     return apology("enough Stocks!")

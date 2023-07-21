@@ -155,6 +155,7 @@ def buy():
             price=price
         )
 
+        #
         # insert data into stocks table
         db.execute(
             "INSERT INTO stocks (user_id, symbol, share_qty) VALUES (:user_id, :symbol, :share_qty)",

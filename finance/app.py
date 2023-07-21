@@ -156,20 +156,21 @@ def buy():
         )
 
         #
-        # insert data into stocks table
+        # insert or update data into stocks table
         db.execute(
             """
             INSERT INTO stocks (user_id, symbol, share_qty) VALUES (:user_id, :symbol, :share_qty)
-            ON CONFLICT (symbol)
+            ON CONFLICT (symbol) DO
+            UPDATE SET symbol = excluded.share_qty + shares
             """,
             user_id=session["user_id"],
             symbol=symbol,
             share_qty=shares,
         )
-        INSERT INTO Book (ID, Name)
-  VALUES (1001, 'SQLite')
-  ON CONFLICT (ID) DO
-  UPDATE SET Name=excluded.Name;
+        # INSERT INTO Book (ID, Name)
+        # VALUES (1001, 'SQLite')
+        # ON CONFLICT (ID) DO
+        # UPDATE SET Name=excluded.Name;
 
         # flash message
         flash(f"You bought {shares} stocks of {symbol} for ${total_cost}!")

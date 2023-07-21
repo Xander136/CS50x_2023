@@ -132,8 +132,7 @@ def buy():
         db.execute(
             """
             CREATE TABLE if not exists stocks(
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            user_id INTEGER NOT NULL,
+            user_id INTEGER PRIMARY KEY NOT NULL,
             symbol TEXT NOT NULL,
             share_qty INTEGER NOT NULL,
             FOREIGN KEY (user_id) REFERENCES users(id))

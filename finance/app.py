@@ -50,22 +50,22 @@ def index():
     portfolio_total = cash
 
     # iterate over stocks
-    for transaction in stocks:
+    for stock in stocks:
         # Look up quote for symbol.
-        quote = lookup(transaction["symbol"])
+        quote = lookup(stock["symbol"])
 
         # the current price of each stock,
-        transaction["price"] = quote["price"]
+        stock["price"] = quote["price"]
 
         # and the total value of each holding (i.e., shares times price).
-        transaction["total"] = transaction["price"] * transaction["share_qty"]
+        stock["total"] = stock["price"] * stock["share_qty"]
 
         # Also display the user’s current cash balance along with a grand total (i.e., stocks’ total value plus cash).
-        portfolio_total += transaction["total"]
+        portfolio_total += stock["total"]
 
         # format into usd
-        transaction["price"] = usd(transaction["price"])
-        transaction["total"] = usd(transaction["total"])
+        stock["price"] = usd(stock["price"])
+        stock["total"] = usd(stock["total"])
 
     # render index template
     return render_template(

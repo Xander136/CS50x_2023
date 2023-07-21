@@ -158,11 +158,12 @@ def buy():
         records = db.execute("SELECT * FROM stocks WHERE user_id = :user_id AND symbol = :symbol", user_id=session["user_id"], symbol=symbol)
         # insert
         if records:
-            # update
+            # update number of stock
             db.execute(
                 "UPDATE stocks SET share_qty = share_qty + :shares WHERE user_id = :user_id AND symbol = :symbol", shares=shares, user_id=session["user_id"], symbol=symbol
             )
         else:
+            # insert new stock
             db.execute(
                 """
                 INSERT OR IGNORE INTO stocks (user_id, symbol, share_qty) VALUES (:user_id, :symbol, :share_qty)
@@ -171,12 +172,6 @@ def buy():
                 symbol=symbol,
                 share_qty=shares
             )
-
-
-        # INSERT INTO Book (ID, Name)
-        # VALUES (1001, 'SQLite')
-        # ON CONFLICT (ID) DO
-        # UPDATE SET Name=excluded.Name;
 
         # flash message
         flash(f"You bought {shares} stocks of {symbol} for ${total_cost}!")

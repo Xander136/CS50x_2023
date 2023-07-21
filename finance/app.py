@@ -358,10 +358,14 @@ def sell():
                 "UPDATE stocks SET share_qty = share_qty - :no_shares WHERE user_id = :user_id AND symbol = :symbol", no_shares=no_shares, user_id=session["user_id"], symbol=symbol
             )
                     # get current stock price quote
-                    quote = 
-                    price=symbol_quote["price"]
+                    symbol_quote = lookup(symbol)
                     # total stock price
+                    price = symbol_quote["price"] * no_shares
                     # add selling price to total user cash
+                    db.execute(
+                        "UPDATE users SET cash = cash + :price WHERE id = :id", price=price, id=session["user_id"]
+                    )
                     # flash message
-                    return apology("enough Stocks!")
+                    flash(f"You sold {no_shares} stocks of {symbol} for ${price}!")
+                    return redirect("/")
 

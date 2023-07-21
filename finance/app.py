@@ -355,6 +355,9 @@ def sell():
                 else:
                     # update stock count
                     db.execute("SELECT * FROM stocks WHERE user_id = :user_id AND symbol = :symbol", user_id=session["user_id"], symbol=symbol)
+                    db.execute(
+                "UPDATE stocks SET share_qty = share_qty + :shares WHERE user_id = :user_id AND symbol = :symbol", shares=shares, user_id=session["user_id"], symbol=symbol
+            )
                     # get current stock price quote
                     # total stock price
                     # add selling price to total user cash

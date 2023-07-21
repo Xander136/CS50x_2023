@@ -354,6 +354,7 @@ def sell():
                     return apology("Not enough Stocks!")
                 else:
                     # update stock count
+                    
                     # get current stock price quote
                     # total stock price
                     # add selling price to total user cash

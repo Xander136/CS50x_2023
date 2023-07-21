@@ -279,14 +279,16 @@ def register():
 @login_required
 def sell():
     """Sell shares of stock"""
-
+    # get user stocks and owned shares
     transactions = db.execute(
         "SELECT symbol, SUM(share_qty) as total_shares FROM transactions WHERE user_id = :id GROUP BY symbol HAVING share_qty > 0", id=session["user_id"]
     )
-
+    # list of symbols owned
     symbols = []
 
+    # render sell page
     if request.method == "GET":
+        # get stocks owned by user
         for transaction in transactions:
             symbols.append(transaction["symbol"].upper())
 

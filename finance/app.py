@@ -155,7 +155,6 @@ def buy():
             price=price
         )
 
-        #
         # insert or update data into stocks table
         db.execute(
             """

@@ -58,7 +58,7 @@ def index():
         transaction["price"] = quote["price"]
 
         # and the total value of each holding (i.e., shares times price).
-        transaction["total"] = transaction["price"] * transaction["total_shares"]
+        transaction["total"] = transaction["price"] * transaction["share_qty"]
 
         # Also display the user’s current cash balance along with a grand total (i.e., stocks’ total value plus cash).
         portfolio_total += transaction["total"]

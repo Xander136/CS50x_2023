@@ -19,10 +19,10 @@
         <tbody>
         {% for transaction in transactions %}
             <tr>
-                <td class="text-start">USD</td>
-                <td class="text-end">-1</td>
-                <td class="text-end">$45.67</td>
-                <td class="text-end">2023-07-20 13:46:23</td>
+                <td class="text-start">{{ transaction.symbol }}</td>
+                <td class="text-end">{{ transaction.type }}</td>
+                <td class="text-end">{{ transaction.price }}</td>
+                <td class="text-end">{{ transaction.created_at }}</td>
             </tr>
         {% endfor %}
         </tbody>

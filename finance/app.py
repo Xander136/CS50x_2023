@@ -216,11 +216,11 @@ def history():
     """Show history of transactions"""
     # get user transactions
     transactions = db.execute(
-        "SELECT * FROM transactions WHERE user_id = :user_id", user_id=session["user_id"]
+        "SELECT * FROM transactions WHERE user_id = :user_id",
+        user_id=session["user_id"],
     )
     # render template
     return render_template("history.html", transactions=transactions)
-
 
 
 @app.route("/login", methods=["GET", "POST"])
@@ -300,7 +300,7 @@ def quote():
                 "quoted.html",
                 name=symbol_quote["name"],
                 price=usd(symbol_quote["price"]),
-                symbol=symbol_quote["symbol"]
+                symbol=symbol_quote["symbol"],
             )
 
 
@@ -345,7 +345,6 @@ def register():
     # flash message
     flash(f"Registration Succesful!")
     return render_template("/index.html")
-
 
 
 @app.route("/sell", methods=["GET", "POST"])
@@ -435,13 +434,14 @@ def sell():
                     flash(f"You sold {no_shares} stocks of {symbol} for ${price}!")
                     return redirect("/")
 
+
 @app.route("/cash_in", methods=["GET", "POST"])
 @login_required
 def cash_in():
     # get current user cash balance
     cash = db.execute(
-            "SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"]
-        )
+        "SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"]
+    )
     if request.method == "GET":
         # show current balance
         return render_template("cash_in.html", cash=cash)
@@ -468,7 +468,7 @@ def cash_in():
             id=session["user_id"],
         )
         if rows == 1:
-        # flash succesful message
+            # flash succesful message
             amount = usd(amount)
             flash(f"Your cash-in of {amount} was succesful!")
             return redirect("/")

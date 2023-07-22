@@ -206,7 +206,7 @@ def history():
         "SELECT * FROM transactions WHERE user_id = :user_id", user_id=session["user_id"]
     )
     # render template
-    return render_template("history.html", transactions)
+    return render_template("history.html", transactions=transactions)
 
 
 

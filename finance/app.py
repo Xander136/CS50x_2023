@@ -108,7 +108,11 @@ def buy():
 
         # check if number of shares is valid
         shares = request.form.get("shares")
-        if shares == "":
+        # check if share is not empty
+        if not shares:
+            return apology("Missing Shares")
+        # check if share is not
+        if not shares:
             return apology("Missing Shares")
 
         # lookup symbol

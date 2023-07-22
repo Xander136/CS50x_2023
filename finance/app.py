@@ -446,6 +446,15 @@ def cash_in():
         # show current balance
         return render_template("cash_in.html", cash=cash)
 
-    else:
-        return apology("to do")
+    elif request.method == "POST":
+        # get user input for amount to cash-in
+        amount = request.form.get("cash_in")
+
+        # validate user input
+        # check if empty
+        if not amount:
+            return apology("Please input amount.")
+
+        # check if it is a 
+
 

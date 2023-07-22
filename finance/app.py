@@ -52,9 +52,9 @@ def index():
         "SELECT symbol, share_qty FROM stocks WHERE user_id = :id GROUP BY symbol HAVING share_qty > 0",
         id=session["user_id"],
     )
-    # if no
-    if not stocks:
-        return apology("No stocks owned.", code="404")
+    # # if no
+    # if not stocks:
+    #     return apology("No stocks owned.", code="404")
 
     # get balance
     cash = db.execute(

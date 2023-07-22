@@ -70,13 +70,13 @@ def index():
         quote = lookup(stock["symbol"])
 
         # the current price of each stock,
-        stock["price"] = int(quote["price"])
+        stock["price"] = quote["price"]
 
         # and the total value of each holding (i.e., shares times price).
-        stock["total"] = stock["price"] * int(stock["share_qty"])
+        stock["total"] = stock["price"] * stock["share_qty"]
 
         # Also display the user’s current cash balance along with a grand total (i.e., stocks’ total value plus cash).
-        portfolio_total += int(stock["total"])
+        portfolio_total += stock["total"]
 
         # format into usd
         stock["price"] = usd(stock["price"])

@@ -41,7 +41,7 @@ def index():
     db.execute(
         """
         CREATE TABLE if not exists stocks(
-        user_id INTEGER PRIMARY KEY NOT NULL,
+        user_id INTEGER NOT NULL,
         symbol TEXT NOT NULL,
         share_qty INTEGER NOT NULL)
         """

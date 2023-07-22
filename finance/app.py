@@ -475,6 +475,3 @@ def cash_in():
         # send user error message
         else:
             return apology("Something went wrong.")
-
-
-

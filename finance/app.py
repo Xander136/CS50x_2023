@@ -434,3 +434,18 @@ def sell():
                     # flash message
                     flash(f"You sold {no_shares} stocks of {symbol} for ${price}!")
                     return redirect("/")
+
+@app.route("/cash_in", methods=["GET", "POST"])
+@login_required
+def cash_in():
+    # get current user cash balance
+    cash = db.execute(
+            "SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"]
+        )
+    if request.method == "GET":
+        # show current balance
+        return render_template("cash_in.html", cash=cash)
+
+    else:
+        return apology("to do")
+

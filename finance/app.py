@@ -469,7 +469,8 @@ def cash_in():
         )
         if rows == 1:
         # flash succesful message
-            flash(f"You cash-ined {no_shares} stocks of {symbol} for ${price}!")
+            amount = usd(amount)
+            flash(f"Your cash-in of {amount} was succesful!")
             return redirect("/")
         # send user error message
         else:

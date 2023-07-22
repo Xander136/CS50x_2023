@@ -462,15 +462,18 @@ def cash_in():
             return apology("Please input amount greater than zero.")
 
         # add cash-in amount to total user cash
-        db.execute(
+        rows = db.execute(
             "UPDATE users SET cash = cash + :price WHERE id = :id",
             amount=amount,
             id=session["user_id"],
         )
-        
-        # flash message
-        flash(f"You sold {no_shares} stocks of {symbol} for ${price}!")
-        return redirect("/")
+        if rows == 1:
+        # flash succesful message
+            flash(f"You cash-ined {no_shares} stocks of {symbol} for ${price}!")
+            return redirect("/")
+        # send user error message
+        else:
+            return apology("Something went wrong.")
 
 
 

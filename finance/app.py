@@ -463,7 +463,7 @@ def cash_in():
 
         # add cash-in amount to total user cash
         rows = db.execute(
-            "UPDATE users SET cash = cash + :price WHERE id = :id",
+            "UPDATE users SET cash = cash + :amount WHERE id = :id",
             amount=amount,
             id=session["user_id"],
         )

@@ -305,6 +305,9 @@ def register():
         if username == "":
             return apology("Please Input a Username")
 
+        if not password:
+            return apology("Please Input a Password")
+
         # Check if password matches
         if password != request.form.get("confirmation"):
             return apology("Password does not match")
@@ -316,7 +319,7 @@ def register():
 
         # Check if username exists
         if len(rows) != 0:
-            return apology("Username already exists", 403)
+            return apology("Username already exists", 400)
         # If username does not exist
         else:
             # Remember registrant

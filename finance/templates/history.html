@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Portfolio
+{% endblock %}
+
+{% block main %}
+    <!-- table headers -->
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="text-start">Symbol</th>
+                <th class="text-end">Shares</th>
+                <th class="text-end">Price</th>
+                <th class="text-end">Transacted</th>
+            </tr>
+        </thead>
+        <!-- table contents -->
+        <tbody>
+        {% for transaction in transactions %}
+            <tr>
+                <td class="text-start">USD</td>
+                <td class="text-end">-1</td>
+                <td class="text-end">$45.67</td>
+                <td class="text-end">2023-07-20 13:46:23</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -328,7 +328,7 @@ def register():
 
     # flash message
     flash(f"Registration Succesful!")
-    return redirect("/index.html")
+    return render_template("/index.html")
 
 
 

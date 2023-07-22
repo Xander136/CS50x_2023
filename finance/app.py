@@ -467,5 +467,10 @@ def cash_in():
             amount=amount,
             id=session["user_id"],
         )
+        
+        # flash message
+        flash(f"You sold {no_shares} stocks of {symbol} for ${price}!")
+        return redirect("/")
+
 
 

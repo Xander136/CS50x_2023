@@ -455,8 +455,12 @@ def cash_in():
         if not amount:
             return apology("Please input amount.")
 
-        # check if it is not a negative number
+        # check if it is not is a positive integer
+        # change
+        amount = int(amount)
         if amount < 0:
             return apology("Please input amount greater than zero.")
+
+        
 
 

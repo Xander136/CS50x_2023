@@ -461,6 +461,11 @@ def cash_in():
         if amount < 0:
             return apology("Please input amount greater than zero.")
 
-        
+        # add cash-in amount to total user cash
+        db.execute(
+            "UPDATE users SET cash = cash + :price WHERE id = :id",
+            amount=amount,
+            id=session["user_id"],
+        )
 
 

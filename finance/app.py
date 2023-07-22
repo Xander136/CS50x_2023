@@ -108,9 +108,11 @@ def buy():
 
         # check if number of shares is valid
         shares = request.form.get("shares")
+
         # check if share is not empty
         if not shares:
             return apology("Missing Shares")
+        
         # check if share is an integer
         if not isdigit(shares):
             return apology("Share must be whole number")

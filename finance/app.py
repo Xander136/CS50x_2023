@@ -36,11 +36,25 @@ def after_request(response):
 @login_required
 def index():
     """Show portfolio of stocks"""
+
+    # Create table for stocks owned
+    db.execute(
+        """
+        CREATE TABLE if not exists stocks(
+        user_id INTEGER PRIMARY KEY NOT NULL,
+        symbol TEXT NOT NULL,
+        share_qty INTEGER NOT NULL
+        """
+    )
+
     # get sum of transactions
     stocks = db.execute(
         "SELECT symbol, share_qty FROM stocks WHERE user_id = :id GROUP BY symbol HAVING share_qty > 0",
         id=session["user_id"],
     )
+    if stocks:
+        return apology("No stocks owned.")
+
     # get balance
     cash = db.execute(
         "SELECT cash FROM users WHERE id = :user_id", user_id=session["user_id"]
@@ -134,15 +148,7 @@ def buy():
             """
         )
 
-        # Create table for stocks owned
-        db.execute(
-            """
-            CREATE TABLE if not exists stocks(
-            user_id INTEGER PRIMARY KEY NOT NULL,
-            symbol TEXT NOT NULL,
-            share_qty INTEGER NOT NULL
-            """
-        )
+
 
         # update user balance
         db.execute(

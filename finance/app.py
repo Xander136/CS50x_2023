@@ -112,7 +112,7 @@ def buy():
         if not shares:
             return apology("Missing Shares")
         # check if share is an integer
-        if not isinstance(shares, int):
+        if not isdigit(shares):
             return apology("Share must be whole number")
 
         # lookup symbol

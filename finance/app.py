@@ -43,7 +43,7 @@ def index():
         CREATE TABLE if not exists stocks(
         user_id INTEGER PRIMARY KEY NOT NULL,
         symbol TEXT NOT NULL,
-        share_qty INTEGER NOT NULL
+        share_qty INTEGER NOT NULL)
         """
     )
 

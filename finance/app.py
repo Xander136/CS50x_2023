@@ -111,9 +111,9 @@ def buy():
         # check if share is not empty
         if not shares:
             return apology("Missing Shares")
-        # check if share is not
-        if not shares:
-            return apology("Missing Shares")
+        # check if share is an integer
+        if not isinstance(shares, int):
+            return apology("Share must be whole number")
 
         # lookup symbol
         symbol_quote = lookup(symbol)

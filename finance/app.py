@@ -117,8 +117,11 @@ def buy():
         if not shares.isdigit():
             return apology("Share must be whole number")
 
+        # convert share to int
+        shares = int(shares)
+
         # check if share is not negative
-        if int(shares) < 0:
+        if shares < 0:
             return apology("Share must not be negative")
 
         # lookup symbol

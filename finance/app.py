@@ -54,7 +54,7 @@ def index():
     )
     # if no
     if not stocks:
-        return apology("No stocks owned.", )
+        return apology("No stocks owned.", code="404")
 
     # get balance
     cash = db.execute(

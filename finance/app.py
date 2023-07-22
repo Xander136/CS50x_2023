@@ -148,8 +148,6 @@ def buy():
             """
         )
 
-
-
         # update user balance
         db.execute(
             "UPDATE users SET cash = :balance WHERE id = :id",

@@ -330,9 +330,9 @@ def register():
 def sell():
     """Sell shares of stock"""
     # get user stocks and owned shares
-    transactions = db.execute(
-        "SELECT symbol, SUM(share_qty) as total_shares FROM transactions WHERE user_id = :id GROUP BY symbol HAVING share_qty > 0",
-        id=session["user_id"],
+    stocks = db.execute(
+        "SELECT symbol, share_qty FROM stocks WHERE user_id = :user_id GROUP BY symbol HAVING share_qty > 0",
+        user_id=session["user_id"],
     )
     # list of symbols owned
     symbols = []
@@ -340,8 +340,8 @@ def sell():
     # render sell page
     if request.method == "GET":
         # get stocks owned by user
-        for transaction in transactions:
-            symbols.append(transaction["symbol"].upper())
+        for stock in stocks:
+            symbols.append(stock["symbol"].upper())
 
         return render_template("/sell.html", symbols=symbols)
 
@@ -364,11 +364,11 @@ def sell():
 
         # check if the user does not own that many shares of the stock.
         # iterate over all owned stocks
-        for transaction in transactions:
+        for stock in stocks:
             # if user inputted symbol matches current item
-            if transaction["symbol"] == symbol:
+            if stock["symbol"] == symbol:
                 # if user inputted stock number is greater than owned stocks
-                if int(no_shares) > int(transaction["total_shares"]):
+                if int(no_shares) > int(stock["total_shares"]):
                     # error message
                     return apology("Not enough Stocks!")
                 else:

@@ -8,6 +8,17 @@ This project would center around my journey about learning new things and tracki
 - What will your software do?<br>
 It would be a web based portfolio.
 
+New idea.
+Help translators joining new projects learn what words they would need for a project.
+
+have a menu for each technology
+ex java
+java script
+python
+html
+css
+sales force
+
 - What features will it have?<br>
 
 - How will it be executed?<br>

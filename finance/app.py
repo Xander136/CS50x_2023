@@ -343,7 +343,13 @@ def sell():
         for stock in stocks:
             symbols.append(stock["symbol"].upper())
 
-        return render_template("/sell.html", symbols=symbols)
+        # check if user has available stocks to sell
+        if not stocks:
+            return apology("No stocks to sell.", code=404)
+
+        # render template if user has available stocks to sell
+        else:
+            return render_template("/sell.html", symbols=symbols)
 
     elif request.method == "POST":
         # get number of shares from user input
@@ -368,7 +374,7 @@ def sell():
             # if user inputted symbol matches current item
             if stock["symbol"] == symbol:
                 # if user inputted stock number is greater than owned stocks
-                if int(no_shares) > int(stock["total_shares"]):
+                if int(no_shares) > int(stock["share_qty"]):
                     # error message
                     return apology("Not enough Stocks!")
                 else:

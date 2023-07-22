@@ -297,7 +297,7 @@ def quote():
                 "quoted.html",
                 name=symbol_quote["name"],
                 price=symbol_quote["price"],
-                symbol=symbol_quote["symbol"],
+                symbol=symbol_quote["symbol"]
             )
 
 

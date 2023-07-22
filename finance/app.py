@@ -296,7 +296,7 @@ def quote():
             return render_template(
                 "quoted.html",
                 name=symbol_quote["name"],
-                price=symbol_quote["price"],
+                price=usd(symbol_quote["price"]),
                 symbol=symbol_quote["symbol"]
             )
 

@@ -140,8 +140,7 @@ def buy():
             CREATE TABLE if not exists stocks(
             user_id INTEGER PRIMARY KEY NOT NULL,
             symbol TEXT NOT NULL,
-            share_qty INTEGER NOT NULL,
-            FOREIGN KEY (user_id) REFERENCES users(id))
+            share_qty INTEGER NOT NULL
             """
         )
 

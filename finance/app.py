@@ -326,9 +326,10 @@ def register():
                 generate_password_hash(password),
             )
 
-    # Confirm registration
-    return apology("registered")
-    # return render_template("/index")
+    # flash message
+    flash(f"Registration Succesful!")
+    return redirect("/index.html")
+
 
 
 @app.route("/sell", methods=["GET", "POST"])

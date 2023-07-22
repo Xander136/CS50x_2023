@@ -455,6 +455,8 @@ def cash_in():
         if not amount:
             return apology("Please input amount.")
 
-        # check if it is a 
+        # check if it is not a negative number
+        if amount < 0:
+            return apology("Please input amount greater than zero.")
 
 

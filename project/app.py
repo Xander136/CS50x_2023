@@ -146,3 +146,7 @@ def register():
     flash(f"Registration Succesful!")
     return render_template("/index.html")
 
+
+# python terms list
+
+

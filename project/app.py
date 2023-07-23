@@ -37,6 +37,8 @@ def after_request(response):
 def index():
     """Show portfolio of stocks"""
 
+
+
     # render index template
     return render_template(
         "index.html"
@@ -46,6 +48,15 @@ def index():
 @login_required
 def cards():
     """Show portfolio of stocks"""
+    # create database for terms list
+    db.execute(
+        """
+        CREATE IF NOT EXISTS
+        id INTEGER AUTO INCREMENT UNIQUE NOT NULL PRIMARY KEY,
+        
+
+        """
+        )
 
     # render index template
     return render_template(

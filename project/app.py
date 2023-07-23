@@ -166,7 +166,7 @@ def add_term():
     # get terms from user input
     japanese = request.form.get("japanese")
     english = request.form.get("english")
-    
+
     # add term to database
     db.execute(
         """

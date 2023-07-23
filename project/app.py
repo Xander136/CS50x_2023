@@ -42,6 +42,17 @@ def index():
         "index.html"
     )
 
+@app.route("/cards.html")
+@login_required
+def cards():
+    """Show portfolio of stocks"""
+
+    # render index template
+    return render_template(
+        "cards.html"
+    )
+
+
 
 @app.route("/login", methods=["GET", "POST"])
 def login():

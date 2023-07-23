@@ -51,12 +51,14 @@ def cards():
     # create database for terms list
     db.execute(
         """
-        CREATE IF NOT EXISTS
-        id INTEGER UNIQUE NOT NULL PRIMARY KEY,
+        CREATE IF NOT EXISTS terms (
+        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
         japanese TEXT,
-        english TEXT
+        english TEXT)
         """
         )
+    CREATE TABLE users (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, username TEXT NOT NULL, hash TEXT NOT NULL, cash NUMERIC NOT NULL DEFAULT 10000.00);
+CREATE UNIQUE INDEX username ON users (username);
 
     # render index template
     return render_template(

@@ -20,6 +20,11 @@ css
 sales force
 
 - What features will it have?<br>
+Display in a list the terms in English and Japanese
+search function
+
+
+
 
 - How will it be executed?<br>
 - What new skills will you need to acquire?<br>

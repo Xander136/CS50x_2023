@@ -53,8 +53,8 @@ def cards():
         """
         CREATE IF NOT EXISTS
         id INTEGER AUTO INCREMENT UNIQUE NOT NULL PRIMARY KEY,
-        
-
+        japanese TEXT,
+        english TEXT
         """
         )
 

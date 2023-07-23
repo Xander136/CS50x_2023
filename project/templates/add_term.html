@@ -5,13 +5,15 @@ Register
 {% endblock %}
 
 {% block main %}
-<form action="/register" method="post">
-    <div class="mb-3">
-        <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="japanese" name="japanese" placeholder="Japanese Term" type="text">
-    </div>
-    <div class="mb-3">
-        <input class="form-control mx-auto w-auto" id="english" name="english" placeholder="English Term" type="text">
-    </div>
-    <button class="btn btn-primary" type="submit">Add Term</button>
-</form>
+<div class=>
+    <form action="/register" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="japanese" name="japanese" placeholder="Japanese Term" type="text">
+        </div>
+        <div class="mb-3">
+            <input class="form-control mx-auto w-auto" id="english" name="english" placeholder="English Term" type="text">
+        </div>
+        <button class="btn btn-primary" type="submit">Add Term</button>
+    </form>
+</div>
 {% endblock %}

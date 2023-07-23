@@ -159,10 +159,14 @@ def cards():
 
 
 # add new terms to the dictionary
-@app.route("/add_term")
+@app.route("/add_term", methods=["GET", "POST"])
 @login_required
 def add_term():
-    """Show portfolio of stocks"""
+    """Ask for user input"""
+    if request.method == "GET":
+        return render_template("register.html")
+
+    if request.method == "POST":
     # get terms from user input
     japanese = request.form.get("japanese")
     english = request.form.get("english")

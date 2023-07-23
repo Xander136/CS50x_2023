@@ -1,6 +1,7 @@
 /* body font */
 body {
-    font: noto-sans
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 
 /* Size for brand */

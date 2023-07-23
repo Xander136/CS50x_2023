@@ -44,26 +44,6 @@ def index():
         "index.html"
     )
 
-@app.route("/cards.html")
-@login_required
-def cards():
-    """Show portfolio of stocks"""
-    # create database for terms list
-    db.execute(
-        """
-        CREATE TABLE IF NOT EXISTS terms (
-        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-        japanese TEXT,
-        english TEXT)
-        """
-        )
-
-    # render index template
-    return render_template(
-        "cards.html"
-    )
-
-
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -158,8 +138,28 @@ def register():
     return render_template("/index.html")
 
 
+@app.route("/cards")
+@login_required
+def cards():
+    """Show portfolio of stocks"""
+    # create database for terms list
+    db.execute(
+        """
+        CREATE TABLE IF NOT EXISTS terms (
+        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+        japanese TEXT,
+        english TEXT)
+        """
+        )
+
+    # render index template
+    return render_template(
+        "cards.html"
+    )
+
+
 # add new terms to the dictionary
-@app.route("/add.html")
+@app.route("/add_term")
 @login_required
 def add_term():
     """Show portfolio of stocks"""

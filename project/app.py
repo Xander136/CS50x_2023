@@ -51,7 +51,7 @@ def cards():
     # create database for terms list
     db.execute(
         """
-        CREATE IF NOT EXISTS terms (
+        CREATE TABLE IF NOT EXISTS terms (
         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
         japanese TEXT,
         english TEXT)

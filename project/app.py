@@ -166,11 +166,11 @@ def cards():
     # create database for terms list
     db.execute(
         """
-        CREATE TABLE IF NOT EXISTS terms (
-        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-        japanese TEXT,
-        english TEXT)
-        """
+        INSER INTO terms (japanese, english)
+        VALUES (japanese = :japanese, english = :english)
+        """,
+        japanese=japanese,
+        english=english
         )
 
     # render index template

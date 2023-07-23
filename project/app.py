@@ -158,8 +158,24 @@ def register():
     return render_template("/index.html")
 
 
-# python terms list
+# add new terms to the dictionary
+@app.route("/add.html")
+@login_required
+def cards():
+    """Show portfolio of stocks"""
+    # create database for terms list
+    db.execute(
+        """
+        CREATE TABLE IF NOT EXISTS terms (
+        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+        japanese TEXT,
+        english TEXT)
+        """
+        )
 
-# create database for terms list
+    # render index template
+    return render_template(
+        "cards.html"
+    )
 
 

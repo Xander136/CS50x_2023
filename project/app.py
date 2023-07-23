@@ -164,26 +164,26 @@ def cards():
 def add_term():
     """Ask for user input"""
     if request.method == "GET":
-        return render_template("register.html")
+        return render_template("add_term.html")
 
     if request.method == "POST":
-    # get terms from user input
-    japanese = request.form.get("japanese")
-    english = request.form.get("english")
+        # get terms from user input
+        japanese = request.form.get("japanese")
+        english = request.form.get("english")
 
-    # add term to database
-    db.execute(
-        """
-        INSERT INTO terms (japanese, english)
-        VALUES (:japanese, :english)
-        """,
-        japanese=japanese,
-        english=english
+        # add term to database
+        db.execute(
+            """
+            INSERT INTO terms (japanese, english)
+            VALUES (:japanese, :english)
+            """,
+            japanese=japanese,
+            english=english
+            )
+
+        # render index template
+        return render_template(
+            "add_term.html"
         )
-
-    # render index template
-    return render_template(
-        "add_term.html"
-    )
 
 

@@ -166,7 +166,7 @@ def cards():
     # create database for terms list
     db.execute(
         """
-        INSER INTO terms (japanese, english)
+        INSERT INTO terms (japanese, english)
         VALUES (japanese = :japanese, english = :english)
         """,
         japanese=japanese,

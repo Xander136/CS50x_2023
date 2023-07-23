@@ -161,13 +161,17 @@ def register():
 # add new terms to the dictionary
 @app.route("/add.html")
 @login_required
-def cards():
+def add_term():
     """Show portfolio of stocks"""
-    # create database for terms list
+    # get terms from user input
+    japanese = request.form.get("japanese")
+    english = request.form.get("english")
+    
+    # add term to database
     db.execute(
         """
         INSERT INTO terms (japanese, english)
-        VALUES (japanese = :japanese, english = :english)
+        VALUES (:japanese, :english)
         """,
         japanese=japanese,
         english=english
@@ -175,7 +179,7 @@ def cards():
 
     # render index template
     return render_template(
-        "cards.html"
+        "add_term.html"
     )
 
 

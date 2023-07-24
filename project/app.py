@@ -140,6 +140,17 @@ def index():
         """
         )
 
+    # create database for programming languages list
+    db.execute(
+        """
+        CREATE TABLE IF NOT EXISTS languages (
+        id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
+        japanese TEXT,
+        english TEXT,
+        language TEXT)
+        """
+        )
+
     # render index template
     return render_template(
         "index.html"

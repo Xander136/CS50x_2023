@@ -137,7 +137,9 @@ def index():
         japanese TEXT,
         english TEXT,
         language TEXT,
-        topic_id INTEGER)
+        topic_id INTEGER,
+        FOREIGN KEY(topic_id)
+        REFERENCES topic(id))
         """
         )
 

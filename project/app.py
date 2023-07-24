@@ -32,19 +32,6 @@ def after_request(response):
     return response
 
 
-@app.route("/")
-@login_required
-def index():
-    """Show portfolio of stocks"""
-
-
-
-    # render index template
-    return render_template(
-        "index.html"
-    )
-
-
 @app.route("/login", methods=["GET", "POST"])
 def login():
     """Log user in"""
@@ -138,9 +125,9 @@ def register():
     return render_template("/index.html")
 
 
-@app.route("/cards")
+@app.route("/")
 @login_required
-def cards():
+def index():
     """Show portfolio of stocks"""
     # create database for terms list
     db.execute(
@@ -154,7 +141,7 @@ def cards():
 
     # render index template
     return render_template(
-        "cards.html"
+        "index.html"
     )
 
 

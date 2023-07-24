@@ -175,6 +175,7 @@ def add_term():
             flash("Sorry, please provide information for all fields!")
             return render_template("/add_term.html")
 
+
         # check database if topic already exists and get topic_id
         topic_id = None
         try:

@@ -145,9 +145,7 @@ def index():
         """
         CREATE TABLE IF NOT EXISTS languages (
         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-        japanese TEXT,
-        english TEXT,
-        language TEXT)
+        name TEXT)
         """
         )
 

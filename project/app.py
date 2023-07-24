@@ -172,6 +172,9 @@ def add_term():
         english = request.form.get("english")
         topic = request.form.get("topic")
 
+        # check database if topic already exists
+        
+
         # add term to database
         db.execute(
             """

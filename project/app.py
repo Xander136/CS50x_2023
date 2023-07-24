@@ -176,11 +176,13 @@ def add_term():
             return render_template("/add_term.html")
 
         # check if user input is not None(not defined)
-        if japanese, english, topic) or (japanese, english, topic is None):
+        if japanese is None or english is None or topic is None:
             # flash message
             flash("Sorry, please provide information for all fields!")
             return render_template("/add_term.html")
 
+        # upper case topic
+        topic = topic.upper()
 
         # check database if topic already exists and get topic_id
         topic_id = None
@@ -264,3 +266,20 @@ def add_term():
 
         # render index template
         return render_template("add_term.html")
+
+
+# display terms by their topics
+@app.route("/list", methods=["GET", "POST"])
+@login_required
+def list():
+    """Ask for user input"""
+    if request.method == "GET":
+        return render_template("list.html")
+
+    elif request.method == "POST":
+        return render_template("list.html")
+        # flash message
+        flash(f"todo")
+        return render_template("/list.html")
+
+

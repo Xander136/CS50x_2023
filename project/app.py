@@ -170,6 +170,7 @@ def add_term():
         # get terms from user input
         japanese = request.form.get("japanese")
         english = request.form.get("english")
+        topic = request.form.get("topic")
 
         # add term to database
         db.execute(

@@ -136,12 +136,11 @@ def index():
         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
         japanese TEXT,
         english TEXT,
-        language TEXT,
         topic_id INTEGER,
         FOREIGN KEY(topic_id)
         REFERENCES topic(id))
         """
-        )
+    )
 
     # create database for programming languages list
     db.execute(
@@ -150,12 +149,10 @@ def index():
         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
         name TEXT UNIQUE)
         """
-        )
+    )
 
     # render index template
-    return render_template(
-        "index.html"
-    )
+    return render_template("index.html")
 
 
 # add new terms to the dictionary
@@ -166,28 +163,96 @@ def add_term():
     if request.method == "GET":
         return render_template("add_term.html")
 
-    if request.method == "POST":
+    elif request.method == "POST":
         # get terms from user input
         japanese = request.form.get("japanese")
         english = request.form.get("english")
         topic = request.form.get("topic")
 
-        # check database if topic already exists
-        
+        # check that all fields have input
+        if not japanese or not english or not topic:
+            # flash message
+            flash("Sorry, please provide information for all fields!")
+            return render_template("/add_term.html")
 
-        # add term to database
-        db.execute(
-            """
-            INSERT INTO terms (japanese, english)
-            VALUES (:japanese, :english)
-            """,
-            japanese=japanese,
-            english=english
+        # check database if topic already exists and get topic_id
+        topic_id = None
+        try:
+            topic_id = db.execute(
+                """
+                SELECT id FROM topic WHERE name = :topic
+                """,
+                topic=topic
+            )
+        except Exception as e:
+                # flash message
+                flash(f"Registering new topic { topic }!")
+
+
+        # if topic does not exist
+        if not topic_id:
+            # insert new topic into database
+            try:
+                inserted_rows = db.execute(
+                    """
+                    INSERT INTO topic (name)
+                    VALUES (:topic)
+                    """,
+                    topic=topic
+                )
+            except Exception as e:
+                # flash message
+                flash(f"Sorry, term registration to database was not successful!")
+                return render_template("/add_term.html")
+
+        # check if insert was success
+        if not inserted_rows:
+            # flash message
+            flash("Sorry, term registration was not successful!")
+            return render_template("/add_term.html")
+
+        # get topic_id
+        try:
+            topic_id = db.execute(
+                """
+                SELECT id FROM topic
+                WHERE name = :topic
+                """,
+                topic=topic
             )
 
+        except Exception as e:
+            # flash message
+            flash(f"Sorry, term registration to database was not successful!")
+            return render_template("/add_term.html")
+
+        # check if there was an id found
+        if not topic_id:
+            # flash message
+            flash("Sorry, failed to retrieve Topic ID!")
+            return render_template("/add_term.html")
+
+        # add term to database
+        try:
+            inserted_terms = db.execute(
+                """
+                INSERT INTO terms (japanese, english, topic_id)
+                VALUES (:japanese, :english, :topic_id)
+                """,
+                japanese=japanese,
+                english=english,
+                topic_id=topic_id[0]["id"]
+            )
+        except Exception as e:
+            # flash message
+            flash(f"Sorry, term registration to database was not successful!")
+            return render_template("/add_term.html")
+
+        # check if adding of term was success
+        if inserted_terms != 1:
+            # flash message
+            flash(f"Sorry, term registration was not successful!")
+            return render_template("/add_term.html")
+
         # render index template
-        return render_template(
-            "add_term.html"
-        )
-
-
+        return render_template("add_term.html")

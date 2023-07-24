@@ -176,7 +176,7 @@ def add_term():
             return render_template("/add_term.html")
 
         # check if user input is not None(not defined)
-        if not or None japanese, english, topic or None:
+        if japanese, english, topic) or (japanese, english, topic is None):
             # flash message
             flash("Sorry, please provide information for all fields!")
             return render_template("/add_term.html")

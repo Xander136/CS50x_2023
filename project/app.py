@@ -137,7 +137,7 @@ def index():
         japanese TEXT,
         english TEXT,
         language TEXT,
-        )
+        topic_id INTEGER)
         """
         )
 

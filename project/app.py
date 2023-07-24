@@ -136,16 +136,17 @@ def index():
         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
         japanese TEXT,
         english TEXT,
-        language TEXT)
+        language TEXT,
+        )
         """
         )
 
     # create database for programming languages list
     db.execute(
         """
-        CREATE TABLE IF NOT EXISTS languages (
+        CREATE TABLE IF NOT EXISTS topic (
         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-        name TEXT)
+        name TEXT UNIQUE)
         """
         )
 

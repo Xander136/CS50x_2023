@@ -190,6 +190,7 @@ def add_term():
 
 
         # if topic does not exist
+        inserted_rows = 0
         if not topic_id:
             # insert new topic into database
             try:

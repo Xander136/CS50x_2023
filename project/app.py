@@ -277,9 +277,8 @@ def list():
         return render_template("list.html")
 
     elif request.method == "POST":
-        return render_template("list.html")
         # flash message
         flash(f"todo")
-        return render_template("/list.html")
+        return render_template("list.html")
 
 

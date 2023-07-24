@@ -135,7 +135,8 @@ def index():
         CREATE TABLE IF NOT EXISTS terms (
         id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
         japanese TEXT,
-        english TEXT)
+        english TEXT,
+        language TEXT)
         """
         )
 

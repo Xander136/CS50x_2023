@@ -195,7 +195,7 @@ def add_term():
             )
         except Exception as e:
                 # flash message
-                flash(f"Failed to insert new topic { topic }!")
+                flash(f"Failed to insert new topic { topic },: { e }!")
 
 
         # if topic does not exist

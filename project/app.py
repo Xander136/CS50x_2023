@@ -199,9 +199,10 @@ def add_term():
 
 
         # if topic does not exist
-        inserted_rows = 0
+
         if not topic_id:
             # insert new topic into database
+            inserted_rows = 0
             try:
                 inserted_rows = db.execute(
                     """
@@ -210,16 +211,18 @@ def add_term():
                     """,
                     topic=topic
                 )
+                # check if insert was success
+                if not inserted_rows:
+                    # flash message
+                    flash("Sorry, term registration to database was not successful. 219 if not inserted_rows:")
+                    return render_template("/add_term.html")
+
+
             except Exception as e:
                 # flash message
                 flash(f"Sorry, term registration to database was not successful, { e }")
                 return render_template("/add_term.html")
 
-        # check if insert was success
-        if not inserted_rows:
-            # flash message
-            flash("Sorry, term registration to database was not successful.")
-            return render_template("/add_term.html")
 
         # get topic_id
         try:
@@ -262,7 +265,7 @@ def add_term():
         # check if adding of term was success
         if inserted_term == 0:
             # flash message
-            flash(f"Sorry, term registration was not successful!")
+            flash(f"Sorry, term registration was not successful!, 263 if inserted_term == 0:")
             return render_template("/add_term.html")
         elif inserted_term != 0:
             # flash message

@@ -212,13 +212,13 @@ def add_term():
                 )
             except Exception as e:
                 # flash message
-                flash(f"Sorry, term registration to database was not successful!")
+                flash(f"Sorry, term registration to database was not successful, { e }")
                 return render_template("/add_term.html")
 
         # check if insert was success
         if not inserted_rows:
             # flash message
-            flash("Sorry, term registration was not successful!")
+            flash("Sorry, term registration to database was not successful.")
             return render_template("/add_term.html")
 
         # get topic_id
@@ -233,7 +233,7 @@ def add_term():
 
         except Exception as e:
             # flash message
-            flash(f"Sorry, term registration to database was not successful!")
+            flash(f"Sorry, term registration to database was not successful, { e }")
             return render_template("/add_term.html")
 
         # check if there was an id found

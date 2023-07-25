@@ -244,7 +244,8 @@ def add_term():
 
         # add term to database
         try:
-            inserted_terms = db.execute(
+            inserted_term = 0
+            inserted_term = db.execute(
                 """
                 INSERT INTO terms (japanese, english, topic_id)
                 VALUES (:japanese, :english, :topic_id)
@@ -259,13 +260,15 @@ def add_term():
             return render_template("/add_term.html")
 
         # check if adding of term was success
-        if inserted_terms == 0:
+        if inserted_term == 0:
             # flash message
             flash(f"Sorry, term registration was not successful!")
             return render_template("/add_term.html")
-
-        # render index template
-        return render_template("add_term.html")
+        elif inserted_term != 0:
+            # flash message
+            flash(f"Term registration successful!")
+            # render add_term template
+            return render_template("add_term.html")
 
 
 # display terms by their topics

@@ -255,11 +255,11 @@ def add_term():
             )
         except Exception as e:
             # flash message
-            flash(f"Sorry, term registration to database was not successful!")
+            flash(f"Sorry, term registration to database was not successful. { e }")
             return render_template("/add_term.html")
 
         # check if adding of term was success
-        if inserted_terms != 1:
+        if inserted_terms == 0:
             # flash message
             flash(f"Sorry, term registration was not successful!")
             return render_template("/add_term.html")

@@ -191,12 +191,11 @@ def add_term():
                 """
                 SELECT id FROM topic WHERE name = :topic
                 """,
-                topic=topic
+                topic=topic,
             )
         except Exception as e:
-                # flash message
-                flash(f"Failed to insert new topic { topic },: { e }!")
-
+            # flash message
+            flash(f"Failed to insert new topic { topic },: { e }!")
 
         # if topic does not exist
 
@@ -209,20 +208,18 @@ def add_term():
                     INSERT INTO topic (name)
                     VALUES (:topic)
                     """,
-                    topic=topic
+                    topic=topic,
                 )
                 # check if insert was success
                 if not inserted_rows:
                     # flash message
-                    flash("Sorry, term registration to database was not successful. 219 if not inserted_rows:")
+                    flash("Sorry, term registration to database was not successful.")
                     return render_template("/add_term.html")
-
 
             except Exception as e:
                 # flash message
                 flash(f"Sorry, term registration to database was not successful, { e }")
                 return render_template("/add_term.html")
-
 
         # get topic_id
         try:
@@ -231,7 +228,7 @@ def add_term():
                 SELECT id FROM topic
                 WHERE name = :topic
                 """,
-                topic=topic
+                topic=topic,
             )
 
         except Exception as e:
@@ -255,7 +252,7 @@ def add_term():
                 """,
                 japanese=japanese,
                 english=english,
-                topic_id=topic_id[0]["id"]
+                topic_id=topic_id[0]["id"],
             )
         except Exception as e:
             # flash message
@@ -265,7 +262,9 @@ def add_term():
         # check if adding of term was success
         if inserted_term == 0:
             # flash message
-            flash(f"Sorry, term registration was not successful!, 263 if inserted_term == 0:")
+            flash(
+                f"Sorry, term registration was not successful!, 263 if inserted_term == 0:"
+            )
             return render_template("/add_term.html")
         elif inserted_term != 0:
             # flash message
@@ -286,5 +285,3 @@ def list():
         # flash message
         flash(f"todo")
         return render_template("list.html")
-
-

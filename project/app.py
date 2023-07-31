@@ -344,6 +344,7 @@ def list():
                 flash(f"Something went wrong. There were no records selected.")
                 return render_template("/add_term.html")
 
+            return render_template("list.html", terms=terms)
 
         except Exception as e:
             # flash message

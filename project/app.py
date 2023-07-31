@@ -321,10 +321,33 @@ def list():
                 flash(f"Something went wrong. No topic data found.")
                 return render_template("/index.html")
 
+            terms = 0
+            terms = db.execute(
+                """
+                SELECT
+                    trm.japanese,
+                    trm.english,
+                    tpc.name
+                FROM
+                    terms as trm
+                WHERE tpc.name LIKE :topic
+                INNER JOIN topic AS tpc
+                    ON trm.topic_id = tpc.id
+                ORDER BY
+                    english
+                """
+                )
+            # check if there were selected terms
+            if not terms:
+                # flash message
+                flash(f"Something went wrong. There were no records selected.")
+                return render_template("/add_term.html")
+
+
         except Exception as e:
             # flash message
             flash(f"Something went wrong. { e }")
             return render_template("/index.html")
 
-        
+
 

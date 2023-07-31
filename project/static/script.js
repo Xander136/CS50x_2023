@@ -1,13 +1,13 @@
-document.getElementById("card1").addEventListener("click", function() {
-    sendPostRequest('card1');
+document.getElementById("python").addEventListener("click", function() {
+    sendPostRequest('python');
 });
 
-document.getElementById("card2").addEventListener("click", function() {
+document.getElementById("java").addEventListener("click", function() {
     sendPostRequest('card2');
 });
 
 function sendPostRequest(cardId) {
-    fetch('/your-endpoint', {
+    fetch('/list', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -16,4 +16,4 @@ function sendPostRequest(cardId) {
             card: cardId
         })
     })
-} 
+}

@@ -311,7 +311,7 @@ def list():
         return render_template("list.html", terms=terms)
 
     elif request.method == "POST":
-
+        topic = request.get_json()
 
 
 

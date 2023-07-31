@@ -273,15 +273,48 @@ def add_term():
             return render_template("add_term.html")
 
 
-# display terms by their topics
+# display all registered terms
 @app.route("/list", methods=["GET", "POST"])
 @login_required
 def list():
-    """Ask for user input"""
+    """show list of all the terms"""
     if request.method == "GET":
-        return render_template("list.html")
+        # SELECT all items from terms table and join related items from topic
+        try:
+            terms = 0
+            terms = db.execute(
+                """
+                SELECT
+                    trm.japanese,
+                    trm.english,
+                    tpc.name
+                FROM
+                    terms as trm
+                INNER JOIN topic AS tpc
+                    ON trm.topic_id = tpc.id
+                ORDER BY
+                    english
+                """
+                )
+            # check if there were selected terms
+            if not terms:
+                # flash message
+                flash(f"Something went wrong. There were no records selected.")
+                return render_template("/add_term.html")
+
+
+        except Exception as e:
+            # flash message
+            flash(f"Something went wrong. { e }")
+            return render_template("/add_term.html")
+
+        return render_template("list.html", terms=terms)
 
     elif request.method == "POST":
+
+        topic = request.form.get("button")
         # flash message
-        flash(f"todo")
-        return render_template("list.html")
+        flash(f"{topic}")
+        return render_template("index.html")
+
+

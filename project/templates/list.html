@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Portfolio
+Terms List
 {% endblock %}
 
 {% block main %}
@@ -12,18 +12,20 @@ Portfolio
             <th scope="col">#</th>
             <th scope="col">English</th>
             <th scope="col">Japanese</th>
+            <th scope="col">Topic</th>
         </tr>
     </thead>
     <tbody>
+        {% for term in terms %}
         <tr>
-            <th scope="row">1</th>
-            <td>Python</td>
-            <td>パイソン</td>
+            <th scope="row">{{ loop.index }}</th>
+            <td>{{ term.english }}</td>
+            <td>{{ term.japanese }}</td>
+            <td>{{ term.name }}</td>
         </tr>
+        {% endfor %}
     </tbody>
 </table>
-<!-- {% for term in terms %}
 
-{% endfor %} -->
 
 {% endblock %}

@@ -326,5 +326,5 @@ def list():
             flash(f"Something went wrong. { e }")
             return render_template("/index.html")
 
-
+        
 

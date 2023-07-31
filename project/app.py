@@ -312,9 +312,6 @@ def list():
 
     elif request.method == "POST":
 
-        topic = request.form.get("button")
-        # flash message
-        flash(f"{topic}")
-        return render_template("index.html")
+
 
 

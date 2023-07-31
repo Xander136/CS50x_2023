@@ -330,12 +330,13 @@ def list():
                     tpc.name
                 FROM
                     terms as trm
-                WHERE tpc.name LIKE :topic
                 INNER JOIN topic AS tpc
                     ON trm.topic_id = tpc.id
+                WHERE tpc.name LIKE :topic
                 ORDER BY
                     english
-                """
+                """,
+                topic=topic
                 )
             # check if there were selected terms
             if not terms:

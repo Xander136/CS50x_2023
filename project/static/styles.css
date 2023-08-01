@@ -117,5 +117,6 @@ nav .navbar-brand .black {
 }
 
 .spacer {
-    
+    clear: both;
+    height: 60px;
 }

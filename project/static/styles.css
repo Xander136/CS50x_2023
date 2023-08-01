@@ -68,15 +68,12 @@ nav .navbar-brand .black {
 #cards_landscape_wrap-2 .card-flyer .text-box .text-container {
     padding: 30px 18px;
     min-height: 15rem;
+    min-width: 5rem;
 }
 
 .description {
     min-height: 6rem;
 }
-
-
-
-
 
 #cards_landscape_wrap-2 .card-flyer {
     background: #FFFFFF;

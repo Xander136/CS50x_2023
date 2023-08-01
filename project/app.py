@@ -299,9 +299,8 @@ def list():
             # check if there were selected terms
             if not terms:
                 # flash message
-                flash(f"Something went wrong. There were no records selected.")
+                flash(f"Something went wrong. There were no records selected. However, You can add new terms for that topic.")
                 return render_template("/add_term.html")
-
 
         except Exception as e:
             # flash message
@@ -340,7 +339,7 @@ def list():
             # check if there were selected terms
             if not terms:
                 # flash message
-                flash(f"Something went wrong. There were no records selected.")
+                flash(f"Something went wrong. There were no records selected. However, You can add new terms for that topic.")
                 return render_template("/add_term.html")
 
             return render_template("list.html", terms=terms)

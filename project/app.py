@@ -313,8 +313,7 @@ def list():
     elif request.method == "POST":
         # try to get topic
         try:
-            data = request.get_json()
-            topic = data['card']
+            topic = request.form.get("topic")
 
             if not topic:
                 # flash message

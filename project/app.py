@@ -313,7 +313,7 @@ def list():
     elif request.method == "POST":
         # try to get topic
         try:
-            topic = request.form.get("topic")
+            topic = request.form.get("button").upper()
 
             if not topic:
                 # flash message

@@ -295,11 +295,13 @@ def list():
                 ORDER BY
                     english
                 """
-                )
+            )
             # check if there were selected terms
             if not terms:
                 # flash message
-                flash(f"Something went wrong. There were no records selected. However, You can add new terms for that topic.")
+                flash(
+                    f"Something went wrong. There were no records selected. However, You can add new terms for that topic."
+                )
                 return render_template("/add_term.html")
 
         except Exception as e:
@@ -334,12 +336,14 @@ def list():
                 ORDER BY
                     english
                 """,
-                topic=topic
-                )
+                topic=topic,
+            )
             # check if there were selected terms
             if not terms:
                 # flash message
-                flash(f"Something went wrong. There were no records selected. However, You can add new terms for that topic.")
+                flash(
+                    f"Something went wrong. There were no records selected. However, You can add new terms for that topic."
+                )
                 return render_template("/add_term.html")
 
             return render_template("list.html", terms=terms)
@@ -348,6 +352,3 @@ def list():
             # flash message
             flash(f"Something went wrong. { e }")
             return render_template("/index.html")
-
-
-

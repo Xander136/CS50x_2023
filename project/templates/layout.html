@@ -32,101 +32,71 @@
         <nav class="bg-light border navbar navbar-expand-md navbar-light">
             <div class="container-fluid">
                 <a class="navbar-brand " href="/"><span class="black">チンプンカンプン</a>
-                <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbar">
-                    {% if session["user_id"] %}
-                    <ul class="navbar-nav me-auto mt-2">
-                        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/list">Terms list</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/add_term">Add Terms</a></li>
-                    </ul>
-                    <ul class="navbar-nav ms-auto mt-2">
-                        <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
-                    </ul>
-                    {% else %}
-                    <ul class="navbar-nav ms-auto mt-2">
-                        <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
-                        <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
-                    </ul>
-                    {% endif %}
+                    <button aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler" data-bs-target="#navbar" data-bs-toggle="collapse" type="button">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbar">
+                        {% if session["user_id"] %}
+                            <ul class="navbar-nav me-auto mt-2">
+                                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/list">Terms list</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/add_term">Add Terms</a></li>
+                            </ul>
+                            <ul class="navbar-nav ms-auto mt-2">
+                                <li class="nav-item"><a class="nav-link" href="/logout">Log Out</a></li>
+                            </ul>
+                        {% else %}
+                            <ul class="navbar-nav ms-auto mt-2">
+                                <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+                                <li class="nav-item"><a class="nav-link" href="/login">Log In</a></li>
+                            </ul>
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
-        </nav>
+            </nav>
 
-        {% if get_flashed_messages() %}
-        <header>
-            <div class="alert alert-primary mb-0 text-center" role="alert">
-                {{ get_flashed_messages() | join(" ") }}
-            </div>
-        </header>
-        {% endif %}
+            {% if get_flashed_messages() %}
+                <header>
+                    <div class="alert alert-primary mb-0 text-center" role="alert">
+                        {{ get_flashed_messages() | join(" ") }}
+                    </div>
+                </header>
+            {% endif %}
 
-        <main class="container">
-            {% block main %}{% endblock %}
-        </main>
-        <footer class="footer fixed-bottom text-center text-white" style="background-color: #f1f1f1;">
+            <main class="container">
+                {% block main %}{% endblock %}
+            </main>
+            <footer class="footer fixed-bottom text-center text-white" style="background-color: #f1f1f1;">
             <!-- Grid container -->
-            <div class="container pt-4">
-              <!-- Section: Social media -->
-              <section class="mb-4">
-                <!-- Facebook -->
-                <a
-                  class="btn btn-link btn-floating btn-lg text-dark m-1"
-                  href="#!"
-                  role="button"
-                  data-mdb-ripple-color="dark"
-                  ><i class="fab fa-facebook-f"></i
-                ></a>
+                <div class="container pt-4">
+                <!-- Section: Social media -->
+                    <section class="mb-4">
+                    <!-- Facebook -->
+                        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
 
-                <!-- Twitter -->
-                <a
-                  class="btn btn-link btn-floating btn-lg text-dark m-1"
-                  href="#!"
-                  role="button"
-                  data-mdb-ripple-color="dark"
-                  ><i class="fab fa-twitter"></i
-                ></a>
+                    <!-- Twitter -->
+                        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
 
-                <!-- Instagram -->
-                <a
-                  class="btn btn-link btn-floating btn-lg text-dark m-1"
-                  href="#!"
-                  role="button"
-                  data-mdb-ripple-color="dark"
-                  ><i class="fab fa-instagram"></i
-                ></a>
+                    <!-- Instagram -->
+                        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-instagram"></i></a>
 
-                <!-- Linkedin -->
-                <a
-                  class="btn btn-link btn-floating btn-lg text-dark m-1"
-                  href="#!"
-                  role="button"
-                  data-mdb-ripple-color="dark"
-                  ><i class="fab fa-linkedin"></i
-                ></a>
-                <!-- Github -->
-                <a
-                  class="btn btn-link btn-floating btn-lg text-dark m-1"
-                  href="#!"
-                  role="button"
-                  data-mdb-ripple-color="dark"
-                  ><i class="fab fa-github"></i
-                ></a>
-              </section>
-              <!-- Section: Social media -->
-            </div>
+                    <!-- Linkedin -->
+                        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
+                    <!-- Github -->
+                        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="#!" role="button" data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
+                    </section>
+                <!-- Section: Social media -->
+                </div>
             <!-- Grid container -->
 
             <!-- Copyright -->
-            <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-              © 2020 Copyright:
-              <a class="text-dark" href="#">Alex Q</a>
-            </div>
+                <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                    © 2023 Copyright:
+                    <a class="text-dark" href="#">Alex Q</a>
+                </div>
             <!-- Copyright -->
-          </footer>
-    <script src="/static/script.js"></script>
-    </body>
+            </footer>
+            <script src="/static/script.js"></script>
+        </body>
 
-</html>
+    </html>

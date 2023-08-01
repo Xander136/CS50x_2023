@@ -1,31 +1,31 @@
 {% extends "layout.html" %}
 
 {% block title %}
-Terms List
+    Terms List
 {% endblock %}
 
 {% block main %}
 
-<table class="table table-hover">
-    <thead class="thead-dark">
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">English</th>
-            <th scope="col">Japanese</th>
-            <th scope="col">Topic</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for term in terms %}
-        <tr>
-            <th scope="row">{{ loop.index }}</th>
-            <td>{{ term.english }}</td>
-            <td>{{ term.japanese }}</td>
-            <td>{{ term.name }}</td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+    <table class="table table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">English</th>
+                <th scope="col">Japanese</th>
+                <th scope="col">Topic</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for term in terms %}
+                <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td>{{ term.english }}</td>
+                    <td>{{ term.japanese }}</td>
+                    <td>{{ term.name }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
 
 
 {% endblock %}

@@ -20,7 +20,7 @@
             {% for term in terms %}
                 <tr>
                     <th scope="row">{{ loop.index }}</th>
-                    <td>{{ term.english }}</td>
+                    <td name="english" value="{{ term.english }}">{{ term.english }}</td>
                     <td>{{ term.japanese }}</td>
                     <td>{{ term.name }}</td>
                     <form action="/confirmation" method="post">

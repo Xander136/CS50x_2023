@@ -13,22 +13,15 @@
                 <th scope="col">English</th>
                 <th scope="col">Japanese</th>
                 <th scope="col">Topic</th>
-                <th scope="col" class="px-2">Actions</th>
             </tr>
         </thead>
         <tbody>
             {% for term in terms %}
                 <tr>
                     <th scope="row">{{ loop.index }}</th>
-                    <td name="english" value="{{ term.english }}">{{ term.english }}</td>
+                    <td>{{ term.english }}</td>
                     <td>{{ term.japanese }}</td>
                     <td>{{ term.name }}</td>
-                    <form action="/confirmation" method="post">
-                        <td>
-                            <button class="btn btn-primary mx-auto" type="submit" name="button" value="update">Update</button>
-                            <button class="btn btn-danger" type="submit" name="button" value="delete">Delete</button>
-                        </td>
-                    </form>
                 </tr>
             {% endfor %}
         </tbody>

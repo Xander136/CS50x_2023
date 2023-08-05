@@ -13,8 +13,7 @@
                 <th scope="col">English</th>
                 <th scope="col">Japanese</th>
                 <th scope="col">Topic</th>
-                <th scope="col">Update</th>
-                <th scope="col">Delete</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -25,10 +24,8 @@
                     <td>{{ term.japanese }}</td>
                     <td>{{ term.name }}</td>
                     <td>
-                        <button class="btn btn-warning" type="submit" name="delete">Delete</button>
-                    </td>
-                    <td>
-                        <button class="btn btn-warning" type="submit" name="delete">Delete</button>
+                        <button class="btn btn-primary mx-4" type="submit" name="update">Update</button>
+                        <button class="btn btn-danger" type="submit" name="delete">Delete</button>
                     </td>
 
                 </tr>

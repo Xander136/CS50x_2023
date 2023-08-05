@@ -23,11 +23,12 @@
                     <td>{{ term.english }}</td>
                     <td>{{ term.japanese }}</td>
                     <td>{{ term.name }}</td>
-                    <td>
-                        <button class="btn btn-primary mx-auto" type="submit" name="update">Update</button>
-                        <button class="btn btn-danger" type="submit" name="delete">Delete</button>
-                    </td>
-
+                    <form action="/confirmation" method="post">
+                        <td>
+                            <button class="btn btn-primary mx-auto" type="submit" name="update">Update</button>
+                            <button class="btn btn-danger" type="submit" name="delete">Delete</button>
+                        </td>
+                    </form>
                 </tr>
             {% endfor %}
         </tbody>

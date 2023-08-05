@@ -6,13 +6,13 @@ from flask_session import Session
 from tempfile import mkdtemp
 from werkzeug.security import check_password_hash, generate_password_hash
 
-from helpers import apology, login_required, lookup, usd
+from helpers import apology, login_required
 
 # Configure application
 app = Flask(__name__)
 
 # Custom filter
-app.jinja_env.filters["usd"] = usd
+# app.jinja_env.filters["usd"] = usd
 
 # Configure session to use filesystem (instead of signed cookies)
 app.config["SESSION_PERMANENT"] = False
@@ -128,7 +128,7 @@ def register():
 @app.route("/")
 @login_required
 def index():
-    """Show portfolio of stocks"""
+    """Shows cards that of the most common Programming Language and Topics"""
     # create database for terms list
     db.execute(
         """
@@ -159,7 +159,8 @@ def index():
 @app.route("/add_term", methods=["GET", "POST"])
 @login_required
 def add_term():
-    """Ask for user input"""
+    """Add new terms to the database"""
+    # Ask for user input
     if request.method == "GET":
         return render_template("add_term.html")
 
@@ -346,6 +347,68 @@ def list():
                 )
                 return render_template("/add_term.html")
 
+            return render_template("list.html", terms=terms)
+
+        except Exception as e:
+            # flash message
+            flash(f"Something went wrong. { e }")
+            return render_template("/index.html")
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    """Search for a Japanese or English Term or a Topic"""
+    if request.method == "GET":
+        # Redirect user to search
+        return render_template("/search.html")
+
+    elif request.method == "POST":
+        # try to get search
+        try:
+            topic = request.form.get("search")
+
+            if not topic:
+                # flash message
+                flash(f"Something went wrong. No search data found.")
+                return render_template("/search.html")
+
+            terms = 0
+            terms = db.execute(
+                """
+                SELECT
+                    trm.japanese,
+                    trm.english,
+                    tpc.name
+                FROM
+                    terms as trm
+                INNER JOIN topic AS tpc
+                    ON trm.topic_id = tpc.id
+                WHERE
+                    tpc.name LIKE :topic
+                OR
+                    trm.japanese LIKE :topic
+                OR
+                    trm.english LIKE :topic
+                ORDER BY
+                    english
+                """,
+                topic=topic,
+            )
+            # check if there were selected terms
+            if not terms:
+                # flash message
+                flash(
+                    f"Something went wrong. There were no records found. However, You can add new terms for that topic."
+                )
+                return render_template("/add_term.html")
+
+            # flash message for how many search hits were found
+            hits = 0
+            for items in terms:
+                hits += 1
+            flash(f"Found { hits } items.")
+
+            # render list template
             return render_template("list.html", terms=terms)
 
         except Exception as e:

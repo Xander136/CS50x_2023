@@ -23,8 +23,8 @@
                     <td id="{{ term.english }}" data-value="{{ term.english }}">{{ term.english }}</td>
                     <td>{{ term.japanese }}</td>
                     <td>{{ term.name }}</td>
-                    <td c>
-                        <form action="/edit" method="POST">
+                    <td>
+                        <form action="/edit" method="POST" class="text-center">
                             <button class="btn btn-success" type="submit" name="button" value="{{ term.id }}">Update</button>
                         </form>
                     </td>

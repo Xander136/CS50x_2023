@@ -24,13 +24,13 @@
                     <td>{{ term.japanese }}</td>
                     <td>{{ term.name }}</td>
                     <td>
-                        <form action="/edit" method="POST" class="text-right">
-                            <button class="btn btn-success" type="submit" name="button" value="{{ term.id }}">Update</button>
+                        <form action="/edit" method="POST">
+                            <button class="btn btn-success mr-2" type="submit" name="button" value="{{ term.id }}">Update</button>
                         </form>
                     </td>
                     <td>
-                        <form action="/delete" method="POST" class="text-center">
-                            <button class="btn btn-danger" type="submit" name="button" value="{{ term.id }}">Delete</button>
+                        <form action="/delete" method="POST">
+                            <button class="btn btn-danger mr-2" type="submit" name="button" value="{{ term.id }}">Delete</button>
                         </form>
                     </td>
                 </tr>

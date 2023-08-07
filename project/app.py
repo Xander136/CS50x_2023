@@ -415,3 +415,16 @@ def search():
             # flash message
             flash(f"Something went wrong. { e }")
             return render_template("/index.html")
+
+# edit a registered term
+@app.route("/edit", methods=["GET", "POST"])
+@login_required
+def edit():
+    return apology("todo")
+
+# delete a registered term
+@app.route("/delete", methods=["GET", "POST"])
+@login_required
+def delete():
+    return apology("todo")
+

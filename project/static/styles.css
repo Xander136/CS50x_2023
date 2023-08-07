@@ -131,3 +131,7 @@ nav .navbar-brand .black {
     flex-direction: row;
     flex-wrap: wrap;
 }
+
+.btn {
+    margin-right: 1rem;
+}

@@ -420,17 +420,13 @@ def search():
             return render_template("/index.html")
 
 # edit a registered term
-@app.route("/edit", methods=["GET", "POST"])
+@app.route("/edit", methods=["POST"])
 @login_required
 def edit():
-    if request.method == "GET":
-        # Redirect user to search
-        return render_template("/search.html")
-
-    elif request.method == "POST":
-        # try to get search
+    if request.method == "POST":
+        # try to get term id
         try:
-            topic = request.form.get("search")
+            id = request.form.get("search")
     return apology("todo")
 
 # delete a registered term

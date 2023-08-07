@@ -327,6 +327,7 @@ def list():
             terms = db.execute(
                 """
                 SELECT
+                    trm.id,
                     trm.japanese,
                     trm.english,
                     tpc.name
@@ -377,6 +378,7 @@ def search():
             terms = db.execute(
                 """
                 SELECT
+                    trm.id,
                     trm.japanese,
                     trm.english,
                     tpc.name
@@ -421,6 +423,7 @@ def search():
 @app.route("/edit", methods=["GET", "POST"])
 @login_required
 def edit():
+    
     return apology("todo")
 
 # delete a registered term

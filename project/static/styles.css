@@ -125,3 +125,8 @@ nav .navbar-brand .black {
 .form-inline {
     display: inline-block;
 }
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+}

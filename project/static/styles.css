@@ -129,4 +129,5 @@ nav .navbar-brand .black {
 .button-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
 }

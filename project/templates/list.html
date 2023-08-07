@@ -19,7 +19,7 @@
             {% for term in terms %}
                 <tr>
                     <th scope="row">{{ loop.index }}</th>
-                    <td value="term.english">{{ term.english }}</td>
+                    <td id="{{ term.english }}" data-value="{{ term.english }}">{{ term.english }}</td>
                     <td>{{ term.japanese }}</td>
                     <td>{{ term.name }}</td>
                 </tr>

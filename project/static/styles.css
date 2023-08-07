@@ -122,6 +122,6 @@ nav .navbar-brand .black {
     height: 60px;
 }
 
-.update-button {
-    
+.form-inline {
+    display: inline-block;
 }

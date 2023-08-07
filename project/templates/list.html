@@ -13,7 +13,7 @@
                 <th scope="col">English</th>
                 <th scope="col">Japanese</th>
                 <th scope="col">Topic</th>
-                <th scope="col" class="text-center">Actions</th>
+                <th scope="col" class="">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -24,11 +24,11 @@
                     <td>{{ term.japanese }}</td>
                     <td>{{ term.name }}</td>
                     <td>
-                        <form action="/edit" method="POST">
+                        <form action="/edit" method="POST" class="form-inline">
                             <button class="btn btn-success mr-2" type="submit" name="button" value="{{ term.id }}">Update</button>
                         </form>
-                        <form action="/delete" method="POST">
-                            <button class="btn btn-danger mr-2" type="submit" name="button" value="{{ term.id }}">Delete</button>
+                        <form action="/delete" method="POST" class="form-inline">
+                            <button class="btn btn-danger" type="submit" name="button" value="{{ term.id }}">Delete</button>
                         </form>
                     </td>
                 </tr>

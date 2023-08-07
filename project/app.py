@@ -286,7 +286,7 @@ def list():
             terms = db.execute(
                 """
                 SELECT
-                    trm.id
+                    trm.id,
                     trm.japanese,
                     trm.english,
                     tpc.name

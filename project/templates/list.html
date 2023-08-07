@@ -13,6 +13,7 @@
                 <th scope="col">English</th>
                 <th scope="col">Japanese</th>
                 <th scope="col">Topic</th>
+                <th scope="col">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +23,10 @@
                     <td id="{{ term.english }}" data-value="{{ term.english }}">{{ term.english }}</td>
                     <td>{{ term.japanese }}</td>
                     <td>{{ term.name }}</td>
+                    <form action="/edit" method="POST">
+                        <button class="btn btn-primary" type="submit" name="button" value="{{ term.id }}">Update</button>
+                        <button class="btn btn-primary" type="submit" name="button" value="{{ term.id }}">Delete</button>
+                    </form>
                 </tr>
             {% endfor %}
         </tbody>

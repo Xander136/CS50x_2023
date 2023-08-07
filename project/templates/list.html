@@ -25,12 +25,12 @@
                     <td>{{ term.name }}</td>
                     <td>
                         <form action="/edit" method="POST">
-                            <button class="btn btn-primary" type="submit" name="button" value="{{ term.id }}">Update</button>
+                            <button class="btn btn-success" type="submit" name="button" value="{{ term.id }}">Update</button>
                         </form>
                     </td>
                     <td>
                         <form action="/delete" method="POST">
-                            <button class="btn btn-primary" type="submit" name="button" value="{{ term.id }}">Delete</button>
+                            <button class="btn btn-danger" type="submit" name="button" value="{{ term.id }}">Delete</button>
                         </form>
                     </td>
                 </tr>

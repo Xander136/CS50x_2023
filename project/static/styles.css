@@ -129,10 +129,13 @@ nav .navbar-brand .black {
 .button-container {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     padding: 0;
     margin: 0;
 }
 
 .btn {
     margin-right: 1rem;
+    margin-top: .3rem;
+    margin-bottom: .3rem;
 }

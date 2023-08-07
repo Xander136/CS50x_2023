@@ -426,7 +426,7 @@ def edit():
     if request.method == "POST":
         # try to get term id
         try:
-            id = request.form.get("search")
+            id = request.form.get("button")
     return apology("todo")
 
 # delete a registered term

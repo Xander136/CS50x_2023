@@ -424,10 +424,17 @@ def search():
 @login_required
 def update():
     if request.method == "POST":
-        # try to get term id
         try:
+            # try to get term id
             id = request.form.get("button")
-            return apology(f"todo {id}")
+
+            # get term information
+            term = db.execute(
+                """
+                SELECT *
+                FROM    
+                """
+            )
 
         except Exception as e:
             # flash message

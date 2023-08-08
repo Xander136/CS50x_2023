@@ -420,10 +420,10 @@ def search():
             return render_template("/index.html")
 
 # edit a registered term
-@app.route("/update", methods=["POST"])
+@app.route("/update", methods=["GET", "POST"])
 @login_required
 def update():
-    if request.method == "POST":
+    if request.method == "GET":
         try:
             # try to get term id
             id = request.form.get("button")
@@ -463,6 +463,9 @@ def update():
             # flash message
             flash(f"Something went wrong. { e }")
             return render_template("/list.html")
+
+    elif request.method == "POST":
+        
 
 # delete a registered term
 @app.route("/delete", methods=["GET", "POST"])

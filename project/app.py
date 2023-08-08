@@ -440,9 +440,12 @@ def update():
                     terms as trm
                 INNER JOIN topic AS tpc
                     ON trm.topic_id = tpc.id
+                WHERE
+                    tpc.id = :id
                 ORDER BY
                     english
-                """
+                """,
+                id=id
             )
 
         except Exception as e:

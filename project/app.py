@@ -465,7 +465,18 @@ def update():
             return render_template("/list.html")
 
     elif request.method == "POST":
-        if
+        # get term details
+        try:
+            id = request.form.get("button")
+            id = request.form.get("button")
+            id = request.form.get("button")
+            id = request.form.get("button")
+
+        except Exception as e:
+        # flash message
+        flash(f"Something went wrong. { e }")
+        return render_template("/list.html")
+
 
 
 # delete a registered term

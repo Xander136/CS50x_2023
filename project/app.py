@@ -468,10 +468,11 @@ def update():
     elif request.method == "POST":
         # get term details
         try:
-            id = request.form.get("button")
-            id = request.form.get("button")
-            id = request.form.get("button")
-            id = request.form.get("button")
+            id = request.form.get("term_id")
+            id = request.form.get("topic_id")
+            id = request.form.get("japanese")
+            id = request.form.get("english")
+            id = request.form.get("topic")
 
         except Exception as e:
         # flash message

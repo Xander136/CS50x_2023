@@ -436,7 +436,8 @@ def update():
                     trm.id,
                     trm.japanese,
                     trm.english,
-                    tpc.name
+                    tpc.name,
+                    tpc.id
                 FROM
                     terms as trm
                 INNER JOIN topic AS tpc

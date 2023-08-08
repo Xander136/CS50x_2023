@@ -447,7 +447,7 @@ def update():
                     english
                 """,
                 id=id
-            )
+            )[0]
 
             if term == 0:
                 # flash message
@@ -465,7 +465,7 @@ def update():
             return render_template("/list.html")
 
     elif request.method == "POST":
-        if 
+        if
 
 
 # delete a registered term

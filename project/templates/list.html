@@ -25,10 +25,10 @@
                     <td>{{ term.name }}</td>
                     <td>
                         <div class="button-container">
-                            <form action="/update" method="POST" class="form-inline">
+                            <form action="/update" method="GET" class="form-inline">
                                 <button class="btn btn-success" type="submit" name="button" value="{{ term.id }}">Update</button>
                             </form>
-                            <form action="/delete" method="POST" class="form-inline">
+                            <form action="/delete" method="GET" class="form-inline">
                                 <button class="btn btn-danger" type="submit" name="button" value="{{ term.id }}">Delete</button>
                             </form>
                         </div>

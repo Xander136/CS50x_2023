@@ -7,16 +7,18 @@
 {% block main %}
     <div class="mx-auto text-center pt-5">
         <form action="/update" method="POST">
-            <input type="hidden" name="id" value="{{ term.id }}">
-            <div class="mb-3">
-                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="japanese" name="japanese" placeholder="Japanese Term" type="text" value="{{ term.japanese }}">
-            </div>
-            <div class="mb-3">
-                <input autocomplete="off" class="form-control mx-auto w-auto" id="english" name="english" placeholder="English Term" type="text" value="{{ term.english }}">
-            </div>
-            <div class="mb-3">
-                <input class="form-control mx-auto w-auto" id="topic" name="topic" placeholder="Topic" type="text" value="{{ term.name }}">
-            </div>
+            {% for term in terms %}
+                <input type="hidden" name="id" value="{{ term.id }}">
+                <div class="mb-3">
+                    <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="japanese" name="japanese" placeholder="Japanese Term" type="text" value="{{ term.japanese }}">
+                </div>
+                <div class="mb-3">
+                    <input autocomplete="off" class="form-control mx-auto w-auto" id="english" name="english" placeholder="English Term" type="text" value="{{ term.english }}">
+                </div>
+                <div class="mb-3">
+                    <input class="form-control mx-auto w-auto" id="topic" name="topic" placeholder="Topic" type="text" value="{{ term.name }}">
+                </div>
+            {% endfor %}
             <button class="btn btn-primary" type="submit">Add Term</button>
         </form>
     </div>

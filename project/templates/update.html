@@ -5,18 +5,18 @@
 {% endblock %}
 
 {% block main %}
-    <div class="container py-5 text-center">
+    <div class="mx-auto text-center pt-5">
         <form action="/update" method="POST">
             <div class="mb-3">
-                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="username" name="username" placeholder="Username" type="text">
+                <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="japanese" name="japanese" placeholder="Japanese Term" type="text">
             </div>
             <div class="mb-3">
-                <input class="form-control mx-auto w-auto" id="password" name="password" placeholder="Password" type="password">
+                <input autocomplete="off" class="form-control mx-auto w-auto" id="english" name="english" placeholder="English Term" type="text">
             </div>
             <div class="mb-3">
-                <input class="form-control mx-auto w-auto" id="confirmation" name="confirmation" placeholder="Re-type Password" type="password">
+                <input class="form-control mx-auto w-auto" id="topic" name="topic" placeholder="Topic" type="text">
             </div>
-            <button class="btn btn-primary" type="submit">Update</button>
+            <button class="btn btn-primary" type="submit">Add Term</button>
         </form>
     </div>
 {% endblock %}

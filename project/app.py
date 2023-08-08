@@ -466,18 +466,115 @@ def update():
             return render_template("/list.html")
 
     elif request.method == "POST":
-        # get term details
+        # get terms from user input
+        term_id = request.form.get("term_id")
+        topic_id = request.form.get("topic_id")
+        japanese = request.form.get("japanese")
+        english = request.form.get("english")
+        topic = request.form.get("topic")
+
+        # check that all fields have input
+        if not japanese or not english or not topic:
+            # flash message
+            flash("Sorry, please provide information for all fields!")
+            return render_template("/list.html")
+
+        # check if user input is not None(not defined)
+        if japanese is None or english is None or topic is None:
+            # flash message
+            flash("Sorry, please provide information for all fields!")
+            return render_template("/add_term.html")
+
+        # upper case topic
+        topic = topic.upper()
+
+        # check database if topic already exists and get topic_id
+        topic_id = None
         try:
-            id = request.form.get("term_id")
-            id = request.form.get("topic_id")
-            id = request.form.get("japanese")
-            id = request.form.get("english")
-            id = request.form.get("topic")
+            topic_id = db.execute(
+                """
+                SELECT id FROM topic WHERE name = :topic
+                """,
+                topic=topic,
+            )
+        except Exception as e:
+            # flash message
+            flash(f"Failed to insert new topic { topic },: { e }!")
+
+        # if topic does not exist
+
+        if not topic_id:
+            # insert new topic into database
+            inserted_rows = 0
+            try:
+                inserted_rows = db.execute(
+                    """
+                    INSERT INTO topic (name)
+                    VALUES (:topic)
+                    """,
+                    topic=topic,
+                )
+                # check if insert was success
+                if not inserted_rows:
+                    # flash message
+                    flash("Sorry, term registration to database was not successful.")
+                    return render_template("/add_term.html")
+
+            except Exception as e:
+                # flash message
+                flash(f"Sorry, term registration to database was not successful, { e }")
+                return render_template("/add_term.html")
+
+        # get topic_id
+        try:
+            topic_id = db.execute(
+                """
+                SELECT id FROM topic
+                WHERE name = :topic
+                """,
+                topic=topic,
+            )
 
         except Exception as e:
-        # flash message
-        flash(f"Something went wrong. { e }")
-        return render_template("/list.html")
+            # flash message
+            flash(f"Sorry, term registration to database was not successful, { e }")
+            return render_template("/add_term.html")
+
+        # check if there was an id found
+        if not topic_id:
+            # flash message
+            flash("Sorry, failed to retrieve Topic ID!")
+            return render_template("/add_term.html")
+
+        # add term to database
+        try:
+            inserted_term = 0
+            inserted_term = db.execute(
+                """
+                INSERT INTO terms (japanese, english, topic_id)
+                VALUES (:japanese, :english, :topic_id)
+                """,
+                japanese=japanese,
+                english=english,
+                topic_id=topic_id[0]["id"],
+            )
+        except Exception as e:
+            # flash message
+            flash(f"Sorry, term registration to database was not successful. { e }")
+            return render_template("/add_term.html")
+
+        # check if adding of term was success
+        if inserted_term == 0:
+            # flash message
+            flash(
+                f"Sorry, term registration was not successful!, 263 if inserted_term == 0:"
+            )
+            return render_template("/add_term.html")
+        elif inserted_term != 0:
+            # flash message
+            flash(f"Term registration successful!")
+            # render add_term template
+            return render_template("add_term.html")
 
 
 

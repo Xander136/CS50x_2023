@@ -454,6 +454,11 @@ def update():
                 flash(f"Something went wrong. Term was not found.")
                 return render_template("/list.html")
 
+            elif term:
+                # render update template
+                return render_template("/update.html", term=term)
+
+
         except Exception as e:
             # flash message
             flash(f"Something went wrong. { e }")

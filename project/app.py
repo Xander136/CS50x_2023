@@ -420,9 +420,9 @@ def search():
             return render_template("/index.html")
 
 # edit a registered term
-@app.route("/edit", methods=["POST"])
+@app.route("/update", methods=["POST"])
 @login_required
-def edit():
+def update():
     if request.method == "POST":
         # try to get term id
         try:

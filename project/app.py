@@ -433,11 +433,11 @@ def update():
             term = db.execute(
                 """
                 SELECT
-                    trm.id,
+                    trm.id AS term_id,
                     trm.japanese,
                     trm.english,
                     tpc.name,
-                    tpc.id
+                    tpc.id AS topic_id
                 FROM
                     terms as trm
                 INNER JOIN topic AS tpc

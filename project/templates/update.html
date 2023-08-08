@@ -8,7 +8,7 @@
     <div class="mx-auto text-center pt-5">
         <form action="/update" method="POST">
             {% for term in terms %}
-                <input type="hidden" name="term_id" value="{{ term.id }}">
+                <input type="hidden" name="term_id" value="{{ term.term_id }}">
                 <div class="mb-3">
                     <input autocomplete="off" autofocus class="form-control mx-auto w-auto" id="japanese" name="japanese" placeholder="Japanese Term" type="text" value="{{ term.japanese }}">
                 </div>
@@ -16,7 +16,7 @@
                     <input autocomplete="off" class="form-control mx-auto w-auto" id="english" name="english" placeholder="English Term" type="text" value="{{ term.english }}">
                 </div>
                 <div class="mb-3">
-                    <input type="hidden" name="topic_id" value="{{ term.id }}">
+                    <input type="hidden" name="topic_id" value="{{ term.topic_id }}">
                     <input class="form-control mx-auto w-auto" id="topic" name="topic" placeholder="Topic" type="text" value="{{ term.name }}">
                 </div>
             {% endfor %}

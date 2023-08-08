@@ -431,8 +431,17 @@ def update():
             # get term information
             term = db.execute(
                 """
-                SELECT *
-                FROM    
+                SELECT
+                    trm.id,
+                    trm.japanese,
+                    trm.english,
+                    tpc.name
+                FROM
+                    terms as trm
+                INNER JOIN topic AS tpc
+                    ON trm.topic_id = tpc.id
+                ORDER BY
+                    english
                 """
             )
 

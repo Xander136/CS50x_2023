@@ -465,7 +465,8 @@ def update():
             return render_template("/list.html")
 
     elif request.method == "POST":
-        
+        if 
+
 
 # delete a registered term
 @app.route("/delete", methods=["GET", "POST"])

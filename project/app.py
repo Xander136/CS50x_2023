@@ -429,6 +429,7 @@ def update():
             id = request.form.get("button")
 
             # get term information
+            term = 0
             term = db.execute(
                 """
                 SELECT
@@ -441,12 +442,17 @@ def update():
                 INNER JOIN topic AS tpc
                     ON trm.topic_id = tpc.id
                 WHERE
-                    tpc.id = :id
+                    trm.id = :id
                 ORDER BY
                     english
                 """,
                 id=id
             )
+
+            if term == 0:
+                # flash message
+                flash(f"Something went wrong. Term was not found.")
+                return render_template("/list.html")
 
         except Exception as e:
             # flash message

@@ -468,7 +468,7 @@ def update():
     elif request.method == "POST":
         # get terms from user input
         term_id = request.form.get("term_id")
-        topic_id = request.form.get("topic_id")
+        topic_id = request.form.get("topic_id") # fix
         japanese = request.form.get("japanese")
         english = request.form.get("english")
         topic = request.form.get("topic")

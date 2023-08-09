@@ -427,7 +427,7 @@ def update():
     if request.method == "GET":
         try:
             # try to get term id
-            id = request.form.get("button")
+            id = request.args.get("button")
             print(id)
             # get term information
             term = 0

@@ -468,13 +468,12 @@ def update():
     elif request.method == "POST":
         # get terms from user input
         term_id = request.form.get("term_id")
-        topic_id = request.form.get("topic_id") # fix
         japanese = request.form.get("japanese")
         english = request.form.get("english")
         topic = request.form.get("topic")
 
         # check that all fields have input
-        if not japanese or not english or not topic:
+        if not japanese or not english or not topic or not term_id:
             # flash message
             flash("Sorry, please provide information for all fields!")
             return render_template("/list.html")

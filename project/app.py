@@ -434,11 +434,10 @@ def update():
             term = db.execute(
                 """
                 SELECT
-                    trm.id AS term_id,
+                    trm.id
                     trm.japanese,
                     trm.english,
-                    tpc.name,
-                    tpc.id AS topic_id
+                    tpc.name
                 FROM
                     terms as trm
                 INNER JOIN topic AS tpc
@@ -456,7 +455,7 @@ def update():
                 # render update template
                 return render_template("/update.html", term=term)
 
-            elif term == 0:
+            else:
                 # flash message
                 flash(f"Something went wrong. Term was not found.")
                 return render_template("/list.html")

@@ -567,17 +567,17 @@ def update():
             flash(f"Sorry, term update to database was not successful. { e }")
             return render_template("list.html")
 
-        # check if adding of term was success
+        # check if updating of term was a success
         if updated_term == 0:
             # flash message
             flash(
                 f"Sorry, term update was not successful. There were no updated items."
             )
             return render_template("/list.html")
-        elif inserted_term != 0:
+        elif updated_term != 0:
             # flash message
             flash(f"Term update successful!")
-            # render add_term template
+            # render list template
             return render_template("list.html")
 
 

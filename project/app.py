@@ -588,5 +588,5 @@ def update():
 @app.route("/delete", methods=["GET", "POST"])
 @login_required
 def delete():
-    if request.method == "GET":
-        
+    return apology("Todo")
+

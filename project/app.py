@@ -419,6 +419,7 @@ def search():
             flash(f"Something went wrong. { e }")
             return render_template("/index.html")
 
+
 # edit a registered term
 @app.route("/update", methods=["GET", "POST"])
 @login_required
@@ -447,7 +448,7 @@ def update():
                 ORDER BY
                     english
                 """,
-                id=id
+                id=id,
             )[0]
 
             if term == 0:
@@ -458,7 +459,6 @@ def update():
             elif term:
                 # render update template
                 return render_template("/update.html", term=term)
-
 
         except Exception as e:
             # flash message
@@ -550,31 +550,35 @@ def update():
             updated_term = 0
             updated_term = db.execute(
                 """
-                INSERT INTO terms (japanese, english, topic_id)
-                VALUES (:japanese, :english, :topic_id)
+                UPDATE
+                        terms
+                SET
+                    japanese=:japanese, english=:english, topic_id=:topic_id
+                WHERE
+                    id = :term_id
                 """,
                 japanese=japanese,
                 english=english,
                 topic_id=topic_id[0]["id"],
+                term_id=term_id,
             )
         except Exception as e:
             # flash message
-            flash(f"Sorry, term registration to database was not successful. { e }")
-            return render_template("/add_term.html")
+            flash(f"Sorry, term update to database was not successful. { e }")
+            return render_template("list.html")
 
         # check if adding of term was success
         if updated_term == 0:
             # flash message
             flash(
-                f"Sorry, term registration was not successful!, 263 if inserted_term == 0:"
+                f"Sorry, term update was not successful. There were no updated items."
             )
-            return render_template("/add_term.html")
+            return render_template("/list.html")
         elif inserted_term != 0:
             # flash message
-            flash(f"Term registration successful!")
+            flash(f"Term update successful!")
             # render add_term template
-            return render_template("add_term.html")
-
+            return render_template("list.html")
 
 
 # delete a registered term
@@ -582,4 +586,3 @@ def update():
 @login_required
 def delete():
     return apology("todo")
-

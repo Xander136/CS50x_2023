@@ -452,6 +452,7 @@ def update():
 
             if term:
                 term = term[0]
+                print(term)
                 # render update template
                 return render_template("/update.html", term=term)
 

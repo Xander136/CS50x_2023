@@ -566,24 +566,27 @@ def update():
         except Exception as e:
             # flash message
             flash(f"Sorry, term update to database was not successful. { e }")
-            return render_template("list.html")
+            return redirect("/list")
 
-        # check if updating of term was a success
+        # check if updating of term was not a success
         if updated_term == 0:
             # flash message
             flash(
                 f"Sorry, term update was not successful. There were no updated items."
             )
-            return render_template("/list.html")
+            return redirect("/list")
+
+        # if the update was a success
         elif updated_term != 0:
             # flash message
             flash(f"Term update successful!")
             # render list template
-            return redirect(url_for('list'))
+            return redirect("/list")
 
 
 # delete a registered term
 @app.route("/delete", methods=["GET", "POST"])
 @login_required
 def delete():
-    return apology("todo")
+    if request.method == "GET":
+        

@@ -545,10 +545,10 @@ def update():
             flash("Sorry, failed to retrieve Topic ID!")
             return render_template("/add_term.html")
 
-        # add term to database
+        # update term information in the database
         try:
-            inserted_term = 0
-            inserted_term = db.execute(
+            updated_term = 0
+            updated_term = db.execute(
                 """
                 INSERT INTO terms (japanese, english, topic_id)
                 VALUES (:japanese, :english, :topic_id)
@@ -563,7 +563,7 @@ def update():
             return render_template("/add_term.html")
 
         # check if adding of term was success
-        if inserted_term == 0:
+        if updated_term == 0:
             # flash message
             flash(
                 f"Sorry, term registration was not successful!, 263 if inserted_term == 0:"

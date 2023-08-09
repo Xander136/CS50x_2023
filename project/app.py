@@ -451,14 +451,16 @@ def update():
                 id=id,
             )
 
-            if term == 0:
+            if term:
+                term = term[0]
+                # render update template
+                return render_template("/update.html", term=term)
+
+            elif term == 0:
                 # flash message
                 flash(f"Something went wrong. Term was not found.")
                 return render_template("/list.html")
 
-            elif term:
-                # render update template
-                return render_template("/update.html", term=term)
 
         except Exception as e:
             # flash message

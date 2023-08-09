@@ -449,7 +449,7 @@ def update():
                     english
                 """,
                 id=id,
-            )[0]
+            )
 
             if term == 0:
                 # flash message
@@ -462,7 +462,7 @@ def update():
 
         except Exception as e:
             # flash message
-            flash(f"Something went wrong. { e }")
+            flash(f"Something went wrong. line 465 { e }")
             return render_template("/list.html")
 
     elif request.method == "POST":

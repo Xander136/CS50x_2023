@@ -428,7 +428,7 @@ def update():
         try:
             # try to get term id
             id = request.form.get("button")
-
+            print(id)
             # get term information
             term = 0
             term = db.execute(

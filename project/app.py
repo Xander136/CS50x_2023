@@ -579,7 +579,7 @@ def update():
             # flash message
             flash(f"Term update successful!")
             # render list template
-            return render_template("list.html")
+            return redirect("list.html")
 
 
 # delete a registered term

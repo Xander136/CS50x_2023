@@ -434,7 +434,7 @@ def update():
             term = db.execute(
                 """
                 SELECT
-                    trm.id
+                    trm.id,
                     trm.japanese,
                     trm.english,
                     tpc.name

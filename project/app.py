@@ -460,7 +460,6 @@ def update():
                 flash(f"Something went wrong. Term was not found.")
                 return render_template("/list.html")
 
-
         except Exception as e:
             # flash message
             flash(f"Something went wrong. line 465 { e }")
@@ -608,7 +607,7 @@ def delete():
                 LIMIT
                     1
                 """,
-                id=id
+                id=id,
             )
             # check if there were items selected
             if term:
@@ -626,7 +625,6 @@ def delete():
             flash(f"Sorry, the term you're deleting does not exist. { e }")
             return redirect("/list")
 
-
     if request.method == "POST":
         # get term id
         term_id = request.form.get("term_id")
@@ -640,7 +638,7 @@ def delete():
                 WHERE
                     id = :id
                 """,
-                id = term_id
+                id=term_id,
             )
 
             # check if item was deleted
@@ -654,11 +652,7 @@ def delete():
                 flash(f"Sorry, the term you're deleting does not exist.")
                 return redirect("/list")
 
-
         except Exception as e:
             # flash message
             flash(f"Sorry, the term you're deleting does not exist. { e }")
             return redirect("/list")
-
-
-

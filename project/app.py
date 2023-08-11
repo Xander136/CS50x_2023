@@ -650,7 +650,7 @@ def delete():
 
             else:
                 # flash message
-                flash(f"Sorry, the term you're deleting does not exist. { e }")
+                flash(f"Sorry, the term you're deleting does not exist.")
                 return redirect("/list")
 
 

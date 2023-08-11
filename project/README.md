@@ -55,18 +55,18 @@ I plan to create a convenient and reliable way to learn about these technical wo
 ##### Function List
 |No.|Function Name|Description|
 |---|-------------|-----------|
-|1  |after_request(response)|From CS50 Finance - Ensure responses aren't cached|
-|2  |login()    |From CS50 Finance - Log user in|
-|3  |logout()    |From CS50 Finance - Log user out|
-|4  |register()   |From CS50 Finance - Register user|
+|1  |add_term()    |Add new terms to the database. <br>Renders add term template.|
+|2  |after_request(response)|From CS50 Finance - Ensure responses aren't cached|
+|3 |apology(message, code=400)    |From CS50 Finance `helpers.py` - Render message as an apology to user.|
+|4  |delete()    |Delete terms from a button in the terms list.|
 |5  |index()    |Creates database table for the terms list. <br>Renders the template that shows cards that of the most common Programming Language and Topics|
-|6  |add_term()    |Add new terms to the database. <br>Renders add term template.|
-|7  |list()    |Shows a list of all the terms in the database or a particular topic selected by the user from the cards in the index.|
-|8  |apology(message, code=400)    |From CS50 Finance `helpers.py` - Render message as an apology to user.|
-|9  |login_required(f)    |From CS50 Finance `helpers.py` - Decorate routes to require login.|
-|10  |search()    |Search for a Japanese or English Term or a Topic.|
-|11  |update()    |Update terms from a button in the terms list.|
-|12  |delete()    |Delete terms from a button in the terms list.|
+|6  |list()    |Shows a list of all the terms in the database or a particular topic selected by the user from the cards in the index.|
+|7  |login()    |From CS50 Finance - Log user in|
+|8  |login_required(f)    |From CS50 Finance `helpers.py` - Decorate routes to require login.|
+|9  |logout()    |From CS50 Finance - Log user out|
+|10  |register()   |From CS50 Finance - Register user|
+|11  |search()    |Search for a Japanese or English Term or a Topic.|
+|12  |update()    |Update terms from a button in the terms list.|
 
 
 ##### Pages

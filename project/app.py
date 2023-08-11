@@ -599,7 +599,8 @@ def delete():
                 """
                 SELECT
                     japanese,
-                    english
+                    english,
+                    id
                 FROM
                     terms
                 WHERE

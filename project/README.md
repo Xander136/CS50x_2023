@@ -65,8 +65,8 @@ I plan to create a convenient and reliable way to learn about these technical wo
 |8  |apology(message, code=400)    |From CS50 Finance `helpers.py` - Render message as an apology to user.|
 |9  |login_required(f)    |From CS50 Finance `helpers.py` - Decorate routes to require login.|
 |10  |search()    |Search for a Japanese or English Term or a Topic.|
-|10  |update()    |Update terms from a button in the terms list.|
-|10  |delete()    |Delete terms from a button in the terms list.|
+|11  |update()    |Update terms from a button in the terms list.|
+|12  |delete()    |Delete terms from a button in the terms list.|
 
 
 ##### Pages
@@ -82,6 +82,10 @@ I plan to create a convenient and reliable way to learn about these technical wo
 ![Add new terms!](/project/static/pages/add_terms.png "Add new terms!")
 ###### 6. Search
 ![Search for terms!](/project/static/pages/search.png "Search for terms!")
+###### 6. Update
+![Update terms!](/project/static/pages/update.png "Update terms!")
+###### 6. Delete
+![Delete terms!](/project/static/pages/delete_confirmation.png "Delete terms!")
 
 ##### Decisions
 1. Using the CS50 Finance distribution code, I was able to easily go and implement what I had in mind, without taking too much time setting up my own flask app base and jinja syntax for the templates.
@@ -96,9 +100,11 @@ I plan to create a convenient and reliable way to learn about these technical wo
 
 6. I am thinking of adding a batch term addition using csv files. Maybe it would be easier to insert items that way.
 
+7. I was able to implement Update and Delete functions. I only used Flask and Jinja and did not rely on Javascript because I wanted to focus on implementing using these 2 technologies.
+
 
 ##### Others
-1. This project took me about 2 weeks to make. I allotted about 2 hours a day.
+1. This project took me about 3 weeks to make. I allotted about 2 hours a day.
 2. Originally, I wanted to make a simple portfolio.
 But suddenly got an Idea to make this Dictionary-like web app instead.
 Because I would be changing projects again very soon, and would need to research again for words and terms for some new programming language or topics.

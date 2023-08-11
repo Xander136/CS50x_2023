@@ -68,10 +68,6 @@ I plan to create a convenient and reliable way to learn about these technical wo
 |11  |search()    |Search for a Japanese or English Term or a Topic.|
 |12  |update()    |Update terms from a button in the terms list.|
 
-##### Templates
-
-
-
 
 ##### Pages
 ###### 1. Login

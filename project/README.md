@@ -13,7 +13,7 @@ I plan to create a convenient and reliable way to learn about these technical wo
 
 - What will your software do?<br>
 1. It would display Japanese words that are used in Programming languages and technical topics.
-2. You can Add new terms to the dictionary.
+2. You can Add, Update, and Delete terms in the dictionary.
 3. You can search for a Japanese and English word.
 
 
@@ -21,7 +21,7 @@ I plan to create a convenient and reliable way to learn about these technical wo
 1. Display in a list of all the terms in English and Japanese.
 2. Cards that you can select to quickly display the most used Programming Language and Topics.
 3. A search function for either word, term, or topic.
-4. Add new terms to the collection of terms.
+4. Add, Update, and Delete terms to the collection of terms.
 
 - How will it be executed?<br>
 1. I will be using Python, Flask, HTML, CSS, Bootstrap cards
@@ -46,7 +46,7 @@ I plan to create a convenient and reliable way to learn about these technical wo
 1. Properly displays a list of cards and lists of terms relating to each programming language or topic.
 
 - A better outcome?<br>
-1. Be able to implement a search function for the words or topic.
+1. Be able to implement a search, Add, Update, and Delete function for the words or topic.
 
 - The best outcome?<br>
 1. Fancy animations, good background, CSS Styles that is responsive and does not break with different kinds of screen sizes.

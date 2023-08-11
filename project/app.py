@@ -591,9 +591,6 @@ def delete():
         # try to get term id
         id = request.args.get("button")
 
-        # if user cancelled
-        if id == "cancel":
-            return redirect("/list")
         try:
             # get term information from database
             term = 0
@@ -629,6 +626,13 @@ def delete():
             return redirect("/list")
 
     if request.method == "POST":
+        # check if user confirmed or cancelled
+        confirmation = request.form.get("button")
+        # if user cancelled
+        if confirmation == "cancel":
+            flash(f"Deletion cancelled.")
+            return redirect("/list")
+
         # get term id
         term_id = request.form.get("term_id")
 

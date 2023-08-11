@@ -589,7 +589,30 @@ def update():
 @login_required
 def delete():
     if request.method == "GET":
-        
+        # try to get term id
+        id = request.args.get("button")
+
+        try:
+            # get term information from database
+            term = db.execute(
+                """
+                SELECT
+                    japanese,
+                    english
+                FROM
+                    terms
+                WHERE
+                    id = :id
+                LIMIT
+                    1
+                """,
+                id=id
+            )
+        except Exception as e:
+            # flash message
+            flash(f"Sorry, the term you're deleting does not exist. { e }")
+            return redirect("/list")
+
 
 
     if request.method == "POST":

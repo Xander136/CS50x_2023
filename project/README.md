@@ -82,9 +82,9 @@ I plan to create a convenient and reliable way to learn about these technical wo
 ![Add new terms!](/project/static/pages/add_terms.png "Add new terms!")
 ###### 6. Search
 ![Search for terms!](/project/static/pages/search.png "Search for terms!")
-###### 6. Update
+###### 7. Update
 ![Update terms!](/project/static/pages/update.png "Update terms!")
-###### 6. Delete
+###### 8. Delete
 ![Delete terms!](/project/static/pages/delete_confirmation.png "Delete terms!")
 
 ##### Decisions
@@ -108,3 +108,4 @@ I plan to create a convenient and reliable way to learn about these technical wo
 2. Originally, I wanted to make a simple portfolio.
 But suddenly got an Idea to make this Dictionary-like web app instead.
 Because I would be changing projects again very soon, and would need to research again for words and terms for some new programming language or topics.
+3. This has been quite a challenge to finish, with a lot of revisions and design changes. I have learned a lot and thats the most important take away from this final project.

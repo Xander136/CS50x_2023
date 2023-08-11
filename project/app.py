@@ -295,7 +295,7 @@ def list():
                 INNER JOIN topic AS tpc
                     ON trm.topic_id = tpc.id
                 ORDER BY
-                    english
+                    LOWER(english)
                 """
             )
             # check if there were selected terms
@@ -337,7 +337,7 @@ def list():
                     ON trm.topic_id = tpc.id
                 WHERE tpc.name LIKE :topic
                 ORDER BY
-                    english
+                    LOWER(english)
                 """,
                 topic=topic,
             )
@@ -444,7 +444,7 @@ def update():
                 WHERE
                     trm.id = :id
                 ORDER BY
-                    english
+                    LOWER(english)
                 """,
                 id=id,
             )

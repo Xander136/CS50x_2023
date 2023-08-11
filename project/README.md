@@ -1,5 +1,5 @@
 # チンプンカンプン・Chinpunkanpun
-#### Video Demo:  <https://www.youtube.com/watch?v=NFQ1blxKiEc>
+#### Video Demo:  [チンプンカンプン - Chinpunkanpun](https://www.youtube.com/watch?v=NFQ1blxKiEc)
 #### Description:
 This project plans to solve some challenges when joining a new project as a Japanese Bridge Systems Engineer.
 Most of the time, we are expected to know a new topic each time we join a new project.

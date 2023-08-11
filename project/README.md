@@ -8,6 +8,8 @@ Although it is fun to learn new things, it is quite a challenge to find a collat
 That's why using my Web app, **チンプンカンプン**(Chinpunkanpun), a Japanese word that according to a dictionary means "unintelligible language; incoherent language; talking nonsense; "all Greek to me"; double Dutch; (something) incomprehensible; babble; gibberish; jargon; gobbledygook".
 I plan to create a convenient and reliable way to learn about these technical words.
 
+### How to use:
+Watch video from video demo link.
 
 #### Things to consider
 

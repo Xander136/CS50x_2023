@@ -594,6 +594,7 @@ def delete():
 
         try:
             # get term information from database
+            term = 0
             term = db.execute(
                 """
                 SELECT
@@ -608,6 +609,9 @@ def delete():
                 """,
                 id=id
             )
+            # check if there were items selected
+            if terms:
+                # render 
         except Exception as e:
             # flash message
             flash(f"Sorry, the term you're deleting does not exist. { e }")

@@ -591,6 +591,9 @@ def delete():
         # try to get term id
         id = request.args.get("button")
 
+        # if user cancelled
+        if id == "cancel":
+            return redirect("/list")
         try:
             # get term information from database
             term = 0

@@ -46,10 +46,10 @@ I plan to create a convenient and reliable way to learn about these technical wo
 1. Properly displays a list of cards and lists of terms relating to each programming language or topic.
 
 - A better outcome?<br>
-1. Be able to implement a search, Add, Update, and Delete function for the words or topic.
+1. Be able to implement a search function for the words or topic.
 
 - The best outcome?<br>
-1. Fancy animations, good background, CSS Styles that is responsive and does not break with different kinds of screen sizes.
+1. Update and Delete functions, good background, CSS Styles that is responsive and does not break with different kinds of screen sizes.
 
 #### Project Specifications
 ##### Function List
@@ -65,6 +65,8 @@ I plan to create a convenient and reliable way to learn about these technical wo
 |8  |apology(message, code=400)    |From CS50 Finance `helpers.py` - Render message as an apology to user.|
 |9  |login_required(f)    |From CS50 Finance `helpers.py` - Decorate routes to require login.|
 |10  |search()    |Search for a Japanese or English Term or a Topic.|
+|10  |update()    |Update terms from a button in the terms list.|
+|10  |delete()    |Delete terms from a button in the terms list.|
 
 
 ##### Pages

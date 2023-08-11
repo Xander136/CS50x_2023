@@ -424,6 +424,7 @@ def search():
 @app.route("/update", methods=["GET", "POST"])
 @login_required
 def update():
+    """ Update terms from a button in the terms list """
     if request.method == "GET":
         try:
             # try to get term id

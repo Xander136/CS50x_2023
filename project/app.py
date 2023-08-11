@@ -631,8 +631,29 @@ def delete():
         term_id = request.form.get("term_id")
 
         try:
-            
-            return redirect("/list")
+            deleted = 0
+            deleted = db.execute(
+                """
+                DELETE FROM
+                    terms
+                WHERE
+                    id = :id
+                """,
+                id = term_id
+            )
+
+            # check if item was deleted
+            if deleted:
+                # flash message
+                flash(f"{deleted} items were succesfully deleted.")
+                return redirect("/list")
+
+            else:
+                # flash message
+                flash(f"Sorry, the term you're deleting does not exist. { e }")
+                return redirect("/list")
+
+
         except Exception as e:
             # flash message
             flash(f"Sorry, the term you're deleting does not exist. { e }")

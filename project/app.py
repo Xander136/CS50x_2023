@@ -612,14 +612,31 @@ def delete():
             # check if there were items selected
             if term:
                 # render delete template
-                return render_template("/delete.html", term=term)
+                return render_template("/delete.html", term=term[0])
+
+            # if no items found
+            elif term == 0:
+                # flash message
+                flash(f"Sorry, the term you're deleting does not exist. { e }")
+                return redirect("/list")
+
         except Exception as e:
             # flash message
             flash(f"Sorry, the term you're deleting does not exist. { e }")
             return redirect("/list")
 
 
-
     if request.method == "POST":
-        return redirect("/")
+        # get term id
+        term_id = request.form.get("term_id")
+
+        try:
+            
+            return redirect("/list")
+        except Exception as e:
+            # flash message
+            flash(f"Sorry, the term you're deleting does not exist. { e }")
+            return redirect("/list")
+
+
 

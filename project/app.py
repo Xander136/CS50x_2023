@@ -393,7 +393,7 @@ def search():
                 OR
                     trm.english LIKE :topic
                 ORDER BY
-                    english
+                    LOWER(english)
                 """,
                 topic=topic,
             )

@@ -10,8 +10,8 @@
             <h3>Delete this entry?</h3>
             <h4>Japanese: {{ term.japanese }}</h4>
             <h4>English: {{ term.english }}</h4>
-            <button class="btn btn-danger" type="submit" value="delete">Delete</button>
-            <button class="btn btn-warning" type="submit" value="cancel">Cancel</button>
+            <button class="btn btn-danger" type="submit" name="button" value="delete">Delete</button>
+            <button class="btn btn-warning" type="submit" name="button" value="cancel">Cancel</button>
             <input type="hidden" name="term_id" value="{{ term.id }}">
         </form>
     </div>

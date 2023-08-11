@@ -8,8 +8,11 @@
     <div class="container py-5 text-center">
         <form action="/delete" method="POST">
             <h3>Delete this entry?</h3>
+            <h4>Japanese: {{ term.japanese }}</h4>
+            <h4>English: {{ term.english }}</h4>
             <button class="btn btn-primary" type="submit" value="delete">Delete</button>
             <button class="btn btn-primary" type="submit" value="cancel">Cancel</button>
+            <input>
         </form>
     </div>
 {% endblock %}

@@ -610,8 +610,9 @@ def delete():
                 id=id
             )
             # check if there were items selected
-            if terms:
-                # render 
+            if term:
+                # render delete template
+                return render_template("/delete.html", term=term)
         except Exception as e:
             # flash message
             flash(f"Sorry, the term you're deleting does not exist. { e }")

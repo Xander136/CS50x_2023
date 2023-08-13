@@ -13,3 +13,4 @@ application/zip
 # get user input
 file = input("File name: ").lower().strip()
 if file.endswith(".gif"):
+    

@@ -10,7 +10,8 @@ text/plain
 application/zip
 """
 
+img_extensions = [".gif", ".jpg", ".jpeg", ".png"]
 # get user input
 file = input("File name: ").lower().strip()
-if file.endswith(".gif"):
-    
+if any(myStr.endswith(extension) for extension in img_extensions):
+    print(f"image/{file}")

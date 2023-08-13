@@ -16,7 +16,10 @@ app_extensions = [".zip", ".pdf"]
 file = input("File name: ").lower().strip()
 if any(file.endswith(extension) for extension in img_extensions):
     file_ext = file.split(".")[-1]
-    print(f"image/{file_ext}")
+    if file_ext == "jpg"
+        print("image/jpeg")
+    else:
+        print(f"image/{file_ext}")
 
 elif any(file.endswith(extension) for extension in app_extensions):
     file_ext = file.split(".")[-1]

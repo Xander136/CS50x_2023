@@ -11,7 +11,7 @@ application/zip
 """
 
 img_extensions = [".gif", ".jpg", ".jpeg", ".png"]
-app_extensions = [".pdf", ".pdf"]
+app_extensions = [".zip", ".pdf"]
 # get user input
 file = input("File name: ").lower().strip()
 if any(file.endswith(extension) for extension in img_extensions):
@@ -24,3 +24,6 @@ elif any(file.endswith(extension) for extension in app_extensions):
 
 elif file.endswith(".txt"):
     print("text/plain")
+
+else:
+    print("application/octet-stream")

@@ -8,13 +8,13 @@ z = int(expression[2])
 
 match y:
     case "+":
-        print(float(x + y))
+        print(float(x + z))
     case "-":
-        print(float(x - y))
+        print(float(x - z))
     case "*":
-        print(float(x * y))
+        print(float(x * z))
     case "/":
-        print(float(x / y))
+        print(float(x / z))
     case _:
         print("Try again.")
 

@@ -14,5 +14,5 @@ img_extensions = [".gif", ".jpg", ".jpeg", ".png"]
 # get user input
 file = input("File name: ").lower().strip()
 if any(file.endswith(extension) for extension in img_extensions):
-    split
+    file_ext = file.split(".")[-1]
     print(f"image/{file}")

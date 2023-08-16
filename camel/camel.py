@@ -10,7 +10,9 @@ for letter in word:
     elif letter.isupper():
         words.append(letters)
         letters = ""
-        letters += letter
+        letters += letter.lower()
+
+words.append(letters)
 
 snake_case = "_".join(words)
 

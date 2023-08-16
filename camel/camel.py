@@ -1,14 +1,17 @@
 # get user input
 word = input("camelCase: ")
 
-words = []
 letters = ""
+words = []
 
 for letter in word:
-    if not letter.isupper() and letter != "\n":
+    if letter.islower():
         letters += letter
-    words.append()
-    letters = ""
+    elif letter.isupper():
+        words.append(letters)
+        letters = ""
+        letters += letter
 
-words.join("_")
-print(f"snake_case: {words}")
+snake_case = words.join("_")
+
+print(f"snake_case: {snake_case}")

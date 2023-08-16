@@ -12,6 +12,6 @@ for letter in word:
         letters = ""
         letters += letter
 
-snake_case = words.join("_")
+snake_case = "_".join(words)
 
 print(f"snake_case: {snake_case}")

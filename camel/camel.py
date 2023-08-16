@@ -5,7 +5,7 @@ words = []
 letters = ""
 
 for letter in word:
-    while not letter.isupper() and letter != "\n":
+    if not letter.isupper() and letter != "\n":
         letters += letter
     words.append()
     letters = ""

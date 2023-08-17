@@ -14,6 +14,7 @@ def main():
     while payment < amount:
         print(f"Amount Due: {amount}")
         change = int(get_change())
+        amount -= change
         payment += change
 
     change = 50 - payment

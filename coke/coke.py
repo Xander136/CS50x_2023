@@ -12,7 +12,7 @@ def main():
     while payment < AMOUNT:
         print(f"Amount Due: {AMOUNT}")
         change = int(get_change())
-        payment += change
+        payment -= change
 
 
 main()

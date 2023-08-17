@@ -12,7 +12,7 @@ def main():
     amount_due = 50
     coins = 0
     while amount_due > 0:
-        print(f"Amount due: {amount_due}")
+        print(f"Amount Due: {amount_due}")
         change = int(get_change())
         amount_due -= change
         coins += change

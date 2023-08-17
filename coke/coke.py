@@ -10,10 +10,14 @@ def get_change():
 
 def main():
     amount = 50
+    payment = 0
     while payment < amount:
         print(f"Amount Due: {amount}")
         change = int(get_change())
         payment += change
+
+    change = 50 - payment
+    print(f"Change Owed: {change}")
 
 
 main()

@@ -1,6 +1,6 @@
 # list of valid coins
 COINS = ["25", "10", "5"]
-AMOUNT = 50
+
 # get user input
 def get_change():
     change = ""
@@ -9,10 +9,11 @@ def get_change():
     return int(change)
 
 def main():
-    while payment < AMOUNT:
-        print(f"Amount Due: {AMOUNT}")
+    amount = 50
+    while payment < amount:
+        print(f"Amount Due: {amount}")
         change = int(get_change())
-        payment -= change
+        payment += change
 
 
 main()

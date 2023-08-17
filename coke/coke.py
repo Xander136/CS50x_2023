@@ -11,7 +11,7 @@ def get_change(amount_due):
 
 def main():
     amount_due = 50
-    coins = 0oo
+    coins = 0
     while amount_due > 0:
         change = int(get_change(amount_due))
         amount_due -= change

@@ -11,11 +11,11 @@ def get_change():
 def main():
     amount_due = 50
     coins = 0
-    while amount_due > 0:
-        print(f"Amount due: {amount_due}")
-        change = int(get_change())
-        amount_due -= change
-        coins += change
+
+    print(f"Amount due: {amount_due}")
+    change = int(get_change())
+    amount_due -= change
+    coins += change
 
     if coins > 50:
         owed = coins - 50

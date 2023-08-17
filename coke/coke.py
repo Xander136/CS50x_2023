@@ -9,16 +9,19 @@ def get_change():
     return int(change)
 
 def main():
-    amount = 50
-    payment = 0
-    while payment < amount:
-        print(f"Amount Due: {amount}")
+    amount_due = 50
+    coins = 0
+    while coins < amount_due:
+        print(f"Amount due: {amount_due}")
         change = int(get_change())
-        amount -= change
-        payment += change
+        amount_due -= change
+        coins += change
 
-    change = 50 - payment
-    print(f"Change Owed: {change}")
+    if coins > 50:
+        owed = coins - 50
+        print(f"Change Owed: {owed}")
+    else:
+        print(f"Change Owed: 0")
 
 
 main()

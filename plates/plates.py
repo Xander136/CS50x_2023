@@ -58,10 +58,20 @@ def max_six_min_two(s):
 
 
 def no_middle_numbers(s):
-    last_number = Bool
-    # check if last char is number
+    last_numeric = ""
+    last_alpha = ""
+    # check if last char is numeric or alpha
     if s[-1].isnumeric():
-        last_number = True
+        last_numeric = True
+
+    elif s[-1].isalpha():
+        last_alpha =True
+
+    else:
+        last_numeric = False
+        last_alpha = False
+
+    
 
 # check if the 1st number is not zero
 def first_number_not_zero(s):

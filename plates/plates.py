@@ -71,6 +71,21 @@ def no_middle_numbers(s)
         return True
 
 
+def first_number_zero(s):
+    # check if there are numbers
+    if s.isalnum():
+        for char in s:
+            # check first number found
+            if char.isnumeric():
+                # if its Zero
+                if char == "0":
+                    return False
+                # if not Zero
+                else:
+                    return True
+    # if no numbers no need to check
+    else:
+        return True
 
 
 main()

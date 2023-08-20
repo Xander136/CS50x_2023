@@ -29,10 +29,7 @@ def is_valid(s):
     if not max_six_min_two(s):
         return False
 
-    if not min_two(s):
-        return False
-
-    if not numbers_middle(s):
+    if not no_middle_numbers(s):
         return False
 
     if first_number_zero(s):
@@ -57,4 +54,14 @@ def max_six_min_two(s):
         return False
 
     return True
+
+
+def no_middle_numbers(s)
+    if s[-1].isnumeric():
+        return False
+
+    return True
+
+
+
 main()

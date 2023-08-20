@@ -44,10 +44,11 @@ def is_valid(s):
     return True
 
 def start_two_letters(s):
-    for char in s[0:1]:
+    for char in s[0:2]:
         # check if first 2 characters are alphabet
-        if not char.isalpha()
-
+        if not char.isalpha():
+            return False
+    return True
 
 
 main()

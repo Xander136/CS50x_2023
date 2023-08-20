@@ -84,7 +84,7 @@ def first_number_zero(s):
                 else:
                     return True
     # if no numbers no need to check
-    else:
+    elif s.isalpha():
         return True
 
 

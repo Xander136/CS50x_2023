@@ -26,7 +26,9 @@ def main():
     ]
 
     calories = ""
-    calories = fruits.name[{item}]
+    for fruit in fruits:
+        if fruit["name"] == item:
+            calories = fruit["calories"]
 
 
     # print result

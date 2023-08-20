@@ -20,7 +20,7 @@ def main():
         {"name": "pineapple", "calories": 50},
         {"name": "plums", "calories": 70},
         {"name": "strawberries", "calories": 50},
-        {"name": "sweet cheries", "calories": 100},
+        {"name": "sweet cherries", "calories": 100},
         {"name": "tangerine", "calories": 50},
         {"name": "watermelon", "calories": 80},
     ]

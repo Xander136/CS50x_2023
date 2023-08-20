@@ -82,4 +82,13 @@ def first_number_not_zero(s):
             continue
     return True
 
+
+# Check if string does not contain invalid chars
+def has_invalid_chars(s):
+    invalid_chars = [".", " ", "!"]
+    if invalid_chars not in s:
+        return True
+    else:
+        return False
+
 main()

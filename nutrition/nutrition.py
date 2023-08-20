@@ -1,10 +1,10 @@
 def main():
     # get user input
-    item = input("Item: ")
+    item = input("Item: ").lower()
 
     fruits = [
         {"name": "apple", "calories": 130},
-        {"name": "avocado california", "calories": 50},
+        {"name": "avocado", "calories": 50},
         {"name": "banana", "calories": 110},
         {"name": "cantaloupe", "calories": 50},
         {"name": "grapefruit", "calories": 60},
@@ -29,7 +29,8 @@ def main():
     for fruit in fruits:
         if fruit["name"] == item:
             calories = fruit.get("calories")
-
+    if calories == "":
+        print("")
 
     # print result
     print(f"Calories: {calories}")

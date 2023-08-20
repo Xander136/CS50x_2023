@@ -28,11 +28,11 @@ def main():
     calories = ""
     for fruit in fruits:
         if fruit["name"] == item:
-            calories = fruit["calories"]
+            calories = fruit.get("calories")
 
 
     # print result
-    print(calories)
+    print(f"Calories: {calories}")
 
 
 main()

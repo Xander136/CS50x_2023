@@ -68,6 +68,8 @@ def no_middle_numbers(s):
         for char in s[2:-1]:
             if char.isnumeric():
                 return False
+        # if no numbers found from 3rd character onwward
+        return True
     else:
         return True
 

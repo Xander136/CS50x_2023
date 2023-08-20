@@ -26,7 +26,7 @@ def is_valid(s):
     if not start_two_letters(s):
         return False
 
-    if not max_six(s):
+    if not max_six_min_two(s):
         return False
 
     if not min_two(s):
@@ -51,4 +51,10 @@ def start_two_letters(s):
     return True
 
 
+def max_six_min_two(s):
+    length = len(s)
+    if length > 6 or length < 2:
+        return False
+
+    return True
 main()

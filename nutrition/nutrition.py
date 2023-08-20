@@ -31,9 +31,9 @@ def main():
             calories = fruit.get("calories")
     if calories == "":
         print("")
-
-    # print result
-    print(f"Calories: {calories}")
+    else:
+        # print result
+        print(f"Calories: {calories}")
 
 
 main()

@@ -57,7 +57,7 @@ def max_six_min_two(s):
 
 
 def no_middle_numbers(s)
-    if s[-1].isalpha() and s.isalnum():
+    if s[1:-1].isalpha() and s.isalnum():
         return False
 
     return True

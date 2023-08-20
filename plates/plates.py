@@ -67,7 +67,8 @@ def no_middle_numbers(s)
         for char in s[2:-1]:
             if char.isnumeric():
                 return False
-
+    else:
+        return True
 
 
 

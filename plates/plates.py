@@ -70,7 +70,7 @@ def no_middle_numbers(s)
     else:
         return True
 
-
+# check if the 1st number is a zero
 def first_number_zero(s):
     # check if there are numbers
     if s.isalnum():
@@ -79,7 +79,7 @@ def first_number_zero(s):
             if char.isnumeric():
                 # if its Zero
                 if char == "0":
-                    return False
+                    return True
                 # if not Zero
                 else:
                     return True

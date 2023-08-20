@@ -64,7 +64,13 @@ def no_middle_numbers(s):
         if char.isnumeric() and number_found == False:
             number_found = True
 
-        if char.isalpha() and number_found == 
+        if char.isnumeric() and number_found == True:
+            continue
+
+        if char.isalpha() and number_found == True:
+            return False
+
+    return True
 
 
 # check if the 1st number is not zero

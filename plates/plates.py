@@ -35,7 +35,18 @@ def is_valid(s):
     if not numbers_middle(s):
         return False
 
-    if 
+    if first_number_zero(s):
+        return False
+
+    if not has_invalid_chars(s):
+        return False
+    # return true if all checks passed
+    return True
+
+def start_two_letters(s):
+    for char in s[0:1]:
+        # check if first 2 characters are alphabet
+        if not char.isalpha()
 
 
 

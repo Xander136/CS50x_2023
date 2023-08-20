@@ -32,13 +32,14 @@ def is_valid(s):
     if not no_middle_numbers(s):
         return False
 
-    if not first_number_zero(s):
+    if not first_number_not_zero(s):
         return False
 
     if not no_invalid_chars(s):
         return False
     # return true if all checks passed
     return True
+
 
 def start_two_letters(s):
     for char in s[0:2]:
@@ -56,7 +57,7 @@ def max_six_min_two(s):
     return True
 
 
-def no_middle_numbers(s)
+def no_middle_numbers(s):
     # check if last char is number
     if s[-1].isnumeric():
         return True
@@ -69,6 +70,7 @@ def no_middle_numbers(s)
                 return False
     else:
         return True
+
 
 # check if the 1st number is not zero
 def first_number_not_zero(s):
@@ -91,5 +93,6 @@ def no_invalid_chars(s):
             return False
 
     return True
+
 
 main()

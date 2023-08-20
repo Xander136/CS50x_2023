@@ -35,7 +35,7 @@ def is_valid(s):
     if not first_number_zero(s):
         return False
 
-    if not has_invalid_chars(s):
+    if not no_invalid_chars(s):
         return False
     # return true if all checks passed
     return True
@@ -84,11 +84,12 @@ def first_number_not_zero(s):
 
 
 # Check if string does not contain invalid chars
-def has_invalid_chars(s):
+def no_invalid_chars(s):
     invalid_chars = [".", " ", "!"]
-    if invalid_chars not in s:
-        return True
-    else:
-        return False
+    for char in invalid_chars:
+        if char in s:
+            return False
+
+    return True
 
 main()

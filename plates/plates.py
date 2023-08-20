@@ -32,7 +32,7 @@ def is_valid(s):
     if not no_middle_numbers(s):
         return False
 
-    if first_number_zero(s):
+    if not first_number_zero(s):
         return False
 
     if not has_invalid_chars(s):
@@ -72,20 +72,14 @@ def no_middle_numbers(s)
 
 # check if the 1st number is not zero
 def first_number_not_zero(s):
-    # check if there are numbers
-    if s.isalnum():
-        for char in s:
-            # check first number found
-            if char.isnumeric():
-                # if its Zero
-                if char == "0":
-                    return False
-                # if not Zero
-                else:
-                    return True
-    # if no numbers no need to check
-    elif s.isalpha():
-        return True
-
+    for char in s:
+        if char.isnumeric():
+            if char == "0":
+                return False
+            else:
+                return True
+        else:
+            continue
+    return True
 
 main()
